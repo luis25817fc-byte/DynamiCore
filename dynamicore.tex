@@ -1,45 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, graphicx}
 
-
-```latex
-\documentclass{article}
-\usepackage{amsmath}
-\usepackage{graphicx}
-
-\title{DynamiCore: Finite-Size Entropy Condensation and Multi-Scale Transitions}
-\author{Luis Daniel Flores Segura}
-\date{\today}
+\title{DynamiCore: Finite-Size Structural Transitions in Deterministic Binary Dynamical Systems}
 
 \begin{document}
 
 \maketitle
 
-\section{Modelo}
-El sistema se define operando sobre un espacio discreto estructurado como:
-\[
-\mathcal{S}_k = \{0,1\}^{2^k}
-\]
-con un escalamiento geométrico de doble exponencialidad.
+\begin{abstract}
+We study deterministic binary dynamical systems over finite state spaces $S_k = \{0,1\}^{2^k}$.
 
-\section{Observables Macroscópicos}
-Monitoreamos la evolución topológica mediante la coherencia estructural $R(k)$, la entropía de Shannon adaptada $H(k)$, y evaluamos la intensidad de la transición mediante el gradiente integrado:
-\[
-\Psi(k) = |\Delta R| + |\Delta H|
-\]
+We show that increasing system size induces structural transitions in attractor organization, despite the absence of stochasticity or external forcing.
 
-\section{Transición Estructural Crítica}
-El punto crítico donde el mapeo experimenta la máxima frustración por resolución finita se extrae analíticamente resolviendo:
+We characterize these transitions using cycle decomposition, entropy, and a structural variation operator $\Psi(k)$.
+
+The results highlight finite-size induced reorganization of deterministic dynamics rather than asymptotic behavior.
+\end{abstract}
+
+\section{Model}
+
+We define:
 \[
-k^* = \arg\max \Psi(k)
+S_k = \{0,1\}^{2^k}
 \]
 
-\section{Resultados Empíricos}
-Los datos experimentales muestran un quiebre abrupto localizado estrictamente en la ventana $k \in [10, 11]$, donde la simetría basal de 2 ciclos se rompe de forma transitoria elevándose a un estado degenerado de hasta 4 ciclos estacionarios en $k=12$, antes de colapsar asintóticamente hacia el orden puro.
+and a deterministic map:
+\[
+f_k: S_k \rightarrow S_k
+\]
 
-\section{Visualización Analítica}
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.9\linewidth]{figures/result.png}
-\caption{Métricas del Framework DynamiCore ($H(k)$, $\Psi(k)$, y ciclos estacionarios reales) graficados en función del parámetro de escala $k$.}
-\end{figure}
+with dynamics:
+\[
+x_{t+1} = f_k(x_t)
+\]
+
+All trajectories converge to periodic orbits due to finiteness.
+
+\section{Cycle Structure}
+
+We define the attractor decomposition:
+\[
+\mathcal{C}(k) = \{C_1, ..., C_{n_k}\}
+\]
+
+with equivalence relation:
+\[
+x \sim y \iff \exists t: f_k^t(x) = y
+\]
+
+\section{Observables}
+
+\subsection{Coherence}
+
+\[
+R(k) = \frac{|C_{\max}|}{|S_k|}
+\]
+
+\subsection{Entropy}
+
+\[
+p_i = \frac{|C_i|}{\sum_j |C_j|}
+\quad,\quad
+H(k) = -\sum_i p_i \log p_i
+\]
+
+\subsection{Structural Variation}
+
+\[
+\Psi(k) = |\Delta R(k)| + |\Delta H(k)|
+\]
+
+\[
+\Delta X(k) = X(k+1) - X(k)
+\]
+
+\section{Baselines}
+
+We compare against:
+
+- Random Boolean Networks (RBN)
+- Cellular Automata (CA)
+- Flat statistical baseline
+
+\section{Critical Scale}
+
+\[
+k^* = \arg\max_k \Psi(k)
+\]
+
+\section{Results}
+
+We observe three regimes:
+
+- Ordered regime: coherent attractor dominance
+- Transition regime: peak in structural variation
+- Asymptotic regime: stabilization of cycle structure
+
+\section{Conclusion}
+
+Finite deterministic systems can exhibit structural transitions driven purely by state-space scaling, without stochasticity or external forcing.
 
 \end{document}
