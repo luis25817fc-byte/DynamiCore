@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{DynamiCore: Finite-Size Entropy Condensation}
+\author{Luis Daniel Flores Segura}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Modelo}
+
+El sistema se define como:
+
+\[
+\mathcal{S}_k = \{0,1\}^{2^k}
+\]
+
+con crecimiento doble exponencial.
+
+\section{Observables}
+
+Se definen:
+
+\[
+R(k), \quad H(k), \quad \Phi(k)
+\]
+
+y el gradiente:
+
+\[
+\Psi(k) = |\Delta R| + |\Delta H|
+\]
+
+\section{Transición}
+
+El punto crítico:
+
+\[
+k^* = \arg\max \Psi(k)
+\]
+
+\section{Resultado}
+
+Se observa una transición de compresión de información en k ≈ 10–11.
+
+\section{Figuras}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{../figures/result.png}
+\caption{DynamiCore observables}
+\end{figure}
+
+\end{document}
