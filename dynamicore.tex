@@ -1,57 +1,49 @@
+
+---
+
+### 📄 Archivo 3: `dynamicore.tex`
+*(Crea un archivo de texto, nómbralo `dynamicore.tex` y pégale esto)*
+
+```latex
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{graphicx}
 
-\title{DynamiCore: Finite-Size Entropy Condensation}
+\title{DynamiCore: Finite-Size Entropy Condensation and Multi-Scale Transitions}
 \author{Luis Daniel Flores Segura}
-\date{}
+\date{\today}
 
 \begin{document}
 
 \maketitle
 
 \section{Modelo}
-
-El sistema se define como:
-
+El sistema se define operando sobre un espacio discreto estructurado como:
 \[
 \mathcal{S}_k = \{0,1\}^{2^k}
 \]
+con un escalamiento geométrico de doble exponencialidad.
 
-con crecimiento doble exponencial.
-
-\section{Observables}
-
-Se definen:
-
-\[
-R(k), \quad H(k), \quad \Phi(k)
-\]
-
-y el gradiente:
-
+\section{Observables Macroscópicos}
+Monitoreamos la evolución topológica mediante la coherencia estructural $R(k)$, la entropía de Shannon adaptada $H(k)$, y evaluamos la intensidad de la transición mediante el gradiente integrado:
 \[
 \Psi(k) = |\Delta R| + |\Delta H|
 \]
 
-\section{Transición}
-
-El punto crítico:
-
+\section{Transición Estructural Crítica}
+El punto crítico donde el mapeo experimenta la máxima frustración por resolución finita se extrae analíticamente resolviendo:
 \[
 k^* = \arg\max \Psi(k)
 \]
 
-\section{Resultado}
+\section{Resultados Empíricos}
+Los datos experimentales muestran un quiebre abrupto localizado estrictamente en la ventana $k \in [10, 11]$, donde la simetría basal de 2 ciclos se rompe de forma transitoria elevándose a un estado degenerado de hasta 4 ciclos estacionarios en $k=12$, antes de colapsar asintóticamente hacia el orden puro.
 
-Se observa una transición de compresión de información en k ≈ 10–11.
-
-\section{Figuras}
-
+\section{Visualización Analítica}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\linewidth]{../figures/result.png}
-\caption{DynamiCore observables}
+\includegraphics[width=0.9\linewidth]{figures/result.png}
+\caption{Métricas del Framework DynamiCore ($H(k)$, $\Psi(k)$, y ciclos estacionarios reales) graficados en función del parámetro de escala $k$.}
 \end{figure}
 
 \end{document}
