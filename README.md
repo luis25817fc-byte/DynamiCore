@@ -2,6 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20789168.svg)](https://doi.org/10.5281/zenodo.20789168)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+## Visual Evidence
 
 ## About
 **DynamiCore** is a research-grade framework designed to study deterministic binary dynamical systems over finite state spaces $S_k = \{0,1\}^{2^k}$. This project provides a robust pipeline to characterize structural transitions in attractor organization induced by system size, utilizing cycle decomposition, entropy analysis, and the structural variation operator $\Psi(k)$.
@@ -48,6 +49,11 @@ A non-monotonic structural transition emerges at a characteristic scale $k^*$, d
 $$k^* = \operatorname{argmax} \Psi(k)$$
 
 ---
+
+## Visual Evidence
+
+![Structural Transition]
+
 
 ## Baselines
 
