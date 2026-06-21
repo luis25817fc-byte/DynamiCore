@@ -1,19 +1,67 @@
-# DynamiCore: Multiscale Analysis Framework for Finite Dynamical Systems
+# DynamiCore
 
-DynamiCore is an open-source computational framework designed for the multi-scale structural analysis, cycle extraction, and entropy decomposition of deterministic discrete mappings over exponentially scaling finite state spaces $\mathcal{S}_k = \{0,1\}^{2^k}$.
+Finite-size structural transitions in deterministic binary dynamical systems.
 
-## Empirical Discovery: Finite-Size Resonance Anomaly
-Using the core pipeline, empirical verification on structured binary spaces isolates a sharp topological phase transition at $k \in [10, 11]$ characterized by an entropy explosion and structural coherence collapse:
+---
 
-| k | Dimension (N) | Cycles | Coherence R(k) | Entropy H(k) | Regime |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **4--9** | 16--512 | 2 | 0.9375 $\to$ 0.9980 | 0.3372 $\to$ 0.0203 | **A: Monolithic Concentration** |
-| **10--11** | 1024--2048 | **3** | **0.6552 $\to$ 0.6528** | **0.9389 $\to$ 0.9368** | **B: Abrupt Fragmentation** |
-| **12** | 4096 | **4** | 0.9899 | 0.0921 | **C: Post-Critical Relaxation** |
-| **13--18** | 8192--262144 | 2 | 0.9998 $\to$ 0.9999 | 0.0017 $\to$ 0.0000 | **D: Asymptotic Condensation** |
+## Overview
 
-## Installation & Quick Start
+We study deterministic discrete-time dynamical systems over finite binary state spaces:
 
-```bash
+S_k = {0,1}^{2^k}
+
+We analyze how increasing system size affects the global organization of attractors.
+
+---
+
+## Model
+
+f_k : S_k → S_k
+
+x_{t+1} = f_k(x_t)
+
+Due to finiteness, all trajectories converge to periodic orbits.
+
+---
+
+## Observables
+
+R(k): coherence of dominant attractor  
+H(k): entropy of cycle distribution  
+Ψ(k): structural variation operator  
+
+---
+
+## Key Result
+
+A non-monotonic structural transition emerges at a characteristic scale k*, defined by:
+
+k* = argmax Ψ(k)
+
+---
+
+## Baselines
+
+- Random Boolean Networks (RBN)
+- Cellular Automata (CA)
+- Flat statistical baseline
+
+---
+
+## Interpretation
+
+The observed transition is a finite-size effect in deterministic state-space dynamics, not requiring stochasticity or external forcing.
+
+---
+
+## Run
+
 pip install -r requirements.txt
 python generate_figures.py
+
+---
+
+## Output
+
+figures/result.png
+figures/result.pdf
