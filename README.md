@@ -46,8 +46,7 @@ Due to the finiteness of $S_k$, all trajectories are guaranteed to converge to p
 
 A non-monotonic structural transition emerges at a characteristic scale $k^*$, defined by:
 
-$$k^* = \operatorname{argmax} \Psi(k)$$
-
+$$k^* = \arg\max \Psi$$
 ---
 ## Visual Evidence
 
