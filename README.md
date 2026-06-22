@@ -66,6 +66,16 @@ $$k^* = \arg\max \Psi(k)$$
 ![Statistical Plot](Screenshot_20260621-100303~2.jpg)
 ![Output Comparison](Screenshot_20260621-100306~2.jpg)
 
+### Empirically Verified Structural Transitions
+The actual execution of the framework validates the non-monotonic transition. Below are the generated subplots tracking coherence collapse, entropy spikes, and critical structural variations:
+
+![DynamiCore Execution Results](results.png)
+
+* **Coherence Drop**: A sudden structural reorganization occurs at scales $k = 10$ and $k = 11$, where $R(k)$ drops to $\approx 0.65$.
+* **Entropy Peak**: In contrast, the cycle distribution entropy $H(k)$ approaches maximum uncertainty ($\approx 0.9$) within the same finite-size window before resetting back to a coherent state.
+* **Structural Variation**: The operator $\Psi(k)$ successfully isolates these boundary shifts with sharp detection peaks reaching $\approx 1.3$.
+
+
 ---
 
 ## Baselines
