@@ -52,7 +52,21 @@ $$k^* = \operatorname{argmax} \Psi(k)$$
 
 ## Visual Evidence
 
-![Structural Transition]
+### Core Concepts & Dynamics
+![Data Table](17764.jpg)
+![Transitions](17765.jpg)
+![Recovery Factor](17766.jpg)
+![Phase Plots](17767.jpg)
+![Arps Decline](17768.jpg)
+![Entropy Curve](17769.jpg)
+![Workflow](17770.jpg)
+![Heatmaps](17771.jpg)
+![Bifurcation](17772.jpg)
+![Coherent Region](17773.jpg)
+![Function Dynamics](17774.jpg)
+![Statistical Plot](17775.jpg)
+![Output Comparison](17776.jpg)
+
 
 
 ## Baselines
