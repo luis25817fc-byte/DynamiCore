@@ -2,7 +2,6 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20789168.svg)](https://doi.org/10.5281/zenodo.20789168)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-## Visual Evidence
 
 ## About
 **DynamiCore** is a research-grade framework designed to study deterministic binary dynamical systems over finite state spaces $S_k = \{0,1\}^{2^k}$. This project provides a robust pipeline to characterize structural transitions in attractor organization induced by system size, utilizing cycle decomposition, entropy analysis, and the structural variation operator $\Psi(k)$.
@@ -36,9 +35,9 @@ Due to the finiteness of $S_k$, all trajectories are guaranteed to converge to p
 
 ## Observables
 
-*   $R(k)$: Coherence of dominant attractor
-*   $H(k)$: Entropy of cycle distribution
-*   $\Psi(k)$: Structural variation operator
+* $R(k)$: Coherence of dominant attractor
+* $H(k)$: Entropy of cycle distribution
+* $\Psi(k)$: Structural variation operator
 
 ---
 
@@ -46,8 +45,10 @@ Due to the finiteness of $S_k$, all trajectories are guaranteed to converge to p
 
 A non-monotonic structural transition emerges at a characteristic scale $k^*$, defined by:
 
-$$k^* = \arg\max \Psi$$
+$$k^* = \arg\max \Psi(k)$$
+
 ---
+
 ## Visual Evidence
 
 ### Core Concepts & Dynamics
@@ -65,14 +66,13 @@ $$k^* = \arg\max \Psi$$
 ![Statistical Plot](Screenshot_20260621-100303~2.jpg)
 ![Output Comparison](Screenshot_20260621-100306~2.jpg)
 
-
-
+---
 
 ## Baselines
 
-*   Random Boolean Networks (RBN)
-*   Cellular Automata (CA)
-*   Flat statistical baseline
+* Random Boolean Networks (RBN)
+* Cellular Automata (CA)
+* Flat statistical baseline
 
 ---
 
@@ -84,9 +84,9 @@ The observed transition is a finite-size effect in deterministic state-space dyn
 
 ## Repository Contents
 
-*   `dynamicore.tex`: Manuscript source detailing mathematical definitions and local update rules.
-*   `generate_figures.py`: Automated pipeline for comparative benchmarks and visualization.
-*   `requirements.txt`: Minimal reproducibility dependencies.
+* `dynamicore.tex`: Manuscript source detailing mathematical definitions and local update rules.
+* `generate_figures.py`: Automated pipeline for comparative benchmarks and visualization.
+* `requirements.txt`: Minimal reproducibility dependencies.
 
 ---
 
