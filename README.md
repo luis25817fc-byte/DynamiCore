@@ -49,23 +49,23 @@ A non-monotonic structural transition emerges at a characteristic scale $k^*$, d
 $$k^* = \operatorname{argmax} \Psi(k)$$
 
 ---
-
 ## Visual Evidence
 
 ### Core Concepts & Dynamics
-![Data Table](17764.jpg)
-![Transitions](17765.jpg)
-![Recovery Factor](17766.jpg)
-![Phase Plots](17767.jpg)
-![Arps Decline](17768.jpg)
-![Entropy Curve](17769.jpg)
-![Workflow](17770.jpg)
-![Heatmaps](17771.jpg)
-![Bifurcation](17772.jpg)
-![Coherent Region](17773.jpg)
-![Function Dynamics](17774.jpg)
-![Statistical Plot](17775.jpg)
-![Output Comparison](17776.jpg)
+![Data Table](Screenshot_20260621-095414~3.jpg)
+![Transitions](Screenshot_20260621-100201~2.jpg)
+![Recovery Factor](Screenshot_20260621-100204~2.jpg)
+![Phase Plots](Screenshot_20260621-100207~2.jpg)
+![Arps Decline](Screenshot_20260621-100211~2.jpg)
+![Entropy Curve](Screenshot_20260621-100219~2.jpg)
+![Workflow](Screenshot_20260621-100222~2.jpg)
+![Heatmaps](Screenshot_20260621-100225~2.jpg)
+![Bifurcation](Screenshot_20260621-100229~2.jpg)
+![Coherent Region](Screenshot_20260621-100237~2.jpg)
+![Function Dynamics](Screenshot_20260621-100239~2.jpg)
+![Statistical Plot](Screenshot_20260621-100303~2.jpg)
+![Output Comparison](Screenshot_20260621-100306~2.jpg)
+
 
 
 
