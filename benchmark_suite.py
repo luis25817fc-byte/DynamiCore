@@ -1,9 +1,9 @@
 import numpy as np
+import json
 
 print("DynamiCore Benchmark Suite V2 - RUNNING")
 
-def load_system_state(n=20):
-    # simulación base del sistema binario
+def load_system_state(n):
     return np.random.randint(0, 2, (n, n))
 
 def compute_entropy(matrix):
@@ -12,16 +12,30 @@ def compute_entropy(matrix):
     return -np.sum(probs * np.log2(probs + 1e-9))
 
 def run_benchmark():
-    results = []
+    results = {
+        "k": [],
+        "R": [],
+        "H": []
+    }
 
-    for k in range(5, 15):
+    for k in range(4, 19):
         state = load_system_state(k)
-        entropy = compute_entropy(state)
 
-        results.append((k, entropy))
-        print(f"k={k} | entropy={entropy:.4f}")
+        # proxies dinámicos (versión experimental)
+        R = np.mean(state)  # coherencia simple
+        H = compute_entropy(state)
 
-    print("\nBenchmark terminado.")
+        results["k"].append(k)
+        results["R"].append(float(R))
+        results["H"].append(float(H))
+
+        print(f"k={k} | R={R:.4f} | H={H:.4f}")
+
+    with open("benchmark_results.json", "w") as f:
+        json.dump(results, f)
+
+    print("\nResultados guardados en benchmark_results.json")
+
     return results
 
 if __name__ == "__main__":
