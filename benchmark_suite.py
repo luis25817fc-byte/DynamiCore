@@ -8,7 +8,7 @@ def load_system_state(n):
 
 def compute_entropy(matrix):
     values, counts = np.unique(matrix, return_counts=True)
-    probs = counts / counts.sum()
+    probs = counts / probs.sum()
     return -np.sum(probs * np.log2(probs + 1e-9))
 
 def run_benchmark():
@@ -21,8 +21,7 @@ def run_benchmark():
     for k in range(4, 19):
         state = load_system_state(k)
 
-        # proxies dinámicos (versión experimental)
-        R = np.mean(state)  # coherencia simple
+        R = np.mean(state)
         H = compute_entropy(state)
 
         results["k"].append(k)
@@ -34,9 +33,7 @@ def run_benchmark():
     with open("benchmark_results.json", "w") as f:
         json.dump(results, f)
 
-    print("\nResultados guardados en benchmark_results.json")
-
-    return results
+    print("Listo: benchmark_results.json creado")
 
 if __name__ == "__main__":
     run_benchmark()
