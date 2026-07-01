@@ -5,7 +5,6 @@ class CycleDetector:
     def compute(self):
         visited = set()
         cycles = []
-
         n = len(self.system)
 
         for i in range(n):
