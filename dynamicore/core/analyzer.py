@@ -24,20 +24,18 @@ class DynamiCore:
 
         entropy_value = self.entropy.shannon(self.system)
         coherence_value = self.metrics.coherence(basins, len(self.system))
-result.pop("graph", None)
 
-if "basins" in result:
-    result["basins"] = {
-        str(k): v
-        for k, v in result["basins"].items()
-    }
+        # -------- FIX JSON --------
+        basins_json = {
+            str(k): v
+            for k, v in basins.items()
+        }
 
-return result
         return {
             "system": self.system,
             "graph": str(self.graph),
             "cycles": cycles,
-            "basins": basins,
+            "basins": basins_json,
             "entropy": float(entropy_value),
             "coherence": float(coherence_value),
         }
