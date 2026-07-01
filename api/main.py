@@ -1,10 +1,9 @@
 from fastapi import FastAPI, Header, HTTPException
 from pydantic import BaseModel
-from dynamicore.core.analyzer import DynamiCore
+from dynamicore.core.analyzer import DynamiCore  # 👈 SOLO ESTO
 
 app = FastAPI(title="DynamiCore API", version="1.0.0")
 
-# 🔐 API KEY SIMPLE (MVP PRODUCTO)
 VALID_API_KEYS = {
     "dev-key-123": "developer"
 }
