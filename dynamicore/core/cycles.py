@@ -1,27 +1,22 @@
 class CycleDetector:
-    def __init__(self, graph):
-        self.graph = graph
+    def __init__(self, system):
+        self.system = system
 
-    def detect(self):
+    def compute(self):
         visited = set()
         cycles = []
 
-        for start in self.graph.states():
-            if start in visited:
-                continue
+        for i in range(len(self.system)):
+            if i not in visited:
+                cycle = []
+                j = i
 
-            path = []
-            index = {}
-            node = start
+                while j not in visited:
+                    visited.add(j)
+                    cycle.append(j)
+                    j = self.system[j]
 
-            while node not in index and node not in visited:
-                index[node] = len(path)
-                path.append(node)
-                node = self.graph.next_state(node)
-
-            if node in index:
-                cycles.append(path[index[node]:])
-
-            visited.update(path)
+                if cycle:
+                    cycles.append(cycle)
 
         return cycles
