@@ -1,12 +1,10 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-
 from dynamicore.core.analyzer import DynamiCore
 
 app = FastAPI(
     title="DynamiCore API",
-    version="1.0.0",
-    description="Deterministic Structural Dynamics Engine"
+    version="1.0.0"
 )
 
 class SystemRequest(BaseModel):
@@ -14,14 +12,9 @@ class SystemRequest(BaseModel):
 
 @app.get("/")
 def root():
-    return {
-        "status": "online",
-        "framework": "DynamiCore"
-    }
+    return {"status": "online"}
 
 @app.post("/analyze")
 def analyze(req: SystemRequest):
-
     engine = DynamiCore(req.system)
-
     return engine.analyze()
