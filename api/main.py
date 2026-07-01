@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Header, HTTPException
 from pydantic import BaseModel
-from app.core.analyzer import DynamiCore
+from dynamicore.core.analyzer import DynamiCore
 
 app = FastAPI(title="DynamiCore API", version="1.0.0")
 
