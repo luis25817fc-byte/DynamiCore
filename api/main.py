@@ -1,18 +1,29 @@
 from fastapi import FastAPI, Header, HTTPException
 from pydantic import BaseModel
 
-from dynamicore.core.analyzer import DynamiCore
+from app.core.analyzer import DynamiCore
 from app.core.auth import get_user_by_key, check_limit, increment_usage
 
+
+# =========================
+# APP
+# =========================
 app = FastAPI(
     title="DynamiCore API",
     version="1.0.0"
 )
 
+
+# =========================
+# REQUEST MODEL
+# =========================
 class SystemRequest(BaseModel):
     system: list[int]
 
 
+# =========================
+# HEALTH CHECK
+# =========================
 @app.get("/")
 def root():
     return {
@@ -21,8 +32,14 @@ def root():
     }
 
 
+# =========================
+# ANALYZE ENDPOINT
+# =========================
 @app.post("/analyze")
-def analyze(req: SystemRequest, x_api_key: str = Header(None)):
+def analyze(
+    req: SystemRequest,
+    x_api_key: str = Header(..., alias="x-api-key")
+):
 
     # 🔐 AUTH
     user, data = get_user_by_key(x_api_key)
@@ -37,7 +54,7 @@ def analyze(req: SystemRequest, x_api_key: str = Header(None)):
     engine = DynamiCore(req.system)
     result = engine.analyze()
 
-    # 📊 TRACK USAGE
+    # 📊 USAGE TRACKING
     increment_usage(user)
 
     return {
