@@ -50,31 +50,38 @@ def analyze(
     if not check_limit(data):
         raise HTTPException(status_code=429, detail="Limit reached")
 
-    # 🧠 ENGINE
-    engine = DynamiCore(req.system)
-    result = engine.analyze()
+    try:
+        # 🧠 ENGINE
+        engine = DynamiCore(req.system)
+        result = engine.analyze()
 
-    # 📊 USAGE TRACKING
-    increment_usage(user)
+        # 🔥 FORZAR JSON SEGURO (IMPORTANTE)
+        payload = {
+            "system": list(req.system),
+            "cycles": result.get("cycles", []),
+            "basins": result.get("basins", {}),
+            "entropy": float(result.get("entropy", 0)),
+            "coherence": float(result.get("coherence", 0)),
 
-    # 🔥 FIX: SERIALIZAR GRAPH PARA FRONTEND
-    system = req.system
+            # 📊 GRAPH YA LIMPIO PARA FRONTEND
+            "graph": {
+                "nodes": result["graph"]["nodes"],
+                "edges": result["graph"]["edges"]
+            }
+        }
 
-    graph_json = {
-        "nodes": list(range(len(system))),
-        "edges": [
-            {"from": i, "to": system[i]}
-            for i in range(len(system))
-        ]
-    }
+        # 📊 USAGE TRACKING
+        increment_usage(user)
 
-    # 🔁 REEMPLAZAR graph OBJECT SI EXISTE
-    if "graph" in result:
-        result["graph"] = graph_json
+        return {
+            "status": "success",
+            "user": user,
+            "plan": data["plan"],
+            "payload": payload
+        }
 
-    return {
-        "status": "success",
-        "user": user,
-        "plan": data["plan"],
-        "payload": result
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": str(e)
     }
