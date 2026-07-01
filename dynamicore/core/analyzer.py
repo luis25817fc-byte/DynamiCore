@@ -12,17 +12,15 @@ class DynamiCore:
         # Graph
         self.graph = FunctionalGraph(system)
 
-        # Cycle detection
+        # Cycles
         self.cycles = CycleDetector(system)
 
-        # Basin analysis
+        # Basins
         self.basins = BasinAnalyzer(system, self.cycles)
 
-        # Entropy (la clase solo tiene métodos estáticos)
+        # Utility classes (métodos estáticos)
         self.entropy = Entropy
-
-        # Metrics
-        self.metrics = StructuralMetrics(system)
+        self.metrics = StructuralMetrics
 
     def analyze(self):
         result = {
@@ -47,15 +45,20 @@ class DynamiCore:
         else:
             result["basins"] = self.basins
 
-        # Shannon entropy
+        # Entropy
         result["entropy"] = Entropy.shannon(self.system)
 
-        # Metrics
-        if hasattr(self.metrics, "compute"):
-            result["metrics"] = self.metrics.compute()
-        elif hasattr(self.metrics, "summary"):
-            result["metrics"] = self.metrics.summary()
+        # Structural metrics
+        if hasattr(self.basins, "summary"):
+            basin_summary = self.basins.summary()
+            basins = basin_summary if isinstance(basin_summary, dict) else {}
         else:
-            result["metrics"] = self.metrics
+            basins = {}
+
+        result["coherence"] = (
+            StructuralMetrics.coherence(basins, len(self.system))
+            if basins
+            else 0.0
+        )
 
         return result
