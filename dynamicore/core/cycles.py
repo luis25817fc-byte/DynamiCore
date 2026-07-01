@@ -6,7 +6,9 @@ class CycleDetector:
         visited = set()
         cycles = []
 
-        for i in range(len(self.system)):
+        n = len(self.system)
+
+        for i in range(n):
             if i not in visited:
                 cycle = []
                 j = i
@@ -16,7 +18,6 @@ class CycleDetector:
                     cycle.append(j)
                     j = self.system[j]
 
-                if cycle:
-                    cycles.append(cycle)
+                cycles.append(cycle)
 
         return cycles
