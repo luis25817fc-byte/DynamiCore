@@ -3,4 +3,7 @@ matplotlib
 fastapi
 uvicorn[standard]
 pydantic
+streamlit
+requests
+
 
