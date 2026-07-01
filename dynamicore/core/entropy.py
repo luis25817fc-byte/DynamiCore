@@ -1,8 +1,7 @@
 import numpy as np
 
 class Entropy:
-    @staticmethod
-    def shannon(values):
+    def shannon(self, values):
         values = np.array(values, dtype=float)
 
         if values.sum() == 0:
