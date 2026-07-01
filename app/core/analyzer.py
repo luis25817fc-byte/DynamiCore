@@ -33,7 +33,7 @@ class DynamiCore:
 
         return {
             "system": self.system,
-            "graph": str(self.graph),
+            "graph": self.graph.to_dict(),
             "cycles": cycles,
             "basins": basins_json,
             "entropy": float(entropy_value),
