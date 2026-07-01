@@ -9,6 +9,18 @@ class FunctionalGraph:
     def next_state(self, state):
         return int(self.successor[state])
 
+def to_dict(self):
+    return {
+        "nodes": list(range(self.n)),
+        "edges": [
+            {
+                "from": i,
+                "to": int(self.successor[i])
+            }
+            for i in range(self.n)
+        ]
+    }
+
     def states(self):
         return range(self.n)
 
