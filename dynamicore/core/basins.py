@@ -1,7 +1,7 @@
 class BasinAnalyzer:
-    def __init__(self, graph, cycles):
-        self.graph = graph
-        self.cycles = cycles
+    def __init__(self, system, cycles):
+        self.system = system
+        self.cycles = cycles.compute()
 
     def compute(self):
         basins = {}
