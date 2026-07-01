@@ -57,6 +57,21 @@ def analyze(
     # 📊 USAGE TRACKING
     increment_usage(user)
 
+    # 🔥 FIX: SERIALIZAR GRAPH PARA FRONTEND
+    system = req.system
+
+    graph_json = {
+        "nodes": list(range(len(system))),
+        "edges": [
+            {"from": i, "to": system[i]}
+            for i in range(len(system))
+        ]
+    }
+
+    # 🔁 REEMPLAZAR graph OBJECT SI EXISTE
+    if "graph" in result:
+        result["graph"] = graph_json
+
     return {
         "status": "success",
         "user": user,
