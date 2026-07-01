@@ -9,30 +9,53 @@ class DynamiCore:
     def __init__(self, system):
         self.system = system
 
-        # Graph layer
+        # Graph
         self.graph = FunctionalGraph(system)
 
         # Cycle detection
         self.cycles = CycleDetector(system)
 
-        # Basin analysis (DEPENDE de cycles)
+        # Basin analysis
         self.basins = BasinAnalyzer(system, self.cycles)
 
-        # Entropy + metrics
-        self.entropy = Entropy(system)
+        # Entropy (la clase solo tiene métodos estáticos)
+        self.entropy = Entropy
+
+        # Metrics
         self.metrics = StructuralMetrics(system)
 
     def analyze(self):
-        return {
+        result = {
             "system": self.system,
-
-            "graph": self.graph.summary() if hasattr(self.graph, "summary") else self.graph,
-
-            "cycles": self.cycles.summary() if hasattr(self.cycles, "summary") else self.cycles,
-
-            "basins": self.basins.summary() if hasattr(self.basins, "summary") else self.basins,
-
-            "entropy": self.entropy.compute() if hasattr(self.entropy, "compute") else self.entropy,
-
-            "metrics": self.metrics.compute() if hasattr(self.metrics, "compute") else self.metrics,
         }
+
+        # Graph
+        if hasattr(self.graph, "summary"):
+            result["graph"] = self.graph.summary()
+        else:
+            result["graph"] = self.graph
+
+        # Cycles
+        if hasattr(self.cycles, "summary"):
+            result["cycles"] = self.cycles.summary()
+        else:
+            result["cycles"] = self.cycles
+
+        # Basins
+        if hasattr(self.basins, "summary"):
+            result["basins"] = self.basins.summary()
+        else:
+            result["basins"] = self.basins
+
+        # Shannon entropy
+        result["entropy"] = Entropy.shannon(self.system)
+
+        # Metrics
+        if hasattr(self.metrics, "compute"):
+            result["metrics"] = self.metrics.compute()
+        elif hasattr(self.metrics, "summary"):
+            result["metrics"] = self.metrics.summary()
+        else:
+            result["metrics"] = self.metrics
+
+        return result
