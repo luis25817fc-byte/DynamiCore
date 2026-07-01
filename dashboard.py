@@ -1,73 +1,73 @@
 import streamlit as st
 import requests
 import matplotlib.pyplot as plt
+import numpy as np
 
 # =========================
 # CONFIG
 # =========================
 API_URL = "https://dynamicore.onrender.com/analyze"
-API_KEY = "dev-key-123"
 
 st.set_page_config(
-    page_title="DynamiCore Dashboard",
-    layout="centered"
+    page_title="DynamiCore Pro",
+    layout="wide"
 )
 
-st.title("🧠 DynamiCore Visual Dashboard")
-st.subheader("Análisis de sistemas dinámicos")
+# =========================
+# UI HEADER
+# =========================
+st.title("🧠 DynamiCore Pro Dashboard")
+st.caption("Sistema de análisis de dinámica discreta")
 
 # =========================
-# INPUT DEL USUARIO
+# SIDEBAR (ESTILO SaaS)
 # =========================
-system_input = st.text_input(
-    "Ingresa sistema (ej: 1,2,0,4,5,3)",
+st.sidebar.title("Configuración")
+
+api_key = st.sidebar.text_input("API Key", type="password", value="dev-key-123")
+
+system_input = st.sidebar.text_input(
+    "Sistema",
     "1,2,0,4,5,3"
 )
 
+run = st.sidebar.button("▶ Ejecutar análisis")
+
 # =========================
-# BOTÓN
+# MAIN
 # =========================
-if st.button("Analizar sistema"):
-    
+if run:
+
     system = [int(x.strip()) for x in system_input.split(",")]
 
-    payload = {
-        "system": system
-    }
+    payload = {"system": system}
 
     headers = {
-        "x-api-key": API_KEY,
+        "x-api-key": api_key,
         "Content-Type": "application/json"
     }
 
-    # =========================
-    # LLAMADA A TU API (RENDER)
-    # =========================
     response = requests.post(API_URL, json=payload, headers=headers)
 
     if response.status_code == 200:
+
         data = response.json()["payload"]
 
-        st.success("Análisis completado")
-
         # =========================
-        # RESULTADOS NUMÉRICOS
+        # KPIs
         # =========================
-        st.write("### 📊 Resultados")
-        st.json(data)
-
-        # =========================
-        # ENTROPÍA Y COHERENCIA
-        # =========================
-        col1, col2 = st.columns(2)
+        col1, col2, col3 = st.columns(3)
 
         col1.metric("Entropy", round(data["entropy"], 4))
         col2.metric("Coherence", round(data["coherence"], 4))
+        col3.metric("Cycles", len(data["cycles"]))
+
+        st.divider()
 
         # =========================
-        # GRAFICO SIMPLE DE BASINS
+        # BASINS (VISUAL PRO)
         # =========================
-        st.write("### 🧩 Cuencas de Atracción")
+        st.subheader("🧩 Basins of Attraction")
 
         basins = data["basins"]
 
@@ -75,16 +75,37 @@ if st.button("Analizar sistema"):
         values = list(basins.values())
 
         fig, ax = plt.subplots()
-        ax.bar(labels, values)
-        ax.set_title("Basins Distribution")
+
+        ax.barh(labels, values, color="#4CAF50")
+        ax.set_xlabel("Size")
+        ax.set_title("Attractor Basins")
 
         st.pyplot(fig)
 
         # =========================
-        # CICLOS
+        # CYCLES VISUAL
         # =========================
-        st.write("### 🔁 Ciclos detectados")
-        st.write(data["cycles"])
+        st.subheader("🔁 Cycles Structure")
+
+        cycles = data["cycles"]
+
+        fig2, ax2 = plt.subplots()
+
+        for i, cycle in enumerate(cycles):
+            x = np.arange(len(cycle))
+            y = cycle
+            ax2.plot(x, y, marker="o", label=f"Cycle {i}")
+
+        ax2.set_title("Cycle Dynamics")
+        ax2.legend()
+
+        st.pyplot(fig2)
+
+        # =========================
+        # RAW DATA (DEBUG PRO)
+        # =========================
+        with st.expander("📦 Raw Data"):
+            st.json(data)
 
     else:
-        st.error("Error al conectar con la API")
+        st.error("Error llamando API. Revisa API Key o backend.")
