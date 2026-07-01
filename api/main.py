@@ -6,25 +6,22 @@ from dynamicore.core.analyzer import DynamiCore
 app = FastAPI(
     title="DynamiCore API",
     version="1.0.0",
-    description="Commercial API for DynamiCore"
+    description="Deterministic Structural Dynamics Engine"
 )
 
-class AnalyzeRequest(BaseModel):
+class SystemRequest(BaseModel):
     system: list[int]
 
 @app.get("/")
 def root():
     return {
-        "framework": "DynamiCore",
         "status": "online",
-        "version": "1.0.0"
+        "framework": "DynamiCore"
     }
 
 @app.post("/analyze")
-def analyze(request: AnalyzeRequest):
+def analyze(req: SystemRequest):
 
-    engine = DynamiCore(request.system)
+    engine = DynamiCore(req.system)
 
-    result = engine.analyze()
-
-    return result
+    return engine.analyze()
