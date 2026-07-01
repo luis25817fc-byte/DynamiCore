@@ -1,47 +1,109 @@
 from fastapi import FastAPI, Header, HTTPException
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
 from app.core.analyzer import DynamiCore
 from app.core.auth import get_user_by_key, check_limit, increment_usage
 
+app = FastAPI(title="DynamiCore API", version="2.0")
 
 # =========================
-# APP
-# =========================
-app = FastAPI(
-    title="DynamiCore API",
-    version="1.0.0"
-)
-
-
-# =========================
-# REQUEST MODEL
+# REQUEST
 # =========================
 class SystemRequest(BaseModel):
     system: list[int]
 
 
 # =========================
-# HEALTH CHECK
+# FRONTEND (UI)
 # =========================
-@app.get("/")
-def root():
-    return {
-        "status": "DynamiCore API online",
-        "tier": "production"
-    }
+@app.get("/", response_class=HTMLResponse)
+def dashboard():
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>DynamiCore</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            body { font-family: Arial; background:#0f172a; color:white; text-align:center; }
+            input, button { padding:10px; margin:5px; }
+            .card { background:#1e293b; padding:20px; margin:20px; border-radius:10px; }
+        </style>
+    </head>
+
+    <body>
+        <h1>🧠 DynamiCore Dashboard</h1>
+
+        <div class="card">
+            <input id="system" value="0,1,2,3,4,5" style="width:300px;">
+            <br>
+            <button onclick="run()">Analizar</button>
+        </div>
+
+        <div class="card">
+            <h3>Resultados</h3>
+            <p id="entropy"></p>
+            <p id="coherence"></p>
+        </div>
+
+        <div class="card">
+            <h3>Basins</h3>
+            <canvas id="chart"></canvas>
+        </div>
+
+        <script>
+        async function run() {
+            const system = document.getElementById("system").value
+                .split(",")
+                .map(x => parseInt(x));
+
+            const res = await fetch("/analyze", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-api-key": "dev-key-123"
+                },
+                body: JSON.stringify({system})
+            });
+
+            const data = await res.json();
+
+            const payload = data.payload;
+
+            document.getElementById("entropy").innerText =
+                "Entropía: " + payload.entropy;
+
+            document.getElementById("coherence").innerText =
+                "Coherencia: " + payload.coherence;
+
+            const labels = Object.keys(payload.basins);
+            const values = Object.values(payload.basins);
+
+            new Chart(document.getElementById("chart"), {
+                type: "bar",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Basins",
+                        data: values
+                    }]
+                }
+            });
+        }
+        </script>
+
+    </body>
+    </html>
+    """
 
 
 # =========================
-# ANALYZE ENDPOINT
+# API
 # =========================
 @app.post("/analyze")
-def analyze(
-    req: SystemRequest,
-    x_api_key: str = Header(..., alias="x-api-key")
-):
+def analyze(req: SystemRequest, x_api_key: str = Header(..., alias="x-api-key")):
 
-    # 🔐 AUTH
     user, data = get_user_by_key(x_api_key)
 
     if not user:
@@ -50,38 +112,14 @@ def analyze(
     if not check_limit(data):
         raise HTTPException(status_code=429, detail="Limit reached")
 
-    try:
-        # 🧠 ENGINE
-        engine = DynamiCore(req.system)
-        result = engine.analyze()
+    engine = DynamiCore(req.system)
+    result = engine.analyze()
 
-        # 🔥 FORZAR JSON SEGURO (IMPORTANTE)
-        payload = {
-            "system": list(req.system),
-            "cycles": result.get("cycles", []),
-            "basins": result.get("basins", {}),
-            "entropy": float(result.get("entropy", 0)),
-            "coherence": float(result.get("coherence", 0)),
+    increment_usage(user)
 
-            # 📊 GRAPH YA LIMPIO PARA FRONTEND
-            "graph": {
-                "nodes": result["graph"]["nodes"],
-                "edges": result["graph"]["edges"]
-            }
-        }
-
-        # 📊 USAGE TRACKING
-        increment_usage(user)
-
-        return {
-            "status": "success",
-            "user": user,
-            "plan": data["plan"],
-            "payload": payload
-        }
-
-    except Exception as e:
-        return {
-            "status": "error",
-            "message": str(e)
+    return {
+        "status": "success",
+        "user": user,
+        "plan": data["plan"],
+        "payload": result
     }
