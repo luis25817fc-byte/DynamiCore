@@ -1,41 +1,73 @@
-from .graph import FunctionalGraph
-from .cycles import CycleDetector
-from .basins import BasinAnalyzer
-from .entropy import Entropy
-from .metrics import StructuralMetrics
+# app/core/analyzer.py
+
+from collections import defaultdict
 
 
 class DynamiCore:
-    def __init__(self, system):
+    def __init__(self, system: list[int]):
         self.system = system
 
-        self.graph = FunctionalGraph(system)
-
-        self.cycles = CycleDetector(system)
-
-        self.basins = BasinAnalyzer(system, self.cycles)
-
-        self.entropy = Entropy()
-        self.metrics = StructuralMetrics()
-
+    # =========================
+    # MAIN ANALYSIS ENGINE
+    # =========================
     def analyze(self):
-        cycles = self.cycles.compute()
-        basins = self.basins.compute()
+        n = len(self.system)
 
-        entropy_value = self.entropy.shannon(self.system)
-        coherence_value = self.metrics.coherence(basins, len(self.system))
+        # 🔥 DETECT CYCLES (versión simple determinista)
+        visited = set()
+        cycles = []
+        basins = defaultdict(int)
 
-        # -------- FIX JSON --------
-        basins_json = {
-            str(k): v
-            for k, v in basins.items()
-        }
+        def dfs(start):
+            path = []
+            current = start
+
+            while current not in path:
+                path.append(current)
+                visited.add(current)
+
+                # transición determinista
+                current = self.system[current % n]
+
+            cycle_start = path.index(current)
+            cycle = path[cycle_start:]
+
+            return cycle
+
+        for i in range(n):
+            if i not in visited:
+                cycle = dfs(i)
+                cycles.append(cycle)
+                basins[str(tuple(cycle))] = len(cycle)
+
+        # 🔥 ENTROPY SIMPLE (normalizada)
+        total = sum(basins.values()) or 1
+        probs = [v / total for v in basins.values()]
+        entropy = -sum(p * (p).bit_length() for p in probs if p > 0)
+
+        # 🔥 COHERENCE (heurística simple estable)
+        coherence = len(cycles) / n if n else 0
+
+        # 🔥 GRAPH SERIALIZABLE (IMPORTANTE)
+        nodes = list(range(n))
+        edges = []
+
+        for i in range(n):
+            edges.append({
+                "from": i,
+                "to": self.system[i % n]
+            })
 
         return {
             "system": self.system,
-            "graph": self.graph.to_dict(),
             "cycles": cycles,
-            "basins": basins_json,
-            "entropy": float(entropy_value),
-            "coherence": float(coherence_value),
-      }
+            "basins": dict(basins),
+            "entropy": float(entropy),
+            "coherence": float(coherence),
+
+            # 👇 ESTO YA ES LO QUE STREAMLIT NECESITA
+            "graph": {
+                "nodes": nodes,
+                "edges": edges
+            }
+            }
