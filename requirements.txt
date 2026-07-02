@@ -6,4 +6,7 @@ pydantic
 streamlit
 requests
 squalite3
+stripe
+python-dotenv
+pyjwt
 
