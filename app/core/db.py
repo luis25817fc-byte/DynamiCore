@@ -1,17 +1,18 @@
 import sqlite3
 
-DB_NAME = "dynamicore.db"
+DB = "dynamicore.db"
+
 
 def init_db():
-    conn = sqlite3.connect(DB_NAME)
+    conn = sqlite3.connect(DB)
     c = conn.cursor()
 
     c.execute("""
     CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id INTEGER PRIMARY KEY,
         api_key TEXT UNIQUE,
-        requests INTEGER DEFAULT 0,
-        limit_requests INTEGER DEFAULT 1000
+        plan TEXT DEFAULT 'free',
+        requests INTEGER DEFAULT 0
     )
     """)
 
@@ -19,8 +20,21 @@ def init_db():
     conn.close()
 
 
+def create_user(api_key):
+    conn = sqlite3.connect(DB)
+    c = conn.cursor()
+
+    c.execute(
+        "INSERT INTO users (api_key, plan, requests) VALUES (?, 'free', 0)",
+        (api_key,)
+    )
+
+    conn.commit()
+    conn.close()
+
+
 def get_user(api_key):
-    conn = sqlite3.connect(DB_NAME)
+    conn = sqlite3.connect(DB)
     c = conn.cursor()
 
     c.execute("SELECT * FROM users WHERE api_key=?", (api_key,))
@@ -30,27 +44,21 @@ def get_user(api_key):
     return user
 
 
-def create_user(api_key):
-    conn = sqlite3.connect(DB_NAME)
+def upgrade_user(api_key):
+    conn = sqlite3.connect(DB)
     c = conn.cursor()
 
-    c.execute(
-        "INSERT INTO users (api_key, requests, limit_requests) VALUES (?, 0, 1000)",
-        (api_key,)
-    )
+    c.execute("UPDATE users SET plan='pro' WHERE api_key=?", (api_key,))
 
     conn.commit()
     conn.close()
 
 
 def increment(api_key):
-    conn = sqlite3.connect(DB_NAME)
+    conn = sqlite3.connect(DB)
     c = conn.cursor()
 
-    c.execute(
-        "UPDATE users SET requests = requests + 1 WHERE api_key=?",
-        (api_key,)
-    )
+    c.execute("UPDATE users SET requests = requests + 1 WHERE api_key=?", (api_key,))
 
     conn.commit()
     conn.close()
