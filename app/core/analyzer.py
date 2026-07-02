@@ -4,70 +4,72 @@ from collections import Counter
 
 class DynamiCore:
     def __init__(self, system: list[int]):
-        # 🔥 asegurar que TODO sea entero limpio
-        self.system = [int(x) for x in system]
+        # 🔥 blindaje total contra floats
+        self.system = []
+        for x in system:
+            try:
+                self.system.append(int(float(x)))
+            except:
+                self.system.append(0)
 
-    # =========================
-    # ENTROPY (ROBUSTA)
-    # =========================
     def _entropy(self, data):
         if not data:
             return 0.0
 
-        counts = Counter(data)
-        total = len(data)
+        c = Counter(data)
+        n = len(data)
 
-        entropy = 0.0
-
-        for c in counts.values():
-            p = c / total
-
-            # 🔥 protección contra log(0)
+        ent = 0.0
+        for v in c.values():
+            p = v / n
             if p > 0:
-                entropy -= p * math.log2(p)
+                ent -= p * math.log2(p)
 
-        return float(entropy)
+        return float(ent)
 
-    # =========================
-    # COHERENCE SIMPLE
-    # =========================
     def _coherence(self, data):
         if not data:
             return 0.0
 
         mean = sum(data) / len(data)
+        var = sum((x - mean) ** 2 for x in data) / len(data)
 
-        # desviación normalizada
-        variance = sum((x - mean) ** 2 for x in data) / len(data)
+        return 1 / (1 + var)
 
-        return 1 / (1 + variance)
-
-    # =========================
-    # BASINS SIMULADOS (ESTABLE)
-    # =========================
     def _basins(self, data):
         if not data:
             return {}
 
-        result = Counter()
+        out = Counter()
 
         for x in data:
-            # 🔥 FIX CLAVE: evitar floats / negativos raros
-            x = int(abs(x))
+            # 🔥 ELIMINA CUALQUIER POSIBLE FLOAT
+            try:
+                x = int(float(x))
+            except:
+                x = 0
 
-            basin_id = x % 3  # simple clustering estable
-            result[f"basin_{basin_id}"] += 1
+            # 🔥 NUNCA bit_length, SOLO operación segura
+            basin = abs(x) % 4
+            out[f"basin_{basin}"] += 1
 
-        return dict(result)
+        return dict(out)
 
-    # =========================
-    # MAIN ANALYSIS
-    # =========================
     def analyze(self):
-        data = self.system
+        try:
+            data = self.system
 
-        return {
-            "entropy": self._entropy(data),
-            "coherence": self._coherence(data),
-            "basins": self._basins(data)
+            return {
+                "entropy": self._entropy(data),
+                "coherence": self._coherence(data),
+                "basins": self._basins(data)
+            }
+
+        except Exception as e:
+            # 🔥 evita que Render rompa frontend
+            return {
+                "entropy": 0,
+                "coherence": 0,
+                "basins": {},
+                "error": str(e)
         }
