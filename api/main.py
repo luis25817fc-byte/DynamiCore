@@ -103,11 +103,11 @@ def dashboard():
 
                 const data = await res.json();
 
-                console.log(data); // debug real
+                console.log(data);
 
                 if (data.status !== "success" || !data.payload) {
                     document.getElementById("error").innerText =
-                        data.message || "Error desconocido del backend";
+                        data.message || "Error backend";
                     return;
                 }
 
@@ -156,12 +156,12 @@ def dashboard():
 # API
 # =========================
 @app.post("/analyze")
-def analyze(
-    req: SystemRequest,
-    x_api_key: str = Header(..., alias="x-api-key")
-):
+def analyze(req: SystemRequest, x_api_key: str = Header(..., alias="x-api-key")):
 
     try:
+        # 🔥 FIX CRÍTICO: evitar floats
+        req.system = [int(x) for x in req.system]
+
         user, data = get_user_by_key(x_api_key)
 
         if not user:
