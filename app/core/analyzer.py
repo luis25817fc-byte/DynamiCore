@@ -11,19 +11,16 @@ class DynamiCore:
         counts = Counter(self.system)
         n = len(self.system)
 
-        # Entropía real
         entropy = 0
         for c in counts.values():
             p = c / n
             entropy -= p * math.log2(p)
 
-        # Coherencia real (normalizada)
         mean = sum(self.system) / n
-        var = sum((x - mean) ** 2 for x in self.system) / n
+        variance = sum((x - mean)**2 for x in self.system) / n
 
-        coherence = 1 / (1 + var)
+        coherence = 1 / (1 + variance)
 
-        # Basins reales
         sorted_keys = sorted(counts.keys())
 
         basins = {
