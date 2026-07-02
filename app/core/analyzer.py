@@ -9,7 +9,7 @@ class DynamiCore:
         self.n = len(system)
 
     # =========================
-    # 🔥 ENTROPY (SHANNON BASE 2)
+    # 📊 ENTROPÍA REAL (SHANNON)
     # =========================
     def entropy(self):
         if self.n == 0:
@@ -21,82 +21,91 @@ class DynamiCore:
         return -sum(p * math.log2(p) for p in probs if p > 0)
 
     # =========================
-    # 🧠 COHERENCE (NORMALIZED ORDER METRIC)
+    # 🧠 COHERENCIA REAL (AUTOCORRELACIÓN SIMPLIFICADA)
     # =========================
     def coherence(self):
         if self.n <= 1:
             return 1.0
 
-        diffs = [
-            abs(self.system[i] - self.system[i - 1])
+        mean = sum(self.system) / self.n
+
+        numerator = sum(
+            (self.system[i] - mean) * (self.system[i - 1] - mean)
             for i in range(1, self.n)
-        ]
+        )
 
-        avg_diff = sum(diffs) / len(diffs)
+        denominator = sum((x - mean) ** 2 for x in self.system) + 1e-9
 
-        # normalización estable 0-1
-        return 1 / (1 + avg_diff)
+        return max(-1, min(1, numerator / denominator))
 
     # =========================
-    # 🌌 BASINS (CUENCAS DINÁMICAS)
+    # 🧩 BASINS (CLUSTERING SIMPLE REAL)
     # =========================
-    def basins(self):
+    def basins(self, k=4):
 
         if self.n == 0:
             return {}
 
-        max_val = max(self.system)
-        min_val = min(self.system)
+        min_v = min(self.system)
+        max_v = max(self.system)
+        span = max(max_v - min_v, 1)
 
-        # evitar división por cero
-        range_val = max(max_val - min_val, 1)
-
-        # 4 cuencas fijas (estable y vendible)
-        basins = {"basin_0": 0, "basin_1": 0, "basin_2": 0, "basin_3": 0}
+        basins = {f"basin_{i}": 0 for i in range(k)}
 
         for x in self.system:
-
-            norm = (x - min_val) / range_val  # 0-1
-
-            if norm < 0.25:
-                basins["basin_0"] += 1
-            elif norm < 0.5:
-                basins["basin_1"] += 1
-            elif norm < 0.75:
-                basins["basin_2"] += 1
-            else:
-                basins["basin_3"] += 1
+            idx = int(((x - min_v) / span) * (k - 1))
+            basins[f"basin_{idx}"] += 1
 
         return basins
 
     # =========================
-    # 🧪 MAIN ENGINE
+    # 🔥 CHANGE DETECTION (DINÁMICA REAL)
+    # =========================
+    def change_rate(self):
+
+        if self.n <= 1:
+            return 0.0
+
+        changes = sum(
+            1 for i in range(1, self.n)
+            if self.system[i] != self.system[i - 1]
+        )
+
+        return changes / (self.n - 1)
+
+    # =========================
+    # 🌡 CHAOS INDEX (REAL COMPOSITE)
+    # =========================
+    def chaos(self, entropy_val, coherence_val, change_rate):
+
+        # normalización estable SaaS
+        return entropy_val * (1 + change_rate) * (1 - abs(coherence_val))
+
+    # =========================
+    # 🚀 MAIN API OUTPUT
     # =========================
     def analyze(self):
 
         entropy_val = self.entropy()
         coherence_val = self.coherence()
         basins_val = self.basins()
+        change_val = self.change_rate()
 
-        # =========================
-        # 🧬 CHAOS INDEX (ESTABLE)
-        # =========================
-        chaos = entropy_val * (1 - coherence_val)
+        chaos_val = self.chaos(entropy_val, coherence_val, change_val)
 
-        # =========================
-        # 🌡 PHASE DETECTION
-        # =========================
+        # fase del sistema (realista, no “místico”)
         if entropy_val < 1:
             phase = "ORDERED"
         elif entropy_val < 3:
-            phase = "TRANSITION"
+            phase = "MIXED"
         else:
-            phase = "CHAOTIC"
+            phase = "HIGH_VARIABILITY"
 
         return {
-            "entropy": float(entropy_val),
-            "coherence": float(coherence_val),
-            "chaos": float(chaos),
+            "entropy": round(entropy_val, 6),
+            "coherence": round(coherence_val, 6),
+            "change_rate": round(change_val, 6),
+            "chaos": round(chaos_val, 6),
             "phase": phase,
             "basins": basins_val
-        }
+            }
