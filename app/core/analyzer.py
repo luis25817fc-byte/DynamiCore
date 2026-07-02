@@ -4,30 +4,39 @@ from collections import Counter
 
 
 class DynamiCore:
+    """
+    🔬 DynamiCore v3.0 — Scientific Dynamical System Analyzer
+
+    Modelo:
+    - Sistema dinámico discreto determinista
+    - Espacio de estados finito
+    - Métricas de información + dinámica no lineal
+    """
+
     def __init__(self, system):
-        self.system = system
+        self.system = system or []
 
     # =========================
-    # 🔥 ENTROPÍA ACOPLADA
+    # 🔥 ENTROPÍA NORMALIZADA
     # =========================
     def entropy(self):
         if not self.system:
             return 0.0
 
         counts = Counter(self.system)
-        total = len(self.system)
+        n = len(self.system)
 
-        base = 0.0
+        h = 0.0
         for c in counts.values():
-            p = c / total
-            base -= p * math.log2(p)
+            p = c / n
+            h -= p * math.log2(p)
 
-        variance = statistics.pstdev(self.system) if len(self.system) > 1 else 0.0
-
-        return base * (1 + math.tanh(variance))
+        # acoplamiento estructural (no linealidad)
+        var = statistics.pstdev(self.system) if n > 1 else 0.0
+        return h * (1 + math.tanh(var))
 
     # =========================
-    # 🔥 COHERENCIA ESTRUCTURAL
+    # 🔥 COHERENCIA (ESTABILIDAD LOCAL)
     # =========================
     def coherence(self):
         if len(self.system) < 2:
@@ -41,7 +50,7 @@ class DynamiCore:
         return 1 / (1 + statistics.mean(diffs))
 
     # =========================
-    # 🔥 CHAOS SCORE (VARIABILIDAD NORMALIZADA)
+    # 🔥 CHAOS SCORE (DISPERSIÓN DINÁMICA)
     # =========================
     def chaos_score(self):
         if len(self.system) < 3:
@@ -53,30 +62,31 @@ class DynamiCore:
         ]
 
         var = statistics.pvariance(diffs)
-        max_d = max(diffs) if diffs else 1
+        m = max(diffs) if diffs else 1
 
-        return var / (max_d + 1e-9)
+        return var / (m + 1e-9)
 
     # =========================
-    # 🔥 LYPUNOV APROX (DISCRETO SIMPLIFICADO)
+    # 🔥 LYPUNOV-LIKE EXPANSION RATE
     # =========================
     def lyapunov_like(self):
         if len(self.system) < 3:
             return 0.0
 
         growth = 0.0
+        n = len(self.system)
 
-        for i in range(1, len(self.system)):
-            if self.system[i - 1] == 0:
-                continue
+        for i in range(1, n):
+            prev = abs(self.system[i - 1])
+            curr = abs(self.system[i])
 
-            ratio = abs(self.system[i] - self.system[i - 1]) / (abs(self.system[i - 1]) + 1e-9)
+            ratio = abs(curr - prev) / (prev + 1e-9)
             growth += math.log(1 + ratio)
 
-        return growth / len(self.system)
+        return growth / n
 
     # =========================
-    # 🔥 BASINS DINÁMICOS NO LINEALES
+    # 🔥 BASINS (MAPA DE ATRACTORES NO LINEALES)
     # =========================
     def basins(self):
         if not self.system:
@@ -88,12 +98,13 @@ class DynamiCore:
         for i, x in enumerate(self.system):
             x = float(x)
 
+            # dinámica no lineal acoplada
             value = (
-                math.sin(x * 1.7 + i * 0.5) * 3 +
-                math.cos(x * 0.9 - i * 0.3) * 2 +
-                (x ** 2) * 0.07 +
-                math.tanh(x + i) * 5 +
-                math.sin(i * x * 0.2) * 2 +
+                math.sin(x * 1.9 + i * 0.6) * 3.0 +
+                math.cos(x * 0.7 - i * 0.4) * 2.5 +
+                math.tanh(x + i) * 4.0 +
+                (x ** 2) * 0.05 +
+                math.sin(x * i * 0.1) * 2.0 +
                 n
             )
 
@@ -103,7 +114,7 @@ class DynamiCore:
         return dict(result)
 
     # =========================
-    # 🔥 DETECCIÓN DE FASE
+    # 🔥 RÉGIMEN DINÁMICO (CLASIFICACIÓN DE FASE)
     # =========================
     def phase_state(self):
         chaos = self.chaos_score()
@@ -119,7 +130,17 @@ class DynamiCore:
             return "CHAOTIC"
 
     # =========================
-    # 🔥 OUTPUT FINAL (PAPER STYLE)
+    # 🔥 ÍNDICE GLOBAL DE COMPLEJIDAD
+    # =========================
+    def complexity_index(self):
+        ent = self.entropy()
+        chaos = self.chaos_score()
+        lyap = self.lyapunov_like()
+
+        return (ent + chaos + lyap) / 3
+
+    # =========================
+    # 🔥 OUTPUT FINAL (FORMATO PAPER)
     # =========================
     def analyze(self):
         return {
@@ -127,6 +148,7 @@ class DynamiCore:
             "coherence": self.coherence(),
             "chaos_score": self.chaos_score(),
             "lyapunov_like": self.lyapunov_like(),
+            "complexity_index": self.complexity_index(),
             "phase_state": self.phase_state(),
             "basins": self.basins()
         }
