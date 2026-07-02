@@ -8,7 +8,7 @@ class DynamiCore:
         self.system = system
 
     # =========================
-    # ENTROPÍA (Shannon base 2)
+    # 🔥 ENTROPÍA ACOPLADA
     # =========================
     def entropy(self):
         if not self.system:
@@ -17,15 +17,17 @@ class DynamiCore:
         counts = Counter(self.system)
         total = len(self.system)
 
-        ent = 0.0
+        base_entropy = 0.0
         for c in counts.values():
             p = c / total
-            ent -= p * math.log2(p)
+            base_entropy -= p * math.log2(p)
 
-        return ent
+        # 🔥 acoplamiento dinámico real
+        variance = statistics.pstdev(self.system) if len(self.system) > 1 else 0.0
+        return base_entropy * (1 + math.tanh(variance))
 
     # =========================
-    # COHERENCIA (estructura global)
+    # 🔥 COHERENCIA (ESTABILIDAD)
     # =========================
     def coherence(self):
         if len(self.system) < 2:
@@ -40,7 +42,7 @@ class DynamiCore:
         return 1 / (1 + mean_diff)
 
     # =========================
-    # 🔥 BASINS NO LINEALES (VERSIÓN PRO)
+    # 🔥 BASINS NO LINEALES (PRO REAL)
     # =========================
     def basins(self):
         if not self.system:
@@ -52,11 +54,12 @@ class DynamiCore:
         for i, x in enumerate(self.system):
             x = float(x)
 
-            # 🔥 dinámica no lineal tipo “paper”
+            # 🔥 dinámica tipo sistema complejo
             value = (
-                math.sin(x * 1.7 + i) * 3 +
+                math.sin(x * 1.7 + i * 0.5) * 3 +
                 math.cos(x * 0.9 - i * 0.3) * 2 +
-                (x ** 2) * 0.05 +
+                (x ** 2) * 0.07 +
+                math.tanh(x + i) * 5 +
                 n
             )
 
@@ -66,7 +69,7 @@ class DynamiCore:
         return dict(result)
 
     # =========================
-    # OUTPUT PRINCIPAL
+    # OUTPUT FINAL
     # =========================
     def analyze(self):
         return {
