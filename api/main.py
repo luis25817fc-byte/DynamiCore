@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Header
+from fastapi import FastAPI, Header, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
@@ -26,43 +26,14 @@ def dashboard():
     <head>
         <title>DynamiCore</title>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
         <style>
-            body {
-                font-family: Arial;
-                background: #0f172a;
-                color: white;
-                text-align: center;
-            }
-
-            input, button {
-                padding: 10px;
-                margin: 10px;
-                border-radius: 8px;
-                border: none;
-            }
-
-            button {
-                background: #2563eb;
-                color: white;
-                cursor: pointer;
-            }
-
-            .card {
-                background: #1e293b;
-                margin: 20px;
-                padding: 20px;
-                border-radius: 12px;
-            }
-
-            #error {
-                color: red;
-            }
+            body { font-family: Arial; background:#0f172a; color:white; text-align:center; }
+            input, button { padding:10px; margin:5px; }
+            .card { background:#1e293b; padding:20px; margin:20px; border-radius:10px; }
         </style>
     </head>
 
     <body>
-
         <h1>🧠 DynamiCore Dashboard</h1>
 
         <div class="card">
@@ -75,7 +46,6 @@ def dashboard():
             <h3>Resultados</h3>
             <p id="entropy">Entropía: -</p>
             <p id="coherence">Coherencia: -</p>
-            <p id="error"></p>
         </div>
 
         <div class="card">
@@ -86,8 +56,6 @@ def dashboard():
         <script>
         async function run() {
             try {
-                document.getElementById("error").innerText = "";
-
                 const system = document.getElementById("system").value
                     .split(",")
                     .map(x => parseInt(x));
@@ -102,47 +70,30 @@ def dashboard():
                 });
 
                 const data = await res.json();
-
-                console.log(data);
-
-                if (data.status !== "success" || !data.payload) {
-                    document.getElementById("error").innerText =
-                        data.message || "Error backend";
-                    return;
-                }
-
                 const payload = data.payload;
 
                 document.getElementById("entropy").innerText =
-                    "Entropía: " + (payload.entropy ?? "N/A");
+                    "Entropía: " + payload.entropy;
 
                 document.getElementById("coherence").innerText =
-                    "Coherencia: " + (payload.coherence ?? "N/A");
+                    "Coherencia: " + payload.coherence;
 
-                const basins = payload.basins || {};
+                const labels = Object.keys(payload.basins);
+                const values = Object.values(payload.basins);
 
-                const labels = Object.keys(basins);
-                const values = Object.values(basins);
-
-                if (window.myChart) window.myChart.destroy();
-
-                window.myChart = new Chart(
-                    document.getElementById("chart"),
-                    {
-                        type: "bar",
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: "Basins",
-                                data: values
-                            }]
-                        }
+                new Chart(document.getElementById("chart"), {
+                    type: "bar",
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: "Basins",
+                            data: values
+                        }]
                     }
-                );
+                });
 
             } catch (err) {
-                document.getElementById("error").innerText =
-                    "Error: " + err.message;
+                alert("Error: " + err.message);
             }
         }
         </script>
@@ -158,30 +109,22 @@ def dashboard():
 @app.post("/analyze")
 def analyze(req: SystemRequest, x_api_key: str = Header(..., alias="x-api-key")):
 
-    try:
-        # 🔥 FIX CRÍTICO: evitar floats
-        req.system = [int(x) for x in req.system]
+    user, data = get_user_by_key(x_api_key)
 
-        user, data = get_user_by_key(x_api_key)
+    if not user:
+        raise HTTPException(status_code=401, detail="Invalid API Key")
 
-        if not user:
-            return {"status": "error", "message": "Invalid API Key"}
+    if not check_limit(data):
+        raise HTTPException(status_code=429, detail="Limit reached")
 
-        if not check_limit(data):
-            return {"status": "error", "message": "Limit reached"}
+    engine = DynamiCore(req.system)
+    result = engine.analyze()
 
-        engine = DynamiCore(req.system)
-        result = engine.analyze()
+    increment_usage(user)
 
-        increment_usage(user)
-
-        return {
-            "status": "success",
-            "payload": result
-        }
-
-    except Exception as e:
-        return {
-            "status": "error",
-            "message": str(e)
-        }
+    return {
+        "status": "success",
+        "user": user,
+        "plan": data["plan"],
+        "payload": result
+    }
