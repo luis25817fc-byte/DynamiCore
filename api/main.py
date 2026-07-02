@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Header, HTTPException
+from fastapi import FastAPI, Header
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
@@ -33,27 +33,25 @@ def dashboard():
                 background: #0f172a;
                 color: white;
                 text-align: center;
-                margin: 0;
-                padding: 0;
             }
 
             input, button {
                 padding: 10px;
-                margin: 8px;
+                margin: 10px;
                 border-radius: 8px;
                 border: none;
             }
 
             button {
-                cursor: pointer;
                 background: #2563eb;
                 color: white;
+                cursor: pointer;
             }
 
             .card {
                 background: #1e293b;
-                padding: 20px;
                 margin: 20px;
+                padding: 20px;
                 border-radius: 12px;
             }
         </style>
@@ -73,6 +71,7 @@ def dashboard():
             <h3>Resultados</h3>
             <p id="entropy">Entropía: -</p>
             <p id="coherence">Coherencia: -</p>
+            <p id="error" style="color:red;"></p>
         </div>
 
         <div class="card">
@@ -83,6 +82,8 @@ def dashboard():
         <script>
         async function run() {
             try {
+                document.getElementById("error").innerText = "";
+
                 const system = document.getElementById("system").value
                     .split(",")
                     .map(x => parseInt(x));
@@ -97,8 +98,12 @@ def dashboard():
                 });
 
                 const text = await res.text();
-
                 const data = JSON.parse(text);
+
+                if (data.status !== "success") {
+                    document.getElementById("error").innerText = data.message;
+                    return;
+                }
 
                 const payload = data.payload;
 
@@ -123,7 +128,8 @@ def dashboard():
                 });
 
             } catch (err) {
-                alert("Error en análisis: " + err.message);
+                document.getElementById("error").innerText =
+                    "Error: " + err.message;
             }
         }
         </script>
@@ -137,32 +143,31 @@ def dashboard():
 # API ENDPOINT
 # =========================
 @app.post("/analyze")
-def analyze(
-    req: SystemRequest,
-    x_api_key: str = Header(..., alias="x-api-key")
-):
-
-    # auth
-    user, data = get_user_by_key(x_api_key)
-
-    if not user:
-        raise HTTPException(status_code=401, detail="Invalid API Key")
-
-    if not check_limit(data):
-        raise HTTPException(status_code=429, detail="Limit reached")
+def analyze(req: SystemRequest, x_api_key: str = Header(..., alias="x-api-key")):
 
     try:
+        print("SYSTEM:", req.system)
+
+        user, data = get_user_by_key(x_api_key)
+
+        if not user:
+            return {"status": "error", "message": "Invalid API Key"}
+
+        if not check_limit(data):
+            return {"status": "error", "message": "Limit reached"}
+
         engine = DynamiCore(req.system)
         result = engine.analyze()
 
+        increment_usage(user)
+
+        return {
+            "status": "success",
+            "payload": result
+        }
+
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-    increment_usage(user)
-
-    return {
-        "status": "success",
-        "user": user,
-        "plan": data["plan"],
-        "payload": result
-    }
+        return {
+            "status": "error",
+            "message": str(e)
+        }
