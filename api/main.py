@@ -16,7 +16,7 @@ class SystemRequest(BaseModel):
 
 
 # =========================
-# FRONTEND (HTML + JS)
+# FRONTEND
 # =========================
 @app.get("/", response_class=HTMLResponse)
 def dashboard():
@@ -54,6 +54,10 @@ def dashboard():
                 padding: 20px;
                 border-radius: 12px;
             }
+
+            #error {
+                color: red;
+            }
         </style>
     </head>
 
@@ -71,7 +75,7 @@ def dashboard():
             <h3>Resultados</h3>
             <p id="entropy">Entropía: -</p>
             <p id="coherence">Coherencia: -</p>
-            <p id="error" style="color:red;"></p>
+            <p id="error"></p>
         </div>
 
         <div class="card">
@@ -97,35 +101,44 @@ def dashboard():
                     body: JSON.stringify({ system })
                 });
 
-                const text = await res.text();
-                const data = JSON.parse(text);
+                const data = await res.json();
 
-                if (data.status !== "success") {
-                    document.getElementById("error").innerText = data.message;
+                console.log(data); // debug real
+
+                if (data.status !== "success" || !data.payload) {
+                    document.getElementById("error").innerText =
+                        data.message || "Error desconocido del backend";
                     return;
                 }
 
                 const payload = data.payload;
 
                 document.getElementById("entropy").innerText =
-                    "Entropía: " + payload.entropy;
+                    "Entropía: " + (payload.entropy ?? "N/A");
 
                 document.getElementById("coherence").innerText =
-                    "Coherencia: " + payload.coherence;
+                    "Coherencia: " + (payload.coherence ?? "N/A");
 
-                const labels = Object.keys(payload.basins);
-                const values = Object.values(payload.basins);
+                const basins = payload.basins || {};
 
-                new Chart(document.getElementById("chart"), {
-                    type: "bar",
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: "Basins",
-                            data: values
-                        }]
+                const labels = Object.keys(basins);
+                const values = Object.values(basins);
+
+                if (window.myChart) window.myChart.destroy();
+
+                window.myChart = new Chart(
+                    document.getElementById("chart"),
+                    {
+                        type: "bar",
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: "Basins",
+                                data: values
+                            }]
+                        }
                     }
-                });
+                );
 
             } catch (err) {
                 document.getElementById("error").innerText =
@@ -140,14 +153,15 @@ def dashboard():
 
 
 # =========================
-# API ENDPOINT
+# API
 # =========================
 @app.post("/analyze")
-def analyze(req: SystemRequest, x_api_key: str = Header(..., alias="x-api-key")):
+def analyze(
+    req: SystemRequest,
+    x_api_key: str = Header(..., alias="x-api-key")
+):
 
     try:
-        print("SYSTEM:", req.system)
-
         user, data = get_user_by_key(x_api_key)
 
         if not user:
