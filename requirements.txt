@@ -5,5 +5,5 @@ uvicorn[standard]
 pydantic
 streamlit
 requests
-
+squalite3
 
