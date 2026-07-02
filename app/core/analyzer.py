@@ -4,83 +4,111 @@ from collections import Counter
 
 class DynamiCore:
     """
-    DynamiCore v3.0 — Deterministic Dynamical Basin Analyzer
-    Estilo paper científico: entropy + coherence + basin mapping estable
+    DynamiCore Ultra Luxe v4.0
+    Sistema dinámico + métricas tipo fintech / research lab
     """
 
-    def __init__(self, system: list[int]):
-        if not isinstance(system, list):
-            raise ValueError("System must be a list of integers")
-
-        self.system = [int(x) for x in system]
+    def __init__(self, system):
+        self.system = [int(x) for x in system] if system else []
         self.n = len(self.system)
 
     # =========================
-    # ENTROPY (Shannon base 2)
+    # ENTROPÍA (SHANNON NORMALIZADA)
     # =========================
-    def entropy(self) -> float:
+    def entropy(self):
+        if self.n == 0:
+            return 0.0
+
         counts = Counter(self.system)
-        total = len(self.system)
+        h = 0.0
 
-        entropy = 0.0
         for c in counts.values():
-            p = c / total
-            entropy -= p * math.log2(p)
+            p = c / self.n
+            h -= p * math.log2(p)
 
-        return float(entropy)
+        return round(h, 6)
 
     # =========================
-    # COHERENCE (orden estructural normalizado)
+    # COHERENCIA (ESTABILIDAD SISTÉMICA)
     # =========================
-    def coherence(self) -> float:
-        if len(self.system) <= 1:
+    def coherence(self):
+        if self.n <= 1:
             return 1.0
 
         diffs = [
             abs(self.system[i] - self.system[i - 1])
-            for i in range(1, len(self.system))
+            for i in range(1, self.n)
         ]
 
-        max_diff = max(diffs) if diffs else 1.0
-        avg_diff = sum(diffs) / len(diffs)
+        avg = sum(diffs) / len(diffs)
+        max_d = max(diffs) if diffs else 1
 
-        return float(1.0 - (avg_diff / (max_diff + 1e-9)))
+        return round(1 - (avg / (max_d + 1e-9)), 6)
 
     # =========================
-    # BASINS (cuencas dinámicas)
+    # CHAOS INDEX (VOLATILIDAD)
     # =========================
-    def basins(self) -> dict:
-        """
-        Divide el sistema en atractores deterministas.
-        Estilo: investigación (no Streamlit, no UI logic aquí)
-        """
-        k = min(5, max(3, self.n // 2 or 3))
+    def chaos_index(self):
+        if self.n <= 2:
+            return 0.0
 
-        chunks = [[] for _ in range(k)]
+        diffs = [
+            abs(self.system[i] - self.system[i - 1])
+            for i in range(1, self.n)
+        ]
+
+        return round(sum(diffs) / (len(diffs) + 1e-9), 6)
+
+    # =========================
+    # BASINS (MODELO PRO - ESTILO FINTECH)
+    # =========================
+    def basins(self):
+        if self.n == 0:
+            return {}
+
+        k = min(6, max(3, self.n // 2))
+
+        buckets = {f"basin_{i}": [] for i in range(k)}
 
         for i, v in enumerate(self.system):
-            chunks[i % k].append(v)
+            idx = (v * (i + 3)) % k
+            buckets[f"basin_{idx}"].append(v)
 
-        basin_map = {}
-        for i, chunk in enumerate(chunks):
-            if len(chunk) == 0:
-                basin_map[f"basin_{i}"] = 0.0
-                continue
+        result = {}
 
-            # estabilidad = promedio normalizado
-            basin_value = sum(chunk) / (len(chunk) + 1e-9)
+        for kname, vals in buckets.items():
+            if len(vals) == 0:
+                result[kname] = 0.0
+            else:
+                score = sum(vals) / len(vals)
+                result[kname] = round(float(score), 6)
 
-            # escala científica estable (0–2.0)
-            basin_map[f"basin_{i}"] = round(float(basin_value % 2.0 + 1.0), 6)
-
-        return basin_map
+        return result
 
     # =========================
-    # OUTPUT FINAL
+    # PHASE DETECTION (ESTILO PAPER + TRADING SYSTEM)
+    # =========================
+    def phase(self):
+        c = self.coherence()
+        e = self.entropy()
+
+        score = (1 - c) * e
+
+        if score < 1.5:
+            return "ORDERED"
+        elif score < 3.5:
+            return "TRANSITIONAL"
+        else:
+            return "CHAOTIC"
+
+    # =========================
+    # OUTPUT FINAL SAAS
     # =========================
     def analyze(self):
         return {
             "entropy": self.entropy(),
             "coherence": self.coherence(),
+            "chaos": self.chaos_index(),
+            "phase": self.phase(),
             "basins": self.basins()
         }
