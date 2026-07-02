@@ -1,75 +1,76 @@
 import math
 from collections import Counter
+import statistics
 
 
 class DynamiCore:
-    def __init__(self, system: list[int]):
-        # 🔥 blindaje total contra floats
-        self.system = []
-        for x in system:
-            try:
-                self.system.append(int(float(x)))
-            except:
-                self.system.append(0)
+    def __init__(self, system):
+        self.system = system
 
-    def _entropy(self, data):
-        if not data:
+    # =========================
+    # ENTROPÍA (Shannon base 2)
+    # =========================
+    def entropy(self):
+        if not self.system:
             return 0.0
 
-        c = Counter(data)
-        n = len(data)
+        counts = Counter(self.system)
+        total = len(self.system)
 
         ent = 0.0
-        for v in c.values():
-            p = v / n
-            if p > 0:
-                ent -= p * math.log2(p)
+        for c in counts.values():
+            p = c / total
+            ent -= p * math.log2(p)
 
-        return float(ent)
+        return ent
 
-    def _coherence(self, data):
-        if not data:
+    # =========================
+    # COHERENCIA (estructura global)
+    # =========================
+    def coherence(self):
+        if len(self.system) < 2:
             return 0.0
 
-        mean = sum(data) / len(data)
-        var = sum((x - mean) ** 2 for x in data) / len(data)
+        diffs = [
+            abs(self.system[i] - self.system[i - 1])
+            for i in range(1, len(self.system))
+        ]
 
-        return 1 / (1 + var)
+        mean_diff = statistics.mean(diffs)
+        return 1 / (1 + mean_diff)
 
-    def _basins(self, data):
-        if not data:
+    # =========================
+    # 🔥 BASINS NO LINEALES (VERSIÓN PRO)
+    # =========================
+    def basins(self):
+        if not self.system:
             return {}
 
-        out = Counter()
+        result = Counter()
+        n = len(self.system)
 
-        for x in data:
-            # 🔥 ELIMINA CUALQUIER POSIBLE FLOAT
-            try:
-                x = int(float(x))
-            except:
-                x = 0
+        for i, x in enumerate(self.system):
+            x = float(x)
 
-            # 🔥 NUNCA bit_length, SOLO operación segura
-            basin = abs(x) % 4
-            out[f"basin_{basin}"] += 1
+            # 🔥 dinámica no lineal tipo “paper”
+            value = (
+                math.sin(x * 1.7 + i) * 3 +
+                math.cos(x * 0.9 - i * 0.3) * 2 +
+                (x ** 2) * 0.05 +
+                n
+            )
 
-        return dict(out)
+            basin_id = int(abs(value)) % 7
+            result[f"basin_{basin_id}"] += 1
 
+        return dict(result)
+
+    # =========================
+    # OUTPUT PRINCIPAL
+    # =========================
     def analyze(self):
-        try:
-            data = self.system
-
-            return {
-                "entropy": self._entropy(data),
-                "coherence": self._coherence(data),
-                "basins": self._basins(data)
-            }
-
-        except Exception as e:
-            # 🔥 evita que Render rompa frontend
-            return {
-                "entropy": 0,
-                "coherence": 0,
-                "basins": {},
-                "error": str(e)
+        return {
+            "entropy": self.entropy(),
+            "coherence": self.coherence(),
+            "basins": self.basins()
         }
