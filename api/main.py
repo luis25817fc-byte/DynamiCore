@@ -3,20 +3,16 @@ from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
 from app.core.analyzer import DynamiCore
-from app.core.auth import get_user_by_key, check_limit, increment_usage
 
-app = FastAPI(title="DynamiCore API", version="2.0")
+app = FastAPI(title="DynamiCore API", version="3.0")
 
 
-# =========================
-# REQUEST MODEL
-# =========================
 class SystemRequest(BaseModel):
     system: list[int]
 
 
 # =========================
-# FRONTEND
+# FRONTEND (CELULAR FRIENDLY)
 # =========================
 @app.get("/", response_class=HTMLResponse)
 def dashboard():
@@ -24,21 +20,45 @@ def dashboard():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>DynamiCore</title>
+        <title>DynamiCore PRO</title>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         <style>
-            body { font-family: Arial; background:#0f172a; color:white; text-align:center; }
-            input, button { padding:10px; margin:5px; }
-            .card { background:#1e293b; padding:20px; margin:20px; border-radius:10px; }
+            body {
+                font-family: Arial;
+                background: #0f172a;
+                color: white;
+                text-align: center;
+                padding: 10px;
+            }
+
+            input, button {
+                padding: 12px;
+                margin: 6px;
+                width: 90%;
+                border-radius: 8px;
+            }
+
+            button {
+                background: #22c55e;
+                color: black;
+                font-weight: bold;
+            }
+
+            .card {
+                background: #1e293b;
+                padding: 15px;
+                margin: 15px;
+                border-radius: 12px;
+            }
         </style>
     </head>
 
     <body>
-        <h1>🧠 DynamiCore Dashboard</h1>
+        <h2>🧠 DynamiCore PRO</h2>
 
         <div class="card">
-            <input id="system" value="0,1,2,3,4,5" style="width:300px;">
-            <br>
+            <input id="system" value="0,1,2,3,4,5" />
             <button onclick="run()">Analizar</button>
         </div>
 
@@ -70,16 +90,22 @@ def dashboard():
                 });
 
                 const data = await res.json();
+
+                if (!data.payload) {
+                    alert("Error: backend no devolvió payload");
+                    return;
+                }
+
                 const payload = data.payload;
 
                 document.getElementById("entropy").innerText =
-                    "Entropía: " + payload.entropy;
+                    "Entropía: " + payload.entropy.toFixed(6);
 
                 document.getElementById("coherence").innerText =
-                    "Coherencia: " + payload.coherence;
+                    "Coherencia: " + payload.coherence.toFixed(6);
 
-                const labels = Object.keys(payload.basins);
-                const values = Object.values(payload.basins);
+                const labels = Object.keys(payload.basins || {});
+                const values = Object.values(payload.basins || {});
 
                 new Chart(document.getElementById("chart"), {
                     type: "bar",
@@ -93,38 +119,29 @@ def dashboard():
                 });
 
             } catch (err) {
-                alert("Error: " + err.message);
+                alert("Error en análisis: " + err.message);
+                console.log(err);
             }
         }
         </script>
-
     </body>
     </html>
     """
 
 
 # =========================
-# API
+# API CORE
 # =========================
 @app.post("/analyze")
 def analyze(req: SystemRequest, x_api_key: str = Header(..., alias="x-api-key")):
 
-    user, data = get_user_by_key(x_api_key)
-
-    if not user:
-        raise HTTPException(status_code=401, detail="Invalid API Key")
-
-    if not check_limit(data):
-        raise HTTPException(status_code=429, detail="Limit reached")
-
     engine = DynamiCore(req.system)
     result = engine.analyze()
 
-    increment_usage(user)
+    if not isinstance(result, dict):
+        raise HTTPException(status_code=500, detail="Invalid analyzer output")
 
     return {
         "status": "success",
-        "user": user,
-        "plan": data["plan"],
         "payload": result
     }
