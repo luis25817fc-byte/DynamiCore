@@ -1,73 +1,73 @@
-# app/core/analyzer.py
-
-from collections import defaultdict
+import math
+from collections import Counter
 
 
 class DynamiCore:
     def __init__(self, system: list[int]):
-        self.system = system
+        # 🔥 asegurar que TODO sea entero limpio
+        self.system = [int(x) for x in system]
 
     # =========================
-    # MAIN ANALYSIS ENGINE
+    # ENTROPY (ROBUSTA)
+    # =========================
+    def _entropy(self, data):
+        if not data:
+            return 0.0
+
+        counts = Counter(data)
+        total = len(data)
+
+        entropy = 0.0
+
+        for c in counts.values():
+            p = c / total
+
+            # 🔥 protección contra log(0)
+            if p > 0:
+                entropy -= p * math.log2(p)
+
+        return float(entropy)
+
+    # =========================
+    # COHERENCE SIMPLE
+    # =========================
+    def _coherence(self, data):
+        if not data:
+            return 0.0
+
+        mean = sum(data) / len(data)
+
+        # desviación normalizada
+        variance = sum((x - mean) ** 2 for x in data) / len(data)
+
+        return 1 / (1 + variance)
+
+    # =========================
+    # BASINS SIMULADOS (ESTABLE)
+    # =========================
+    def _basins(self, data):
+        if not data:
+            return {}
+
+        result = Counter()
+
+        for x in data:
+            # 🔥 FIX CLAVE: evitar floats / negativos raros
+            x = int(abs(x))
+
+            basin_id = x % 3  # simple clustering estable
+            result[f"basin_{basin_id}"] += 1
+
+        return dict(result)
+
+    # =========================
+    # MAIN ANALYSIS
     # =========================
     def analyze(self):
-        n = len(self.system)
-
-        # 🔥 DETECT CYCLES (versión simple determinista)
-        visited = set()
-        cycles = []
-        basins = defaultdict(int)
-
-        def dfs(start):
-            path = []
-            current = start
-
-            while current not in path:
-                path.append(current)
-                visited.add(current)
-
-                # transición determinista
-                current = self.system[current % n]
-
-            cycle_start = path.index(current)
-            cycle = path[cycle_start:]
-
-            return cycle
-
-        for i in range(n):
-            if i not in visited:
-                cycle = dfs(i)
-                cycles.append(cycle)
-                basins[str(tuple(cycle))] = len(cycle)
-
-        # 🔥 ENTROPY SIMPLE (normalizada)
-        total = sum(basins.values()) or 1
-        probs = [v / total for v in basins.values()]
-        entropy = -sum(p * (p).bit_length() for p in probs if p > 0)
-
-        # 🔥 COHERENCE (heurística simple estable)
-        coherence = len(cycles) / n if n else 0
-
-        # 🔥 GRAPH SERIALIZABLE (IMPORTANTE)
-        nodes = list(range(n))
-        edges = []
-
-        for i in range(n):
-            edges.append({
-                "from": i,
-                "to": self.system[i % n]
-            })
+        data = self.system
 
         return {
-            "system": self.system,
-            "cycles": cycles,
-            "basins": dict(basins),
-            "entropy": float(entropy),
-            "coherence": float(coherence),
-
-            # 👇 ESTO YA ES LO QUE STREAMLIT NECESITA
-            "graph": {
-                "nodes": nodes,
-                "edges": edges
-            }
-            }
+            "entropy": self._entropy(data),
+            "coherence": self._coherence(data),
+            "basins": self._basins(data)
+        }
