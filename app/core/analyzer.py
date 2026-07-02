@@ -3,33 +3,25 @@ from collections import Counter
 
 
 class DynamiCore:
-    """
-    DynamiCore Ultra Luxe v4.0
-    Sistema dinámico + métricas tipo fintech / research lab
-    """
 
-    def __init__(self, system):
-        self.system = [int(x) for x in system] if system else []
-        self.n = len(self.system)
+    def __init__(self, system: list[int]):
+        self.system = system
+        self.n = len(system)
 
     # =========================
-    # ENTROPÍA (SHANNON NORMALIZADA)
+    # 🔥 ENTROPY (SHANNON BASE 2)
     # =========================
     def entropy(self):
         if self.n == 0:
             return 0.0
 
         counts = Counter(self.system)
-        h = 0.0
+        probs = [c / self.n for c in counts.values()]
 
-        for c in counts.values():
-            p = c / self.n
-            h -= p * math.log2(p)
-
-        return round(h, 6)
+        return -sum(p * math.log2(p) for p in probs if p > 0)
 
     # =========================
-    # COHERENCIA (ESTABILIDAD SISTÉMICA)
+    # 🧠 COHERENCE (NORMALIZED ORDER METRIC)
     # =========================
     def coherence(self):
         if self.n <= 1:
@@ -40,75 +32,71 @@ class DynamiCore:
             for i in range(1, self.n)
         ]
 
-        avg = sum(diffs) / len(diffs)
-        max_d = max(diffs) if diffs else 1
+        avg_diff = sum(diffs) / len(diffs)
 
-        return round(1 - (avg / (max_d + 1e-9)), 6)
-
-    # =========================
-    # CHAOS INDEX (VOLATILIDAD)
-    # =========================
-    def chaos_index(self):
-        if self.n <= 2:
-            return 0.0
-
-        diffs = [
-            abs(self.system[i] - self.system[i - 1])
-            for i in range(1, self.n)
-        ]
-
-        return round(sum(diffs) / (len(diffs) + 1e-9), 6)
+        # normalización estable 0-1
+        return 1 / (1 + avg_diff)
 
     # =========================
-    # BASINS (MODELO PRO - ESTILO FINTECH)
+    # 🌌 BASINS (CUENCAS DINÁMICAS)
     # =========================
     def basins(self):
+
         if self.n == 0:
             return {}
 
-        k = min(6, max(3, self.n // 2))
+        max_val = max(self.system)
+        min_val = min(self.system)
 
-        buckets = {f"basin_{i}": [] for i in range(k)}
+        # evitar división por cero
+        range_val = max(max_val - min_val, 1)
 
-        for i, v in enumerate(self.system):
-            idx = (v * (i + 3)) % k
-            buckets[f"basin_{idx}"].append(v)
+        # 4 cuencas fijas (estable y vendible)
+        basins = {"basin_0": 0, "basin_1": 0, "basin_2": 0, "basin_3": 0}
 
-        result = {}
+        for x in self.system:
 
-        for kname, vals in buckets.items():
-            if len(vals) == 0:
-                result[kname] = 0.0
+            norm = (x - min_val) / range_val  # 0-1
+
+            if norm < 0.25:
+                basins["basin_0"] += 1
+            elif norm < 0.5:
+                basins["basin_1"] += 1
+            elif norm < 0.75:
+                basins["basin_2"] += 1
             else:
-                score = sum(vals) / len(vals)
-                result[kname] = round(float(score), 6)
+                basins["basin_3"] += 1
 
-        return result
-
-    # =========================
-    # PHASE DETECTION (ESTILO PAPER + TRADING SYSTEM)
-    # =========================
-    def phase(self):
-        c = self.coherence()
-        e = self.entropy()
-
-        score = (1 - c) * e
-
-        if score < 1.5:
-            return "ORDERED"
-        elif score < 3.5:
-            return "TRANSITIONAL"
-        else:
-            return "CHAOTIC"
+        return basins
 
     # =========================
-    # OUTPUT FINAL SAAS
+    # 🧪 MAIN ENGINE
     # =========================
     def analyze(self):
+
+        entropy_val = self.entropy()
+        coherence_val = self.coherence()
+        basins_val = self.basins()
+
+        # =========================
+        # 🧬 CHAOS INDEX (ESTABLE)
+        # =========================
+        chaos = entropy_val * (1 - coherence_val)
+
+        # =========================
+        # 🌡 PHASE DETECTION
+        # =========================
+        if entropy_val < 1:
+            phase = "ORDERED"
+        elif entropy_val < 3:
+            phase = "TRANSITION"
+        else:
+            phase = "CHAOTIC"
+
         return {
-            "entropy": self.entropy(),
-            "coherence": self.coherence(),
-            "chaos": self.chaos_index(),
-            "phase": self.phase(),
-            "basins": self.basins()
+            "entropy": float(entropy_val),
+            "coherence": float(coherence_val),
+            "chaos": float(chaos),
+            "phase": phase,
+            "basins": basins_val
         }
