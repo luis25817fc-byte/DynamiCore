@@ -1,12 +1,9 @@
 numpy
 matplotlib
 fastapi
-uvicorn[standard]
+uvicorn
 pydantic
 streamlit
 requests
-squalite3
-stripe
 python-dotenv
-pyjwt
-
+stripe
