@@ -1,67 +1,43 @@
-from fastapi import FastAPI, Depends, Body
-from app.core.db import Base, engine
-from app.core.auth import create_api_key, create_user, get_user
-from app.core.security import require_api_key
-from app.core.memory import save_message, get_history
-from app.core.ai import run_ai
-from app.core.stripe_service import create_checkout
+from fastapi import FastAPI, Request, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+import os
 
-app = FastAPI(title="DynamiCore AI Engine v2")
+app = FastAPI(title="DynamiCore API", version="1.0.0")
 
-@app.on_event("startup")
-def startup():
-    Base.metadata.create_all(bind=engine)
+# CORS para frontend (Replit / dominio / SaaS)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # en producción lo restringimos luego
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-
-# HOME
+# Health check (IMPORTANTE para Render)
 @app.get("/")
 def home():
-    return {"status": "DynamiCore AI Engine v2 LIVE"}
+    return {"status": "ok", "message": "DynamiCore API running"}
 
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
 
-# SIGNUP
-@app.get("/signup")
-def signup():
-    api_key = create_api_key()
-    create_user(api_key)
-    return {"api_key": api_key}
-
-
-# CHAT (CON MEMORIA REAL)
+# CHAT ENDPOINT (SaaS CORE)
 @app.post("/chat")
-def chat(
-    prompt: str = Body(...),
-    user=Depends(require_api_key)
-):
+async def chat(request: Request):
+    body = await request.json()
 
-    user.requests += 1
+    message = body.get("message", "")
+    model = body.get("model", "gpt-4-turbo")
 
-    # 🧠 guardar mensaje usuario
-    save_message(user.api_key, "user", prompt)
+    if not message:
+        raise HTTPException(status_code=400, detail="Message is required")
 
-    # 📚 historial
-    history = get_history(user.api_key)
-
-    # 🧠 IA
-    response = run_ai(history)
-
-    # 💾 guardar respuesta
-    save_message(user.api_key, "assistant", response)
+    # 🔥 Aquí luego conectas OpenAI real
+    response = f"DynamiCore recibió: {message}"
 
     return {
         "response": response,
-        "usage": user.requests
+        "model": model,
+        "status": "success"
     }
-
-
-# ANALYZE
-@app.post("/analyze")
-def analyze(user=Depends(require_api_key)):
-    user.requests += 1
-    return {"status": "ok", "requests": user.requests}
-
-
-# STRIPE
-@app.get("/upgrade/{api_key}")
-def upgrade(api_key: str):
-    return {"checkout_url": create_checkout(api_key)}
