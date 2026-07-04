@@ -1,27 +1,26 @@
 import os
+from openai import OpenAI
 
-# Luego puedes cambiar esto por OpenAI real o modelo local
-USE_MOCK = True
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
-def run_ai(prompt: str, user_context: dict = None):
+def run_ai(prompt: str, user_context: dict):
 
-    if USE_MOCK:
-        return {
-            "response": f"[DynamiCore AI MOCK] procesé: {prompt}",
-            "model": "mock-v1"
-        }
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {
+                "role": "system",
+                "content": "You are DynamiCore AI Engine. You are a SaaS API assistant."
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
 
-    # 🔥 AQUÍ después conectas OpenAI real
-    # from openai import OpenAI
-    # client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-    #
-    # completion = client.chat.completions.create(
-    #     model="gpt-4o-mini",
-    #     messages=[
-    #         {"role": "system", "content": "You are DynamiCore AI Engine"},
-    #         {"role": "user", "content": prompt}
-    #     ]
-    # )
-    #
-    # return {"response": completion.choices[0].message.content}
+    return {
+        "response": response.choices[0].message.content,
+        "model": "gpt-4o-mini"
+    }
