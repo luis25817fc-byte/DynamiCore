@@ -1,20 +1,14 @@
-from fastapi import APIRouter
-from api.core.analyzer import DynamiCore
+import sys
+import os
 
-router = APIRouter()
-engine = DynamiCore()
+# Esto añade la carpeta raíz al path de Python para que siempre encuentre los módulos
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-@router.post("/analyze-system")
-def analyze(payload: dict):
+# Ahora la importación funcionará desde cualquier lugar
+from api.routes.analyze import router as analyze_router
 
-    system = payload.get("system", [])
+from fastapi import FastAPI
 
-    if not system:
-        return {"error": "system required"}
+app = FastAPI()
 
-    result = engine.analyze(system)
-
-    return {
-        "success": True,
-        "payload": result
-    }
+app.include_router(analyze_router)
