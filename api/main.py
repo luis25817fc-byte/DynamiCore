@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from openai import OpenAI
@@ -14,7 +14,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# OpenAI client (usa variable de entorno)
+# CLIENTE OPENAI
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 @app.get("/")
@@ -25,31 +25,32 @@ def home():
 def health():
     return {"status": "healthy"}
 
+# CHAT REAL
 @app.post("/chat")
 async def chat(request: Request):
+    body = await request.json()
+
+    message = body.get("message")
+
+    if not message:
+        return {
+            "success": False,
+            "error": "Message is required"
+        }
+
     try:
-        body = await request.json()
-
-        message = body.get("message")
-        model = body.get("model", "gpt-4o-mini")  # estable y barato
-
-        if not message:
-            raise HTTPException(status_code=400, detail="Message is required")
-
-        # 🔥 llamada a IA real
         response = client.responses.create(
-            model=model,
+            model="gpt-4o-mini",
             input=message
         )
 
         return {
-            "response": response.output_text,
-            "model": model,
-            "status": "success"
+            "success": True,
+            "response": response.output_text
         }
 
     except Exception as e:
         return {
-            "status": "error",
+            "success": False,
             "error": str(e)
-            }
+        }
