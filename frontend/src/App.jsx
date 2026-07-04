@@ -7,7 +7,7 @@ export async function sendMessage(message) {
       controller.abort();
     }, 15000);
 
-    const res = await fetch("https://dynamicore-api.onrender.com/chat", {
+    const res = await fetch("https://dynamicore.onrender.com/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
