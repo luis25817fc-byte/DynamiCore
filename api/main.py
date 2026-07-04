@@ -2,23 +2,21 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.routes.analyze import router as analyze_router
-from api.routes.explain import router as explain_router
 
-app = FastAPI(title="DynamiCore Engine")
+app = FastAPI()
 
+# CORS (IMPORTANTE para frontend)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
+    allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
 
+# REGISTRO DE RUTAS
 app.include_router(analyze_router)
-app.include_router(explain_router)
 
 @app.get("/")
 def root():
-    return {
-        "status": "DynamiCore Engine online",
-        "version": "1.0.0"
-    }
+    return {"status": "DynamiCore API running"}
