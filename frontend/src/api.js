@@ -1,9 +1,21 @@
-import axios from "axios";
+export async function sendMessage(message) {
+  try {
+    const res = await fetch("https://dynamicore.onrender.com/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer e22efa84-543b-459d-82d0-0f0147762451"
+      },
+      body: JSON.stringify({
+        message,
+        model: "gpt-4-turbo"
+      })
+    });
 
-const api = axios.create({
+    const data = await res.json();
+    return data;
 
-    baseURL: "https://dynamicore.onrender.com"
-
-});
-
-export default api;
+  } catch (err) {
+    return { error: err.message };
+  }
+}
