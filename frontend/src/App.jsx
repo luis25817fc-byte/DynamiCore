@@ -1,43 +1,46 @@
-export async function sendMessage(message) {
-  try {
-    const controller = new AbortController();
+import { useState } from "react";
+import { sendMessage } from "./api";
 
-    // timeout de seguridad (15s)
-    const timeout = setTimeout(() => {
-      controller.abort();
-    }, 15000);
+export default function App() {
+  const [input, setInput] = useState("");
+  const [chat, setChat] = useState([]);
 
-    const res = await fetch("https://dynamicore.onrender.com/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer 9e4ed968-02fe-4027-ad91-dba303cbe437"
-      },
-      signal: controller.signal,
-      body: JSON.stringify({
-        message: message,
-        model: "gpt-4-turbo"
-      })
-    });
+  const send = async () => {
+    if (!input.trim()) return;
 
-    clearTimeout(timeout);
+    const msg = input;
 
-    if (!res.ok) {
-      const errorText = await res.text();
-      throw new Error(`API Error: ${res.status} - ${errorText}`);
-    }
+    setChat(prev => [...prev, { role: "user", text: msg }]);
+    setInput("");
 
-    const data = await res.json();
+    const res = await sendMessage(msg);
 
-    return {
-      success: true,
-      data
-    };
+    setChat(prev => [
+      ...prev,
+      { role: "ai", text: res.response || res.error || "Sin respuesta" }
+    ]);
+  };
 
-  } catch (error) {
-    return {
-      success: false,
-      error: error.message || "Error desconocido en DynamiCore API"
-    };
-  }
-}
+  return (
+    <div className="container">
+      <h1>DynamiCore AI</h1>
+
+      <div className="chat">
+        {chat.map((m, i) => (
+          <div key={i} className={m.role}>
+            <b>{m.role}:</b> {m.text}
+          </div>
+        ))}
+      </div>
+
+      <div className="inputBox">
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Escribe un mensaje..."
+        />
+        <button onClick={send}>Enviar</button>
+      </div>
+    </div>
+  );
+          }
