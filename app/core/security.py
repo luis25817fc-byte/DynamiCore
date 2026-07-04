@@ -1,21 +1,14 @@
-import jwt
-import datetime
-
-SECRET = "super-secret-dynamicore"
+from fastapi import Header, HTTPException
+from app.core.auth import get_user
 
 
-def create_token(api_key: str):
-    payload = {
-        "api_key": api_key,
-        "exp": datetime.datetime.utcnow() + datetime.timedelta(days=7)
-    }
-    return jwt.encode(payload, SECRET, algorithm="HS256")
+def require_api_key(x_api_key: str = Header(None)):
+    if not x_api_key:
+        raise HTTPException(status_code=401, detail="Missing API key")
 
+    user = get_user(x_api_key)
 
-def verify_token(token: str):
-    try:
-        return jwt.decode(token, SECRET, algorithms=["HS256"])
-    except jwt.ExpiredSignatureError:
-        return None
-    except jwt.InvalidTokenError:
-        return None
+    if not user:
+        raise HTTPException(status_code=403, detail="Invalid API key")
+
+    return user
