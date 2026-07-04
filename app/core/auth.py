@@ -1,10 +1,6 @@
 import uuid
-import jwt
-import os
-from datetime import datetime, timedelta
-from app.core.db import SessionLocal, User
-
-SECRET = os.getenv("JWT_SECRET", "dev-secret")
+from app.core.db import SessionLocal
+from app.core.models import User
 
 
 def create_api_key():
@@ -25,18 +21,3 @@ def get_user(api_key: str):
     user = db.query(User).filter(User.api_key == api_key).first()
     db.close()
     return user
-
-
-def encode_jwt(api_key: str):
-    payload = {
-        "api_key": api_key,
-        "exp": datetime.utcnow() + timedelta(days=7)
-    }
-    return jwt.encode(payload, SECRET, algorithm="HS256")
-
-
-def decode_jwt(token: str):
-    try:
-        return jwt.decode(token, SECRET, algorithms=["HS256"])
-    except:
-        return None
