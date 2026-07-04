@@ -1,13 +1,9 @@
-import sys
-import os
-
-# Agregamos la carpeta raíz al path para asegurar que 'routes' sea encontrada
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
 from fastapi import FastAPI
-# Ahora importamos desde routes, ya que estamos dentro de la subcarpeta 'api'
-from routes.analyze import router as analyze_router
+# Como main.py y la carpeta 'rutas' están en la misma carpeta 'api', 
+# el import es directo:
+from rutas.analizar import router as analyze_router
 
 app = FastAPI()
 
+# Incluimos el router que importamos
 app.include_router(analyze_router)
