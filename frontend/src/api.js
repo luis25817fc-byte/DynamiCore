@@ -13,9 +13,9 @@ export async function sendMessage(message) {
     });
 
     const data = await res.json();
-    return data;
 
+    return data;
   } catch (err) {
-    return { error: err.message };
+    return { response: "Error de conexión: " + err.message };
   }
 }
