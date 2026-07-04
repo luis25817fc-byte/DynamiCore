@@ -1,19 +1,21 @@
-# app/core/db.py
+import os
+from sqlalchemy import create_engine, Column, String, Integer
+from sqlalchemy.orm import declarative_base, sessionmaker
 
-USERS = {}
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-def create_user(api_key: str):
-    USERS[api_key] = {
-        "plan": "free",
-        "requests": 0
-    }
-    return USERS[api_key]
-
-
-def get_user(api_key: str):
-    return USERS.get(api_key)
+engine = create_engine(DATABASE_URL)
+SessionLocal = sessionmaker(bind=engine)
+Base = declarative_base()
 
 
-def upgrade_user(api_key: str):
-    if api_key in USERS:
-        USERS[api_key]["plan"] = "pro"
+class User(Base):
+    __tablename__ = "users"
+
+    api_key = Column(String, primary_key=True, index=True)
+    plan = Column(String, default="free")
+    requests = Column(Integer, default=0)
+
+
+def init_db():
+    Base.metadata.create_all(bind=engine)
