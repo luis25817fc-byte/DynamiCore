@@ -1,18 +1,15 @@
-from app.core.db import get_user
+# app/core/auth.py
 
-def validate_user(api_key):
+import uuid
+from app.core.db import create_user, get_user
 
+
+def generate_api_key():
+    api_key = str(uuid.uuid4())
+    create_user(api_key)
+    return api_key
+
+
+def validate_api_key(api_key: str):
     user = get_user(api_key)
-
-    if not user:
-        return None
-
-    plan = user[2]
-    requests = user[3]
-
-    limit = 200 if plan == "free" else 100000
-
-    if requests >= limit:
-        return "LIMIT"
-
-    return user
+    return user is not None
