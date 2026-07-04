@@ -1,22 +1,13 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+import sys
+import os
 
-from api.routes.analyze import router as analyze_router
+# Agregamos la carpeta raíz al path para asegurar que 'routes' sea encontrada
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from fastapi import FastAPI
+# Ahora importamos desde routes, ya que estamos dentro de la subcarpeta 'api'
+from routes.analyze import router as analyze_router
 
 app = FastAPI()
 
-# CORS (IMPORTANTE para frontend)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# REGISTRO DE RUTAS
 app.include_router(analyze_router)
-
-@app.get("/")
-def root():
-    return {"status": "DynamiCore API running"}
