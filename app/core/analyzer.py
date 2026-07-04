@@ -3,33 +3,31 @@ from collections import Counter
 
 class DynamiCore:
 
-    def __init__(self, system):
-        self.system = system
+    def analyze(self, system: list):
 
-    def analyze(self):
+        counts = Counter(system)
+        n = len(system)
 
-        counts = Counter(self.system)
-        n = len(self.system)
-
+        # Entropy
         entropy = 0
         for c in counts.values():
             p = c / n
             entropy -= p * math.log2(p)
 
-        mean = sum(self.system) / n
-        variance = sum((x - mean)**2 for x in self.system) / n
-
+        # Coherence (simple stability metric)
+        mean = sum(system) / n
+        variance = sum((x - mean) ** 2 for x in system) / n
         coherence = 1 / (1 + variance)
 
-        sorted_keys = sorted(counts.keys())
-
+        # Basins
         basins = {
             f"basin_{i}": counts[k]
-            for i, k in enumerate(sorted_keys)
+            for i, k in enumerate(sorted(counts.keys()))
         }
 
         return {
             "entropy": round(entropy, 6),
             "coherence": round(coherence, 6),
-            "basins": basins
+            "basins": basins,
+            "n": n
         }
