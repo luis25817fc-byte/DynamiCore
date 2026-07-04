@@ -5,42 +5,48 @@ export default function App() {
   const [input, setInput] = useState("");
   const [chat, setChat] = useState([]);
 
-  const send = async () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
 
     const msg = input;
-
-    setChat(prev => [...prev, { role: "user", text: msg }]);
     setInput("");
 
-    const res = await sendMessage(msg);
+    setChat(prev => [...prev, { role: "user", text: msg }]);
 
-    setChat(prev => [
-      ...prev,
-      { role: "ai", text: res.response || res.error || "Sin respuesta" }
-    ]);
+    try {
+      const res = await sendMessage(msg);
+
+      setChat(prev => [
+        ...prev,
+        {
+          role: "ai",
+          text: res?.response || res?.error || "Sin respuesta"
+        }
+      ]);
+    } catch (err) {
+      setChat(prev => [
+        ...prev,
+        { role: "ai", text: "Error frontend: " + err.message }
+      ]);
+    }
   };
 
   return (
-    <div className="container">
+    <div style={{ padding: 20 }}>
       <h1>DynamiCore AI</h1>
 
-      <div className="chat">
-        {chat.map((m, i) => (
-          <div key={i} className={m.role}>
-            <b>{m.role}:</b> {m.text}
-          </div>
-        ))}
-      </div>
+      {chat.map((m, i) => (
+        <div key={i}>
+          <b>{m.role}:</b> {m.text}
+        </div>
+      ))}
 
-      <div className="inputBox">
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Escribe un mensaje..."
-        />
-        <button onClick={send}>Enviar</button>
-      </div>
+      <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+
+      <button onClick={handleSend}>Enviar</button>
     </div>
   );
-          }
+        }
