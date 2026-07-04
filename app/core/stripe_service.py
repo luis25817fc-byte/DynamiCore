@@ -10,13 +10,9 @@ def create_checkout(api_key: str):
         line_items=[{
             "price_data": {
                 "currency": "usd",
-                "product_data": {
-                    "name": "DynamiCore Pro"
-                },
+                "product_data": {"name": "DynamiCore AI Pro"},
                 "unit_amount": 1999,
-                "recurring": {
-                    "interval": "month"
-                }
+                "recurring": {"interval": "month"}
             },
             "quantity": 1
         }],
