@@ -1,56 +1,24 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import os
-from openai import OpenAI
 
-app = FastAPI(title="DynamiCore API", version="1.0.0")
+from api.routes.analyze import router as analyze_router
+from api.routes.explain import router as explain_router
 
-# CORS
+app = FastAPI(title="DynamiCore Engine")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*"]
 )
 
-# CLIENTE OPENAI
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+app.include_router(analyze_router)
+app.include_router(explain_router)
 
 @app.get("/")
-def home():
-    return {"status": "ok", "message": "DynamiCore API running"}
-
-@app.get("/health")
-def health():
-    return {"status": "healthy"}
-
-# CHAT REAL
-@app.post("/chat")
-async def chat(request: Request):
-    body = await request.json()
-
-    message = body.get("message")
-
-    if not message:
-        return {
-            "success": False,
-            "error": "Message is required"
-        }
-
-    try:
-        response = client.responses.create(
-            model="gpt-4o-mini",
-            input=message
-        )
-
-        return {
-            "success": True,
-            "response": response.output_text
-        }
-
-    except Exception as e:
-        return {
-            "success": False,
-            "error": str(e)
-        }
+def root():
+    return {
+        "status": "DynamiCore Engine online",
+        "version": "1.0.0"
+    }
