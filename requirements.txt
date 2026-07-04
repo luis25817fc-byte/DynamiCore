@@ -1,11 +1,10 @@
 fastapi
 uvicorn
-stripe
-python-dotenv
-pyjwt
 sqlalchemy
 psycopg2-binary
-passlib[bcrypt]
-requests
+python-dotenv
+pyjwt
+stripe
 slowapi
+requests
 openai
