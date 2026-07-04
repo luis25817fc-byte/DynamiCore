@@ -1,3 +1,5 @@
+# app/core/stripe_service.py
+
 import stripe
 import os
 from dotenv import load_dotenv
@@ -7,8 +9,7 @@ load_dotenv()
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 
 
-def checkout(api_key):
-
+def create_checkout_session(api_key: str):
     session = stripe.checkout.Session.create(
         mode="subscription",
         line_items=[{
