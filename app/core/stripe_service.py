@@ -1,27 +1,20 @@
-# app/core/stripe_service.py
-
 import stripe
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 
 
-def create_checkout_session(api_key: str):
+def create_checkout(api_key: str):
     session = stripe.checkout.Session.create(
         mode="subscription",
         line_items=[{
             "price_data": {
                 "currency": "usd",
                 "product_data": {
-                    "name": "DynamiCore Pro"
+                    "name": "DynamiCore Pro API"
                 },
                 "unit_amount": 1999,
-                "recurring": {
-                    "interval": "month"
-                }
+                "recurring": {"interval": "month"}
             },
             "quantity": 1
         }],
