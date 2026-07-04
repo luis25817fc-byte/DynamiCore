@@ -1,14 +1,66 @@
-from fastapi import Header, HTTPException
-from app.core.auth import get_user
+"""
+DynamiCore Enterprise Security
+"""
+
+import secrets
+from datetime import datetime
+from datetime import timedelta
+
+from jose import jwt
+from passlib.context import CryptContext
+
+SECRET_KEY = secrets.token_hex(64)
+
+ALGORITHM = "HS256"
+
+ACCESS_TOKEN_EXPIRE_MINUTES = 1440
+
+pwd_context = CryptContext(
+    schemes=["bcrypt"],
+    deprecated="auto"
+)
 
 
-def require_api_key(x_api_key: str = Header(None)):
-    if not x_api_key:
-        raise HTTPException(status_code=401, detail="Missing API key")
+def hash_password(password: str):
 
-    user = get_user(x_api_key)
+    return pwd_context.hash(password)
 
-    if not user:
-        raise HTTPException(status_code=403, detail="Invalid API key")
 
-    return user
+def verify_password(password, hashed):
+
+    return pwd_context.verify(password, hashed)
+
+
+def create_access_token(data: dict):
+
+    payload = data.copy()
+
+    expire = datetime.utcnow() + timedelta(
+        minutes=ACCESS_TOKEN_EXPIRE_MINUTES
+    )
+
+    payload.update(
+        {
+            "exp": expire
+        }
+    )
+
+    return jwt.encode(
+        payload,
+        SECRET_KEY,
+        algorithm=ALGORITHM
+    )
+
+
+def decode_token(token):
+
+    return jwt.decode(
+        token,
+        SECRET_KEY,
+        algorithms=[ALGORITHM]
+    )
+
+
+def create_api_key():
+
+    return secrets.token_hex(32)
