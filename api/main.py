@@ -1,18 +1,12 @@
 from fastapi import FastAPI, Depends, Body
-from slowapi.middleware import SlowAPIMiddleware
-
 from app.core.db import Base, engine
-from app.core.auth import create_api_key, create_user
+from app.core.auth import create_api_key, create_user, get_user
 from app.core.security import require_api_key
-from app.core.stripe_service import create_checkout
+from app.core.memory import save_message, get_history
 from app.core.ai import run_ai
+from app.core.stripe_service import create_checkout
 
-from sqlalchemy.orm import Session
-
-app = FastAPI(title="DynamiCore AI Engine v1")
-
-app.add_middleware(SlowAPIMiddleware)
-
+app = FastAPI(title="DynamiCore AI Engine v2")
 
 @app.on_event("startup")
 def startup():
@@ -22,7 +16,7 @@ def startup():
 # HOME
 @app.get("/")
 def home():
-    return {"status": "DynamiCore AI Engine LIVE"}
+    return {"status": "DynamiCore AI Engine v2 LIVE"}
 
 
 # SIGNUP
@@ -33,17 +27,7 @@ def signup():
     return {"api_key": api_key}
 
 
-# ANALYZE (NO IA)
-@app.post("/analyze")
-def analyze(user=Depends(require_api_key)):
-    user.requests += 1
-    return {
-        "status": "ok",
-        "requests": user.requests
-    }
-
-
-# IA ENGINE (ESTO ES LO IMPORTANTE)
+# CHAT (CON MEMORIA REAL)
 @app.post("/chat")
 def chat(
     prompt: str = Body(...),
@@ -52,33 +36,32 @@ def chat(
 
     user.requests += 1
 
-    result = run_ai(
-        prompt=prompt,
-        user_context={
-            "api_key": user.api_key,
-            "plan": user.plan
-        }
-    )
+    # 🧠 guardar mensaje usuario
+    save_message(user.api_key, "user", prompt)
+
+    # 📚 historial
+    history = get_history(user.api_key)
+
+    # 🧠 IA
+    response = run_ai(history)
+
+    # 💾 guardar respuesta
+    save_message(user.api_key, "assistant", response)
 
     return {
-        "input": prompt,
-        "output": result["response"],
-        "model": result["model"],
-        "requests_used": user.requests
+        "response": response,
+        "usage": user.requests
     }
 
 
-# STRIPE UPGRADE
+# ANALYZE
+@app.post("/analyze")
+def analyze(user=Depends(require_api_key)):
+    user.requests += 1
+    return {"status": "ok", "requests": user.requests}
+
+
+# STRIPE
 @app.get("/upgrade/{api_key}")
 def upgrade(api_key: str):
     return {"checkout_url": create_checkout(api_key)}
-
-
-@app.get("/success")
-def success():
-    return {"status": "payment_success"}
-
-
-@app.get("/cancel")
-def cancel():
-    return {"status": "payment_cancelled"}
