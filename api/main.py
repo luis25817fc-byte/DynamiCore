@@ -1,9 +1,21 @@
+# api/main.py
+
 from fastapi import FastAPI
-# Como main.py y la carpeta 'rutas' están en la misma carpeta 'api', 
-# el import es directo:
-from rutas.analizar import router as analyze_router
+from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+from api.routes.analyze import router as analyze_router
 
-# Incluimos el router que importamos
+app = FastAPI(title="DynamiCore Enterprise")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/")
+def root():
+    return {"status": "DynamiCore online"}
+
 app.include_router(analyze_router)
