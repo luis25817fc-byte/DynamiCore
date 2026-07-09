@@ -1,31 +1,25 @@
-# api/core/engine.py
 
-import math
-from collections import Counter
+from .metrics.engine import MetricsEngine
+
 
 class DynamiCoreEngine:
 
-    def analyze(self, system: list):
+
+    def __init__(self):
+
+        self.metrics = MetricsEngine()
+
+
+    def analyze(self, system):
 
         if not system:
             return {
                 "error": "empty input"
             }
 
-        counts = Counter(system)
-        n = len(system)
 
-        entropy = sum(
-            -(c / n) * math.log2(c / n)
-            for c in counts.values()
-        )
+        result = self.metrics.analyze(system)
 
-        mean = sum(system) / n
-        variance = sum((x - mean) ** 2 for x in system) / n
-        coherence = 1 / (1 + variance)
+        result["system_size"] = len(system)
 
-        return {
-            "entropy": round(entropy, 6),
-            "coherence": round(coherence, 6),
-            "n": n
-}
+        return result
