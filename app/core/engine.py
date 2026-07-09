@@ -1,6 +1,7 @@
 
 from .metrics.engine import MetricsEngine
 from .predictive.forecast import ForecastEngine
+from .predictive.risk import RiskEngine
 
 
 class DynamiCoreEngine:
@@ -10,6 +11,7 @@ class DynamiCoreEngine:
 
         self.metrics = MetricsEngine()
         self.forecast = ForecastEngine()
+        self.risk = RiskEngine()
 
 
     def analyze(self, system):
@@ -25,8 +27,16 @@ class DynamiCoreEngine:
 
         predictive = self.forecast.analyze(system)
 
-
         result["predictive"] = predictive
+
+
+        risk = self.risk.analyze(
+            predictive,
+            result
+        )
+
+        result["risk"] = risk
+
 
         result["system_size"] = len(system)
 
