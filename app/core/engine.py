@@ -2,6 +2,7 @@
 from .metrics.engine import MetricsEngine
 from .predictive.forecast import ForecastEngine
 from .predictive.risk import RiskEngine
+from .predictive.regime import RegimeEngine
 
 
 class DynamiCoreEngine:
@@ -12,6 +13,7 @@ class DynamiCoreEngine:
         self.metrics = MetricsEngine()
         self.forecast = ForecastEngine()
         self.risk = RiskEngine()
+        self.regime = RegimeEngine()
 
 
     def analyze(self, system):
@@ -26,7 +28,6 @@ class DynamiCoreEngine:
 
 
         predictive = self.forecast.analyze(system)
-
         result["predictive"] = predictive
 
 
@@ -34,8 +35,14 @@ class DynamiCoreEngine:
             predictive,
             result
         )
-
         result["risk"] = risk
+
+
+        regime = self.regime.analyze(
+            predictive,
+            risk
+        )
+        result["regime_analysis"] = regime
 
 
         result["system_size"] = len(system)
