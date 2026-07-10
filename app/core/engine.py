@@ -12,6 +12,13 @@ from .kernel.state_vector import StateVector
 
 from .agents.orchestrator import AgentOrchestrator
 
+from .state.evolution import EvolutionEngine
+from .state.transition import StateTransitionEngine
+
+from .twin.engine import TwinEngine
+
+from .simulation.engine import ScenarioEngine
+
 from .attribution.engine import AttributionEngine
 from .causal.engine import CausalEngine
 from .decision.engine import DecisionEngine
@@ -33,6 +40,14 @@ class DynamiCoreEngine:
         self.snapshots = SnapshotEngine()
 
         self.agents = AgentOrchestrator()
+
+        self.evolution = EvolutionEngine()
+
+        self.transition = StateTransitionEngine()
+
+        self.twin = TwinEngine()
+
+        self.scenario = ScenarioEngine()
 
         self.attribution = AttributionEngine()
 
@@ -202,6 +217,43 @@ class DynamiCoreEngine:
 
 
         result["decision"] = decision
+
+
+
+        # ==========================
+        # EVOLUTION INTELLIGENCE
+        # ==========================
+
+        snapshots = self.snapshots.all()
+
+        previous = None
+
+        if len(snapshots) > 0:
+            previous = snapshots[-1]
+
+
+        current_snapshot = {
+            "analysis": result
+        }
+
+
+        result["evolution"] = self.evolution.compare(
+            previous,
+            current_snapshot
+        )
+
+
+
+        # ==========================
+        # DIGITAL TWIN STATUS
+        # ==========================
+
+        result["twin_state"] = {
+
+            "available":
+                self.twin.list()
+
+        }
 
 
 
