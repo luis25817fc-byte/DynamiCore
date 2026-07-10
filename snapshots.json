@@ -1,6 +1,299 @@
-[
-  {
-    "id": 0,
-    "state": "test"
+{
+  "id": 0,
+  "analysis": {
+    "H(k)": {
+      "shannon": 2.321928094887362,
+      "normalized": 1.0,
+      "entropy_rate": 1
+    },
+    "R(k)": {
+      "coherence": 0.2,
+      "robustness": 0.12,
+      "recovery": 0.5,
+      "persistence": 0.0,
+      "noise_resistance": 0.2,
+      "R(k)": 0.20400000000000001
+    },
+    "\u0394R(k)": {
+      "first_derivative": -0.196,
+      "second_derivative": -0.396,
+      "regime_change": true,
+      "critical_point": false,
+      "trend": "decreasing"
+    },
+    "\u03a8(k)": {
+      "structural_potential": 1.0,
+      "energy": 2.5,
+      "persistence": 0.0,
+      "stability": 0.2,
+      "connectivity": 5,
+      "\u03a8(k)": 1.7399999999999998
+    },
+    "D(k)": {
+      "structural_divergence": 0.296,
+      "historical_distance": 0.5,
+      "attractor_distance": 0.20400000000000001,
+      "anomaly": false,
+      "risk": 0.1,
+      "D(k)": 0.275
+    },
+    "alert_level": "normal",
+    "regime": "unstable",
+    "predictive": {
+      "trend": 4,
+      "velocity": 1,
+      "acceleration": 0,
+      "next_state": 5,
+      "regime": "stable"
+    },
+    "risk": {
+      "risk_score": 0.2,
+      "severity": "low",
+      "warning": false
+    },
+    "regime_analysis": {
+      "regime": "stable",
+      "transition": false,
+      "confidence": 0.2
+    },
+    "system": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "anomaly": {
+      "anomaly": false,
+      "score": 0,
+      "reason": "no_history"
+    },
+    "state_vector": {
+      "H(k)": 2.321928094887362,
+      "R(k)": 0.20400000000000001,
+      "\u0394R(k)": -0.196,
+      "\u03a8(k)": 1.7399999999999998,
+      "D(k)": 0.275,
+      "timestamp": "2026-07-10T18:45:56.861312"
+    },
+    "context": {
+      "domain": "general",
+      "criticality": "low",
+      "stability": "unstable",
+      "state_summary": {
+        "entropy": 2.321928094887362,
+        "coherence": 0.20400000000000001,
+        "dynamics": -0.196,
+        "potential": 1.7399999999999998,
+        "divergence": 0.275
+      },
+      "metadata": {}
+    },
+    "attribution": {
+      "contributors": {
+        "entropy_change": 0.43572141592885216,
+        "coherence_change": 0.1493733797541183,
+        "dynamics_change": 0.03678037993945626,
+        "potential_change": 0.3265196994625198,
+        "divergence_change": 0.05160512491505343
+      },
+      "ranking": [
+        "('entropy_change', 0.43572141592885216)",
+        "('potential_change', 0.3265196994625198)",
+        "('coherence_change', 0.1493733797541183)",
+        "('divergence_change', 0.05160512491505343)",
+        "('dynamics_change', 0.03678037993945626)"
+      ],
+      "dominant_factor": "entropy_change",
+      "confidence": 0.43572141592885216,
+      "severity": "moderate"
+    },
+    "causal": {
+      "cause": "entropy_growth",
+      "effects": [
+        {
+          "effect": "complexity_increase",
+          "weight": 0.6
+        }
+      ],
+      "effect_ranking": [
+        "<circular_reference_removed>"
+      ],
+      "causal_strength": 0.6,
+      "confidence": 0.43572141592885216,
+      "level": "moderate",
+      "causal_found": true
+    },
+    "decision": {
+      "decision": "optimize_system_state",
+      "priority": "medium",
+      "decision_score": 0.62,
+      "reasons": [
+        "low_coherence",
+        "negative_dynamics",
+        "strong_causal_signal"
+      ],
+      "causal_basis": "entropy_growth"
+    },
+    "feedback": {
+      "decision": "optimize_system_state",
+      "outcome": "neutral",
+      "impact": 0,
+      "learn": false
+    },
+    "adaptation": {
+      "version": "6.0",
+      "confidence": {
+        "confidence": 0.352,
+        "decision": 0.62,
+        "causal": 0.43572141592885216,
+        "feedback": 0,
+        "level": "low"
+      },
+      "calibration": {
+        "calibrated": true,
+        "original_score": 0.62,
+        "adjusted_score": 0.62,
+        "adjustment": 0,
+        "reason": "neutral_learning"
+      },
+      "policy": {
+        "policy": "collect_more_information",
+        "confidence": 0.3,
+        "outcome": "neutral"
+      },
+      "threshold": {
+        "version": "6.0",
+        "action": "observe",
+        "confidence": 0.352,
+        "impact": 0.0,
+        "policy": "collect_more_information"
+      },
+      "memory": {
+        "stored": true,
+        "memory_size": 1
+      },
+      "learning": {
+        "version": "6.0",
+        "learned": true,
+        "total_cases": 1,
+        "successful": 0,
+        "failed": 0,
+        "success_rate": 0.0,
+        "policy_usage": {
+          "collect_more_information": 1
+        }
+      },
+      "strategy": {
+        "version": "6.0",
+        "optimized": true,
+        "recommendation": "replace_strategy",
+        "success_rate": 0.0,
+        "policy_usage": "<circular_reference_removed>"
+      },
+      "optimization": {
+        "optimized": true,
+        "actions": [
+          "increase_coherence",
+          "collect_more_information"
+        ],
+        "decision": "optimize_system_state",
+        "confidence": 0.352
+      }
+    },
+    "explainability": {
+      "summary": "DynamiCore analysis explanation",
+      "evidence": [
+        "coherence degradation detected",
+        "negative system dynamics"
+      ],
+      "cause": "entropy_growth",
+      "decision": "optimize_system_state",
+      "priority": "medium",
+      "confidence": 0.43572141592885216
+    },
+    "evolution": {
+      "version": "6.1.1",
+      "changed": false,
+      "metrics": {
+        "risk_change": 0,
+        "confidence_change": 0
+      },
+      "changes": {},
+      "trajectory": "stable"
+    },
+    "twin_state": {
+      "available": [
+        "main_system"
+      ],
+      "snapshot": {
+        "name": "main_system",
+        "current_state": {
+          "H(k)": 2.321928094887362,
+          "R(k)": 0.20400000000000001,
+          "\u0394R(k)": -0.196,
+          "\u03a8(k)": 1.7399999999999998,
+          "D(k)": 0.275,
+          "timestamp": "2026-07-10T18:45:56.861312"
+        },
+        "history_size": 1
+      }
+    },
+    "simulation": {
+      "scenario": "custom_scenario",
+      "before": {
+        "risk": 0.47100000000000003
+      },
+      "after": {
+        "risk": 0.42100000000000004
+      },
+      "impact": 0.04999999999999999,
+      "state": {
+        "entropy": 2.321928094887362,
+        "coherence": 0.30400000000000005,
+        "dynamics": -0.196,
+        "potential": 1.7399999999999998,
+        "divergence": 0.22500000000000003
+      }
+    },
+    "agents": {
+      "metrics_agent": {
+        "agent": "metrics_agent",
+        "metrics": {}
+      },
+      "risk_agent": {
+        "agent": "risk_agent",
+        "risk": "<circular_reference_removed>"
+      },
+      "forecast_agent": {
+        "agent": "forecast_agent",
+        "forecast": {}
+      },
+      "decision_agent": {
+        "agent": "decision_agent",
+        "decision": "optimize_system_state"
+      }
+    },
+    "system_size": 5,
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "confidence": 1.0
+    },
+    "knowledge": {
+      "learned": true,
+      "pattern": {
+        "condition": {
+          "coherence": "<circular_reference_removed>",
+          "divergence": "<circular_reference_removed>"
+        },
+        "decision": "optimize_system_state"
+      },
+      "total_patterns": 1
+    },
+    "learning": {
+      "stored": true,
+      "memory_size": 1
+    }
   }
-]
+}

@@ -1,6 +1,5 @@
 
 from .evolution_adapter import EvolutionAdapter
-from .evolution_diff import EvolutionDiffEngine
 
 
 class EvolutionService:
@@ -11,8 +10,6 @@ class EvolutionService:
         self.version = "6.1"
 
         self.adapter = EvolutionAdapter()
-
-        self.diff_engine = EvolutionDiffEngine()
 
 
 
@@ -35,6 +32,8 @@ class EvolutionService:
 
         )
 
+
+        # salida limpia para snapshots
 
         return {
 
@@ -153,10 +152,38 @@ class EvolutionService:
     ):
 
 
-        return self.diff_engine.compare(
+        previous = previous or {}
 
-            previous,
+        current = current or {}
 
-            current
 
-        )
+        changes = {}
+
+
+        for key in set(previous) | set(current):
+
+
+            if previous.get(key) != current.get(key):
+
+                changes[key] = {
+
+                    "previous":
+
+                        previous.get(key),
+
+                    "current":
+
+                        current.get(key)
+
+                }
+
+
+        return {
+
+            "version": self.version,
+
+            "changed": bool(changes),
+
+            "changes": changes
+
+        }
