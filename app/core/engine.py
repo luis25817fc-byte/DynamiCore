@@ -281,14 +281,28 @@ class DynamiCoreEngine:
 
 
 
+        # ==========================
+        # SCENARIO SIMULATION
+        # ==========================
+
+        result["simulation"] = self.scenario.simulate(
+
+            state_vector,
+
+            {
+                "divergence": -0.05,
+                "coherence": 0.10
+            }
+
+        )
+
+
         result["agents"] = self.agents.execute(
             result
         )
 
 
-
         result["system_size"] = len(system)
-
 
 
         self.snapshots.save(
