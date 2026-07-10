@@ -1,22 +1,44 @@
 
+from .policy import PolicyEngine
+from .calibration import CalibrationEngine
+from .confidence import ConfidenceEngine
+from .self_optimizer import SelfOptimizerEngine
+
+
 class AdaptationEngine:
 
 
     def __init__(self):
 
-        self.version = "4.0"
+        self.version = "5.2"
 
         self.total = 0
 
         self.successful = 0
 
 
+        self.policy = PolicyEngine()
+
+        self.calibration = CalibrationEngine()
+
+        self.confidence = ConfidenceEngine()
+
+        self.optimizer = SelfOptimizerEngine()
+
+
 
     def adapt(
+
         self,
+
         feedback,
-        learning,
-        knowledge
+
+        decision=None,
+
+        causal=None,
+
+        state=None
+
     ):
 
 
@@ -32,16 +54,90 @@ class AdaptationEngine:
 
 
 
+        decision = decision or {}
+
+        causal = causal or {}
+
+
+
+        confidence = self.confidence.evaluate(
+
+            decision,
+
+            causal,
+
+            feedback
+
+        )
+
+
+
+        calibration = self.calibration.calibrate(
+
+            decision,
+
+            feedback
+
+        )
+
+
+
+        policy = self.policy.evaluate(
+
+            feedback
+
+        )
+
+
+
+        optimization = self.optimizer.optimize(
+
+            feedback,
+
+            decision,
+
+            confidence
+
+        )
+
+
+
         if not feedback.get(
+
             "learn",
+
             False
+
         ):
+
 
             return {
 
                 "adapted": False,
 
-                "reason": "learning_not_required"
+                "reason":
+
+                    "learning_not_required",
+
+
+                "confidence":
+
+                    confidence,
+
+
+                "calibration":
+
+                    calibration,
+
+
+                "policy":
+
+                    policy,
+
+
+                "optimization":
+
+                    optimization
 
             }
 
@@ -51,28 +147,14 @@ class AdaptationEngine:
 
 
 
-        learning_result = learning.learn(
-            feedback
-        )
-
-
-
-        knowledge_result = knowledge.extract(
-            {
-
-                "state": {},
-
-                "decision": feedback
-
-            }
-        )
-
-
-
         outcome = feedback.get(
+
             "outcome",
+
             "unknown"
+
         )
+
 
 
         if outcome == "successful":
@@ -83,19 +165,39 @@ class AdaptationEngine:
 
         return {
 
+
             "adapted": True,
 
-            "version": self.version,
 
-            "outcome": outcome,
+            "version":
 
-            "learning":
+                self.version,
 
-                learning_result,
 
-            "knowledge":
+            "outcome":
 
-                knowledge_result,
+                outcome,
+
+
+            "confidence":
+
+                confidence,
+
+
+            "calibration":
+
+                calibration,
+
+
+            "policy":
+
+                policy,
+
+
+            "optimization":
+
+                optimization,
+
 
             "success_rate":
 
