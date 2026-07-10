@@ -288,6 +288,11 @@ class DynamiCoreEngine:
                 {}
             ),
 
+            result.get(
+                "causal",
+                {}
+            ),
+
             state_vector
 
         )
