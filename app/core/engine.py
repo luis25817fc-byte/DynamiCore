@@ -18,6 +18,7 @@ from .state.transition import StateTransitionEngine
 from .twin.engine import TwinEngine
 
 from .simulation.engine import ScenarioEngine
+from .validation.validator import ValidationEngine
 
 from .attribution.engine import AttributionEngine
 from .causal.engine import CausalEngine
@@ -48,6 +49,8 @@ class DynamiCoreEngine:
         self.twin = TwinEngine()
 
         self.scenario = ScenarioEngine()
+
+        self.validation = ValidationEngine()
 
         self.attribution = AttributionEngine()
 
@@ -303,6 +306,15 @@ class DynamiCoreEngine:
 
 
         result["system_size"] = len(system)
+
+
+        # ==========================
+        # VALIDATION INTELLIGENCE
+        # ==========================
+
+        result["validation"] = self.validation.validate(
+            state_vector
+        )
 
 
         self.snapshots.save(
