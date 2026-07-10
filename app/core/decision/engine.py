@@ -1,4 +1,5 @@
 
+
 class DecisionEngine:
 
 
@@ -6,74 +7,143 @@ class DecisionEngine:
         self,
         state,
         context,
-        causal
+        causal,
+        risk=None,
+        simulation=None,
+        knowledge=None
     ):
 
 
-        priority = "low"
+        score = 0.0
 
 
-        if state.divergence > 1:
-            priority = "high"
-
-        elif state.divergence > 0.5:
-            priority = "medium"
+        reasons = []
 
 
 
-        actions = []
+        # ==========================
+        # RISK ANALYSIS
+        # ==========================
 
+        if risk:
 
+            risk_score = risk.get(
+                "risk_score",
+                0
+            )
 
-        if causal.get("causal_found"):
+            score += risk_score
 
+            if risk_score > 0.5:
 
-            cause = causal["cause"]
-
-
-            if cause == "coherence_drop":
-
-                actions.append(
-                    "increase_system_stability"
+                reasons.append(
+                    "high_risk_detected"
                 )
 
 
-            elif cause == "divergence_growth":
 
-                actions.append(
-                    "reduce_structural_divergence"
-                )
+        # ==========================
+        # STATE ANALYSIS
+        # ==========================
+
+        if state.divergence > 0.5:
+
+            score += 0.3
+
+            reasons.append(
+                "structural_divergence"
+            )
 
 
-            elif cause == "entropy_growth":
+        if state.coherence < 0.3:
 
-                actions.append(
-                    "reduce_system_complexity"
-                )
+            score += 0.3
+
+            reasons.append(
+                "low_coherence"
+            )
 
 
-        else:
+        if state.dynamics < 0:
 
-            actions.append(
-                "collect_more_information"
+            score += 0.2
+
+            reasons.append(
+                "negative_dynamics"
             )
 
 
 
-        impact = 0.0
+        # ==========================
+        # CAUSAL INTELLIGENCE
+        # ==========================
+
+        causal_strength = causal.get(
+            "causal_strength",
+            0
+        )
 
 
-        if priority == "high":
+        score += causal_strength * 0.2
 
-            impact = 0.8
 
-        elif priority == "medium":
+        if causal_strength > 0.5:
 
-            impact = 0.5
+            reasons.append(
+                "strong_causal_signal"
+            )
+
+
+
+        # ==========================
+        # SIMULATION IMPACT
+        # ==========================
+
+        if simulation:
+
+            impact = simulation.get(
+                "impact",
+                0
+            )
+
+
+            if impact > 0:
+
+                reasons.append(
+                    "simulation_found_improvement"
+                )
+
+
+
+        # ==========================
+        # FINAL DECISION
+        # ==========================
+
+        if score >= 1:
+
+            decision = (
+                "apply_corrective_action"
+            )
+
+            priority = "high"
+
+
+        elif score >= 0.5:
+
+            decision = (
+                "optimize_system_state"
+            )
+
+            priority = "medium"
+
 
         else:
 
-            impact = 0.2
+            decision = (
+                "maintain_current_strategy"
+            )
+
+            priority = "low"
 
 
 
@@ -81,32 +151,28 @@ class DecisionEngine:
 
 
             "decision":
-                actions[0],
+                decision,
 
 
             "priority":
                 priority,
 
 
-            "actions":
-                actions,
-
-
-            "reason":
-                causal.get(
-                    "cause",
-                    "unknown"
+            "decision_score":
+                round(
+                    score,
+                    3
                 ),
 
 
-            "expected_impact":
-                impact,
+            "reasons":
+                reasons,
 
 
-            "domain":
-                context.get(
-                    "domain",
-                    "general"
+            "causal_basis":
+                causal.get(
+                    "cause",
+                    "unknown"
                 )
 
         }
