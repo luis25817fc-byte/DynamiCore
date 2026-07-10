@@ -22,6 +22,7 @@ from .validation.validator import ValidationEngine
 from .knowledge.engine import KnowledgeEngine
 from .learning.engine import LearningEngine
 from .context.engine import ContextEngine
+from .explainability.engine import ExplainabilityEngine
 
 from .attribution.engine import AttributionEngine
 from .causal.engine import CausalEngine
@@ -60,6 +61,8 @@ class DynamiCoreEngine:
         self.learning = LearningEngine()
 
         self.context = ContextEngine()
+
+        self.explainability = ExplainabilityEngine()
 
         self.attribution = AttributionEngine()
 
@@ -241,6 +244,17 @@ class DynamiCoreEngine:
 
 
         result["decision"] = decision
+
+
+        # ==========================
+        # EXPLAINABILITY INTELLIGENCE
+        # ==========================
+
+        result["explainability"] = self.explainability.generate(
+            state_vector,
+            causal,
+            decision
+        )
 
 
 
