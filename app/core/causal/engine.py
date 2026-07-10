@@ -2,7 +2,6 @@
 from .graph import CausalGraph
 
 
-
 class CausalEngine:
 
 
@@ -11,22 +10,17 @@ class CausalEngine:
         self.graph = CausalGraph()
 
 
-
-        # Relaciones iniciales del sistema
-
         self.graph.add_relation(
             "coherence_drop",
             "system_instability",
             0.8
         )
 
-
         self.graph.add_relation(
             "divergence_growth",
             "risk_increase",
             0.7
         )
-
 
         self.graph.add_relation(
             "entropy_growth",
@@ -35,49 +29,60 @@ class CausalEngine:
         )
 
 
+    def analyze(self, attribution):
 
-    def analyze(
-        self,
-        attribution
-    ):
-
-
-        dominant = attribution[
-            "dominant_factor"
-        ]
-
+        dominant = attribution.get(
+            "dominant_factor",
+            "unknown"
+        )
 
         effects = self.graph.get_effects(
             dominant
         )
 
+        confidence = attribution.get(
+            "confidence",
+            0
+        )
 
-        confidence = attribution[
-            "confidence"
-        ]
 
+        ranking = sorted(
+            effects,
+            key=lambda x: x["weight"],
+            reverse=True
+        )
+
+
+        strength = sum(
+            item["weight"]
+            for item in effects
+        )
+
+
+        if strength > 0.7:
+            level = "strong"
+
+        elif strength > 0.3:
+            level = "moderate"
+
+        else:
+            level = "weak"
 
 
         return {
 
+            "cause": dominant,
 
-            "cause":
+            "effects": effects,
 
-                dominant,
+            "effect_ranking": ranking,
 
+            "causal_strength": strength,
 
-            "effects":
+            "confidence": confidence,
 
-                effects,
+            "level": level,
 
-
-            "confidence":
-
-                confidence,
-
-
-            "causal_found":
-
-                len(effects) > 0
+            "causal_found": len(effects) > 0
 
         }
