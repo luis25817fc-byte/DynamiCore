@@ -54,10 +54,34 @@ class DynamiCoreEngine:
         result["regime_analysis"] = regime
 
 
-        history = [
-            s["analysis"].get("system", [])
-            for s in self.snapshots.all()
-        ]
+        history = []
+
+        for s in self.snapshots.all():
+
+            if not isinstance(s, dict):
+                continue
+
+
+            if "analysis" in s:
+
+                system_state = s["analysis"].get(
+                    "system",
+                    []
+                )
+
+            else:
+
+                system_state = s.get(
+                    "system",
+                    []
+                )
+
+
+            if system_state:
+
+                history.append(
+                    system_state
+                )
 
 
         result["system"] = system
