@@ -55,15 +55,7 @@ def test_full_cycle():
     assert recommendation["policy"] == "reinforce_strategy"
 
 
-    return {
-
-        "recommendation": recommendation,
-
-        "ranking":
-
-            service.adapter.evolution.rank()
-
-    }
+    assert True
 
 
 

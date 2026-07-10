@@ -57,13 +57,7 @@ def test_policy_evolution_flow():
     assert best["confidence"] == 1.0
 
 
-    return {
-
-        "ranking": ranking,
-
-        "best_policy": best
-
-    }
+    assert True
 
 
 

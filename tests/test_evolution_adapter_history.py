@@ -46,13 +46,7 @@ def test_evolution_history():
     assert best["policy"] == "reinforce_strategy"
 
 
-    return {
-
-        "best_policy": best,
-
-        "ranking": adapter.evolution.rank()
-
-    }
+    assert True
 
 
 
