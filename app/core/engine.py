@@ -8,6 +8,11 @@ from .predictive.anomaly import AnomalyEngine
 
 from .state.snapshot import SnapshotEngine
 
+from .kernel.state_vector import StateVector
+
+from .agents.orchestrator import AgentOrchestrator
+
+
 
 class DynamiCoreEngine:
 
@@ -23,68 +28,86 @@ class DynamiCoreEngine:
 
         self.snapshots = SnapshotEngine()
 
+        self.agents = AgentOrchestrator()
+
 
 
     def analyze(self, system):
 
+
         if not system:
+
             return {
-                "error": "empty input"
+                "error":"empty input"
             }
 
 
-        result = self.metrics.analyze(system)
+
+        result = self.metrics.analyze(
+            system
+        )
 
 
-        predictive = self.forecast.analyze(system)
+
+        predictive = self.forecast.analyze(
+            system
+        )
+
         result["predictive"] = predictive
+
 
 
         risk = self.risk.analyze(
             predictive,
             result
         )
+
         result["risk"] = risk
+
 
 
         regime = self.regime.analyze(
             predictive,
             risk
         )
+
         result["regime_analysis"] = regime
+
 
 
         history = []
 
         for s in self.snapshots.all():
 
-            if not isinstance(s, dict):
+            if not isinstance(s,dict):
                 continue
 
 
             if "analysis" in s:
 
-                system_state = s["analysis"].get(
+                state = s["analysis"].get(
                     "system",
                     []
                 )
 
             else:
 
-                system_state = s.get(
+                state = s.get(
                     "system",
                     []
                 )
 
 
-            if system_state:
+            if state:
 
                 history.append(
-                    system_state
+                    state
                 )
 
 
+
         result["system"] = system
+
 
 
         anomaly = self.anomaly.analyze(
@@ -92,13 +115,52 @@ class DynamiCoreEngine:
             history
         )
 
+
         result["anomaly"] = anomaly
+
 
 
         result["system_size"] = len(system)
 
 
-        self.snapshots.save(result)
+
+        # ==========================
+        # STATE VECTOR
+        # ==========================
+
+        state_vector = StateVector(
+
+            entropy=result["H(k)"]["shannon"],
+
+            coherence=result["R(k)"]["R(k)"],
+
+            dynamics=result["ΔR(k)"]["first_derivative"],
+
+            potential=result["Ψ(k)"]["Ψ(k)"],
+
+            divergence=result["D(k)"]["D(k)"]
+
+        )
+
+
+        result["state_vector"] = state_vector.to_dict()
+
+
+
+        # ==========================
+        # AGENT INTELLIGENCE
+        # ==========================
+
+        result["agents"] = self.agents.execute(
+            result
+        )
+
+
+
+        self.snapshots.save(
+            result
+        )
+
 
 
         return result
