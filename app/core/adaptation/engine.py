@@ -4,13 +4,19 @@ from .calibration import CalibrationEngine
 from .confidence import ConfidenceEngine
 from .self_optimizer import SelfOptimizerEngine
 
+from .adaptive_threshold import AdaptiveThresholdEngine
+from .strategy_memory import StrategyMemory
+from .adaptive_learning import AdaptiveLearningEngine
+from .strategy_optimizer import StrategyOptimizer
+
+
 
 class AdaptationEngine:
 
 
     def __init__(self):
 
-        self.version = "5.2"
+        self.version = "6.0"
 
         self.total = 0
 
@@ -24,6 +30,17 @@ class AdaptationEngine:
         self.confidence = ConfidenceEngine()
 
         self.optimizer = SelfOptimizerEngine()
+
+
+        # V6 INTELLIGENCE
+
+        self.threshold = AdaptiveThresholdEngine()
+
+        self.memory = StrategyMemory()
+
+        self.learning = AdaptiveLearningEngine()
+
+        self.strategy_optimizer = StrategyOptimizer()
 
 
 
@@ -40,18 +57,6 @@ class AdaptationEngine:
         state=None
 
     ):
-
-
-        if not feedback:
-
-            return {
-
-                "adapted": False,
-
-                "reason": "no_feedback"
-
-            }
-
 
 
         decision = decision or {}
@@ -71,7 +76,6 @@ class AdaptationEngine:
         )
 
 
-
         calibration = self.calibration.calibrate(
 
             decision,
@@ -81,10 +85,75 @@ class AdaptationEngine:
         )
 
 
-
         policy = self.policy.evaluate(
 
             feedback
+
+        )
+
+
+
+        threshold = self.threshold.evaluate(
+
+            confidence.get(
+                "confidence",
+                0
+            ),
+
+            feedback.get(
+                "impact",
+                0
+            ),
+
+            policy.get(
+                "policy"
+            )
+
+        )
+
+
+
+        memory = self.memory.store(
+
+            decision.get(
+                "decision",
+                "unknown"
+            ),
+
+            policy.get(
+                "policy"
+            ),
+
+            feedback.get(
+                "outcome",
+                "unknown"
+            ),
+
+            feedback.get(
+                "impact",
+                0
+            ),
+
+            confidence.get(
+                "confidence",
+                0
+            )
+
+        )
+
+
+
+        learning = self.learning.analyze(
+
+            self.memory.all()
+
+        )
+
+
+
+        strategy = self.strategy_optimizer.optimize(
+
+            learning
 
         )
 
@@ -102,81 +171,12 @@ class AdaptationEngine:
 
 
 
-        if not feedback.get(
-
-            "learn",
-
-            False
-
-        ):
-
-
-            return {
-
-                "adapted": False,
-
-                "reason":
-
-                    "learning_not_required",
-
-
-                "confidence":
-
-                    confidence,
-
-
-                "calibration":
-
-                    calibration,
-
-
-                "policy":
-
-                    policy,
-
-
-                "optimization":
-
-                    optimization
-
-            }
-
-
-
-        self.total += 1
-
-
-
-        outcome = feedback.get(
-
-            "outcome",
-
-            "unknown"
-
-        )
-
-
-
-        if outcome == "successful":
-
-            self.successful += 1
-
-
-
         return {
-
-
-            "adapted": True,
 
 
             "version":
 
                 self.version,
-
-
-            "outcome":
-
-                outcome,
 
 
             "confidence":
@@ -194,21 +194,28 @@ class AdaptationEngine:
                 policy,
 
 
+            "threshold":
+
+                threshold,
+
+
+            "memory":
+
+                memory,
+
+
+            "learning":
+
+                learning,
+
+
+            "strategy":
+
+                strategy,
+
+
             "optimization":
 
-                optimization,
-
-
-            "success_rate":
-
-                round(
-
-                    self.successful /
-
-                    self.total,
-
-                    3
-
-                )
+                optimization
 
         }
