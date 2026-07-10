@@ -271,6 +271,29 @@ class DynamiCoreEngine:
         )
 
 
+
+        # ==========================
+        # ADAPTIVE INTELLIGENCE LOOP
+        # ==========================
+
+        result["adaptation"] = self.adaptation.adapt(
+
+            result.get(
+                "feedback",
+                {}
+            ),
+
+            result.get(
+                "decision",
+                {}
+            ),
+
+            state_vector
+
+        )
+
+
+
         # ==========================
         # EXPLAINABILITY INTELLIGENCE
         # ==========================
