@@ -12,6 +12,10 @@ from .kernel.state_vector import StateVector
 
 from .agents.orchestrator import AgentOrchestrator
 
+from .attribution.engine import AttributionEngine
+from .causal.engine import CausalEngine
+from .decision.engine import DecisionEngine
+
 
 
 class DynamiCoreEngine:
@@ -29,6 +33,12 @@ class DynamiCoreEngine:
         self.snapshots = SnapshotEngine()
 
         self.agents = AgentOrchestrator()
+
+        self.attribution = AttributionEngine()
+
+        self.causal = CausalEngine()
+
+        self.decision = DecisionEngine()
 
 
 
@@ -66,16 +76,14 @@ class DynamiCoreEngine:
 
 
 
-        regime = self.regime.analyze(
+        result["regime_analysis"] = self.regime.analyze(
             predictive,
             risk
         )
 
-        result["regime_analysis"] = regime
 
 
-
-        history = []
+        history=[]
 
         for s in self.snapshots.all():
 
@@ -85,24 +93,21 @@ class DynamiCoreEngine:
 
             if "analysis" in s:
 
-                state = s["analysis"].get(
+                old = s["analysis"].get(
                     "system",
                     []
                 )
 
             else:
 
-                state = s.get(
+                old = s.get(
                     "system",
                     []
                 )
 
 
-            if state:
-
-                history.append(
-                    state
-                )
+            if old:
+                history.append(old)
 
 
 
@@ -110,23 +115,12 @@ class DynamiCoreEngine:
 
 
 
-        anomaly = self.anomaly.analyze(
+        result["anomaly"] = self.anomaly.analyze(
             system,
             history
         )
 
 
-        result["anomaly"] = anomaly
-
-
-
-        result["system_size"] = len(system)
-
-
-
-        # ==========================
-        # STATE VECTOR
-        # ==========================
 
         state_vector = StateVector(
 
@@ -148,8 +142,68 @@ class DynamiCoreEngine:
 
 
         # ==========================
-        # AGENT INTELLIGENCE
+        # ATTRIBUTION INTELLIGENCE
         # ==========================
+
+        attribution = self.attribution.analyze(
+            state_vector
+        )
+
+        result["attribution"] = attribution
+
+
+
+        # Adaptador causal
+
+        causal_input = attribution.copy()
+
+
+        mapping = {
+
+            "coherence_change":
+                "coherence_drop",
+
+            "divergence_change":
+                "divergence_growth",
+
+            "entropy_change":
+                "entropy_growth"
+
+        }
+
+
+        factor = attribution["dominant_factor"]
+
+
+        causal_input["dominant_factor"] = mapping.get(
+            factor,
+            factor
+        )
+
+
+        causal = self.causal.analyze(
+            causal_input
+        )
+
+
+        result["causal"] = causal
+
+
+
+        decision = self.decision.decide(
+
+            state_vector,
+
+            {},
+
+            causal
+
+        )
+
+
+        result["decision"] = decision
+
+
 
         result["agents"] = self.agents.execute(
             result
@@ -157,10 +211,13 @@ class DynamiCoreEngine:
 
 
 
+        result["system_size"] = len(system)
+
+
+
         self.snapshots.save(
             result
         )
-
 
 
         return result
