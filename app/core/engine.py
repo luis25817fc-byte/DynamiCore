@@ -28,6 +28,7 @@ from .attribution.engine import AttributionEngine
 from .causal.engine import CausalEngine
 from .decision.engine import DecisionEngine
 from .feedback.engine import FeedbackEngine
+from .adaptation.engine import AdaptationEngine
 
 
 
@@ -71,6 +72,7 @@ class DynamiCoreEngine:
 
         self.decision = DecisionEngine()
         self.feedback = FeedbackEngine()
+        self.adaptation = AdaptationEngine()
 
 
 
