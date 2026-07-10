@@ -245,13 +245,37 @@ class DynamiCoreEngine:
 
 
         # ==========================
-        # DIGITAL TWIN STATUS
         # ==========================
+        # DIGITAL TWIN UPDATE
+        # ==========================
+
+        twin_name = "main_system"
+
+
+        if twin_name not in self.twin.list():
+
+            self.twin.create(
+                twin_name,
+                state_vector
+            )
+
+        else:
+
+            self.twin.update(
+                twin_name,
+                state_vector
+            )
+
 
         result["twin_state"] = {
 
             "available":
-                self.twin.list()
+                self.twin.list(),
+
+            "snapshot":
+                self.twin.get(
+                    twin_name
+                )
 
         }
 
