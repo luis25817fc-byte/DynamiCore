@@ -19,6 +19,7 @@ from .twin.engine import TwinEngine
 
 from .simulation.engine import ScenarioEngine
 from .validation.validator import ValidationEngine
+from .knowledge.engine import KnowledgeEngine
 
 from .attribution.engine import AttributionEngine
 from .causal.engine import CausalEngine
@@ -51,6 +52,8 @@ class DynamiCoreEngine:
         self.scenario = ScenarioEngine()
 
         self.validation = ValidationEngine()
+
+        self.knowledge = KnowledgeEngine()
 
         self.attribution = AttributionEngine()
 
@@ -314,6 +317,21 @@ class DynamiCoreEngine:
 
         result["validation"] = self.validation.validate(
             state_vector
+        )
+
+
+        # ==========================
+        # KNOWLEDGE LEARNING
+        # ==========================
+
+        result["knowledge"] = self.knowledge.extract(
+            {
+                "state": result,
+                "decision": result.get(
+                    "decision",
+                    {}
+                )
+            }
         )
 
 
