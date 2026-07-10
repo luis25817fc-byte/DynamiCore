@@ -27,6 +27,7 @@ from .explainability.engine import ExplainabilityEngine
 from .attribution.engine import AttributionEngine
 from .causal.engine import CausalEngine
 from .decision.engine import DecisionEngine
+from .feedback.engine import FeedbackEngine
 
 
 
@@ -69,6 +70,7 @@ class DynamiCoreEngine:
         self.causal = CausalEngine()
 
         self.decision = DecisionEngine()
+        self.feedback = FeedbackEngine()
 
 
 
@@ -244,6 +246,27 @@ class DynamiCoreEngine:
 
 
         result["decision"] = decision
+
+
+        # ==========================
+        # DECISION FEEDBACK LOOP
+        # ==========================
+
+        result["feedback"] = self.feedback.evaluate(
+
+            decision,
+
+            result.get(
+                "risk",
+                {}
+            ),
+
+            result.get(
+                "simulation",
+                {}
+            )
+
+        )
 
 
         # ==========================
