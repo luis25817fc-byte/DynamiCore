@@ -2,7 +2,6 @@
 from .memory import LearningMemory
 
 
-
 class LearningEngine:
 
 
@@ -12,41 +11,12 @@ class LearningEngine:
 
 
 
-    def learn(
-        self,
-        state,
-        context,
-        decision,
-        explanation
-    ):
-
-
-        case = {
-
-
-            "state":
-                state.to_dict(),
-
-
-            "context":
-                context,
-
-
-            "decision":
-                decision,
-
-
-            "explanation":
-                explanation
-
-        }
-
+    def learn(self, case):
 
         self.memory.store(case)
 
 
         return {
-
 
             "stored": True,
 

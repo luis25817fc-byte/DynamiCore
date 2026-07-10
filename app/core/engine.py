@@ -20,6 +20,7 @@ from .twin.engine import TwinEngine
 from .simulation.engine import ScenarioEngine
 from .validation.validator import ValidationEngine
 from .knowledge.engine import KnowledgeEngine
+from .learning.engine import LearningEngine
 
 from .attribution.engine import AttributionEngine
 from .causal.engine import CausalEngine
@@ -54,6 +55,8 @@ class DynamiCoreEngine:
         self.validation = ValidationEngine()
 
         self.knowledge = KnowledgeEngine()
+
+        self.learning = LearningEngine()
 
         self.attribution = AttributionEngine()
 
@@ -332,6 +335,15 @@ class DynamiCoreEngine:
                     {}
                 )
             }
+        )
+
+
+        # ==========================
+        # LEARNING MEMORY
+        # ==========================
+
+        result["learning"] = self.learning.learn(
+            result
         )
 
 
