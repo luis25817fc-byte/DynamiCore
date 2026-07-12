@@ -4,13 +4,11 @@ from .evolution_layer import EvolutionLayer
 from .pattern_engine import StructuralPatternEngine
 from .evolution_predictor import GraphEvolutionPredictor
 from .temporal_memory import TemporalGraphMemory
-from .history_engine import HistoricalEvolutionEngine
-from .decision_engine import DecisionEngine
 
 
 class GraphIntelligencePipeline:
 
-    VERSION = "6.4.0"
+    VERSION = "6.3.2"
 
     def __init__(self):
         self.delta = GraphDeltaEngine()
@@ -19,8 +17,6 @@ class GraphIntelligencePipeline:
         self.patterns = StructuralPatternEngine()
         self.predictor = GraphEvolutionPredictor()
         self.memory = TemporalGraphMemory()
-        self.history = HistoricalEvolutionEngine()
-        self.decision = DecisionEngine()
 
 
     def analyze_structure(self, sig):
@@ -64,21 +60,7 @@ class GraphIntelligencePipeline:
             "evolution_score": evo["evolution_score"]
         })
 
-        decision = self.decision.analyze(
-            intelligence,
-            evo,
-            prediction
-        )
-
         self.memory.store(sig)
-
-        history_snapshot = self.history.record(
-            sig,
-            intelligence,
-            evo,
-            prediction,
-            decision
-        )
 
         return {
             "version": self.VERSION,
@@ -87,7 +69,5 @@ class GraphIntelligencePipeline:
             "delta": delta,
             "evolution": evo,
             "patterns": patterns,
-            "prediction": prediction,
-            "decision": decision,
-            "history": history_snapshot
+            "prediction": prediction
         }
