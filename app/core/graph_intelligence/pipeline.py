@@ -8,6 +8,7 @@ from .graph_intelligence import DynamicGraphIntelligence
 from .evolution_metrics import EvolutionMetrics
 from .structural_transition import StructuralTransitionIntelligence
 from .structural_fusion import StructuralIntelligenceFusion
+from .predictive_structural import PredictiveStructuralLayer
 from .pattern_engine import StructuralPatternEngine
 from .evolution_predictor import GraphEvolutionPredictor
 from .temporal_memory import TemporalGraphMemory
@@ -30,6 +31,7 @@ class GraphIntelligencePipeline:
         self.evolution_metrics = EvolutionMetrics()
         self.structural_transition = StructuralTransitionIntelligence()
         self.structural_fusion = StructuralIntelligenceFusion()
+        self.predictive_structural = PredictiveStructuralLayer()
         self.patterns = StructuralPatternEngine()
         self.predictor = GraphEvolutionPredictor()
         self.memory = TemporalGraphMemory()
@@ -119,6 +121,11 @@ class GraphIntelligencePipeline:
             decision
         )
 
+        predictive_structural = self.predictive_structural.predict(
+            structural_fusion,
+            self.history
+        )
+
         history_snapshot = self.history.record(
             sig,
             intelligence,
@@ -141,6 +148,7 @@ class GraphIntelligencePipeline:
             "evolution_metrics": evolution_metrics,
             "transition_intelligence": transition_intelligence,
             "structural_fusion": structural_fusion,
+            "predictive_structural": predictive_structural,
             "decision": decision,
             "history": history_snapshot
         }
