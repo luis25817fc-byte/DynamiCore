@@ -1,5 +1,6 @@
 from .graph_delta import GraphDeltaEngine
 from .structural_signature import StructuralSignatureEngine
+from .structural_signature_v2 import StructuralSignatureV2
 from .evolution_layer import EvolutionLayer
 from .pattern_engine import StructuralPatternEngine
 from .evolution_predictor import GraphEvolutionPredictor
@@ -15,6 +16,7 @@ class GraphIntelligencePipeline:
     def __init__(self):
         self.delta = GraphDeltaEngine()
         self.signature = StructuralSignatureEngine()
+        self.signature_v2 = StructuralSignatureV2()
         self.evolution = EvolutionLayer()
         self.patterns = StructuralPatternEngine()
         self.predictor = GraphEvolutionPredictor()
