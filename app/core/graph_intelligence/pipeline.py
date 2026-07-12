@@ -6,6 +6,7 @@ from .evolution_diff import EvolutionDiffEngine
 from .transition_detector import TransitionDetector
 from .graph_intelligence import DynamicGraphIntelligence
 from .evolution_metrics import EvolutionMetrics
+from .structural_transition import StructuralTransitionIntelligence
 from .pattern_engine import StructuralPatternEngine
 from .evolution_predictor import GraphEvolutionPredictor
 from .temporal_memory import TemporalGraphMemory
@@ -26,6 +27,7 @@ class GraphIntelligencePipeline:
         self.transition_detector = TransitionDetector()
         self.graph_intelligence = DynamicGraphIntelligence()
         self.evolution_metrics = EvolutionMetrics()
+        self.structural_transition = StructuralTransitionIntelligence()
         self.patterns = StructuralPatternEngine()
         self.predictor = GraphEvolutionPredictor()
         self.memory = TemporalGraphMemory()
