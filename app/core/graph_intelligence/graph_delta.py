@@ -1,32 +1,91 @@
 
+"""
+DynamiCore V6.2.1
+Graph Delta Engine
+"""
+
+
 class GraphDeltaEngine:
 
-    VERSION="6.2"
+    VERSION = "6.2.1"
 
-    def compare(self,previous,current):
 
-        previous=previous or {}
-        current=current or {}
+    def compare(self, previous, current):
 
-        delta={}
+        previous = previous or {}
+        current = current or {}
 
-        keys=set(previous)|set(current)
 
-        for key in keys:
+        previous_nodes = {
+            n.get("id")
+            for n in previous.get("nodes", [])
+        }
 
-            if previous.get(key)!=current.get(key):
+        current_nodes = {
+            n.get("id")
+            for n in current.get("nodes", [])
+        }
 
-                delta[key]={
-                    "previous":previous.get(key),
-                    "current":current.get(key)
-                }
 
-        return{
+        previous_edges = {
+            (
+                e.get("source"),
+                e.get("target")
+            )
+            for e in previous.get("edges", [])
+        }
 
-            "version":"6.2",
 
-            "changed":bool(delta),
+        current_edges = {
+            (
+                e.get("source"),
+                e.get("target")
+            )
+            for e in current.get("edges", [])
+        }
 
-            "delta":delta
+
+        added_nodes = current_nodes - previous_nodes
+        removed_nodes = previous_nodes - current_nodes
+
+        added_edges = current_edges - previous_edges
+        removed_edges = previous_edges - current_edges
+
+
+        score = (
+            len(added_nodes)
+            +
+            len(removed_nodes)
+            +
+            len(added_edges)
+            +
+            len(removed_edges)
+        )
+
+
+        return {
+
+            "version": self.VERSION,
+
+            "changed": score > 0,
+
+            "delta": {
+
+                "nodes_added":
+                    list(added_nodes),
+
+                "nodes_removed":
+                    list(removed_nodes),
+
+                "edges_added":
+                    list(added_edges),
+
+                "edges_removed":
+                    list(removed_edges)
+
+            },
+
+            "change_score":
+                score
 
         }
