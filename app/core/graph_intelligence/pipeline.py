@@ -2,6 +2,7 @@ from .graph_delta import GraphDeltaEngine
 from .structural_signature import StructuralSignatureEngine
 from .structural_signature_v2 import StructuralSignatureV2
 from .evolution_layer import EvolutionLayer
+from .evolution_diff import EvolutionDiffEngine
 from .pattern_engine import StructuralPatternEngine
 from .evolution_predictor import GraphEvolutionPredictor
 from .temporal_memory import TemporalGraphMemory
@@ -18,6 +19,7 @@ class GraphIntelligencePipeline:
         self.signature = StructuralSignatureEngine()
         self.signature_v2 = StructuralSignatureV2()
         self.evolution = EvolutionLayer()
+        self.evolution_diff = EvolutionDiffEngine()
         self.patterns = StructuralPatternEngine()
         self.predictor = GraphEvolutionPredictor()
         self.memory = TemporalGraphMemory()
