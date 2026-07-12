@@ -88,6 +88,11 @@ class GraphIntelligencePipeline:
             transition
         )
 
+        evolution_metrics = self.evolution_metrics.calculate(
+            evolution_diff,
+            transition
+        )
+
         decision = self.decision.analyze(
             intelligence,
             evo,
