@@ -72,6 +72,20 @@ class GraphIntelligencePipeline:
             "evolution_score": evo["evolution_score"]
         })
 
+        evolution_diff = self.evolution_diff.compare(
+            previous,
+            current
+        )
+
+        transition = self.transition_detector.detect(
+            evolution_diff
+        )
+
+        graph_state = self.graph_intelligence.analyze(
+            evolution_diff,
+            transition
+        )
+
         decision = self.decision.analyze(
             intelligence,
             evo,
@@ -96,6 +110,9 @@ class GraphIntelligencePipeline:
             "evolution": evo,
             "patterns": patterns,
             "prediction": prediction,
+            "evolution_diff": evolution_diff,
+            "transition": transition,
+            "graph_intelligence": graph_state,
             "decision": decision,
             "history": history_snapshot
         }
