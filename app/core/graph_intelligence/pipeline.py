@@ -12,6 +12,7 @@ from .predictive_structural import PredictiveStructuralLayer
 from .critical_transition import CriticalTransitionDetector
 from .dynamic_intelligence_state import DynamicIntelligenceState
 from .intelligence_validator import IntelligenceValidator
+from .intelligence_benchmark import IntelligenceBenchmark
 from .pattern_engine import StructuralPatternEngine
 from .evolution_predictor import GraphEvolutionPredictor
 from .temporal_memory import TemporalGraphMemory
@@ -38,6 +39,7 @@ class GraphIntelligencePipeline:
         self.critical_transition = CriticalTransitionDetector()
         self.dynamic_state = DynamicIntelligenceState()
         self.validator = IntelligenceValidator()
+        self.benchmark = IntelligenceBenchmark()
         self.patterns = StructuralPatternEngine()
         self.predictor = GraphEvolutionPredictor()
         self.memory = TemporalGraphMemory()
