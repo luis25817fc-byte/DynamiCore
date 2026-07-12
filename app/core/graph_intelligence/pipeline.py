@@ -11,6 +11,7 @@ from .structural_fusion import StructuralIntelligenceFusion
 from .predictive_structural import PredictiveStructuralLayer
 from .critical_transition import CriticalTransitionDetector
 from .dynamic_intelligence_state import DynamicIntelligenceState
+from .intelligence_validator import IntelligenceValidator
 from .pattern_engine import StructuralPatternEngine
 from .evolution_predictor import GraphEvolutionPredictor
 from .temporal_memory import TemporalGraphMemory
@@ -36,6 +37,7 @@ class GraphIntelligencePipeline:
         self.predictive_structural = PredictiveStructuralLayer()
         self.critical_transition = CriticalTransitionDetector()
         self.dynamic_state = DynamicIntelligenceState()
+        self.validator = IntelligenceValidator()
         self.patterns = StructuralPatternEngine()
         self.predictor = GraphEvolutionPredictor()
         self.memory = TemporalGraphMemory()
@@ -143,6 +145,16 @@ class GraphIntelligencePipeline:
             decision
         )
 
+        validation_report = self.validator.validate({
+            "signature": sig,
+            "evolution": evo,
+            "predictive_structural": predictive_structural,
+            "critical_transition": critical_transition,
+            "decision": decision,
+            "structural_fusion": structural_fusion,
+            "dynamic_state": dynamic_state
+        })
+
         history_snapshot = self.history.record(
             sig,
             intelligence,
@@ -168,6 +180,7 @@ class GraphIntelligencePipeline:
             "predictive_structural": predictive_structural,
             "critical_transition": critical_transition,
             "dynamic_state": dynamic_state,
+            "validation_report": validation_report,
             "decision": decision,
             "history": history_snapshot
         }
