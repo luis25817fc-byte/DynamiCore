@@ -115,6 +115,7 @@ class GraphIntelligencePipeline:
             "evolution_diff": evolution_diff,
             "transition": transition,
             "graph_intelligence": graph_state,
+            "evolution_metrics": evolution_metrics,
             "decision": decision,
             "history": history_snapshot
         }
