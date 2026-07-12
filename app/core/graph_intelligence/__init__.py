@@ -6,3 +6,5 @@ from .evolution_layer import EvolutionLayer
 from .pattern_engine import StructuralPatternEngine
 
 from .evolution_predictor import GraphEvolutionPredictor
+
+from .temporal_memory import TemporalGraphMemory
