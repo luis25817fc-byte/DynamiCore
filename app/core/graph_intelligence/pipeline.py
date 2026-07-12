@@ -95,6 +95,11 @@ class GraphIntelligencePipeline:
             transition
         )
 
+        transition_intelligence = self.structural_transition.analyze(
+            sig,
+            evolution_metrics
+        )
+
         decision = self.decision.analyze(
             intelligence,
             evo,
@@ -123,6 +128,7 @@ class GraphIntelligencePipeline:
             "transition": transition,
             "graph_intelligence": graph_state,
             "evolution_metrics": evolution_metrics,
+            "transition_intelligence": transition_intelligence,
             "decision": decision,
             "history": history_snapshot
         }
