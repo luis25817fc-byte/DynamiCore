@@ -4,6 +4,7 @@ from .structural_signature_v2 import StructuralSignatureV2
 from .evolution_layer import EvolutionLayer
 from .evolution_diff import EvolutionDiffEngine
 from .transition_detector import TransitionDetector
+from .graph_intelligence import DynamicGraphIntelligence
 from .pattern_engine import StructuralPatternEngine
 from .evolution_predictor import GraphEvolutionPredictor
 from .temporal_memory import TemporalGraphMemory
@@ -22,6 +23,7 @@ class GraphIntelligencePipeline:
         self.evolution = EvolutionLayer()
         self.evolution_diff = EvolutionDiffEngine()
         self.transition_detector = TransitionDetector()
+        self.graph_intelligence = DynamicGraphIntelligence()
         self.patterns = StructuralPatternEngine()
         self.predictor = GraphEvolutionPredictor()
         self.memory = TemporalGraphMemory()
