@@ -3,7 +3,6 @@ class DynamiCoreEnterpriseIntelligenceCore:
 
     VERSION = "6.8.0"
 
-
     def __init__(
         self,
         enterprise_core,
@@ -11,12 +10,10 @@ class DynamiCoreEnterpriseIntelligenceCore:
         decision_service,
         memory
     ):
-
         self.enterprise_core = enterprise_core
         self.graph_engine = graph_engine
         self.decision_service = decision_service
         self.memory = memory
-
 
     def analyze(
         self,
@@ -29,34 +26,19 @@ class DynamiCoreEnterpriseIntelligenceCore:
             current
         )
 
-
-        decision = self.decision_service.generate(
-            graph
+        decision = self.decision_service.evaluate(
+            graph["dynamic_state"]
         )
 
-
-        self.memory.learn(
-            {
-                "graph_state": graph,
-                "decision": decision
-            }
-        )
-
+        self.memory.learn({
+            "graph": graph,
+            "decision": decision
+        })
 
         return {
-
-            "version":
-                self.VERSION,
-
-            "status":
-                "ENTERPRISE_INTELLIGENCE_ACTIVE",
-
-            "graph":
-                graph,
-
-            "decision":
-                decision,
-
-            "memory":
-                self.memory.recall()
+            "version": self.VERSION,
+            "status": "ENTERPRISE_INTELLIGENCE_ACTIVE",
+            "graph": graph,
+            "decision": decision,
+            "memory": self.memory.recall()
         }
