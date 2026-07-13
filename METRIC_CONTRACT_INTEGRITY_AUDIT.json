@@ -1,0 +1,407 @@
+{
+    "version": "V6.9.6",
+    "audit": "METRIC_CONTRACT_INTEGRITY",
+    "metrics": {
+        "H(k)_entropy": {
+            "files": [
+                "benchmark_suite.py",
+                "dashboard.py",
+                "generate_figures.py",
+                "engine/engine.py",
+                "engine/state.py",
+                "tests/test_metrics_entropy.py",
+                "app/core/analyzer.py",
+                "app/core/engine.py",
+                "app/core/entropy.py",
+                "app/core/adaptation/evolution_diff.py",
+                "app/core/attribution/engine.py",
+                "app/core/causal/engine.py",
+                "app/core/context/engine.py",
+                "app/core/kernel/state_vector.py",
+                "app/core/metrics/__init__.py",
+                "app/core/metrics/entropy.py",
+                "app/core/metrics/engine.py",
+                "app/core/simulation/scenario.py",
+                "app/core/state/transition.py",
+                "app/core/validation/validator.py",
+                "app/core/research/collatz/state.py"
+            ],
+            "classes": [
+                {
+                    "class": "Entropy",
+                    "file": "app/core/entropy.py"
+                },
+                {
+                    "class": "EntropyEngine",
+                    "file": "app/core/metrics/entropy.py"
+                }
+            ],
+            "functions": [
+                {
+                    "function": "compute_entropy",
+                    "file": "benchmark_suite.py"
+                },
+                {
+                    "function": "test_entropy",
+                    "file": "tests/test_metrics_entropy.py"
+                },
+                {
+                    "function": "shannon",
+                    "file": "app/core/entropy.py"
+                },
+                {
+                    "function": "shannon",
+                    "file": "app/core/metrics/entropy.py"
+                },
+                {
+                    "function": "entropy_rate",
+                    "file": "app/core/metrics/entropy.py"
+                }
+            ]
+        },
+        "R(k)_coherence": {
+            "files": [
+                "dashboard.py",
+                "generate_figures.py",
+                "tests/test_metrics_coherence.py",
+                "app/core/analyzer.py",
+                "app/core/engine.py",
+                "app/core/adaptation/evolution_diff.py",
+                "app/core/adaptation/self_optimizer.py",
+                "app/core/attribution/engine.py",
+                "app/core/causal/engine.py",
+                "app/core/context/engine.py",
+                "app/core/decision/engine.py",
+                "app/core/explainability/engine.py",
+                "app/core/kernel/state_vector.py",
+                "app/core/knowledge/engine.py",
+                "app/core/metrics/__init__.py",
+                "app/core/metrics/coherence.py",
+                "app/core/metrics/dynamics.py",
+                "app/core/metrics/engine.py",
+                "app/core/simulation/scenario.py",
+                "app/core/state/transition.py",
+                "app/core/validation/validator.py",
+                "app/core/research/collatz/state.py"
+            ],
+            "classes": [
+                {
+                    "class": "CoherenceEngine",
+                    "file": "app/core/metrics/coherence.py"
+                }
+            ],
+            "functions": [
+                {
+                    "function": "test_coherence",
+                    "file": "tests/test_metrics_coherence.py"
+                }
+            ]
+        },
+        "\u0394R(k)_dynamic_change": {
+            "files": [
+                "benchmark_suite.py",
+                "dashboard.py",
+                "generate_figures.py",
+                "setup.py",
+                "api/main.py",
+                "auth/security.py",
+                "benchmarks/stress_test.py",
+                "engine/__init__.py",
+                "engine/basins.py",
+                "engine/engine.py",
+                "engine/graph.py",
+                "engine/cycles.py",
+                "engine/memory.py",
+                "engine/state.py",
+                "engine/metrics.py",
+                "engine/validation.py",
+                "reports/investor_report.py",
+                "tests/test_core_engine.py",
+                "tests/test_evolution_adapter_history.py",
+                "tests/test_evolution_service_full_cycle.py",
+                "tests/test_metrics_coherence.py",
+                "tests/test_metrics_dynamics.py",
+                "tests/test_metrics_divergence.py",
+                "tests/test_metrics_potential.py",
+                "tests/test_metrics_entropy.py",
+                "tests/test_policy_evolution_integration.py",
+                "api/routes/analyze.py",
+                "api/routes/explain.py",
+                "app/core/Billing.py",
+                "app/core/analyzer.py",
+                "app/core/db.py",
+                "app/core/engine.py",
+                "app/core/graph.py",
+                "app/core/security.py",
+                "app/core/stripe_service.py",
+                "app/core/adaptation/evolution_adapter.py",
+                "app/core/adaptation/evolution_service.py",
+                "app/core/adaptation/evolution_diff.py",
+                "app/core/adaptation/policy_bridge.py",
+                "app/core/adaptation/policy_evolution.py",
+                "app/core/attribution/engine.py",
+                "app/core/context/engine.py",
+                "app/core/decision/engine.py",
+                "app/core/explainability/engine.py",
+                "app/core/graph_intelligence/critical_transition.py",
+                "app/core/graph_intelligence/dynamic_intelligence_state.py",
+                "app/core/graph_intelligence/intelligence_benchmark.py",
+                "app/core/graph_intelligence/intelligence_validator.py",
+                "app/core/graph_intelligence/predictive_structural.py",
+                "app/core/graph_intelligence/structural_fusion.py",
+                "app/core/graph_intelligence/evolution_diff.py",
+                "app/core/graph_intelligence/__init__.py",
+                "app/core/graph_intelligence/evolution_metrics.py",
+                "app/core/graph_intelligence/decision_engine.py",
+                "app/core/graph_intelligence/evolution_layer.py",
+                "app/core/graph_intelligence/evolution_predictor.py",
+                "app/core/graph_intelligence/graph_delta.py",
+                "app/core/graph_intelligence/graph_dynamics.py",
+                "app/core/graph_intelligence/graph_intelligence.py",
+                "app/core/graph_intelligence/history_engine.py",
+                "app/core/graph_intelligence/pattern_engine.py",
+                "app/core/graph_intelligence/pipeline.py",
+                "app/core/graph_intelligence/pipeline_v6_3_3_backup.py",
+                "app/core/graph_intelligence/structural_transition.py",
+                "app/core/kernel/state_vector.py",
+                "app/core/metrics/__init__.py",
+                "app/core/metrics/dynamics.py",
+                "app/core/metrics/engine.py",
+                "app/core/predictive/anomaly.py",
+                "app/core/simulation/engine.py",
+                "app/core/simulation/scenario.py",
+                "app/core/state/evolution.py",
+                "app/core/state/transition.py",
+                "app/core/enterprise/decision_service.py",
+                "app/core/enterprise/dynamic_graph_bridge.py",
+                "app/core/enterprise/global_state_manager.py",
+                "app/core/enterprise/intelligence_core.py",
+                "app/core/enterprise/adaptive_intelligence_bridge.py",
+                "app/core/enterprise/cognitive_memory_layer.py",
+                "app/core/enterprise/predictive_intelligence_layer.py",
+                "app/core/research/collatz/state.py"
+            ],
+            "classes": [
+                {
+                    "class": "DynamiCoreEngine",
+                    "file": "engine/engine.py"
+                },
+                {
+                    "class": "DynamiCoreState",
+                    "file": "engine/state.py"
+                },
+                {
+                    "class": "DynamiCore",
+                    "file": "app/core/analyzer.py"
+                },
+                {
+                    "class": "DynamiCoreEngine",
+                    "file": "app/core/engine.py"
+                },
+                {
+                    "class": "EvolutionAdapter",
+                    "file": "app/core/adaptation/evolution_adapter.py"
+                },
+                {
+                    "class": "EvolutionService",
+                    "file": "app/core/adaptation/evolution_service.py"
+                },
+                {
+                    "class": "EvolutionDiffEngine",
+                    "file": "app/core/adaptation/evolution_diff.py"
+                },
+                {
+                    "class": "PolicyEvolutionEngine",
+                    "file": "app/core/adaptation/policy_evolution.py"
+                },
+                {
+                    "class": "DynamicIntelligenceState",
+                    "file": "app/core/graph_intelligence/dynamic_intelligence_state.py"
+                },
+                {
+                    "class": "EvolutionDiffEngine",
+                    "file": "app/core/graph_intelligence/evolution_diff.py"
+                },
+                {
+                    "class": "EvolutionMetrics",
+                    "file": "app/core/graph_intelligence/evolution_metrics.py"
+                },
+                {
+                    "class": "EvolutionLayer",
+                    "file": "app/core/graph_intelligence/evolution_layer.py"
+                },
+                {
+                    "class": "GraphEvolutionPredictor",
+                    "file": "app/core/graph_intelligence/evolution_predictor.py"
+                },
+                {
+                    "class": "GraphDeltaEngine",
+                    "file": "app/core/graph_intelligence/graph_delta.py"
+                },
+                {
+                    "class": "GraphDynamicsEngine",
+                    "file": "app/core/graph_intelligence/graph_dynamics.py"
+                },
+                {
+                    "class": "DynamicGraphIntelligence",
+                    "file": "app/core/graph_intelligence/graph_intelligence.py"
+                },
+                {
+                    "class": "HistoricalEvolutionEngine",
+                    "file": "app/core/graph_intelligence/history_engine.py"
+                },
+                {
+                    "class": "DynamicsEngine",
+                    "file": "app/core/metrics/dynamics.py"
+                },
+                {
+                    "class": "EvolutionEngine",
+                    "file": "app/core/state/evolution.py"
+                },
+                {
+                    "class": "EnterpriseDynamicGraphBridge",
+                    "file": "app/core/enterprise/dynamic_graph_bridge.py"
+                },
+                {
+                    "class": "DynamiCoreEnterpriseIntelligenceCore",
+                    "file": "app/core/enterprise/intelligence_core.py"
+                }
+            ],
+            "functions": [
+                {
+                    "function": "test_evolution_history",
+                    "file": "tests/test_evolution_adapter_history.py"
+                },
+                {
+                    "function": "test_dynamics",
+                    "file": "tests/test_metrics_dynamics.py"
+                },
+                {
+                    "function": "test_policy_evolution_flow",
+                    "file": "tests/test_policy_evolution_integration.py"
+                }
+            ]
+        },
+        "\u03a8(k)_potential": {
+            "files": [
+                "generate_figures.py",
+                "engine/engine.py",
+                "engine/state.py",
+                "tests/test_metrics_potential.py",
+                "app/core/engine.py",
+                "app/core/attribution/engine.py",
+                "app/core/context/engine.py",
+                "app/core/kernel/state_vector.py",
+                "app/core/metrics/__init__.py",
+                "app/core/metrics/engine.py",
+                "app/core/metrics/potential.py",
+                "app/core/simulation/scenario.py",
+                "app/core/state/transition.py",
+                "app/core/validation/validator.py",
+                "app/core/research/collatz/state.py"
+            ],
+            "classes": [
+                {
+                    "class": "PotentialEngine",
+                    "file": "app/core/metrics/potential.py"
+                }
+            ],
+            "functions": [
+                {
+                    "function": "test_potential",
+                    "file": "tests/test_metrics_potential.py"
+                }
+            ]
+        },
+        "D(k)_divergence": {
+            "files": [
+                "engine/engine.py",
+                "engine/state.py",
+                "tests/test_metrics_divergence.py",
+                "app/core/engine.py",
+                "app/core/adaptation/evolution_diff.py",
+                "app/core/adaptation/self_optimizer.py",
+                "app/core/attribution/engine.py",
+                "app/core/causal/engine.py",
+                "app/core/context/engine.py",
+                "app/core/decision/engine.py",
+                "app/core/explainability/engine.py",
+                "app/core/kernel/state_vector.py",
+                "app/core/knowledge/engine.py",
+                "app/core/metrics/__init__.py",
+                "app/core/metrics/divergence.py",
+                "app/core/metrics/engine.py",
+                "app/core/simulation/engine.py",
+                "app/core/simulation/scenario.py",
+                "app/core/state/transition.py",
+                "app/core/validation/validator.py",
+                "app/core/research/collatz/state.py"
+            ],
+            "classes": [
+                {
+                    "class": "DivergenceEngine",
+                    "file": "app/core/metrics/divergence.py"
+                }
+            ],
+            "functions": [
+                {
+                    "function": "test_divergence",
+                    "file": "tests/test_metrics_divergence.py"
+                }
+            ]
+        }
+    },
+    "duplicates": [
+        {
+            "class": "DynamiCoreEngine",
+            "locations": [
+                "engine/engine.py",
+                "app/core/engine.py"
+            ]
+        },
+        {
+            "class": "EvolutionDiffEngine",
+            "locations": [
+                "app/core/adaptation/evolution_diff.py",
+                "app/core/graph_intelligence/evolution_diff.py"
+            ]
+        }
+    ],
+    "enterprise_connections": [
+        "app/core/enterprise/__init__.py",
+        "app/core/enterprise/adaptive_intelligence.py",
+        "app/core/enterprise/autonomous_control.py",
+        "app/core/enterprise/bootstrap.py",
+        "app/core/enterprise/configuration.py",
+        "app/core/enterprise/decision_service.py",
+        "app/core/enterprise/deployment_readiness.py",
+        "app/core/enterprise/dynamic_graph_bridge.py",
+        "app/core/enterprise/enterprise_api_gateway.py",
+        "app/core/enterprise/enterprise_core.py",
+        "app/core/enterprise/event_processor.py",
+        "app/core/enterprise/final_integration_audit.py",
+        "app/core/enterprise/global_state_manager.py",
+        "app/core/enterprise/intelligence_api.py",
+        "app/core/enterprise/intelligence_core.py",
+        "app/core/enterprise/intelligence_gateway.py",
+        "app/core/enterprise/intelligence_stream.py",
+        "app/core/enterprise/knowledge_memory.py",
+        "app/core/enterprise/monitoring_alert.py",
+        "app/core/enterprise/observability.py",
+        "app/core/enterprise/orchestrator.py",
+        "app/core/enterprise/persistence_history.py",
+        "app/core/enterprise/runtime_manager.py",
+        "app/core/enterprise/runtime_state.py",
+        "app/core/enterprise/security_layer.py",
+        "app/core/enterprise/self_optimization.py",
+        "app/core/enterprise/validation_automation.py",
+        "app/core/enterprise/workflow_engine.py",
+        "app/core/enterprise/adaptive_intelligence_bridge.py",
+        "app/core/enterprise/autonomous_intelligence_loop.py",
+        "app/core/enterprise/intelligence_orchestration_layer.py",
+        "app/core/enterprise/cognitive_memory_layer.py",
+        "app/core/enterprise/predictive_intelligence_layer.py",
+        "app/core/enterprise/self_awareness_layer.py"
+    ],
+    "files_scanned": 189
+}

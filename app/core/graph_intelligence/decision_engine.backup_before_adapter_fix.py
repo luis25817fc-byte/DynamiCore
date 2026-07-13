@@ -39,27 +39,17 @@ class DecisionEngine:
         knowledge=None
     ):
 
-        intelligence = {
+        payload = {
 
             "state": state,
 
             "context": context or {},
 
-            "causal": causal or {}
-
-        }
-
-
-        evolution = {
+            "causal": causal or {},
 
             "risk": risk or {},
 
-            "simulation": simulation or {}
-
-        }
-
-
-        prediction = {
+            "simulation": simulation or {},
 
             "knowledge": knowledge or {}
 
@@ -67,13 +57,7 @@ class DecisionEngine:
 
 
         result = self.analyze(
-
-            intelligence,
-
-            evolution,
-
-            prediction
-
+            payload
         )
 
 

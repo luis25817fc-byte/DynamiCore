@@ -1,31 +1,79 @@
 
-from dataclasses import dataclass
-from datetime import datetime
+# ==============================================================
+# DynamiCore V6.9.8
+# Unified State Vector Contract
+# ==============================================================
 
 
-@dataclass
 class StateVector:
 
-    entropy: float
-    coherence: float
-    dynamics: float
-    potential: float
-    divergence: float
-
-    timestamp: str = None
+    VERSION = "6.9.8"
 
 
-    def __post_init__(self):
-        if self.timestamp is None:
-            self.timestamp = datetime.utcnow().isoformat()
+    def __init__(
+        self,
+        entropy=0.0,
+        coherence=0.0,
+        delta=0.0,
+        potential=0.0,
+        divergence=0.0,
+        dynamics=0.0,
+        **kwargs
+    ):
+
+        self.entropy = entropy
+
+        self.coherence = coherence
+
+        self.delta = delta
+
+        self.potential = potential
+
+        self.divergence = divergence
+
+        self.dynamics = dynamics
+
+
+        # compatibility fields
+
+        for key, value in kwargs.items():
+
+            setattr(
+                self,
+                key,
+                value
+            )
 
 
     def to_dict(self):
+
         return {
-            "H(k)": self.entropy,
-            "R(k)": self.coherence,
-            "ΔR(k)": self.dynamics,
-            "Ψ(k)": self.potential,
-            "D(k)": self.divergence,
-            "timestamp": self.timestamp
+
+            "version":
+                self.VERSION,
+
+            "entropy":
+                self.entropy,
+
+            "coherence":
+                self.coherence,
+
+            "delta":
+                self.delta,
+
+            "potential":
+                self.potential,
+
+            "divergence":
+                self.divergence,
+
+            "dynamics":
+                self.dynamics
         }
+
+
+    def __repr__(self):
+
+        return str(
+            self.to_dict()
+        )
