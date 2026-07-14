@@ -17,8 +17,7 @@ class EnterpriseAutonomousControl:
     def control(
         self,
         state,
-        event,
-        decision=None
+        event
     ):
 
         intelligence = self.adaptive.adapt(
@@ -26,19 +25,15 @@ class EnterpriseAutonomousControl:
         )
 
 
-        if decision is None:
+        decision = {
 
-            decision = {
+            "action":
+                "CONTINUE_OPERATION",
 
-                "action":
-                    "CONTINUE_OPERATION",
+            "mode":
+                intelligence["adaptation"]
 
-                "mode":
-                    intelligence.get(
-                        "adaptation",
-                        "NORMAL"
-                    )
-            }
+        }
 
 
         execution = self.workflow.execute(
@@ -57,9 +52,6 @@ class EnterpriseAutonomousControl:
 
             "intelligence":
                 intelligence,
-
-            "decision":
-                decision,
 
             "execution":
                 execution
