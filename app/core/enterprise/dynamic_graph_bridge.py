@@ -1,12 +1,23 @@
+
+"""
+DynamiCore V6.10.1
+Enterprise Dynamic Graph Bridge
+Decision Integration
+"""
+
+
 from app.core.graph_intelligence.graph_intelligence import DynamicGraphIntelligence
 from app.core.graph_intelligence.structural_fusion import StructuralIntelligenceFusion
 from app.core.graph_intelligence.dynamic_intelligence_state import DynamicIntelligenceState
-from app.core.graph_intelligence.predictive_structural import PredictiveStructuralLayer
+
+from app.core.decision.policy_engine import EnterpriseDecisionPolicyEngine
+from app.core.decision.decision_contract import DecisionContract
+
 
 
 class EnterpriseDynamicGraphBridge:
 
-    VERSION = "6.9.1"
+    VERSION = "6.10.1"
 
 
     def __init__(self, enterprise_core=None):
@@ -17,9 +28,11 @@ class EnterpriseDynamicGraphBridge:
 
         self.structural_fusion = StructuralIntelligenceFusion()
 
-        self.predictive_structural = PredictiveStructuralLayer()
-
         self.dynamic_state = DynamicIntelligenceState()
+
+        self.decision_engine = EnterpriseDecisionPolicyEngine()
+
+        self.decision_contract = DecisionContract()
 
 
 
@@ -40,24 +53,73 @@ class EnterpriseDynamicGraphBridge:
         )
 
 
-        predictive_structural = self.predictive_structural.predict(
-            fusion
-        )
-
-
         dynamic_state = self.dynamic_state.build(
             fusion,
-            predictive_structural,
+            graph_result.get("predictive_structural", {}),
             graph_result.get("critical_transition", {}),
             graph_result.get("decision", {})
         )
 
 
+        decision_raw = self.decision_engine.evaluate({
+
+            "entropy": dynamic_state.get(
+                "entropy",
+                0
+            ),
+
+            "coherence": dynamic_state.get(
+                "coherence",
+                1
+            ),
+
+            "risk": transition.get(
+                "risk",
+                "LOW"
+            ),
+
+            "transition_probability": dynamic_state.get(
+                "transition_probability",
+                0
+            )
+
+        })
+
+
+        decision = self.decision_contract.build(
+
+            decision_raw.get("decision"),
+
+            decision_raw.get("priority"),
+
+            decision_raw.get("confidence"),
+
+            decision_raw.get("risk"),
+
+            decision_raw.get("reason"),
+
+            decision_raw.get("next_actions")
+
+        )
+
+
         return {
+
             "version": self.VERSION,
-            "status": "DYNAMIC_GRAPH_BRIDGE_ACTIVE",
-            "graph_result": graph_result,
-            "fusion": fusion,
-            "predictive_structural": predictive_structural,
-            "dynamic_state": dynamic_state
+
+            "status":
+                "DYNAMIC_GRAPH_BRIDGE_ACTIVE",
+
+            "graph_result":
+                graph_result,
+
+            "fusion":
+                fusion,
+
+            "dynamic_state":
+                dynamic_state,
+
+            "decision":
+                decision
+
         }
