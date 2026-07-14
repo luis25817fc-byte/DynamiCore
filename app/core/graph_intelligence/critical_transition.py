@@ -1,53 +1,48 @@
 
 class CriticalTransitionDetector:
 
-    VERSION = "6.5.5"
+    VERSION = "7.0.0"
 
-    def analyze(
-        self,
-        evolution_metrics,
-        predictive_structural,
-        transition_intelligence
-    ):
+    def evaluate(self, predictive):
 
-        pressure = evolution_metrics.get(
-            "evolution_pressure",
-            0
-        )
+        predictive = predictive or {}
 
-        probability = predictive_structural.get(
+        probability = predictive.get(
             "transition_probability",
             0
         )
 
-        state = transition_intelligence.get(
-            "state",
-            "UNKNOWN"
+        risk = predictive.get(
+            "risk_level",
+            "LOW"
         )
 
-        if pressure >= 7 or probability >= 0.7:
+        if probability >= 0.80:
             criticality = "HIGH"
-            crossed = True
-            transition_state = "CRITICAL"
+            state = "CRITICAL_TRANSITION"
 
-        elif pressure >= 4 or probability >= 0.4:
+        elif probability >= 0.50:
             criticality = "MEDIUM"
-            crossed = True
-            transition_state = "EMERGING"
+            state = "ACTIVE_TRANSITION"
 
         else:
             criticality = "LOW"
-            crossed = False
-            transition_state = state
+            state = "STABLE_STRUCTURE"
 
         return {
+
             "version": self.VERSION,
-            "transition_state": transition_state,
+
             "criticality": criticality,
-            "threshold_crossed": crossed,
-            "warning": (
-                "STRUCTURAL_REGIME_CHANGE"
-                if crossed
-                else "NO_CRITICAL_TRANSITION"
-            )
+
+            "transition_state": state,
+
+            "transition_probability": probability,
+
+            "risk_level": risk
+
         }
+
+
+# Compatibilidad V7
+CriticalTransitionEngine = CriticalTransitionDetector

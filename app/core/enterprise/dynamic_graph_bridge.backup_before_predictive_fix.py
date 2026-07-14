@@ -1,12 +1,12 @@
+
 from app.core.graph_intelligence.graph_intelligence import DynamicGraphIntelligence
 from app.core.graph_intelligence.structural_fusion import StructuralIntelligenceFusion
 from app.core.graph_intelligence.dynamic_intelligence_state import DynamicIntelligenceState
-from app.core.graph_intelligence.predictive_structural import PredictiveStructuralLayer
 
 
 class EnterpriseDynamicGraphBridge:
 
-    VERSION = "6.9.1"
+    VERSION = "6.9.0"
 
 
     def __init__(self, enterprise_core=None):
@@ -16,8 +16,6 @@ class EnterpriseDynamicGraphBridge:
         self.graph_intelligence = DynamicGraphIntelligence()
 
         self.structural_fusion = StructuralIntelligenceFusion()
-
-        self.predictive_structural = PredictiveStructuralLayer()
 
         self.dynamic_state = DynamicIntelligenceState()
 
@@ -40,14 +38,9 @@ class EnterpriseDynamicGraphBridge:
         )
 
 
-        predictive_structural = self.predictive_structural.predict(
-            fusion
-        )
-
-
         dynamic_state = self.dynamic_state.build(
             fusion,
-            predictive_structural,
+            graph_result.get("predictive_structural", {}),
             graph_result.get("critical_transition", {}),
             graph_result.get("decision", {})
         )
@@ -58,6 +51,5 @@ class EnterpriseDynamicGraphBridge:
             "status": "DYNAMIC_GRAPH_BRIDGE_ACTIVE",
             "graph_result": graph_result,
             "fusion": fusion,
-            "predictive_structural": predictive_structural,
             "dynamic_state": dynamic_state
         }
