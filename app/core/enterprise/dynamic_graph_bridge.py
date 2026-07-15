@@ -1,8 +1,8 @@
 
 """
-DynamiCore V6.10.6
+DynamiCore V6.10.7
 Enterprise Dynamic Graph Bridge
-Adaptive Persistent Decision Intelligence
+Cognitive Decision Integration
 """
 
 
@@ -32,12 +32,16 @@ from app.core.enterprise.adaptive_strategy_evolution import (
     AdaptiveStrategyEvolution
 )
 
+from app.core.enterprise.cognitive_memory_layer import (
+    CognitiveMemoryLayer
+)
+
 
 
 class EnterpriseDynamicGraphBridge:
 
 
-    VERSION = "6.10.6"
+    VERSION = "6.10.7"
 
 
 
@@ -45,6 +49,7 @@ class EnterpriseDynamicGraphBridge:
         self,
         enterprise_core=None
     ):
+
 
         self.enterprise_core = enterprise_core
 
@@ -76,6 +81,11 @@ class EnterpriseDynamicGraphBridge:
 
         self.strategy_evolution = (
             AdaptiveStrategyEvolution()
+        )
+
+
+        self.cognitive_memory = (
+            CognitiveMemoryLayer()
         )
 
 
@@ -213,34 +223,61 @@ class EnterpriseDynamicGraphBridge:
 
 
 
-        return {
+        cognitive = (
+            self.cognitive_memory.process(
+                signature=
+                    graph_result.get(
+                        "signature",
+                        {}
+                    ),
 
+                state=
+                    dynamic_state,
+
+                diff=
+                    diff,
+
+                structural_intelligence=
+                    fusion,
+
+                prediction=
+                    graph_result.get(
+                        "predictive_structural",
+                        {}
+                    ),
+
+                decision=
+                    decision
+            )
+        )
+
+
+
+
+        return {
 
             "version":
                 self.VERSION,
 
-
             "status":
-                "DYNAMIC_GRAPH_BRIDGE_PERSISTENT_ACTIVE",
-
+                "COGNITIVE_DYNAMIC_GRAPH_ACTIVE",
 
             "graph_result":
                 graph_result,
 
-
             "fusion":
                 fusion,
-
 
             "dynamic_state":
                 dynamic_state,
 
-
             "strategy":
                 strategy,
 
-
             "decision":
-                decision
+                decision,
+
+            "cognitive_memory":
+                cognitive
 
         }

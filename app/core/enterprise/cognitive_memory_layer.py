@@ -1,31 +1,81 @@
 
-from app.core.enterprise.knowledge_memory import EnterpriseKnowledgeMemory
-from app.core.enterprise.persistence_history import EnterprisePersistenceHistory
+"""
+DynamiCore V6.10.7
+Cognitive Operational Memory Integration
+"""
 
-from app.core.graph_intelligence.temporal_memory import TemporalGraphMemory
-from app.core.graph_intelligence.pattern_engine import StructuralPatternEngine
-from app.core.graph_intelligence.history_engine import HistoricalEvolutionEngine
-from app.core.graph_intelligence.transition_memory import TransitionMemory
+
+from datetime import datetime
+
+
+from app.core.enterprise.knowledge_memory import (
+    EnterpriseKnowledgeMemory
+)
+
+from app.core.enterprise.persistence_history import (
+    EnterprisePersistenceHistory
+)
+
+
+from app.core.graph_intelligence.temporal_memory import (
+    TemporalGraphMemory
+)
+
+from app.core.graph_intelligence.pattern_engine import (
+    StructuralPatternEngine
+)
+
+from app.core.graph_intelligence.history_engine import (
+    HistoricalEvolutionEngine
+)
+
+from app.core.graph_intelligence.transition_memory import (
+    TransitionMemory
+)
+
 
 
 class CognitiveMemoryLayer:
 
-    VERSION = "6.9.4"
+
+    VERSION = "6.10.7"
+
 
 
     def __init__(self):
 
-        self.knowledge = EnterpriseKnowledgeMemory()
 
-        self.persistence = EnterprisePersistenceHistory()
+        self.knowledge = (
+            EnterpriseKnowledgeMemory()
+        )
 
-        self.temporal = TemporalGraphMemory()
 
-        self.patterns = StructuralPatternEngine()
+        self.persistence = (
+            EnterprisePersistenceHistory()
+        )
 
-        self.history = HistoricalEvolutionEngine()
 
-        self.transitions = TransitionMemory()
+        self.temporal = (
+            TemporalGraphMemory()
+        )
+
+
+        self.patterns = (
+            StructuralPatternEngine()
+        )
+
+
+        self.history = (
+            HistoricalEvolutionEngine()
+        )
+
+
+        self.transitions = (
+            TransitionMemory()
+        )
+
+
+        self.operational_memory = []
 
 
 
@@ -39,21 +89,63 @@ class CognitiveMemoryLayer:
         structural_intelligence=None,
         evolution=None,
         prediction=None,
-        decision=None
+        decision=None,
+        execution=None
     ):
 
-        pattern = self.patterns.detect(
-            signature
+
+
+        pattern = (
+            self.patterns.detect(
+                signature
+            )
         )
 
 
+
+        record = {
+
+
+            "timestamp":
+                datetime.utcnow().isoformat(),
+
+
+            "signature":
+                signature,
+
+
+            "state":
+                state,
+
+
+            "pattern":
+                pattern,
+
+
+            "decision":
+                decision,
+
+
+            "execution":
+                execution
+
+        }
+
+
+
+        self.operational_memory.append(
+            record
+        )
+
+
+
         self.knowledge.learn(
-            pattern
+            record
         )
 
 
         self.persistence.save(
-            state
+            record
         )
 
 
@@ -71,7 +163,9 @@ class CognitiveMemoryLayer:
         )
 
 
+
         if before is not None:
+
 
             self.transitions.record(
                 before,
@@ -80,18 +174,60 @@ class CognitiveMemoryLayer:
             )
 
 
+
         return {
 
-            "version": self.VERSION,
 
-            "status": "COGNITIVE_MEMORY_ACTIVE",
+            "version":
+                self.VERSION,
 
-            "pattern": pattern,
 
-            "knowledge": self.knowledge.recall(),
+            "status":
+                "COGNITIVE_MEMORY_OPERATIONAL_ACTIVE",
 
-            "history_size": self.history.size(),
 
-            "transitions": self.transitions.history()
+            "pattern":
+                pattern,
+
+
+            "knowledge":
+                self.knowledge.recall(),
+
+
+            "operational_records":
+                len(
+                    self.operational_memory
+                ),
+
+
+            "history_size":
+                self.history.size(),
+
+
+            "transitions":
+                self.transitions.history()
+
+        }
+
+
+
+    def recall_operational_memory(self):
+
+
+        return {
+
+
+            "version":
+                self.VERSION,
+
+
+            "records":
+                len(
+                    self.operational_memory
+                ),
+
+
+            "memory":
+                self.operational_memory
 
         }
