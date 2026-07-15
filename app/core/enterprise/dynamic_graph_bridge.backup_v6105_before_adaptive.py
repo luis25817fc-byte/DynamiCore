@@ -1,8 +1,8 @@
 
 """
-DynamiCore V6.10.5
+DynamiCore V6.10.1
 Enterprise Dynamic Graph Bridge
-Decision Adaptive Intelligence Integration
+Decision Integration
 """
 
 
@@ -13,20 +13,14 @@ from app.core.graph_intelligence.dynamic_intelligence_state import DynamicIntell
 from app.core.decision.policy_engine import EnterpriseDecisionPolicyEngine
 from app.core.decision.decision_contract import DecisionContract
 
-from app.core.enterprise.adaptive_strategy_evolution import AdaptiveStrategyEvolution
 
 
 class EnterpriseDynamicGraphBridge:
 
-
-    VERSION = "6.10.5"
-
+    VERSION = "6.10.1"
 
 
-    def __init__(
-        self,
-        enterprise_core=None
-    ):
+    def __init__(self, enterprise_core=None):
 
         self.enterprise_core = enterprise_core
 
@@ -40,16 +34,9 @@ class EnterpriseDynamicGraphBridge:
 
         self.decision_contract = DecisionContract()
 
-        self.strategy_evolution = AdaptiveStrategyEvolution()
 
 
-
-    def analyze_transition(
-        self,
-        diff,
-        transition
-    ):
-
+    def analyze_transition(self, diff, transition):
 
         graph_result = self.graph_intelligence.analyze(
             diff,
@@ -74,41 +61,29 @@ class EnterpriseDynamicGraphBridge:
         )
 
 
-        strategy = self.strategy_evolution.recommend()
-
-
-
         decision_raw = self.decision_engine.evaluate({
 
-            "entropy":
-                dynamic_state.get(
-                    "entropy",
-                    0
-                ),
+            "entropy": dynamic_state.get(
+                "entropy",
+                0
+            ),
 
-            "coherence":
-                dynamic_state.get(
-                    "coherence",
-                    1
-                ),
+            "coherence": dynamic_state.get(
+                "coherence",
+                1
+            ),
 
-            "risk":
-                transition.get(
-                    "risk",
-                    "LOW"
-                ),
+            "risk": transition.get(
+                "risk",
+                "LOW"
+            ),
 
-            "transition_probability":
-                dynamic_state.get(
-                    "transition_probability",
-                    0
-                ),
-
-            "strategy":
-                strategy
+            "transition_probability": dynamic_state.get(
+                "transition_probability",
+                0
+            )
 
         })
-
 
 
         decision = self.decision_contract.build(
@@ -130,29 +105,19 @@ class EnterpriseDynamicGraphBridge:
 
         return {
 
-            "version":
-                self.VERSION,
-
+            "version": self.VERSION,
 
             "status":
                 "DYNAMIC_GRAPH_BRIDGE_ACTIVE",
 
-
             "graph_result":
                 graph_result,
-
 
             "fusion":
                 fusion,
 
-
             "dynamic_state":
                 dynamic_state,
-
-
-            "strategy":
-                strategy,
-
 
             "decision":
                 decision
