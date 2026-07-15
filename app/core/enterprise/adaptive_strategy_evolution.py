@@ -1,21 +1,86 @@
 
 """
-DynamiCore V6.10.4
-Adaptive Strategy Evolution
+DynamiCore V6.10.6
+Adaptive Strategy Persistent Intelligence
 """
 
+import json
 
+from pathlib import Path
 from datetime import datetime
 
 
 class AdaptiveStrategyEvolution:
 
-    VERSION = "6.10.4"
+    VERSION = "6.10.6"
 
 
-    def __init__(self):
+    def __init__(
+        self,
+        storage_path=None
+    ):
+
+        if storage_path is None:
+
+            storage_path = (
+                Path(__file__).parent /
+                "adaptive_strategy_memory.json"
+            )
+
+        self.storage_path = Path(
+            storage_path
+        )
 
         self.strategies = {}
+
+        self.load()
+
+
+
+    def load(self):
+
+        if not self.storage_path.exists():
+
+            self.strategies = {}
+
+            return
+
+
+        try:
+
+            with open(
+                self.storage_path,
+                "r",
+                encoding="utf-8"
+            ) as file:
+
+                self.strategies = json.load(file)
+
+        except Exception:
+
+            self.strategies = {}
+
+
+
+    def save(self):
+
+        self.storage_path.parent.mkdir(
+            parents=True,
+            exist_ok=True
+        )
+
+        with open(
+            self.storage_path,
+            "w",
+            encoding="utf-8"
+        ) as file:
+
+            json.dump(
+                self.strategies,
+                file,
+                indent=4
+            )
+
 
 
     def evaluate_strategy(
@@ -41,7 +106,8 @@ class AdaptiveStrategyEvolution:
 
                 "executions": 0,
                 "success": 0,
-                "score": 0
+                "score": 0,
+                "history": []
 
             }
 
@@ -64,6 +130,23 @@ class AdaptiveStrategyEvolution:
         )
 
 
+        strategy["history"].append({
+
+            "timestamp":
+                datetime.utcnow().isoformat(),
+
+            "score":
+                score,
+
+            "decision":
+                decision
+
+        })
+
+
+        self.save()
+
+
         return {
 
             "version":
@@ -79,12 +162,10 @@ class AdaptiveStrategyEvolution:
                 strategy["executions"],
 
             "success_rate":
-                strategy["score"],
-
-            "timestamp":
-                datetime.utcnow().isoformat()
+                strategy["score"]
 
         }
+
 
 
     def recommend(self):
@@ -93,8 +174,14 @@ class AdaptiveStrategyEvolution:
 
             return {
 
+                "version":
+                    self.VERSION,
+
                 "recommended_strategy":
-                    "UNKNOWN"
+                    "UNKNOWN",
+
+                "confidence":
+                    0
 
             }
 
@@ -116,5 +203,22 @@ class AdaptiveStrategyEvolution:
 
             "confidence":
                 self.strategies[best]["score"]
+
+        }
+
+
+
+    def status(self):
+
+        return {
+
+            "version":
+                self.VERSION,
+
+            "status":
+                "ADAPTIVE_STRATEGY_PERSISTENT_ACTIVE",
+
+            "strategies":
+                len(self.strategies)
 
         }
