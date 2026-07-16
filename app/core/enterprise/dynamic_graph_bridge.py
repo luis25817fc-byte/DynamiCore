@@ -1,256 +1,87 @@
 
 """
-DynamiCore V6.10.7
+DynamiCore V6.10.9
 Enterprise Dynamic Graph Bridge
-Cognitive Decision Integration
 """
 
-
-from app.core.graph_intelligence.graph_intelligence import (
-    DynamicGraphIntelligence
+from app.core.enterprise.predictive_intelligence_layer import (
+    PredictiveIntelligenceLayer
 )
-
-from app.core.graph_intelligence.structural_fusion import (
-    StructuralIntelligenceFusion
-)
-
-from app.core.graph_intelligence.dynamic_intelligence_state import (
-    DynamicIntelligenceState
-)
-
-
-from app.core.decision.policy_engine import (
-    EnterpriseDecisionPolicyEngine
-)
-
-from app.core.decision.decision_contract import (
-    DecisionContract
-)
-
-
-from app.core.enterprise.adaptive_strategy_evolution import (
-    AdaptiveStrategyEvolution
-)
-
-from app.core.enterprise.cognitive_memory_layer import (
-    CognitiveMemoryLayer
-)
-
 
 
 class EnterpriseDynamicGraphBridge:
 
-
-    VERSION = "6.10.7"
-
+    VERSION = "6.10.9"
 
 
-    def __init__(
-        self,
-        enterprise_core=None
-    ):
+    def __init__(self):
 
-
-        self.enterprise_core = enterprise_core
-
-
-        self.graph_intelligence = (
-            DynamicGraphIntelligence()
-        )
-
-
-        self.structural_fusion = (
-            StructuralIntelligenceFusion()
-        )
-
-
-        self.dynamic_state = (
-            DynamicIntelligenceState()
-        )
-
-
-        self.decision_engine = (
-            EnterpriseDecisionPolicyEngine()
-        )
-
-
-        self.decision_contract = (
-            DecisionContract()
-        )
-
-
-        self.strategy_evolution = (
-            AdaptiveStrategyEvolution()
-        )
-
-
-        self.cognitive_memory = (
-            CognitiveMemoryLayer()
-        )
+        self.predictive = PredictiveIntelligenceLayer()
 
 
 
     def analyze_transition(
         self,
         diff,
-        transition
+        transition,
+        signature=None,
+        fusion=None,
+        state=None,
+        context=None
     ):
 
 
-        graph_result = (
-            self.graph_intelligence.analyze(
-                diff,
-                transition
-            )
+        signature = signature or {}
+
+        fusion = fusion or {}
+
+        state = state or {}
+
+
+
+        prediction_result = self.predictive.process(
+            signature=signature,
+            fusion=fusion,
+            state=state,
+            context=context
         )
 
 
+        prediction = prediction_result.get(
+            "prediction",
+            {}
+        )
 
-        fusion = (
-            self.structural_fusion.fuse(
-                graph_result.get(
-                    "signature",
-                    {}
+
+        structural_prediction = prediction_result.get(
+            "structural_prediction",
+            {}
+        )
+
+
+        decision = {
+
+            "version":
+                "6.10.0",
+
+            "decision":
+                "CONTINUE_OPERATION",
+
+            "priority":
+                "LOW",
+
+            "confidence":
+                prediction.get(
+                    "confidence",
+                    0
                 ),
-                graph_result.get(
-                    "evolution_metrics",
-                    {}
-                ),
-                graph_result.get(
-                    "transition_intelligence",
-                    {}
-                ),
-                graph_result,
-                graph_result.get(
-                    "decision",
-                    {}
+
+            "risk":
+                prediction.get(
+                    "risk",
+                    "UNKNOWN"
                 )
-            )
-        )
-
-
-
-        dynamic_state = (
-            self.dynamic_state.build(
-                fusion,
-                graph_result.get(
-                    "predictive_structural",
-                    {}
-                ),
-                graph_result.get(
-                    "critical_transition",
-                    {}
-                ),
-                graph_result.get(
-                    "decision",
-                    {}
-                )
-            )
-        )
-
-
-
-        strategy = (
-            self.strategy_evolution.recommend()
-        )
-
-
-
-        decision_raw = (
-            self.decision_engine.evaluate({
-
-                "entropy":
-                    dynamic_state.get(
-                        "entropy",
-                        0
-                    ),
-
-                "coherence":
-                    dynamic_state.get(
-                        "coherence",
-                        1
-                    ),
-
-                "risk":
-                    transition.get(
-                        "risk",
-                        "LOW"
-                    ),
-
-                "transition_probability":
-                    dynamic_state.get(
-                        "transition_probability",
-                        0
-                    ),
-
-                "strategy":
-                    strategy
-
-            })
-        )
-
-
-
-        decision = (
-            self.decision_contract.build(
-
-                decision_raw.get(
-                    "decision"
-                ),
-
-                decision_raw.get(
-                    "priority"
-                ),
-
-                decision_raw.get(
-                    "confidence"
-                ),
-
-                decision_raw.get(
-                    "risk"
-                ),
-
-                decision_raw.get(
-                    "reason"
-                ),
-
-                decision_raw.get(
-                    "next_actions"
-                )
-
-            )
-        )
-
-
-
-        cognitive = (
-            self.cognitive_memory.process(
-                signature=
-                    graph_result.get(
-                        "signature",
-                        {}
-                    ),
-
-                state=
-                    dynamic_state,
-
-                diff=
-                    diff,
-
-                structural_intelligence=
-                    fusion,
-
-                prediction=
-                    graph_result.get(
-                        "predictive_structural",
-                        {}
-                    ),
-
-                decision=
-                    decision
-            )
-        )
-
+        }
 
 
 
@@ -262,22 +93,18 @@ class EnterpriseDynamicGraphBridge:
             "status":
                 "COGNITIVE_DYNAMIC_GRAPH_ACTIVE",
 
-            "graph_result":
-                graph_result,
+            "diff":
+                diff,
 
-            "fusion":
-                fusion,
+            "transition":
+                transition,
 
-            "dynamic_state":
-                dynamic_state,
+            "prediction":
+                prediction,
 
-            "strategy":
-                strategy,
+            "structural_prediction":
+                structural_prediction,
 
             "decision":
-                decision,
-
-            "cognitive_memory":
-                cognitive
-
+                decision
         }

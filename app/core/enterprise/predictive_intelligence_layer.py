@@ -1,14 +1,21 @@
 
-from app.core.graph_intelligence.evolution_predictor import GraphEvolutionPredictor
-from app.core.graph_intelligence.predictive_structural import PredictiveStructuralLayer
-from app.core.graph_intelligence.decision_engine import DecisionEngine as GraphDecisionEngine
+"""
+DynamiCore V6.10.9
+Enterprise Predictive Intelligence Layer
+"""
 
-from app.core.decision.engine import DecisionEngine as CoreDecisionEngine
+from app.core.graph_intelligence.evolution_predictor import (
+    GraphEvolutionPredictor
+)
+
+from app.core.graph_intelligence.predictive_structural import (
+    PredictiveStructuralLayer
+)
 
 
 class PredictiveIntelligenceLayer:
 
-    VERSION = "6.9.5"
+    VERSION = "6.10.9"
 
 
     def __init__(self):
@@ -16,10 +23,6 @@ class PredictiveIntelligenceLayer:
         self.predictor = GraphEvolutionPredictor()
 
         self.structural = PredictiveStructuralLayer()
-
-        self.graph_decision = GraphDecisionEngine()
-
-        self.decision = CoreDecisionEngine()
 
 
 
@@ -36,58 +39,28 @@ class PredictiveIntelligenceLayer:
         history=None
     ):
 
-
         prediction = self.predictor.predict(
-            signature
+            signature or {}
         )
 
 
         structural_prediction = self.structural.predict(
-            fusion,
+            fusion or {},
             history
-        )
-
-
-        intelligence = {
-
-            "signature": signature,
-
-            "prediction": prediction,
-
-            "structural_prediction": structural_prediction
-
-        }
-
-
-        evolution_decision = self.graph_decision.analyze(
-            intelligence,
-            prediction,
-            structural_prediction
-        )
-
-
-        final_decision = self.decision.decide(
-            state,
-            context,
-            causal,
-            risk,
-            simulation,
-            knowledge
         )
 
 
         return {
 
-            "version": self.VERSION,
+            "version":
+                self.VERSION,
 
-            "status": "PREDICTIVE_INTELLIGENCE_ACTIVE",
+            "status":
+                "ENTERPRISE_PREDICTIVE_INTELLIGENCE_ACTIVE",
 
-            "prediction": prediction,
+            "prediction":
+                prediction,
 
-            "structural_prediction": structural_prediction,
-
-            "evolution_decision": evolution_decision,
-
-            "decision": final_decision
-
+            "structural_prediction":
+                structural_prediction
         }
