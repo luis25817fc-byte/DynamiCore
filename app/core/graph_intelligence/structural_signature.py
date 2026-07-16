@@ -1,52 +1,175 @@
 
+"""
+DynamiCore V6.11.0
+Structural Signature Intelligence Engine
+"""
+
+
+import hashlib
+import json
+
+
 class StructuralSignatureEngine:
 
-    VERSION = "6.3.1"
+    VERSION = "6.11.0"
 
-    def generate(self, graph):
+
+    def generate(
+        self,
+        graph
+    ):
 
         graph = graph or {}
 
-        nodes = graph.get("nodes", [])
-        edges = graph.get("edges", [])
 
-        degree = {}
+        nodes = graph.get(
+            "nodes",
+            []
+        )
 
-        for edge in edges:
-            s = edge.get("source")
-            t = edge.get("target")
+        edges = graph.get(
+            "edges",
+            []
+        )
 
-            if s:
-                degree[s] = degree.get(s, 0) + 1
-
-            if t:
-                degree[t] = degree.get(t, 0) + 1
 
         node_count = len(nodes)
+
         edge_count = len(edges)
 
-        density = (
-            (2 * edge_count) /
-            (node_count * (node_count - 1))
-            if node_count > 1 else 0
+
+
+        density = 0
+
+        if node_count > 1:
+
+            density = round(
+                (2 * edge_count) /
+                (node_count * (node_count - 1)),
+                4
+            )
+
+
+        degree_map = {}
+
+
+        for node in nodes:
+
+            node_id = node.get(
+                "id"
+            )
+
+            degree_map[node_id] = 0
+
+
+
+        for edge in edges:
+
+            source = edge.get(
+                "source"
+            )
+
+            target = edge.get(
+                "target"
+            )
+
+
+            if source in degree_map:
+
+                degree_map[source] += 1
+
+
+            if target in degree_map:
+
+                degree_map[target] += 1
+
+
+
+        average_degree = 0
+
+
+        if degree_map:
+
+            average_degree = round(
+                sum(degree_map.values()) /
+                len(degree_map),
+                4
+            )
+
+
+
+        complexity = round(
+            density *
+            average_degree,
+            4
         )
 
-        average_degree = (
-            (2 * edge_count) / node_count
-            if node_count > 0 else 0
+
+        stability_index = round(
+            1 /
+            (1 + complexity),
+            4
         )
 
-        complexity = density * average_degree
 
-        stability = 1 / (1 + abs(complexity))
+
+        raw_signature = {
+
+            "nodes":
+                node_count,
+
+            "edges":
+                edge_count,
+
+            "density":
+                density,
+
+            "average_degree":
+                average_degree,
+
+            "complexity":
+                complexity
+
+        }
+
+
+
+        signature_hash = hashlib.sha256(
+            json.dumps(
+                raw_signature,
+                sort_keys=True
+            ).encode()
+        ).hexdigest()
+
+
 
         return {
-            "version": self.VERSION,
-            "nodes": node_count,
-            "edges": edge_count,
-            "degree_distribution": degree,
-            "density": density,
-            "average_degree": average_degree,
-            "structural_complexity": complexity,
-            "stability_index": stability
+
+            "version":
+                self.VERSION,
+
+            "nodes":
+                node_count,
+
+            "edges":
+                edge_count,
+
+            "density":
+                density,
+
+            "average_degree":
+                average_degree,
+
+            "structural_complexity":
+                complexity,
+
+            "stability_index":
+                stability_index,
+
+            "signature_hash":
+                signature_hash,
+
+            "status":
+                "STRUCTURAL_SIGNATURE_ACTIVE"
+
         }

@@ -1,48 +1,104 @@
 
+"""
+DynamiCore V6.11.1
+Critical Transition Intelligence
+"""
+
+
 class CriticalTransitionDetector:
 
-    VERSION = "7.0.0"
 
-    def evaluate(self, predictive):
+    VERSION = "6.11.1"
 
-        predictive = predictive or {}
 
-        probability = predictive.get(
-            "transition_probability",
+
+    def detect(
+        self,
+        metrics,
+        prediction,
+        transition
+    ):
+
+        metrics = metrics or {}
+        prediction = prediction or {}
+        transition = transition or {}
+
+
+        pressure = metrics.get(
+            "evolution_pressure",
             0
         )
 
-        risk = predictive.get(
-            "risk_level",
-            "LOW"
+
+        confidence = prediction.get(
+            "confidence",
+            0
         )
 
-        if probability >= 0.80:
-            criticality = "HIGH"
-            state = "CRITICAL_TRANSITION"
 
-        elif probability >= 0.50:
-            criticality = "MEDIUM"
-            state = "ACTIVE_TRANSITION"
+        risk = transition.get(
+            "risk",
+            "UNKNOWN"
+        )
+
+
+
+        if pressure >= 5:
+
+            state = "CRITICAL"
+
+        elif pressure >= 2:
+
+            state = "WARNING"
 
         else:
-            criticality = "LOW"
-            state = "STABLE_STRUCTURE"
+
+            state = "STABLE"
+
+
+
+        early_warning = (
+            state != "STABLE"
+        )
+
+
 
         return {
 
-            "version": self.VERSION,
+            "version":
+                self.VERSION,
 
-            "criticality": criticality,
+            "state":
+                state,
 
-            "transition_state": state,
+            "risk":
+                risk,
 
-            "transition_probability": probability,
+            "evolution_pressure":
+                pressure,
 
-            "risk_level": risk
+            "confidence":
+                confidence,
+
+            "early_warning":
+                early_warning,
+
+            "status":
+                "CRITICAL_TRANSITION_ACTIVE"
 
         }
 
 
-# Compatibilidad V7
-CriticalTransitionEngine = CriticalTransitionDetector
+
+    def analyze(
+        self,
+        metrics,
+        prediction,
+        transition
+    ):
+
+        return self.detect(
+            metrics,
+            prediction,
+            transition
+        )
