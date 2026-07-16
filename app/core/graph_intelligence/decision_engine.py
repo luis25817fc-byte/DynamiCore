@@ -5,8 +5,17 @@ class DecisionEngine:
 
     def analyze(self, intelligence, evolution, prediction):
 
-        risk = intelligence.get("structural_risk", "LOW")
-        stability = intelligence.get("stability", 1)
+        risk = (
+            intelligence.get("structural_risk")
+            or intelligence.get("risk")
+            or "LOW"
+        )
+        stability = float(
+            intelligence.get(
+                "stability",
+                1
+            )
+        )
 
         if risk == "HIGH":
             action = "STOP_SYSTEM"
