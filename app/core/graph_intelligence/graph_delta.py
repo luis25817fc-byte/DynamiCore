@@ -1,29 +1,41 @@
 
 """
-DynamiCore V6.2.1
-Graph Delta Engine
+DynamiCore V6.11.0
+Graph Delta Intelligence Engine
 """
 
 
 class GraphDeltaEngine:
 
-    VERSION = "6.2.1"
+    VERSION = "6.11.0"
 
 
-    def compare(self, previous, current):
+    def compare(
+        self,
+        previous,
+        current
+    ):
 
         previous = previous or {}
+
         current = current or {}
 
 
         previous_nodes = {
             n.get("id")
-            for n in previous.get("nodes", [])
+            for n in previous.get(
+                "nodes",
+                []
+            )
         }
+
 
         current_nodes = {
             n.get("id")
-            for n in current.get("nodes", [])
+            for n in current.get(
+                "nodes",
+                []
+            )
         }
 
 
@@ -32,7 +44,10 @@ class GraphDeltaEngine:
                 e.get("source"),
                 e.get("target")
             )
-            for e in previous.get("edges", [])
+            for e in previous.get(
+                "edges",
+                []
+            )
         }
 
 
@@ -41,51 +56,115 @@ class GraphDeltaEngine:
                 e.get("source"),
                 e.get("target")
             )
-            for e in current.get("edges", [])
+            for e in current.get(
+                "edges",
+                []
+            )
         }
 
 
-        added_nodes = current_nodes - previous_nodes
-        removed_nodes = previous_nodes - current_nodes
 
-        added_edges = current_edges - previous_edges
-        removed_edges = previous_edges - current_edges
+        added_nodes = (
+            current_nodes -
+            previous_nodes
+        )
 
 
-        score = (
-            len(added_nodes)
-            +
+        removed_nodes = (
+            previous_nodes -
+            current_nodes
+        )
+
+
+        added_edges = (
+            current_edges -
+            previous_edges
+        )
+
+
+        removed_edges = (
+            previous_edges -
+            current_edges
+        )
+
+
+        node_variation = (
+            len(added_nodes) +
             len(removed_nodes)
-            +
-            len(added_edges)
-            +
+        )
+
+
+        edge_variation = (
+            len(added_edges) +
             len(removed_edges)
         )
 
 
+        total_changes = (
+            node_variation +
+            edge_variation
+        )
+
+
+        max_size = max(
+            len(previous_nodes) +
+            len(previous_edges),
+            len(current_nodes) +
+            len(current_edges),
+            1
+        )
+
+
+        structural_variation = round(
+            total_changes / max_size,
+            4
+        )
+
+
+        if structural_variation >= 0.7:
+
+            pressure = "HIGH"
+
+        elif structural_variation >= 0.3:
+
+            pressure = "MEDIUM"
+
+        else:
+
+            pressure = "LOW"
+
+
+
         return {
 
-            "version": self.VERSION,
+            "version":
+                self.VERSION,
 
-            "changed": score > 0,
+            "added_nodes":
+                list(added_nodes),
 
-            "delta": {
+            "removed_nodes":
+                list(removed_nodes),
 
-                "nodes_added":
-                    list(added_nodes),
+            "added_edges":
+                list(added_edges),
 
-                "nodes_removed":
-                    list(removed_nodes),
+            "removed_edges":
+                list(removed_edges),
 
-                "edges_added":
-                    list(added_edges),
+            "nodes_changed":
+                node_variation,
 
-                "edges_removed":
-                    list(removed_edges)
+            "edges_changed":
+                edge_variation,
 
-            },
+            "total_changes":
+                total_changes,
 
-            "change_score":
-                score
+            "structural_variation":
+                structural_variation,
+
+            "topology_pressure":
+                pressure
 
         }
