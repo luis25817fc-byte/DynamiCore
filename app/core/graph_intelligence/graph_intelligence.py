@@ -1,104 +1,141 @@
 
 """
-DynamiCore V6.11
-Dynamic Graph Intelligence Evolution Core
+DynamiCore V7.3
+DLIS Graph Intelligence Engine
 """
 
-from app.core.graph_intelligence.evolution_metrics import EvolutionMetrics
-from app.core.graph_intelligence.structural_transition import StructuralTransitionIntelligence
+from datetime import datetime
 
 
 class DynamicGraphIntelligence:
 
-    VERSION = "6.11.0"
+
+    VERSION = "7.3"
 
 
-    def __init__(self):
+    def __init__(
+        self,
+        graph_delta=None,
+        signature_engine=None,
+        evolution_metrics=None,
+        transition_engine=None,
+        predictor=None,
+        fusion=None
+    ):
 
-        self.metrics = EvolutionMetrics()
+        self.graph_delta = graph_delta
 
-        self.transition_engine = StructuralTransitionIntelligence()
+        self.signature_engine = signature_engine
 
+        self.evolution_metrics = evolution_metrics
 
+        self.transition_engine = transition_engine
 
-    def analyze(self, diff, transition):
+        self.predictor = predictor
 
-        diff = diff or {}
-
-        transition = transition or {}
-
-
-        evolution_metrics = self.metrics.calculate(
-            diff,
-            transition
-        )
-
-
-        signature = {
-
-            "density":
-                transition.get(
-                    "density",
-                    0
-                ),
-
-            "evolution_score":
-                evolution_metrics.get(
-                    "evolution_pressure",
-                    0
-                ),
-
-            "structural_variation":
-                diff.get(
-                    "structural_variation",
-                    0
-                ),
-
-            "evolution_pressure":
-                evolution_metrics.get(
-                    "evolution_pressure",
-                    0
-                ),
-
-            "transition_risk":
-                transition.get(
-                    "risk",
-                    "UNKNOWN"
-                )
-
-        }
+        self.fusion = fusion
 
 
-        transition_intelligence = self.transition_engine.analyze(
-            signature,
-            evolution_metrics
-        )
+
+    def analyze(
+        self,
+        previous_graph,
+        current_graph
+    ):
+
+        diff = {}
+
+        if self.graph_delta:
+
+            diff = self.graph_delta.compare(
+                previous_graph,
+                current_graph
+            )
+
+
+        signature = {}
+
+        if self.signature_engine:
+
+            signature = self.signature_engine.generate(
+                current_graph
+            )
+
+
+        metrics = {}
+
+        if self.evolution_metrics:
+
+            metrics = self.evolution_metrics.calculate(
+                diff,
+                signature
+            )
+
+
+        transition = {}
+
+        if self.transition_engine:
+
+            transition = self.transition_engine.analyze(
+                signature,
+                metrics
+            )
+
+
+        prediction = {}
+
+        if self.predictor:
+
+            prediction = self.predictor.predict(
+                transition,
+                metrics
+            )
+
+
+        intelligence = {}
+
+        if self.fusion:
+
+            intelligence = self.fusion.fuse(
+                signature,
+                metrics,
+                transition,
+                prediction
+            )
 
 
         return {
 
-            "version":
-                self.VERSION,
+            "version": self.VERSION,
 
-            "diff":
-                diff,
+            "timestamp": datetime.utcnow(),
 
-            "transition":
-                transition,
+            "graph_diff": diff,
 
-            "signature":
-                signature,
+            "structural_signature": signature,
 
-            "evolution_metrics":
-                evolution_metrics,
+            "evolution_metrics": metrics,
 
-            "transition_intelligence":
-                transition_intelligence,
+            "transition": transition,
 
-            "decision":
-                {},
+            "prediction": prediction,
 
-            "intelligence":
-                "ACTIVE"
+            "intelligence_state": intelligence,
 
+            "status": "ONLINE"
+        }
+
+
+
+    def status(self):
+
+        return {
+
+            "version": self.VERSION,
+
+            "module":
+                "DynamicGraphIntelligence",
+
+            "status":
+                "ONLINE"
         }

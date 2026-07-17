@@ -1,0 +1,281 @@
+{
+    "dynamic_intelligence_state.py": {
+        "classes": [
+            "DynamicIntelligenceState"
+        ],
+        "functions": [
+            "build"
+        ],
+        "imports": []
+    },
+    "final_audit.py": {
+        "classes": [
+            "FinalAudit"
+        ],
+        "functions": [
+            "run"
+        ],
+        "imports": []
+    },
+    "intelligence_benchmark.py": {
+        "classes": [
+            "IntelligenceBenchmark"
+        ],
+        "functions": [
+            "run"
+        ],
+        "imports": [
+            "time"
+        ]
+    },
+    "intelligence_validator.py": {
+        "classes": [
+            "IntelligenceValidator"
+        ],
+        "functions": [
+            "validate"
+        ],
+        "imports": []
+    },
+    "structural_fusion.py": {
+        "classes": [
+            "StructuralIntelligenceFusion"
+        ],
+        "functions": [
+            "fuse"
+        ],
+        "imports": []
+    },
+    "evolution_diff.py": {
+        "classes": [
+            "EvolutionDiffEngine"
+        ],
+        "functions": [
+            "compare"
+        ],
+        "imports": []
+    },
+    "__init__.py": {
+        "classes": [],
+        "functions": [],
+        "imports": [
+            "structural_signature",
+            "graph_delta",
+            "evolution_layer",
+            "pattern_engine",
+            "evolution_predictor",
+            "temporal_memory",
+            "pipeline"
+        ]
+    },
+    "evolution_metrics.py": {
+        "classes": [
+            "EvolutionMetrics"
+        ],
+        "functions": [
+            "calculate"
+        ],
+        "imports": []
+    },
+    "graph_dynamics.py": {
+        "classes": [
+            "GraphDynamicsEngine"
+        ],
+        "functions": [
+            "analyze"
+        ],
+        "imports": []
+    },
+    "history_engine.py": {
+        "classes": [
+            "HistoricalEvolutionEngine"
+        ],
+        "functions": [
+            "__init__",
+            "record",
+            "latest",
+            "all",
+            "size"
+        ],
+        "imports": [
+            "datetime",
+            "copy"
+        ]
+    },
+    "pattern_engine.py": {
+        "classes": [
+            "StructuralPatternEngine"
+        ],
+        "functions": [
+            "detect"
+        ],
+        "imports": []
+    },
+    "structural_memory.py": {
+        "classes": [
+            "StructuralMemory"
+        ],
+        "functions": [
+            "__init__",
+            "store",
+            "size"
+        ],
+        "imports": []
+    },
+    "temporal_memory.py": {
+        "classes": [
+            "TemporalGraphMemory"
+        ],
+        "functions": [
+            "__init__",
+            "store",
+            "latest"
+        ],
+        "imports": []
+    },
+    "transition_detector.py": {
+        "classes": [
+            "TransitionDetector"
+        ],
+        "functions": [
+            "detect"
+        ],
+        "imports": []
+    },
+    "transition_memory.py": {
+        "classes": [
+            "TransitionMemory"
+        ],
+        "functions": [
+            "__init__",
+            "record",
+            "history"
+        ],
+        "imports": []
+    },
+    "structural_transition.py": {
+        "classes": [
+            "StructuralTransitionIntelligence"
+        ],
+        "functions": [
+            "analyze"
+        ],
+        "imports": []
+    },
+    "evolution_predictor.py": {
+        "classes": [
+            "GraphEvolutionPredictor"
+        ],
+        "functions": [
+            "predict"
+        ],
+        "imports": []
+    },
+    "graph_intelligence.py": {
+        "classes": [
+            "DynamicGraphIntelligence"
+        ],
+        "functions": [
+            "__init__",
+            "analyze"
+        ],
+        "imports": [
+            "app.core.graph_intelligence.evolution_metrics",
+            "app.core.graph_intelligence.structural_transition"
+        ]
+    },
+    "evolution_layer.py": {
+        "classes": [
+            "EvolutionLayer"
+        ],
+        "functions": [
+            "analyze"
+        ],
+        "imports": []
+    },
+    "graph_delta.py": {
+        "classes": [
+            "GraphDeltaEngine"
+        ],
+        "functions": [
+            "compare"
+        ],
+        "imports": []
+    },
+    "structural_signature.py": {
+        "classes": [
+            "StructuralSignatureEngine"
+        ],
+        "functions": [
+            "generate"
+        ],
+        "imports": [
+            "hashlib",
+            "json"
+        ]
+    },
+    "structural_signature_v2.py": {
+        "classes": [
+            "StructuralSignatureV2"
+        ],
+        "functions": [
+            "compare"
+        ],
+        "imports": [
+            "hashlib",
+            "json"
+        ]
+    },
+    "critical_transition.py": {
+        "classes": [
+            "CriticalTransitionDetector"
+        ],
+        "functions": [
+            "detect",
+            "analyze"
+        ],
+        "imports": []
+    },
+    "pipeline.py": {
+        "classes": [
+            "GraphIntelligencePipeline"
+        ],
+        "functions": [
+            "__init__",
+            "run"
+        ],
+        "imports": [
+            "graph_delta",
+            "structural_signature",
+            "structural_signature_v2",
+            "evolution_layer",
+            "evolution_metrics",
+            "predictive_structural",
+            "critical_transition",
+            "dynamic_intelligence_state",
+            "structural_transition",
+            "structural_fusion",
+            "decision_engine"
+        ]
+    },
+    "decision_engine.py": {
+        "classes": [
+            "DecisionEngine"
+        ],
+        "functions": [
+            "analyze",
+            "decide"
+        ],
+        "imports": []
+    },
+    "predictive_structural.py": {
+        "classes": [
+            "PredictiveStructuralLayer"
+        ],
+        "functions": [
+            "_clamp",
+            "predict"
+        ],
+        "imports": []
+    }
+}

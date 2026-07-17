@@ -1,0 +1,1548 @@
+{
+    "total_files": 180,
+    "duplicates": {
+        "EvolutionDiffEngine": [
+            "adaptation/evolution_diff.py",
+            "graph_intelligence/evolution_diff.py"
+        ],
+        "DecisionEngine": [
+            "decision/engine.py",
+            "graph_intelligence/decision_engine.py"
+        ],
+        "EvolutionEngine": [
+            "state/evolution.py",
+            "intelligence/evolution_engine.py"
+        ],
+        "EnterpriseBootstrap": [
+            "enterprise/bootstrap.py",
+            "intelligence/enterprise_bootstrap.py"
+        ]
+    },
+    "files": {
+        "__init__.py": {
+            "classes": [],
+            "imports": [],
+            "lines": 1
+        },
+        "Billing.py": {
+            "classes": [],
+            "imports": [],
+            "lines": 27
+        },
+        "ai.py": {
+            "classes": [],
+            "imports": [
+                "os",
+                "openai"
+            ],
+            "lines": 15
+        },
+        "analyzer.py": {
+            "classes": [
+                "DynamiCore"
+            ],
+            "imports": [
+                "math",
+                "collections"
+            ],
+            "lines": 33
+        },
+        "basins.py": {
+            "classes": [
+                "BasinAnalyzer"
+            ],
+            "imports": [],
+            "lines": 12
+        },
+        "cycles.py": {
+            "classes": [
+                "CycleDetector"
+            ],
+            "imports": [],
+            "lines": 22
+        },
+        "db.py": {
+            "classes": [
+                "Base"
+            ],
+            "imports": [
+                "os",
+                "sqlalchemy",
+                "sqlalchemy.orm",
+                "sqlalchemy.orm",
+                "sqlalchemy.orm"
+            ],
+            "lines": 57
+        },
+        "engine.py": {
+            "classes": [
+                "DynamiCoreEngine"
+            ],
+            "imports": [
+                "metrics.engine",
+                "predictive.forecast",
+                "predictive.risk",
+                "predictive.regime",
+                "predictive.anomaly",
+                "state.snapshot",
+                "kernel.state_vector",
+                "agents.orchestrator",
+                "state.evolution",
+                "state.transition",
+                "twin.engine",
+                "simulation.engine",
+                "validation.validator",
+                "knowledge.engine",
+                "learning.engine",
+                "context.engine",
+                "explainability.engine",
+                "attribution.engine",
+                "causal.engine",
+                "decision.engine",
+                "feedback.engine",
+                "adaptation.engine",
+                "adaptation.evolution_service"
+            ],
+            "lines": 465
+        },
+        "entropy.py": {
+            "classes": [
+                "Entropy"
+            ],
+            "imports": [
+                "numpy"
+            ],
+            "lines": 11
+        },
+        "graph.py": {
+            "classes": [
+                "FunctionalGraph"
+            ],
+            "imports": [
+                "numpy"
+            ],
+            "lines": 33
+        },
+        "security.py": {
+            "classes": [],
+            "imports": [
+                "secrets",
+                "datetime",
+                "datetime",
+                "jose",
+                "passlib.context"
+            ],
+            "lines": 66
+        },
+        "stripe_service.py": {
+            "classes": [],
+            "imports": [
+                "stripe",
+                "os"
+            ],
+            "lines": 24
+        },
+        "auth.py": {
+            "classes": [],
+            "imports": [
+                "uuid",
+                "app.core.db",
+                "app.core.models"
+            ],
+            "lines": 23
+        },
+        "memory.py": {
+            "classes": [],
+            "imports": [
+                "app.core.db",
+                "app.core.models"
+            ],
+            "lines": 27
+        },
+        "models.py": {
+            "classes": [
+                "User",
+                "UsageLog"
+            ],
+            "imports": [
+                "sqlalchemy",
+                "datetime",
+                "api.db"
+            ],
+            "lines": 20
+        },
+        "middleware.py": {
+            "classes": [],
+            "imports": [
+                "fastapi",
+                "app.core.auth"
+            ],
+            "lines": 14
+        },
+        "runtime_dependencies.py": {
+            "classes": [],
+            "imports": [],
+            "lines": 41
+        },
+        "health_check.py": {
+            "classes": [
+                "HealthCheck"
+            ],
+            "imports": [],
+            "lines": 30
+        },
+        "adaptation/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine",
+                "policy",
+                "calibration",
+                "confidence",
+                "self_optimizer"
+            ],
+            "lines": 21
+        },
+        "adaptation/adaptive_learning.py": {
+            "classes": [
+                "AdaptiveLearningEngine"
+            ],
+            "imports": [],
+            "lines": 148
+        },
+        "adaptation/adaptive_threshold.py": {
+            "classes": [
+                "AdaptiveThresholdEngine"
+            ],
+            "imports": [],
+            "lines": 106
+        },
+        "adaptation/calibration.py": {
+            "classes": [
+                "CalibrationEngine"
+            ],
+            "imports": [],
+            "lines": 107
+        },
+        "adaptation/engine.py": {
+            "classes": [
+                "AdaptationEngine"
+            ],
+            "imports": [
+                "policy",
+                "calibration",
+                "confidence",
+                "self_optimizer",
+                "adaptive_threshold",
+                "strategy_memory",
+                "adaptive_learning",
+                "strategy_optimizer"
+            ],
+            "lines": 221
+        },
+        "adaptation/confidence.py": {
+            "classes": [
+                "ConfidenceEngine"
+            ],
+            "imports": [],
+            "lines": 142
+        },
+        "adaptation/evolution_adapter.py": {
+            "classes": [
+                "EvolutionAdapter"
+            ],
+            "imports": [
+                "policy_evolution"
+            ],
+            "lines": 50
+        },
+        "adaptation/policy.py": {
+            "classes": [
+                "PolicyEngine"
+            ],
+            "imports": [],
+            "lines": 141
+        },
+        "adaptation/evolution_service.py": {
+            "classes": [
+                "EvolutionService"
+            ],
+            "imports": [
+                "evolution_adapter",
+                "evolution_diff"
+            ],
+            "lines": 162
+        },
+        "adaptation/evolution_diff.py": {
+            "classes": [
+                "EvolutionDiffEngine"
+            ],
+            "imports": [],
+            "lines": 120
+        },
+        "adaptation/policy_bridge.py": {
+            "classes": [
+                "PolicyBridge"
+            ],
+            "imports": [],
+            "lines": 34
+        },
+        "adaptation/policy_evolution.py": {
+            "classes": [
+                "PolicyEvolutionEngine"
+            ],
+            "imports": [],
+            "lines": 150
+        },
+        "adaptation/self_optimizer.py": {
+            "classes": [
+                "SelfOptimizerEngine"
+            ],
+            "imports": [],
+            "lines": 139
+        },
+        "adaptation/strategy_memory.py": {
+            "classes": [
+                "StrategyMemory"
+            ],
+            "imports": [],
+            "lines": 101
+        },
+        "adaptation/strategy_optimizer.py": {
+            "classes": [
+                "StrategyOptimizer"
+            ],
+            "imports": [],
+            "lines": 111
+        },
+        "agents/__init__.py": {
+            "classes": [],
+            "imports": [
+                "orchestrator",
+                "base"
+            ],
+            "lines": 8
+        },
+        "agents/base.py": {
+            "classes": [
+                "BaseAgent"
+            ],
+            "imports": [],
+            "lines": 19
+        },
+        "agents/forecast_agent.py": {
+            "classes": [
+                "ForecastAgent"
+            ],
+            "imports": [
+                "base"
+            ],
+            "lines": 32
+        },
+        "agents/metrics_agent.py": {
+            "classes": [
+                "MetricsAgent"
+            ],
+            "imports": [
+                "base"
+            ],
+            "lines": 16
+        },
+        "agents/decision_agent.py": {
+            "classes": [
+                "DecisionAgent"
+            ],
+            "imports": [
+                "base"
+            ],
+            "lines": 30
+        },
+        "agents/orchestrator.py": {
+            "classes": [
+                "AgentOrchestrator"
+            ],
+            "imports": [
+                "metrics_agent",
+                "risk_agent",
+                "forecast_agent",
+                "decision_agent"
+            ],
+            "lines": 46
+        },
+        "agents/risk_agent.py": {
+            "classes": [
+                "RiskAgent"
+            ],
+            "imports": [
+                "base"
+            ],
+            "lines": 35
+        },
+        "attribution/engine.py": {
+            "classes": [
+                "AttributionEngine"
+            ],
+            "imports": [],
+            "lines": 118
+        },
+        "attribution/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine"
+            ],
+            "lines": 6
+        },
+        "causal/engine.py": {
+            "classes": [
+                "CausalEngine"
+            ],
+            "imports": [
+                "graph"
+            ],
+            "lines": 88
+        },
+        "causal/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine",
+                "graph"
+            ],
+            "lines": 9
+        },
+        "causal/graph.py": {
+            "classes": [
+                "CausalGraph"
+            ],
+            "imports": [],
+            "lines": 37
+        },
+        "context/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine"
+            ],
+            "lines": 6
+        },
+        "context/engine.py": {
+            "classes": [
+                "ContextEngine"
+            ],
+            "imports": [],
+            "lines": 83
+        },
+        "decision/engine.py": {
+            "classes": [
+                "DecisionEngine"
+            ],
+            "imports": [],
+            "lines": 178
+        },
+        "decision/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine"
+            ],
+            "lines": 6
+        },
+        "decision/policy_engine.py": {
+            "classes": [
+                "EnterpriseDecisionPolicyEngine"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 59
+        },
+        "decision/decision_contract.py": {
+            "classes": [
+                "DecisionContract"
+            ],
+            "imports": [],
+            "lines": 40
+        },
+        "explainability/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine"
+            ],
+            "lines": 6
+        },
+        "explainability/engine.py": {
+            "classes": [
+                "ExplainabilityEngine"
+            ],
+            "imports": [],
+            "lines": 87
+        },
+        "feedback/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine"
+            ],
+            "lines": 6
+        },
+        "feedback/engine.py": {
+            "classes": [
+                "FeedbackEngine"
+            ],
+            "imports": [],
+            "lines": 77
+        },
+        "graph_intelligence/dynamic_intelligence_state.py": {
+            "classes": [
+                "DynamicIntelligenceState"
+            ],
+            "imports": [],
+            "lines": 52
+        },
+        "graph_intelligence/final_audit.py": {
+            "classes": [
+                "FinalAudit"
+            ],
+            "imports": [],
+            "lines": 54
+        },
+        "graph_intelligence/intelligence_benchmark.py": {
+            "classes": [
+                "IntelligenceBenchmark"
+            ],
+            "imports": [
+                "time"
+            ],
+            "lines": 71
+        },
+        "graph_intelligence/intelligence_validator.py": {
+            "classes": [
+                "IntelligenceValidator"
+            ],
+            "imports": [],
+            "lines": 40
+        },
+        "graph_intelligence/structural_fusion.py": {
+            "classes": [
+                "StructuralIntelligenceFusion"
+            ],
+            "imports": [],
+            "lines": 43
+        },
+        "graph_intelligence/evolution_diff.py": {
+            "classes": [
+                "EvolutionDiffEngine"
+            ],
+            "imports": [],
+            "lines": 18
+        },
+        "graph_intelligence/__init__.py": {
+            "classes": [],
+            "imports": [
+                "structural_signature",
+                "graph_delta",
+                "evolution_layer",
+                "pattern_engine",
+                "evolution_predictor",
+                "temporal_memory",
+                "pipeline"
+            ],
+            "lines": 12
+        },
+        "graph_intelligence/evolution_metrics.py": {
+            "classes": [
+                "EvolutionMetrics"
+            ],
+            "imports": [],
+            "lines": 19
+        },
+        "graph_intelligence/graph_dynamics.py": {
+            "classes": [
+                "GraphDynamicsEngine"
+            ],
+            "imports": [],
+            "lines": 30
+        },
+        "graph_intelligence/history_engine.py": {
+            "classes": [
+                "HistoricalEvolutionEngine"
+            ],
+            "imports": [
+                "datetime",
+                "copy"
+            ],
+            "lines": 47
+        },
+        "graph_intelligence/pattern_engine.py": {
+            "classes": [
+                "StructuralPatternEngine"
+            ],
+            "imports": [],
+            "lines": 33
+        },
+        "graph_intelligence/structural_memory.py": {
+            "classes": [
+                "StructuralMemory"
+            ],
+            "imports": [],
+            "lines": 13
+        },
+        "graph_intelligence/temporal_memory.py": {
+            "classes": [
+                "TemporalGraphMemory"
+            ],
+            "imports": [],
+            "lines": 23
+        },
+        "graph_intelligence/transition_detector.py": {
+            "classes": [
+                "TransitionDetector"
+            ],
+            "imports": [],
+            "lines": 11
+        },
+        "graph_intelligence/transition_memory.py": {
+            "classes": [
+                "TransitionMemory"
+            ],
+            "imports": [],
+            "lines": 25
+        },
+        "graph_intelligence/structural_transition.py": {
+            "classes": [
+                "StructuralTransitionIntelligence"
+            ],
+            "imports": [],
+            "lines": 70
+        },
+        "graph_intelligence/evolution_predictor.py": {
+            "classes": [
+                "GraphEvolutionPredictor"
+            ],
+            "imports": [],
+            "lines": 121
+        },
+        "graph_intelligence/graph_intelligence.py": {
+            "classes": [
+                "DynamicGraphIntelligence"
+            ],
+            "imports": [
+                "app.core.graph_intelligence.evolution_metrics",
+                "app.core.graph_intelligence.structural_transition"
+            ],
+            "lines": 104
+        },
+        "graph_intelligence/evolution_layer.py": {
+            "classes": [
+                "EvolutionLayer"
+            ],
+            "imports": [],
+            "lines": 131
+        },
+        "graph_intelligence/graph_delta.py": {
+            "classes": [
+                "GraphDeltaEngine"
+            ],
+            "imports": [],
+            "lines": 170
+        },
+        "graph_intelligence/structural_signature.py": {
+            "classes": [
+                "StructuralSignatureEngine"
+            ],
+            "imports": [
+                "hashlib",
+                "json"
+            ],
+            "lines": 175
+        },
+        "graph_intelligence/structural_signature_v2.py": {
+            "classes": [
+                "StructuralSignatureV2"
+            ],
+            "imports": [
+                "hashlib",
+                "json"
+            ],
+            "lines": 172
+        },
+        "graph_intelligence/critical_transition.py": {
+            "classes": [
+                "CriticalTransitionDetector"
+            ],
+            "imports": [],
+            "lines": 104
+        },
+        "graph_intelligence/pipeline.py": {
+            "classes": [
+                "GraphIntelligencePipeline"
+            ],
+            "imports": [
+                "graph_delta",
+                "structural_signature",
+                "structural_signature_v2",
+                "evolution_layer",
+                "evolution_metrics",
+                "predictive_structural",
+                "critical_transition",
+                "dynamic_intelligence_state",
+                "structural_transition",
+                "structural_fusion",
+                "decision_engine"
+            ],
+            "lines": 214
+        },
+        "graph_intelligence/decision_engine.py": {
+            "classes": [
+                "DecisionEngine"
+            ],
+            "imports": [],
+            "lines": 106
+        },
+        "graph_intelligence/predictive_structural.py": {
+            "classes": [
+                "PredictiveStructuralLayer"
+            ],
+            "imports": [],
+            "lines": 192
+        },
+        "kernel/__init__.py": {
+            "classes": [],
+            "imports": [
+                "state_vector"
+            ],
+            "lines": 1
+        },
+        "kernel/state_vector.py": {
+            "classes": [
+                "StateVector"
+            ],
+            "imports": [],
+            "lines": 79
+        },
+        "knowledge/store.py": {
+            "classes": [
+                "KnowledgeStore"
+            ],
+            "imports": [],
+            "lines": 38
+        },
+        "knowledge/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine",
+                "store"
+            ],
+            "lines": 9
+        },
+        "knowledge/engine.py": {
+            "classes": [
+                "KnowledgeEngine"
+            ],
+            "imports": [
+                "store"
+            ],
+            "lines": 108
+        },
+        "learning/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine",
+                "memory"
+            ],
+            "lines": 8
+        },
+        "learning/engine.py": {
+            "classes": [
+                "LearningEngine"
+            ],
+            "imports": [
+                "memory"
+            ],
+            "lines": 32
+        },
+        "learning/memory.py": {
+            "classes": [
+                "LearningMemory"
+            ],
+            "imports": [],
+            "lines": 25
+        },
+        "metrics/__init__.py": {
+            "classes": [],
+            "imports": [
+                "entropy",
+                "coherence",
+                "dynamics",
+                "potential",
+                "divergence"
+            ],
+            "lines": 14
+        },
+        "metrics/coherence.py": {
+            "classes": [
+                "CoherenceEngine"
+            ],
+            "imports": [],
+            "lines": 43
+        },
+        "metrics/divergence.py": {
+            "classes": [
+                "DivergenceEngine"
+            ],
+            "imports": [],
+            "lines": 42
+        },
+        "metrics/dynamics.py": {
+            "classes": [
+                "DynamicsEngine"
+            ],
+            "imports": [],
+            "lines": 49
+        },
+        "metrics/entropy.py": {
+            "classes": [
+                "EntropyEngine"
+            ],
+            "imports": [
+                "math",
+                "collections"
+            ],
+            "lines": 35
+        },
+        "metrics/engine.py": {
+            "classes": [
+                "MetricsEngine"
+            ],
+            "imports": [
+                "entropy",
+                "coherence",
+                "dynamics",
+                "potential",
+                "divergence"
+            ],
+            "lines": 76
+        },
+        "metrics/potential.py": {
+            "classes": [
+                "PotentialEngine"
+            ],
+            "imports": [],
+            "lines": 43
+        },
+        "predictive/__init__.py": {
+            "classes": [],
+            "imports": [],
+            "lines": 0
+        },
+        "predictive/anomaly.py": {
+            "classes": [
+                "AnomalyEngine"
+            ],
+            "imports": [],
+            "lines": 55
+        },
+        "predictive/forecast.py": {
+            "classes": [
+                "ForecastEngine"
+            ],
+            "imports": [],
+            "lines": 49
+        },
+        "predictive/regime.py": {
+            "classes": [
+                "RegimeEngine"
+            ],
+            "imports": [],
+            "lines": 43
+        },
+        "predictive/risk.py": {
+            "classes": [
+                "RiskEngine"
+            ],
+            "imports": [],
+            "lines": 36
+        },
+        "research/collatz/engine.py": {
+            "classes": [
+                "CollatzEngine"
+            ],
+            "imports": [],
+            "lines": 43
+        },
+        "research/collatz/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine",
+                "analysis",
+                "state"
+            ],
+            "lines": 4
+        },
+        "research/collatz/analysis.py": {
+            "classes": [
+                "CollatzAnalyzer"
+            ],
+            "imports": [],
+            "lines": 45
+        },
+        "research/collatz/state.py": {
+            "classes": [
+                "CollatzStateBuilder"
+            ],
+            "imports": [
+                "app.core.kernel"
+            ],
+            "lines": 26
+        },
+        "simulation/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine",
+                "scenario"
+            ],
+            "lines": 9
+        },
+        "simulation/engine.py": {
+            "classes": [
+                "ScenarioEngine"
+            ],
+            "imports": [
+                "scenario"
+            ],
+            "lines": 81
+        },
+        "simulation/scenario.py": {
+            "classes": [
+                "Scenario"
+            ],
+            "imports": [],
+            "lines": 56
+        },
+        "state/__init__.py": {
+            "classes": [],
+            "imports": [
+                "transition"
+            ],
+            "lines": 2
+        },
+        "state/evolution.py": {
+            "classes": [
+                "EvolutionEngine"
+            ],
+            "imports": [],
+            "lines": 45
+        },
+        "state/store.py": {
+            "classes": [
+                "SnapshotStore"
+            ],
+            "imports": [
+                "json",
+                "pathlib"
+            ],
+            "lines": 119
+        },
+        "state/snapshot.py": {
+            "classes": [
+                "SnapshotEngine"
+            ],
+            "imports": [
+                "store"
+            ],
+            "lines": 40
+        },
+        "state/history.py": {
+            "classes": [
+                "HistoryEngine"
+            ],
+            "imports": [],
+            "lines": 30
+        },
+        "state/transition.py": {
+            "classes": [
+                "StateTransitionEngine"
+            ],
+            "imports": [
+                "app.core.kernel"
+            ],
+            "lines": 36
+        },
+        "twin/__init__.py": {
+            "classes": [],
+            "imports": [
+                "engine",
+                "model"
+            ],
+            "lines": 12
+        },
+        "twin/engine.py": {
+            "classes": [
+                "TwinEngine"
+            ],
+            "imports": [
+                "model"
+            ],
+            "lines": 90
+        },
+        "twin/model.py": {
+            "classes": [
+                "DigitalTwin"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 66
+        },
+        "validation/__init__.py": {
+            "classes": [],
+            "imports": [
+                "validator"
+            ],
+            "lines": 6
+        },
+        "validation/validator.py": {
+            "classes": [
+                "ValidationEngine"
+            ],
+            "imports": [],
+            "lines": 53
+        },
+        "validation/v71_enterprise_validator.py": {
+            "classes": [
+                "V71EnterpriseValidator"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 68
+        },
+        "enterprise/__init__.py": {
+            "classes": [],
+            "imports": [],
+            "lines": 0
+        },
+        "enterprise/adaptive_intelligence.py": {
+            "classes": [
+                "EnterpriseAdaptiveIntelligence"
+            ],
+            "imports": [],
+            "lines": 50
+        },
+        "enterprise/bootstrap.py": {
+            "classes": [
+                "EnterpriseBootstrap"
+            ],
+            "imports": [
+                "runtime_manager",
+                "intelligence_stream",
+                "intelligence_api",
+                "decision_service",
+                "monitoring_alert",
+                "persistence_history",
+                "configuration",
+                "security_layer",
+                "deployment_readiness",
+                "orchestrator",
+                "enterprise_core",
+                "knowledge_memory"
+            ],
+            "lines": 83
+        },
+        "enterprise/configuration.py": {
+            "classes": [
+                "EnterpriseConfiguration"
+            ],
+            "imports": [],
+            "lines": 38
+        },
+        "enterprise/decision_service.py": {
+            "classes": [
+                "EnterpriseDecisionService"
+            ],
+            "imports": [],
+            "lines": 32
+        },
+        "enterprise/deployment_readiness.py": {
+            "classes": [
+                "DeploymentReadiness"
+            ],
+            "imports": [],
+            "lines": 47
+        },
+        "enterprise/enterprise_api_gateway.py": {
+            "classes": [
+                "EnterpriseAPIGateway"
+            ],
+            "imports": [],
+            "lines": 37
+        },
+        "enterprise/enterprise_core.py": {
+            "classes": [
+                "EnterpriseCore"
+            ],
+            "imports": [],
+            "lines": 61
+        },
+        "enterprise/event_processor.py": {
+            "classes": [
+                "EnterpriseEventProcessor"
+            ],
+            "imports": [],
+            "lines": 62
+        },
+        "enterprise/final_integration_audit.py": {
+            "classes": [
+                "EnterpriseFinalIntegrationAudit"
+            ],
+            "imports": [],
+            "lines": 63
+        },
+        "enterprise/global_state_manager.py": {
+            "classes": [
+                "EnterpriseGlobalStateManager"
+            ],
+            "imports": [],
+            "lines": 48
+        },
+        "enterprise/intelligence_api.py": {
+            "classes": [
+                "IntelligenceAPI"
+            ],
+            "imports": [],
+            "lines": 34
+        },
+        "enterprise/intelligence_core.py": {
+            "classes": [
+                "DynamiCoreEnterpriseIntelligenceCore"
+            ],
+            "imports": [],
+            "lines": 44
+        },
+        "enterprise/intelligence_gateway.py": {
+            "classes": [
+                "EnterpriseIntelligenceGateway"
+            ],
+            "imports": [],
+            "lines": 40
+        },
+        "enterprise/intelligence_stream.py": {
+            "classes": [
+                "IntelligenceStream"
+            ],
+            "imports": [],
+            "lines": 30
+        },
+        "enterprise/knowledge_memory.py": {
+            "classes": [
+                "EnterpriseKnowledgeMemory"
+            ],
+            "imports": [],
+            "lines": 46
+        },
+        "enterprise/monitoring_alert.py": {
+            "classes": [
+                "EnterpriseMonitoringAlert"
+            ],
+            "imports": [],
+            "lines": 32
+        },
+        "enterprise/observability.py": {
+            "classes": [
+                "EnterpriseObservability"
+            ],
+            "imports": [
+                "time"
+            ],
+            "lines": 47
+        },
+        "enterprise/orchestrator.py": {
+            "classes": [
+                "EnterpriseOrchestrator"
+            ],
+            "imports": [],
+            "lines": 66
+        },
+        "enterprise/persistence_history.py": {
+            "classes": [
+                "EnterprisePersistenceHistory"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 40
+        },
+        "enterprise/runtime_manager.py": {
+            "classes": [
+                "EnterpriseRuntimeManager"
+            ],
+            "imports": [
+                "runtime_state"
+            ],
+            "lines": 17
+        },
+        "enterprise/runtime_state.py": {
+            "classes": [
+                "EnterpriseRuntimeState"
+            ],
+            "imports": [],
+            "lines": 18
+        },
+        "enterprise/security_layer.py": {
+            "classes": [
+                "EnterpriseSecurityLayer"
+            ],
+            "imports": [],
+            "lines": 37
+        },
+        "enterprise/self_optimization.py": {
+            "classes": [
+                "EnterpriseSelfOptimization"
+            ],
+            "imports": [],
+            "lines": 59
+        },
+        "enterprise/validation_automation.py": {
+            "classes": [
+                "EnterpriseValidationAutomation"
+            ],
+            "imports": [
+                "json",
+                "datetime"
+            ],
+            "lines": 117
+        },
+        "enterprise/workflow_engine.py": {
+            "classes": [
+                "EnterpriseWorkflowEngine"
+            ],
+            "imports": [],
+            "lines": 56
+        },
+        "enterprise/adaptive_intelligence_bridge.py": {
+            "classes": [
+                "AdaptiveIntelligenceBridge"
+            ],
+            "imports": [
+                "app.core.enterprise.adaptive_intelligence",
+                "app.core.enterprise.knowledge_memory",
+                "app.core.enterprise.self_optimization",
+                "app.core.graph_intelligence.evolution_predictor",
+                "app.core.graph_intelligence.predictive_structural"
+            ],
+            "lines": 78
+        },
+        "enterprise/autonomous_intelligence_loop.py": {
+            "classes": [
+                "AutonomousIntelligenceLoop"
+            ],
+            "imports": [
+                "app.core.enterprise.autonomous_control",
+                "app.core.enterprise.workflow_engine",
+                "app.core.enterprise.decision_service",
+                "app.core.decision.engine",
+                "app.core.agents.decision_agent"
+            ],
+            "lines": 67
+        },
+        "enterprise/intelligence_orchestration_layer.py": {
+            "classes": [
+                "IntelligenceOrchestrationLayer"
+            ],
+            "imports": [
+                "app.core.enterprise.orchestrator",
+                "app.core.enterprise.global_state_manager",
+                "app.core.enterprise.observability",
+                "app.core.enterprise.monitoring_alert"
+            ],
+            "lines": 60
+        },
+        "enterprise/self_awareness_layer.py": {
+            "classes": [
+                "SelfAwarenessLayer"
+            ],
+            "imports": [
+                "app.core.enterprise.observability",
+                "app.core.enterprise.monitoring_alert",
+                "app.core.enterprise.global_state_manager",
+                "app.core.enterprise.runtime_state",
+                "app.core.enterprise.runtime_manager"
+            ],
+            "lines": 48
+        },
+        "enterprise/autonomous_control.py": {
+            "classes": [
+                "EnterpriseAutonomousControl"
+            ],
+            "imports": [],
+            "lines": 66
+        },
+        "enterprise/autonomous_feedback.py": {
+            "classes": [
+                "AutonomousFeedbackIntelligence"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 89
+        },
+        "enterprise/persistent_strategy_repository.py": {
+            "classes": [],
+            "imports": [],
+            "lines": 0
+        },
+        "enterprise/strategy_loader.py": {
+            "classes": [],
+            "imports": [],
+            "lines": 0
+        },
+        "enterprise/adaptive_strategy_evolution.py": {
+            "classes": [
+                "AdaptiveStrategyEvolution"
+            ],
+            "imports": [
+                "json",
+                "pathlib",
+                "datetime"
+            ],
+            "lines": 224
+        },
+        "enterprise/decision_execution_bridge.py": {
+            "classes": [
+                "EnterpriseDecisionExecutionBridge"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 169
+        },
+        "enterprise/cognitive_memory_layer.py": {
+            "classes": [
+                "CognitiveMemoryLayer"
+            ],
+            "imports": [
+                "datetime",
+                "app.core.enterprise.knowledge_memory",
+                "app.core.enterprise.persistence_history",
+                "app.core.graph_intelligence.temporal_memory",
+                "app.core.graph_intelligence.pattern_engine",
+                "app.core.graph_intelligence.history_engine",
+                "app.core.graph_intelligence.transition_memory"
+            ],
+            "lines": 233
+        },
+        "enterprise/predictive_intelligence_layer.py": {
+            "classes": [
+                "PredictiveIntelligenceLayer"
+            ],
+            "imports": [
+                "app.core.graph_intelligence.evolution_predictor",
+                "app.core.graph_intelligence.predictive_structural"
+            ],
+            "lines": 66
+        },
+        "enterprise/dynamic_graph_bridge.py": {
+            "classes": [
+                "EnterpriseDynamicGraphBridge"
+            ],
+            "imports": [
+                "app.core.enterprise.predictive_intelligence_layer"
+            ],
+            "lines": 110
+        },
+        "enterprise/intelligence_orchestrator_bridge.py": {
+            "classes": [
+                "IntelligenceOrchestratorBridge"
+            ],
+            "imports": [],
+            "lines": 81
+        },
+        "enterprise/dynamic_graph_evolution_bridge.py": {
+            "classes": [
+                "DynamicGraphEvolutionBridge"
+            ],
+            "imports": [],
+            "lines": 111
+        },
+        "enterprise/runtime_bootstrap.py": {
+            "classes": [
+                "RuntimeBootstrap"
+            ],
+            "imports": [
+                "datetime",
+                "app.core.intelligence.kernel",
+                "app.core.intelligence.auto_registry"
+            ],
+            "lines": 45
+        },
+        "intelligence/structural_contract.py": {
+            "classes": [
+                "StructuralIntelligenceState"
+            ],
+            "imports": [
+                "dataclasses",
+                "typing"
+            ],
+            "lines": 73
+        },
+        "intelligence/orchestrator.py": {
+            "classes": [
+                "DynamiCoreIntelligenceOrchestrator"
+            ],
+            "imports": [
+                "app.core.contracts"
+            ],
+            "lines": 82
+        },
+        "intelligence/graph_adapter.py": {
+            "classes": [
+                "GraphIntelligenceAdapter"
+            ],
+            "imports": [
+                "app.core.graph_intelligence.structural_signature",
+                "app.core.graph_intelligence.graph_delta"
+            ],
+            "lines": 58
+        },
+        "intelligence/runtime_bridge.py": {
+            "classes": [
+                "RuntimeIntelligenceBridge"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 162
+        },
+        "intelligence/runtime_registry.py": {
+            "classes": [
+                "RuntimeRegistry"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 40
+        },
+        "intelligence/enterprise_bootstrap.py": {
+            "classes": [
+                "EnterpriseBootstrap"
+            ],
+            "imports": [
+                "app.core.intelligence.kernel"
+            ],
+            "lines": 33
+        },
+        "intelligence/kernel.py": {
+            "classes": [
+                "IntelligenceKernel"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 49
+        },
+        "intelligence/auto_registry.py": {
+            "classes": [
+                "AutoRegistry"
+            ],
+            "imports": [
+                "importlib"
+            ],
+            "lines": 73
+        },
+        "intelligence/evolution_contract.py": {
+            "classes": [
+                "EvolutionReport"
+            ],
+            "imports": [
+                "dataclasses",
+                "datetime",
+                "typing"
+            ],
+            "lines": 36
+        },
+        "intelligence/evolution_engine.py": {
+            "classes": [
+                "EvolutionEngine"
+            ],
+            "imports": [
+                "datetime",
+                "app.core.intelligence.evolution_contract"
+            ],
+            "lines": 140
+        },
+        "intelligence/evolution_orchestrator.py": {
+            "classes": [
+                "EvolutionOrchestrator"
+            ],
+            "imports": [
+                "datetime",
+                "app.core.intelligence.evolution_engine",
+                "app.core.intelligence.graph_evolution_bridge"
+            ],
+            "lines": 52
+        },
+        "intelligence/graph_evolution_bridge.py": {
+            "classes": [
+                "GraphEvolutionBridge"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 74
+        },
+        "intelligence/intelligence_core.py": {
+            "classes": [
+                "IntelligenceCore"
+            ],
+            "imports": [
+                "datetime",
+                "evolution_orchestrator"
+            ],
+            "lines": 73
+        },
+        "intelligence/graph_intelligence_validator.py": {
+            "classes": [
+                "GraphIntelligenceValidator"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 160
+        },
+        "intelligence/intelligence_validation_bridge.py": {
+            "classes": [
+                "IntelligenceValidationBridge"
+            ],
+            "imports": [
+                "datetime",
+                "app.core.intelligence.graph_intelligence_validator"
+            ],
+            "lines": 88
+        },
+        "intelligence/kernel_v73.py": {
+            "classes": [
+                "IntelligenceKernelV73"
+            ],
+            "imports": [
+                "datetime"
+            ],
+            "lines": 76
+        },
+        "contracts/intelligence_contract.py": {
+            "classes": [
+                "IntelligenceState",
+                "IntelligencePrediction",
+                "IntelligenceDecision",
+                "IntelligenceReport"
+            ],
+            "imports": [
+                "dataclasses",
+                "datetime",
+                "typing"
+            ],
+            "lines": 109
+        },
+        "contracts/__init__.py": {
+            "classes": [],
+            "imports": [
+                "intelligence_contract"
+            ],
+            "lines": 8
+        }
+    }
+}
