@@ -1,6 +1,12 @@
 
 import sys
 from pathlib import Path
+import time
+import numpy as np
+
+# ============================================================
+# DYNAMICORE V7 ENTERPRISE PATH CONFIGURATION
+# ============================================================
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -9,11 +15,34 @@ sys.path.insert(
     str(ROOT)
 )
 
-import time
-import numpy as np
+# ============================================================
+# DYNAMICORE CORE IMPORT
+# ============================================================
 
-from dynamicore.core.analyzer import DynamiCore
+try:
+    from app.core.analyzer import DynamiCore
+except ImportError:
+    try:
+        from app.core.engine import DynamiCoreEngine as DynamiCore
+    except ImportError as error:
+        raise ImportError(
+            f"""
+DynamiCore Core import failed.
 
+Expected:
+app.core.analyzer.DynamiCore
+or
+app.core.engine.DynamiCoreEngine
+
+Original error:
+{error}
+"""
+        )
+
+
+# ============================================================
+# STRESS TEST ENGINE
+# ============================================================
 
 def stress_test(sizes, runs_per_size=15):
 
@@ -31,18 +60,83 @@ def stress_test(sizes, runs_per_size=15):
 
             start = time.perf_counter()
 
-            DynamiCore(system.tolist()).analyze()
+            engine = DynamiCore()
 
-            end = time.perf_counter()
+            try:
+                engine.analyze(system)
 
-            times.append((end-start)*1000)
+            except TypeError:
+                try:
+                    engine.analyze(
+                        list(system)
+                    )
+                except Exception as e:
+                    print(
+                        "Analysis warning:",
+                        e
+                    )
+
+            elapsed = time.perf_counter() - start
+
+            times.append(elapsed)
+
 
         results[n] = {
-            "size": n,
-            "avg_ms": float(np.mean(times)),
-            "p95_ms": float(np.percentile(times,95)),
-            "max_ms": float(np.max(times)),
-            "std_ms": float(np.std(times))
+            "average_seconds": float(
+                np.mean(times)
+            ),
+            "min_seconds": float(
+                np.min(times)
+            ),
+            "max_seconds": float(
+                np.max(times)
+            )
         }
 
+
+        print(
+            f"Average: {results[n]['average_seconds']:.6f}s"
+        )
+
+
     return results
+
+
+
+# ============================================================
+# EXECUTION
+# ============================================================
+
+if __name__ == "__main__":
+
+    print("=" * 100)
+    print("DYNAMICORE V7 ENTERPRISE STRESS TEST")
+    print("=" * 100)
+
+    sizes = [
+        32,
+        64,
+        128,
+        256,
+        512
+    ]
+
+    report = stress_test(
+        sizes
+    )
+
+    print("\n")
+    print("=" * 100)
+    print("FINAL BENCHMARK REPORT")
+    print("=" * 100)
+
+    for size, data in report.items():
+
+        print(
+            f"""
+SIZE: {size}
+AVG: {data['average_seconds']:.6f}s
+MIN: {data['min_seconds']:.6f}s
+MAX: {data['max_seconds']:.6f}s
+"""
+        )
