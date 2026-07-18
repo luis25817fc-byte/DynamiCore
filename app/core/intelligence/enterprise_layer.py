@@ -1,11 +1,13 @@
 
 from datetime import datetime
 
+from app.core.intelligence.enterprise_runtime import EnterpriseRuntimeV73
+
 
 class EnterpriseLayerV73:
 
 
-    VERSION = "7.3"
+    VERSION = "7.4"
 
 
 
@@ -13,7 +15,7 @@ class EnterpriseLayerV73:
 
         self.created = datetime.utcnow()
 
-        self.runtime_events = []
+        self.runtime = EnterpriseRuntimeV73()
 
         self.active = True
 
@@ -25,26 +27,34 @@ class EnterpriseLayerV73:
         payload=None
     ):
 
-        record = {
-
-            "event":
-                event,
-
-            "payload":
-                payload or {},
-
-            "timestamp":
-                datetime.utcnow()
-
-        }
-
-
-        self.runtime_events.append(
-            record
+        return self.runtime.push_event(
+            event,
+            payload
         )
 
 
-        return record
+
+    def register_state(
+        self,
+        state
+    ):
+
+        return self.runtime.push_state(
+            state
+        )
+
+
+
+    def register_transition(
+        self,
+        previous,
+        current
+    ):
+
+        return self.runtime.push_transition(
+            previous,
+            current
+        )
 
 
 
@@ -53,23 +63,19 @@ class EnterpriseLayerV73:
         kernel=None
     ):
 
-        if kernel:
+        score = 1.0
 
-            modules = kernel.modules
+        if kernel:
 
             score = (
                 sum(
                     1
-                    for value in modules.values()
-                    if value
+                    for v in kernel.modules.values()
+                    if v
                 )
                 /
-                len(modules)
+                len(kernel.modules)
             )
-
-        else:
-
-            score = 1.0
 
 
         return {
@@ -77,19 +83,16 @@ class EnterpriseLayerV73:
             "version":
                 self.VERSION,
 
-            "enterprise":
-                True,
-
             "health":
                 score,
+
+            "runtime":
+                self.runtime.metrics(),
 
             "status":
                 "ONLINE"
                 if score == 1.0
-                else "DEGRADED",
-
-            "runtime_events":
-                len(self.runtime_events)
+                else "DEGRADED"
 
         }
 
@@ -105,11 +108,8 @@ class EnterpriseLayerV73:
             "module":
                 "EnterpriseLayerV73",
 
-            "active":
-                self.active,
-
-            "events":
-                len(self.runtime_events),
+            "runtime":
+                self.runtime.status(),
 
             "status":
                 "ONLINE"
