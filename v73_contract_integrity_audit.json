@@ -1,0 +1,649 @@
+{
+  "app/core/evolution/evolution_state.py": {
+    "classes": [
+      "EvolutionState"
+    ],
+    "functions": [
+      "__post_init__"
+    ],
+    "imports": [
+      "dataclasses",
+      "datetime"
+    ]
+  },
+  "app/core/evolution/evolution_engine_v73.py": {
+    "classes": [
+      "EvolutionEngineV73"
+    ],
+    "functions": [
+      "__init__",
+      "calculate_delta",
+      "evolve",
+      "status"
+    ],
+    "imports": [
+      "app.core.evolution.evolution_state"
+    ]
+  },
+  "app/core/intelligence/structural_contract.py": {
+    "classes": [
+      "StructuralIntelligenceState"
+    ],
+    "functions": [
+      "update_metrics",
+      "snapshot"
+    ],
+    "imports": [
+      "dataclasses",
+      "typing"
+    ]
+  },
+  "app/core/intelligence/orchestrator.py": {
+    "classes": [
+      "DynamiCoreIntelligenceOrchestrator"
+    ],
+    "functions": [
+      "__init__",
+      "analyze",
+      "predict",
+      "decide"
+    ],
+    "imports": [
+      "app.core.contracts"
+    ]
+  },
+  "app/core/intelligence/graph_adapter.py": {
+    "classes": [
+      "GraphIntelligenceAdapter"
+    ],
+    "functions": [
+      "__init__",
+      "analyze_structure"
+    ],
+    "imports": [
+      "app.core.graph_intelligence.structural_signature",
+      "app.core.graph_intelligence.graph_delta"
+    ]
+  },
+  "app/core/intelligence/runtime_bridge.py": {
+    "classes": [
+      "RuntimeIntelligenceBridge"
+    ],
+    "functions": [
+      "__init__",
+      "analyze"
+    ],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/runtime_registry.py": {
+    "classes": [
+      "RuntimeRegistry"
+    ],
+    "functions": [
+      "__init__",
+      "register",
+      "health",
+      "get"
+    ],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/enterprise_bootstrap.py": {
+    "classes": [
+      "EnterpriseBootstrap"
+    ],
+    "functions": [
+      "__init__",
+      "register_component",
+      "boot",
+      "health"
+    ],
+    "imports": [
+      "app.core.intelligence.kernel"
+    ]
+  },
+  "app/core/intelligence/kernel.py": {
+    "classes": [
+      "IntelligenceKernel"
+    ],
+    "functions": [
+      "__init__",
+      "register",
+      "status",
+      "health"
+    ],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/auto_registry.py": {
+    "classes": [
+      "AutoRegistry"
+    ],
+    "functions": [
+      "__init__",
+      "register_module",
+      "register_core_stack"
+    ],
+    "imports": [
+      "importlib"
+    ]
+  },
+  "app/core/intelligence/evolution_contract.py": {
+    "classes": [
+      "EvolutionReport"
+    ],
+    "functions": [],
+    "imports": [
+      "dataclasses",
+      "datetime",
+      "typing"
+    ]
+  },
+  "app/core/intelligence/evolution_engine.py": {
+    "classes": [
+      "EvolutionEngine"
+    ],
+    "functions": [
+      "analyze",
+      "_compute_delta",
+      "_classify_transition",
+      "_confidence"
+    ],
+    "imports": [
+      "datetime",
+      "app.core.intelligence.evolution_contract"
+    ]
+  },
+  "app/core/intelligence/evolution_orchestrator.py": {
+    "classes": [
+      "EvolutionOrchestrator"
+    ],
+    "functions": [
+      "__init__",
+      "analyze_evolution",
+      "status"
+    ],
+    "imports": [
+      "datetime",
+      "app.core.intelligence.evolution_engine",
+      "app.core.intelligence.graph_evolution_bridge"
+    ]
+  },
+  "app/core/intelligence/graph_evolution_bridge.py": {
+    "classes": [
+      "GraphEvolutionBridge"
+    ],
+    "functions": [
+      "__init__",
+      "process",
+      "status"
+    ],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/intelligence_core.py": {
+    "classes": [
+      "IntelligenceCore"
+    ],
+    "functions": [
+      "__init__",
+      "analyze",
+      "status"
+    ],
+    "imports": [
+      "datetime",
+      "evolution_orchestrator"
+    ]
+  },
+  "app/core/intelligence/graph_intelligence_validator.py": {
+    "classes": [
+      "GraphIntelligenceValidator"
+    ],
+    "functions": [
+      "__init__",
+      "validate_graph_state",
+      "validate_evolution",
+      "validate_prediction",
+      "validate_decision",
+      "validate",
+      "status"
+    ],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/intelligence_validation_bridge.py": {
+    "classes": [
+      "IntelligenceValidationBridge"
+    ],
+    "functions": [
+      "__init__",
+      "validate_intelligence",
+      "status"
+    ],
+    "imports": [
+      "datetime",
+      "app.core.intelligence.graph_intelligence_validator"
+    ]
+  },
+  "app/core/intelligence/kernel_v73.py": {
+    "classes": [
+      "IntelligenceKernelV73"
+    ],
+    "functions": [
+      "__init__",
+      "attach_math_core",
+      "attach_graph_intelligence",
+      "attach_evolution_engine",
+      "attach_validation_bridge",
+      "analyze",
+      "build_state",
+      "validate",
+      "attach_enterprise_layer",
+      "status"
+    ],
+    "imports": [
+      "datetime",
+      "app.core.intelligence.dlis_state",
+      "app.core.intelligence.validation_bridge"
+    ]
+  },
+  "app/core/intelligence/dlis_state.py": {
+    "classes": [
+      "DLISState"
+    ],
+    "functions": [
+      "status"
+    ],
+    "imports": [
+      "dataclasses",
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/validation_bridge.py": {
+    "classes": [
+      "ValidationBridgeV73"
+    ],
+    "functions": [
+      "__init__",
+      "validate_math",
+      "validate_graph",
+      "validate_evolution",
+      "validate",
+      "status"
+    ],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/enterprise_layer.py": {
+    "classes": [
+      "EnterpriseLayerV73"
+    ],
+    "functions": [
+      "__init__",
+      "register_event",
+      "health",
+      "status"
+    ],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/mathematical/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "mathematical_core",
+      "state_adapter",
+      "invariant_engine"
+    ]
+  },
+  "app/core/mathematical/mathematical_core.py": {
+    "classes": [
+      "MathematicalCore"
+    ],
+    "functions": [
+      "__init__",
+      "analyze",
+      "status"
+    ],
+    "imports": [
+      "datetime",
+      "app.core.mathematical.invariant_engine"
+    ]
+  },
+  "app/core/mathematical/dlis_math_v1.py": {
+    "classes": [
+      "DLISState",
+      "DLISMath"
+    ],
+    "functions": [
+      "psi",
+      "pi",
+      "omega",
+      "sigma",
+      "phi",
+      "kappa",
+      "collapse",
+      "evaluate"
+    ],
+    "imports": [
+      "dataclasses",
+      "math"
+    ]
+  },
+  "app/core/mathematical/invariant_engine.py": {
+    "classes": [
+      "InvariantReport",
+      "InvariantEngine"
+    ],
+    "functions": [
+      "_get",
+      "compare_values",
+      "compare",
+      "status"
+    ],
+    "imports": [
+      "dataclasses",
+      "math"
+    ]
+  },
+  "app/core/mathematical/state_adapter.py": {
+    "classes": [
+      "MathematicalState",
+      "StateAdapter"
+    ],
+    "functions": [
+      "adapt",
+      "status"
+    ],
+    "imports": [
+      "dataclasses"
+    ]
+  },
+  "app/core/graph_intelligence/dynamic_intelligence_state.py": {
+    "classes": [
+      "DynamicIntelligenceState"
+    ],
+    "functions": [
+      "build"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/final_audit.py": {
+    "classes": [
+      "FinalAudit"
+    ],
+    "functions": [
+      "run"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/intelligence_benchmark.py": {
+    "classes": [
+      "IntelligenceBenchmark"
+    ],
+    "functions": [
+      "run"
+    ],
+    "imports": [
+      "time"
+    ]
+  },
+  "app/core/graph_intelligence/intelligence_validator.py": {
+    "classes": [
+      "IntelligenceValidator"
+    ],
+    "functions": [
+      "validate"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/structural_fusion.py": {
+    "classes": [
+      "StructuralIntelligenceFusion"
+    ],
+    "functions": [
+      "fuse"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/evolution_diff.py": {
+    "classes": [
+      "EvolutionDiffEngine"
+    ],
+    "functions": [
+      "compare"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "structural_signature",
+      "graph_delta",
+      "evolution_layer",
+      "pattern_engine",
+      "evolution_predictor",
+      "temporal_memory",
+      "pipeline"
+    ]
+  },
+  "app/core/graph_intelligence/evolution_metrics.py": {
+    "classes": [
+      "EvolutionMetrics"
+    ],
+    "functions": [
+      "calculate"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/graph_dynamics.py": {
+    "classes": [
+      "GraphDynamicsEngine"
+    ],
+    "functions": [
+      "analyze"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/history_engine.py": {
+    "classes": [
+      "HistoricalEvolutionEngine"
+    ],
+    "functions": [
+      "__init__",
+      "record",
+      "latest",
+      "all",
+      "size"
+    ],
+    "imports": [
+      "datetime",
+      "copy"
+    ]
+  },
+  "app/core/graph_intelligence/pattern_engine.py": {
+    "classes": [
+      "StructuralPatternEngine"
+    ],
+    "functions": [
+      "detect"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/structural_memory.py": {
+    "classes": [
+      "StructuralMemory"
+    ],
+    "functions": [
+      "__init__",
+      "store",
+      "size"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/temporal_memory.py": {
+    "classes": [
+      "TemporalGraphMemory"
+    ],
+    "functions": [
+      "__init__",
+      "store",
+      "latest"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/transition_detector.py": {
+    "classes": [
+      "TransitionDetector"
+    ],
+    "functions": [
+      "detect"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/transition_memory.py": {
+    "classes": [
+      "TransitionMemory"
+    ],
+    "functions": [
+      "__init__",
+      "record",
+      "history"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/structural_transition.py": {
+    "classes": [
+      "StructuralTransitionIntelligence"
+    ],
+    "functions": [
+      "analyze"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/evolution_predictor.py": {
+    "classes": [
+      "GraphEvolutionPredictor"
+    ],
+    "functions": [
+      "predict"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/graph_intelligence.py": {
+    "classes": [
+      "DynamicGraphIntelligence"
+    ],
+    "functions": [
+      "__init__",
+      "analyze",
+      "status"
+    ],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/graph_intelligence/evolution_layer.py": {
+    "classes": [
+      "EvolutionLayer"
+    ],
+    "functions": [
+      "analyze"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/graph_delta.py": {
+    "classes": [
+      "GraphDeltaEngine"
+    ],
+    "functions": [
+      "compare"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/structural_signature.py": {
+    "classes": [
+      "StructuralSignatureEngine"
+    ],
+    "functions": [
+      "generate"
+    ],
+    "imports": [
+      "hashlib",
+      "json"
+    ]
+  },
+  "app/core/graph_intelligence/structural_signature_v2.py": {
+    "classes": [
+      "StructuralSignatureV2"
+    ],
+    "functions": [
+      "compare"
+    ],
+    "imports": [
+      "hashlib",
+      "json"
+    ]
+  },
+  "app/core/graph_intelligence/critical_transition.py": {
+    "classes": [
+      "CriticalTransitionDetector"
+    ],
+    "functions": [
+      "detect",
+      "analyze"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/pipeline.py": {
+    "classes": [
+      "GraphIntelligencePipeline"
+    ],
+    "functions": [
+      "__init__",
+      "run"
+    ],
+    "imports": [
+      "graph_delta",
+      "structural_signature",
+      "structural_signature_v2",
+      "evolution_layer",
+      "evolution_metrics",
+      "predictive_structural",
+      "critical_transition",
+      "dynamic_intelligence_state",
+      "structural_transition",
+      "structural_fusion",
+      "decision_engine"
+    ]
+  },
+  "app/core/graph_intelligence/decision_engine.py": {
+    "classes": [
+      "DecisionEngine"
+    ],
+    "functions": [
+      "analyze",
+      "decide"
+    ],
+    "imports": []
+  },
+  "app/core/graph_intelligence/predictive_structural.py": {
+    "classes": [
+      "PredictiveStructuralLayer"
+    ],
+    "functions": [
+      "_clamp",
+      "predict"
+    ],
+    "imports": []
+  }
+}
