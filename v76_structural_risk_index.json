@@ -1,0 +1,27 @@
+{
+    "version": "7.6.22",
+    "module": "StructuralRiskIndex",
+    "generated": "2026-07-18 17:14:23.333468",
+    "inputs": {
+        "state": {
+            "entropy": 0.91,
+            "health": 0.22,
+            "risk": 0.78
+        },
+        "transition": {
+            "detected": false
+        },
+        "critical_window": {
+            "detected": false,
+            "score": 0.78
+        }
+    },
+    "risk_index": 0.78,
+    "classification": "HIGH",
+    "governance": {
+        "deterministic": true,
+        "traceable": true,
+        "no_auto_intervention": true
+    },
+    "status": "ONLINE"
+}
