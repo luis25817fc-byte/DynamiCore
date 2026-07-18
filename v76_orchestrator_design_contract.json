@@ -1,0 +1,78 @@
+{
+    "version": "7.6.6",
+    "project": "DynamiCore Project Titan",
+    "generated": "2026-07-18 14:58:38.142293",
+    "module": "CognitiveOrchestrator",
+    "purpose": "Coordinate deterministic intelligence layers without replacing existing engines",
+    "principles": [
+        "deterministic_execution",
+        "modular_coordination",
+        "state_driven_analysis",
+        "historical_context_awareness",
+        "explainable_decisions"
+    ],
+    "pipeline": {
+        "INPUT": {
+            "accepts": [
+                "state_vector",
+                "system_snapshot",
+                "external_signal"
+            ]
+        },
+        "ANALYSIS": {
+            "delegates_to": [
+                "DynamiCoreEngine",
+                "Analyzer",
+                "CausalEngine",
+                "ContextEngine"
+            ]
+        },
+        "MEMORY": {
+            "delegates_to": [
+                "RuntimePersistence",
+                "TemporalMemoryEngine",
+                "StructuralTimelineEngine"
+            ]
+        },
+        "PREDICTION": {
+            "delegates_to": [
+                "PredictiveTemporalEngine",
+                "ForecastEngine",
+                "RiskEngine"
+            ]
+        },
+        "DECISION": {
+            "delegates_to": [
+                "DecisionEngine",
+                "DecisionAgent",
+                "PolicyEngine"
+            ]
+        },
+        "ACTION": {
+            "delegates_to": [
+                "EnterpriseAPIGateway",
+                "AutonomousControl",
+                "ExecutionBridge"
+            ]
+        }
+    },
+    "rules": {
+        "orchestrator_must_not": [
+            "duplicate_analysis",
+            "store_raw_memory_directly",
+            "replace_prediction_models",
+            "override_validation_layer"
+        ],
+        "orchestrator_must": [
+            "coordinate_modules",
+            "maintain_execution_order",
+            "preserve_determinism",
+            "produce_trace"
+        ]
+    },
+    "v8_alignment": {
+        "future_component": "Cognitive Decision Engine",
+        "status": "PREPARED"
+    },
+    "status": "DESIGN_CONTRACT_READY"
+}

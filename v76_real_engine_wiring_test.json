@@ -1,0 +1,56 @@
+{
+    "version": "7.6.14",
+    "project": "DynamiCore Project Titan",
+    "generated": "2026-07-18 15:52:19.325153",
+    "engines": {
+        "memory": {
+            "class": "TemporalMemoryEngineV75",
+            "loaded": true,
+            "status": {
+                "version": "7.5.0",
+                "module": "TemporalMemoryEngineV75",
+                "status": "ONLINE"
+            }
+        },
+        "prediction": {
+            "class": "PredictiveTemporalEngineV753",
+            "loaded": true,
+            "status": {
+                "version": "7.5.3",
+                "module": "PredictiveTemporalEngineV753",
+                "status": "ONLINE"
+            }
+        },
+        "decision": {
+            "class": "DecisionEngine",
+            "loaded": true
+        }
+    },
+    "cycle": {
+        "completed": true,
+        "trace_events": 4
+    },
+    "trace": [
+        {
+            "stage": "INPUT",
+            "state": {
+                "entropy": 0.91,
+                "health": 0.22,
+                "risk": 0.78
+            }
+        },
+        {
+            "stage": "MEMORY",
+            "status": "AVAILABLE"
+        },
+        {
+            "stage": "PREDICTION",
+            "status": "AVAILABLE"
+        },
+        {
+            "stage": "DECISION",
+            "status": "AVAILABLE"
+        }
+    ],
+    "status": "ONLINE"
+}

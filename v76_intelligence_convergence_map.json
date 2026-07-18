@@ -1,0 +1,53 @@
+{
+    "version": "7.6.5",
+    "project": "DynamiCore Project Titan",
+    "generated": "2026-07-18 14:52:14.900713",
+    "system_flow": {
+        "ENTRY": {
+            "count": 73,
+            "primary_candidates": [
+                "engine.py::analyze",
+                "analyzer.py::analyze",
+                "enterprise/intelligence_api.py::ingest"
+            ]
+        },
+        "PROCESSING": {
+            "modules": 148
+        },
+        "MEMORY": {
+            "modules": 24
+        },
+        "PREDICTION": {
+            "modules": 10
+        },
+        "DECISION": {
+            "modules": 9
+        },
+        "ACTION": {
+            "modules": 4
+        }
+    },
+    "orchestrator_candidates": {
+        "kernel": [
+            "app.core.engine",
+            "app.core.intelligence.kernel_v73"
+        ],
+        "coordination": [
+            "agents.orchestrator",
+            "enterprise.enterprise_core"
+        ],
+        "decision": [
+            "decision.engine",
+            "agents.decision_agent"
+        ]
+    },
+    "risk_flags": {
+        "multiple_memory_layers": true,
+        "multiple_decision_layers": true,
+        "multiple_prediction_layers": true
+    },
+    "future": {
+        "v8": "Cognitive Decision Engine"
+    },
+    "status": "CONVERGENCE_ANALYZED"
+}

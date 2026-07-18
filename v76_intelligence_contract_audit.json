@@ -1,0 +1,1354 @@
+[
+    {
+        "module": "__init__.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.623420"
+    },
+    {
+        "module": "Billing.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.627189"
+    },
+    {
+        "module": "ai.py",
+        "imports": [
+            "os",
+            "openai"
+        ],
+        "timestamp": "2026-07-18 14:43:00.629561"
+    },
+    {
+        "module": "analyzer.py",
+        "imports": [
+            "math",
+            "collections"
+        ],
+        "timestamp": "2026-07-18 14:43:00.632824"
+    },
+    {
+        "module": "basins.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.635250"
+    },
+    {
+        "module": "cycles.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.638109"
+    },
+    {
+        "module": "db.py",
+        "imports": [
+            "os",
+            "sqlalchemy",
+            "sqlalchemy.orm",
+            "sqlalchemy.orm",
+            "sqlalchemy.orm"
+        ],
+        "timestamp": "2026-07-18 14:43:00.640963"
+    },
+    {
+        "module": "engine.py",
+        "imports": [
+            "metrics.engine",
+            "predictive.forecast",
+            "predictive.risk",
+            "predictive.regime",
+            "predictive.anomaly",
+            "state.snapshot",
+            "kernel.state_vector",
+            "agents.orchestrator",
+            "state.evolution",
+            "state.transition",
+            "twin.engine",
+            "simulation.engine",
+            "validation.validator",
+            "knowledge.engine",
+            "learning.engine",
+            "context.engine",
+            "explainability.engine",
+            "attribution.engine",
+            "causal.engine",
+            "decision.engine",
+            "feedback.engine",
+            "adaptation.engine",
+            "adaptation.evolution_service"
+        ],
+        "timestamp": "2026-07-18 14:43:00.646802"
+    },
+    {
+        "module": "entropy.py",
+        "imports": [
+            "numpy"
+        ],
+        "timestamp": "2026-07-18 14:43:00.650319"
+    },
+    {
+        "module": "graph.py",
+        "imports": [
+            "numpy"
+        ],
+        "timestamp": "2026-07-18 14:43:00.653277"
+    },
+    {
+        "module": "security.py",
+        "imports": [
+            "secrets",
+            "datetime",
+            "datetime",
+            "jose",
+            "passlib.context"
+        ],
+        "timestamp": "2026-07-18 14:43:00.655911"
+    },
+    {
+        "module": "stripe_service.py",
+        "imports": [
+            "stripe",
+            "os"
+        ],
+        "timestamp": "2026-07-18 14:43:00.658712"
+    },
+    {
+        "module": "auth.py",
+        "imports": [
+            "uuid",
+            "app.core.db",
+            "app.core.models"
+        ],
+        "timestamp": "2026-07-18 14:43:00.661462"
+    },
+    {
+        "module": "memory.py",
+        "imports": [
+            "app.core.db",
+            "app.core.models"
+        ],
+        "timestamp": "2026-07-18 14:43:00.664477"
+    },
+    {
+        "module": "models.py",
+        "imports": [
+            "sqlalchemy",
+            "datetime",
+            "api.db"
+        ],
+        "timestamp": "2026-07-18 14:43:00.666796"
+    },
+    {
+        "module": "middleware.py",
+        "imports": [
+            "fastapi",
+            "app.core.auth"
+        ],
+        "timestamp": "2026-07-18 14:43:00.670569"
+    },
+    {
+        "module": "runtime_dependencies.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.674255"
+    },
+    {
+        "module": "health_check.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.677356"
+    },
+    {
+        "module": "adaptation/__init__.py",
+        "imports": [
+            "engine",
+            "policy",
+            "calibration",
+            "confidence",
+            "self_optimizer"
+        ],
+        "timestamp": "2026-07-18 14:43:00.684985"
+    },
+    {
+        "module": "adaptation/adaptive_learning.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.688534"
+    },
+    {
+        "module": "adaptation/adaptive_threshold.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.707385"
+    },
+    {
+        "module": "adaptation/calibration.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.713685"
+    },
+    {
+        "module": "adaptation/engine.py",
+        "imports": [
+            "policy",
+            "calibration",
+            "confidence",
+            "self_optimizer",
+            "adaptive_threshold",
+            "strategy_memory",
+            "adaptive_learning",
+            "strategy_optimizer"
+        ],
+        "timestamp": "2026-07-18 14:43:00.717759"
+    },
+    {
+        "module": "adaptation/confidence.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.720868"
+    },
+    {
+        "module": "adaptation/evolution_adapter.py",
+        "imports": [
+            "policy_evolution"
+        ],
+        "timestamp": "2026-07-18 14:43:00.723413"
+    },
+    {
+        "module": "adaptation/policy.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.726329"
+    },
+    {
+        "module": "adaptation/evolution_service.py",
+        "imports": [
+            "evolution_adapter",
+            "evolution_diff"
+        ],
+        "timestamp": "2026-07-18 14:43:00.729646"
+    },
+    {
+        "module": "adaptation/evolution_diff.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.733314"
+    },
+    {
+        "module": "adaptation/policy_bridge.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.736640"
+    },
+    {
+        "module": "adaptation/policy_evolution.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.739761"
+    },
+    {
+        "module": "adaptation/self_optimizer.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.743210"
+    },
+    {
+        "module": "adaptation/strategy_memory.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.745903"
+    },
+    {
+        "module": "adaptation/strategy_optimizer.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.748417"
+    },
+    {
+        "module": "agents/__init__.py",
+        "imports": [
+            "orchestrator",
+            "base"
+        ],
+        "timestamp": "2026-07-18 14:43:00.751818"
+    },
+    {
+        "module": "agents/base.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.754348"
+    },
+    {
+        "module": "agents/forecast_agent.py",
+        "imports": [
+            "base"
+        ],
+        "timestamp": "2026-07-18 14:43:00.756989"
+    },
+    {
+        "module": "agents/metrics_agent.py",
+        "imports": [
+            "base"
+        ],
+        "timestamp": "2026-07-18 14:43:00.759777"
+    },
+    {
+        "module": "agents/decision_agent.py",
+        "imports": [
+            "base"
+        ],
+        "timestamp": "2026-07-18 14:43:00.763787"
+    },
+    {
+        "module": "agents/orchestrator.py",
+        "imports": [
+            "metrics_agent",
+            "risk_agent",
+            "forecast_agent",
+            "decision_agent"
+        ],
+        "timestamp": "2026-07-18 14:43:00.767078"
+    },
+    {
+        "module": "agents/risk_agent.py",
+        "imports": [
+            "base"
+        ],
+        "timestamp": "2026-07-18 14:43:00.769557"
+    },
+    {
+        "module": "attribution/engine.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.773812"
+    },
+    {
+        "module": "attribution/__init__.py",
+        "imports": [
+            "engine"
+        ],
+        "timestamp": "2026-07-18 14:43:00.776272"
+    },
+    {
+        "module": "causal/engine.py",
+        "imports": [
+            "graph"
+        ],
+        "timestamp": "2026-07-18 14:43:00.779777"
+    },
+    {
+        "module": "causal/__init__.py",
+        "imports": [
+            "engine",
+            "graph"
+        ],
+        "timestamp": "2026-07-18 14:43:00.782462"
+    },
+    {
+        "module": "causal/graph.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.785541"
+    },
+    {
+        "module": "context/__init__.py",
+        "imports": [
+            "engine"
+        ],
+        "timestamp": "2026-07-18 14:43:00.788253"
+    },
+    {
+        "module": "context/engine.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.790860"
+    },
+    {
+        "module": "decision/engine.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.794789"
+    },
+    {
+        "module": "decision/__init__.py",
+        "imports": [
+            "engine"
+        ],
+        "timestamp": "2026-07-18 14:43:00.797439"
+    },
+    {
+        "module": "decision/policy_engine.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:00.800169"
+    },
+    {
+        "module": "decision/decision_contract.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.803533"
+    },
+    {
+        "module": "explainability/__init__.py",
+        "imports": [
+            "engine"
+        ],
+        "timestamp": "2026-07-18 14:43:00.806543"
+    },
+    {
+        "module": "explainability/engine.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.809803"
+    },
+    {
+        "module": "feedback/__init__.py",
+        "imports": [
+            "engine"
+        ],
+        "timestamp": "2026-07-18 14:43:00.813753"
+    },
+    {
+        "module": "feedback/engine.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.816286"
+    },
+    {
+        "module": "graph_intelligence/dynamic_intelligence_state.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.820240"
+    },
+    {
+        "module": "graph_intelligence/final_audit.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.823236"
+    },
+    {
+        "module": "graph_intelligence/intelligence_benchmark.py",
+        "imports": [
+            "time"
+        ],
+        "timestamp": "2026-07-18 14:43:00.829456"
+    },
+    {
+        "module": "graph_intelligence/intelligence_validator.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.832118"
+    },
+    {
+        "module": "graph_intelligence/structural_fusion.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.834855"
+    },
+    {
+        "module": "graph_intelligence/evolution_diff.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.837442"
+    },
+    {
+        "module": "graph_intelligence/__init__.py",
+        "imports": [
+            "structural_signature",
+            "graph_delta",
+            "evolution_layer",
+            "pattern_engine",
+            "evolution_predictor",
+            "temporal_memory",
+            "pipeline"
+        ],
+        "timestamp": "2026-07-18 14:43:00.839895"
+    },
+    {
+        "module": "graph_intelligence/evolution_metrics.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.842478"
+    },
+    {
+        "module": "graph_intelligence/graph_dynamics.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.845544"
+    },
+    {
+        "module": "graph_intelligence/history_engine.py",
+        "imports": [
+            "datetime",
+            "copy"
+        ],
+        "timestamp": "2026-07-18 14:43:00.848586"
+    },
+    {
+        "module": "graph_intelligence/pattern_engine.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.851874"
+    },
+    {
+        "module": "graph_intelligence/structural_memory.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.854250"
+    },
+    {
+        "module": "graph_intelligence/temporal_memory.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.856833"
+    },
+    {
+        "module": "graph_intelligence/transition_detector.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.859371"
+    },
+    {
+        "module": "graph_intelligence/transition_memory.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.861821"
+    },
+    {
+        "module": "graph_intelligence/structural_transition.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.864790"
+    },
+    {
+        "module": "graph_intelligence/evolution_predictor.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.867820"
+    },
+    {
+        "module": "graph_intelligence/evolution_layer.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.871344"
+    },
+    {
+        "module": "graph_intelligence/graph_delta.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.874802"
+    },
+    {
+        "module": "graph_intelligence/structural_signature.py",
+        "imports": [
+            "hashlib",
+            "json"
+        ],
+        "timestamp": "2026-07-18 14:43:00.878859"
+    },
+    {
+        "module": "graph_intelligence/structural_signature_v2.py",
+        "imports": [
+            "hashlib",
+            "json"
+        ],
+        "timestamp": "2026-07-18 14:43:00.883842"
+    },
+    {
+        "module": "graph_intelligence/critical_transition.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.886887"
+    },
+    {
+        "module": "graph_intelligence/pipeline.py",
+        "imports": [
+            "graph_delta",
+            "structural_signature",
+            "structural_signature_v2",
+            "evolution_layer",
+            "evolution_metrics",
+            "predictive_structural",
+            "critical_transition",
+            "dynamic_intelligence_state",
+            "structural_transition",
+            "structural_fusion",
+            "decision_engine"
+        ],
+        "timestamp": "2026-07-18 14:43:00.890264"
+    },
+    {
+        "module": "graph_intelligence/decision_engine.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.892918"
+    },
+    {
+        "module": "graph_intelligence/predictive_structural.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.896118"
+    },
+    {
+        "module": "graph_intelligence/graph_intelligence.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:00.899684"
+    },
+    {
+        "module": "kernel/__init__.py",
+        "imports": [
+            "state_vector"
+        ],
+        "timestamp": "2026-07-18 14:43:00.902534"
+    },
+    {
+        "module": "kernel/state_vector.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.905531"
+    },
+    {
+        "module": "knowledge/store.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.908577"
+    },
+    {
+        "module": "knowledge/__init__.py",
+        "imports": [
+            "engine",
+            "store"
+        ],
+        "timestamp": "2026-07-18 14:43:00.911200"
+    },
+    {
+        "module": "knowledge/engine.py",
+        "imports": [
+            "store"
+        ],
+        "timestamp": "2026-07-18 14:43:00.913998"
+    },
+    {
+        "module": "learning/__init__.py",
+        "imports": [
+            "engine",
+            "memory"
+        ],
+        "timestamp": "2026-07-18 14:43:00.917657"
+    },
+    {
+        "module": "learning/engine.py",
+        "imports": [
+            "memory"
+        ],
+        "timestamp": "2026-07-18 14:43:00.920529"
+    },
+    {
+        "module": "learning/memory.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.923612"
+    },
+    {
+        "module": "metrics/__init__.py",
+        "imports": [
+            "entropy",
+            "coherence",
+            "dynamics",
+            "potential",
+            "divergence"
+        ],
+        "timestamp": "2026-07-18 14:43:00.926919"
+    },
+    {
+        "module": "metrics/coherence.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.929855"
+    },
+    {
+        "module": "metrics/divergence.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.933552"
+    },
+    {
+        "module": "metrics/dynamics.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.936704"
+    },
+    {
+        "module": "metrics/entropy.py",
+        "imports": [
+            "math",
+            "collections"
+        ],
+        "timestamp": "2026-07-18 14:43:00.939462"
+    },
+    {
+        "module": "metrics/engine.py",
+        "imports": [
+            "entropy",
+            "coherence",
+            "dynamics",
+            "potential",
+            "divergence"
+        ],
+        "timestamp": "2026-07-18 14:43:00.942896"
+    },
+    {
+        "module": "metrics/potential.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.963479"
+    },
+    {
+        "module": "predictive/__init__.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.965904"
+    },
+    {
+        "module": "predictive/anomaly.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.969949"
+    },
+    {
+        "module": "predictive/forecast.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.973428"
+    },
+    {
+        "module": "predictive/regime.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.975965"
+    },
+    {
+        "module": "predictive/risk.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.978877"
+    },
+    {
+        "module": "simulation/__init__.py",
+        "imports": [
+            "engine",
+            "scenario"
+        ],
+        "timestamp": "2026-07-18 14:43:00.982701"
+    },
+    {
+        "module": "simulation/engine.py",
+        "imports": [
+            "scenario"
+        ],
+        "timestamp": "2026-07-18 14:43:00.985503"
+    },
+    {
+        "module": "simulation/scenario.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.988063"
+    },
+    {
+        "module": "state/__init__.py",
+        "imports": [
+            "transition"
+        ],
+        "timestamp": "2026-07-18 14:43:00.990736"
+    },
+    {
+        "module": "state/evolution.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:00.994184"
+    },
+    {
+        "module": "state/store.py",
+        "imports": [
+            "json",
+            "pathlib"
+        ],
+        "timestamp": "2026-07-18 14:43:00.997495"
+    },
+    {
+        "module": "state/snapshot.py",
+        "imports": [
+            "store"
+        ],
+        "timestamp": "2026-07-18 14:43:01.000685"
+    },
+    {
+        "module": "state/history.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.003425"
+    },
+    {
+        "module": "state/transition.py",
+        "imports": [
+            "app.core.kernel"
+        ],
+        "timestamp": "2026-07-18 14:43:01.006113"
+    },
+    {
+        "module": "twin/__init__.py",
+        "imports": [
+            "engine",
+            "model"
+        ],
+        "timestamp": "2026-07-18 14:43:01.009284"
+    },
+    {
+        "module": "twin/engine.py",
+        "imports": [
+            "model"
+        ],
+        "timestamp": "2026-07-18 14:43:01.011940"
+    },
+    {
+        "module": "twin/model.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.015166"
+    },
+    {
+        "module": "validation/__init__.py",
+        "imports": [
+            "validator"
+        ],
+        "timestamp": "2026-07-18 14:43:01.018723"
+    },
+    {
+        "module": "validation/validator.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.021210"
+    },
+    {
+        "module": "validation/v71_enterprise_validator.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.023929"
+    },
+    {
+        "module": "enterprise/__init__.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.027269"
+    },
+    {
+        "module": "enterprise/adaptive_intelligence.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.031403"
+    },
+    {
+        "module": "enterprise/bootstrap.py",
+        "imports": [
+            "runtime_manager",
+            "intelligence_stream",
+            "intelligence_api",
+            "decision_service",
+            "monitoring_alert",
+            "persistence_history",
+            "configuration",
+            "security_layer",
+            "deployment_readiness",
+            "orchestrator",
+            "enterprise_core",
+            "knowledge_memory"
+        ],
+        "timestamp": "2026-07-18 14:43:01.034121"
+    },
+    {
+        "module": "enterprise/configuration.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.037098"
+    },
+    {
+        "module": "enterprise/decision_service.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.039610"
+    },
+    {
+        "module": "enterprise/deployment_readiness.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.042862"
+    },
+    {
+        "module": "enterprise/enterprise_api_gateway.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.045386"
+    },
+    {
+        "module": "enterprise/enterprise_core.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.048780"
+    },
+    {
+        "module": "enterprise/event_processor.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.051316"
+    },
+    {
+        "module": "enterprise/final_integration_audit.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.053851"
+    },
+    {
+        "module": "enterprise/global_state_manager.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.057278"
+    },
+    {
+        "module": "enterprise/intelligence_api.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.059760"
+    },
+    {
+        "module": "enterprise/intelligence_core.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.063555"
+    },
+    {
+        "module": "enterprise/intelligence_gateway.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.066273"
+    },
+    {
+        "module": "enterprise/intelligence_stream.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.069478"
+    },
+    {
+        "module": "enterprise/knowledge_memory.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.071931"
+    },
+    {
+        "module": "enterprise/monitoring_alert.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.074619"
+    },
+    {
+        "module": "enterprise/observability.py",
+        "imports": [
+            "time"
+        ],
+        "timestamp": "2026-07-18 14:43:01.076845"
+    },
+    {
+        "module": "enterprise/orchestrator.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.079695"
+    },
+    {
+        "module": "enterprise/persistence_history.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.082209"
+    },
+    {
+        "module": "enterprise/runtime_manager.py",
+        "imports": [
+            "runtime_state"
+        ],
+        "timestamp": "2026-07-18 14:43:01.084536"
+    },
+    {
+        "module": "enterprise/runtime_state.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.086920"
+    },
+    {
+        "module": "enterprise/security_layer.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.089473"
+    },
+    {
+        "module": "enterprise/self_optimization.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.092547"
+    },
+    {
+        "module": "enterprise/validation_automation.py",
+        "imports": [
+            "json",
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.095996"
+    },
+    {
+        "module": "enterprise/workflow_engine.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.099180"
+    },
+    {
+        "module": "enterprise/adaptive_intelligence_bridge.py",
+        "imports": [
+            "app.core.enterprise.adaptive_intelligence",
+            "app.core.enterprise.knowledge_memory",
+            "app.core.enterprise.self_optimization",
+            "app.core.graph_intelligence.evolution_predictor",
+            "app.core.graph_intelligence.predictive_structural"
+        ],
+        "timestamp": "2026-07-18 14:43:01.102559"
+    },
+    {
+        "module": "enterprise/autonomous_intelligence_loop.py",
+        "imports": [
+            "app.core.enterprise.autonomous_control",
+            "app.core.enterprise.workflow_engine",
+            "app.core.enterprise.decision_service",
+            "app.core.decision.engine",
+            "app.core.agents.decision_agent"
+        ],
+        "timestamp": "2026-07-18 14:43:01.105319"
+    },
+    {
+        "module": "enterprise/intelligence_orchestration_layer.py",
+        "imports": [
+            "app.core.enterprise.orchestrator",
+            "app.core.enterprise.global_state_manager",
+            "app.core.enterprise.observability",
+            "app.core.enterprise.monitoring_alert"
+        ],
+        "timestamp": "2026-07-18 14:43:01.107723"
+    },
+    {
+        "module": "enterprise/self_awareness_layer.py",
+        "imports": [
+            "app.core.enterprise.observability",
+            "app.core.enterprise.monitoring_alert",
+            "app.core.enterprise.global_state_manager",
+            "app.core.enterprise.runtime_state",
+            "app.core.enterprise.runtime_manager"
+        ],
+        "timestamp": "2026-07-18 14:43:01.111854"
+    },
+    {
+        "module": "enterprise/autonomous_control.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.114553"
+    },
+    {
+        "module": "enterprise/autonomous_feedback.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.117517"
+    },
+    {
+        "module": "enterprise/persistent_strategy_repository.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.118954"
+    },
+    {
+        "module": "enterprise/strategy_loader.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.121864"
+    },
+    {
+        "module": "enterprise/adaptive_strategy_evolution.py",
+        "imports": [
+            "json",
+            "pathlib",
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.126609"
+    },
+    {
+        "module": "enterprise/decision_execution_bridge.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.130886"
+    },
+    {
+        "module": "enterprise/cognitive_memory_layer.py",
+        "imports": [
+            "datetime",
+            "app.core.enterprise.knowledge_memory",
+            "app.core.enterprise.persistence_history",
+            "app.core.graph_intelligence.temporal_memory",
+            "app.core.graph_intelligence.pattern_engine",
+            "app.core.graph_intelligence.history_engine",
+            "app.core.graph_intelligence.transition_memory"
+        ],
+        "timestamp": "2026-07-18 14:43:01.134843"
+    },
+    {
+        "module": "enterprise/predictive_intelligence_layer.py",
+        "imports": [
+            "app.core.graph_intelligence.evolution_predictor",
+            "app.core.graph_intelligence.predictive_structural"
+        ],
+        "timestamp": "2026-07-18 14:43:01.137668"
+    },
+    {
+        "module": "enterprise/dynamic_graph_bridge.py",
+        "imports": [
+            "app.core.enterprise.predictive_intelligence_layer"
+        ],
+        "timestamp": "2026-07-18 14:43:01.140339"
+    },
+    {
+        "module": "enterprise/intelligence_orchestrator_bridge.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.143489"
+    },
+    {
+        "module": "enterprise/dynamic_graph_evolution_bridge.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.146588"
+    },
+    {
+        "module": "enterprise/runtime_bootstrap.py",
+        "imports": [
+            "datetime",
+            "app.core.intelligence.kernel",
+            "app.core.intelligence.auto_registry"
+        ],
+        "timestamp": "2026-07-18 14:43:01.149170"
+    },
+    {
+        "module": "intelligence/structural_contract.py",
+        "imports": [
+            "dataclasses",
+            "typing"
+        ],
+        "timestamp": "2026-07-18 14:43:01.153745"
+    },
+    {
+        "module": "intelligence/orchestrator.py",
+        "imports": [
+            "app.core.contracts"
+        ],
+        "timestamp": "2026-07-18 14:43:01.156873"
+    },
+    {
+        "module": "intelligence/graph_adapter.py",
+        "imports": [
+            "app.core.graph_intelligence.structural_signature",
+            "app.core.graph_intelligence.graph_delta"
+        ],
+        "timestamp": "2026-07-18 14:43:01.159416"
+    },
+    {
+        "module": "intelligence/runtime_bridge.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.162686"
+    },
+    {
+        "module": "intelligence/runtime_registry.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.166435"
+    },
+    {
+        "module": "intelligence/enterprise_bootstrap.py",
+        "imports": [
+            "app.core.intelligence.kernel"
+        ],
+        "timestamp": "2026-07-18 14:43:01.168987"
+    },
+    {
+        "module": "intelligence/kernel.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.172057"
+    },
+    {
+        "module": "intelligence/auto_registry.py",
+        "imports": [
+            "importlib"
+        ],
+        "timestamp": "2026-07-18 14:43:01.175159"
+    },
+    {
+        "module": "intelligence/evolution_contract.py",
+        "imports": [
+            "dataclasses",
+            "datetime",
+            "typing"
+        ],
+        "timestamp": "2026-07-18 14:43:01.177604"
+    },
+    {
+        "module": "intelligence/evolution_engine.py",
+        "imports": [
+            "datetime",
+            "app.core.intelligence.evolution_contract"
+        ],
+        "timestamp": "2026-07-18 14:43:01.181429"
+    },
+    {
+        "module": "intelligence/evolution_orchestrator.py",
+        "imports": [
+            "datetime",
+            "app.core.intelligence.evolution_engine",
+            "app.core.intelligence.graph_evolution_bridge"
+        ],
+        "timestamp": "2026-07-18 14:43:01.200235"
+    },
+    {
+        "module": "intelligence/graph_evolution_bridge.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.203065"
+    },
+    {
+        "module": "intelligence/intelligence_core.py",
+        "imports": [
+            "datetime",
+            "evolution_orchestrator"
+        ],
+        "timestamp": "2026-07-18 14:43:01.206072"
+    },
+    {
+        "module": "intelligence/graph_intelligence_validator.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.209475"
+    },
+    {
+        "module": "intelligence/intelligence_validation_bridge.py",
+        "imports": [
+            "datetime",
+            "app.core.intelligence.graph_intelligence_validator"
+        ],
+        "timestamp": "2026-07-18 14:43:01.212634"
+    },
+    {
+        "module": "intelligence/dlis_state.py",
+        "imports": [
+            "dataclasses",
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.215739"
+    },
+    {
+        "module": "intelligence/validation_bridge.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.218586"
+    },
+    {
+        "module": "intelligence/kernel_v73.py",
+        "imports": [
+            "datetime",
+            "app.core.intelligence.dlis_state",
+            "app.core.intelligence.validation_bridge"
+        ],
+        "timestamp": "2026-07-18 14:43:01.222716"
+    },
+    {
+        "module": "intelligence/enterprise_layer.py",
+        "imports": [
+            "datetime",
+            "app.core.intelligence.enterprise_runtime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.226944"
+    },
+    {
+        "module": "intelligence/enterprise_runtime.py",
+        "imports": [
+            "dataclasses",
+            "datetime",
+            "typing",
+            "app.core.intelligence.runtime_persistence"
+        ],
+        "timestamp": "2026-07-18 14:43:01.231837"
+    },
+    {
+        "module": "intelligence/runtime_persistence.py",
+        "imports": [
+            "pathlib",
+            "json"
+        ],
+        "timestamp": "2026-07-18 14:43:01.236169"
+    },
+    {
+        "module": "intelligence/temporal_memory_engine.py",
+        "imports": [
+            "pathlib",
+            "json",
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.240428"
+    },
+    {
+        "module": "intelligence/evolution_history_analyzer.py",
+        "imports": [
+            "statistics"
+        ],
+        "timestamp": "2026-07-18 14:43:01.244519"
+    },
+    {
+        "module": "intelligence/structural_timeline_engine.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.248185"
+    },
+    {
+        "module": "intelligence/predictive_temporal_engine.py",
+        "imports": [
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.252489"
+    },
+    {
+        "module": "contracts/intelligence_contract.py",
+        "imports": [
+            "dataclasses",
+            "datetime",
+            "typing"
+        ],
+        "timestamp": "2026-07-18 14:43:01.258631"
+    },
+    {
+        "module": "contracts/__init__.py",
+        "imports": [
+            "intelligence_contract"
+        ],
+        "timestamp": "2026-07-18 14:43:01.261354"
+    },
+    {
+        "module": "mathematical/dlis_math_v1.py",
+        "imports": [
+            "dataclasses",
+            "math"
+        ],
+        "timestamp": "2026-07-18 14:43:01.265722"
+    },
+    {
+        "module": "mathematical/mathematical_core.py",
+        "imports": [
+            "datetime",
+            "app.core.mathematical.invariant_engine"
+        ],
+        "timestamp": "2026-07-18 14:43:01.268920"
+    },
+    {
+        "module": "mathematical/state_adapter.py",
+        "imports": [
+            "dataclasses"
+        ],
+        "timestamp": "2026-07-18 14:43:01.271903"
+    },
+    {
+        "module": "mathematical/invariant_engine.py",
+        "imports": [
+            "dataclasses",
+            "math"
+        ],
+        "timestamp": "2026-07-18 14:43:01.275750"
+    },
+    {
+        "module": "mathematical/__init__.py",
+        "imports": [
+            "mathematical_core",
+            "state_adapter",
+            "invariant_engine"
+        ],
+        "timestamp": "2026-07-18 14:43:01.278234"
+    },
+    {
+        "module": "evolution/evolution_state.py",
+        "imports": [
+            "dataclasses",
+            "datetime"
+        ],
+        "timestamp": "2026-07-18 14:43:01.281952"
+    },
+    {
+        "module": "evolution/evolution_engine_v73.py",
+        "imports": [
+            "app.core.evolution.evolution_state"
+        ],
+        "timestamp": "2026-07-18 14:43:01.285354"
+    },
+    {
+        "module": "research/collatz/engine.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.314873"
+    },
+    {
+        "module": "research/collatz/__init__.py",
+        "imports": [
+            "engine",
+            "analysis",
+            "state"
+        ],
+        "timestamp": "2026-07-18 14:43:01.318645"
+    },
+    {
+        "module": "research/collatz/analysis.py",
+        "imports": [],
+        "timestamp": "2026-07-18 14:43:01.321773"
+    },
+    {
+        "module": "research/collatz/state.py",
+        "imports": [
+            "app.core.kernel"
+        ],
+        "timestamp": "2026-07-18 14:43:01.324768"
+    }
+]

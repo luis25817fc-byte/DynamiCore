@@ -1,0 +1,373 @@
+{
+    "version": "7.6.4",
+    "project": "DynamiCore Project Titan",
+    "generated": "2026-07-18 14:43:24.923848",
+    "entry_points": [
+        {
+            "module": "analyzer.py",
+            "method": "analyze",
+            "line": 6
+        },
+        {
+            "module": "engine.py",
+            "method": "analyze",
+            "line": 81
+        },
+        {
+            "module": "adaptation/adaptive_learning.py",
+            "method": "analyze",
+            "line": 14
+        },
+        {
+            "module": "adaptation/adaptive_threshold.py",
+            "method": "evaluate",
+            "line": 14
+        },
+        {
+            "module": "adaptation/confidence.py",
+            "method": "evaluate",
+            "line": 11
+        },
+        {
+            "module": "adaptation/evolution_adapter.py",
+            "method": "process",
+            "line": 16
+        },
+        {
+            "module": "adaptation/policy.py",
+            "method": "evaluate",
+            "line": 13
+        },
+        {
+            "module": "adaptation/evolution_service.py",
+            "method": "evaluate",
+            "line": 19
+        },
+        {
+            "module": "agents/base.py",
+            "method": "run",
+            "line": 14
+        },
+        {
+            "module": "agents/forecast_agent.py",
+            "method": "run",
+            "line": 16
+        },
+        {
+            "module": "agents/metrics_agent.py",
+            "method": "run",
+            "line": 11
+        },
+        {
+            "module": "agents/decision_agent.py",
+            "method": "run",
+            "line": 16
+        },
+        {
+            "module": "agents/orchestrator.py",
+            "method": "execute",
+            "line": 28
+        },
+        {
+            "module": "agents/risk_agent.py",
+            "method": "run",
+            "line": 16
+        },
+        {
+            "module": "attribution/engine.py",
+            "method": "analyze",
+            "line": 5
+        },
+        {
+            "module": "causal/engine.py",
+            "method": "analyze",
+            "line": 32
+        },
+        {
+            "module": "context/engine.py",
+            "method": "analyze",
+            "line": 17
+        },
+        {
+            "module": "decision/engine.py",
+            "method": "decide",
+            "line": 6
+        },
+        {
+            "module": "decision/policy_engine.py",
+            "method": "evaluate",
+            "line": 14
+        },
+        {
+            "module": "feedback/engine.py",
+            "method": "evaluate",
+            "line": 6
+        },
+        {
+            "module": "graph_intelligence/final_audit.py",
+            "method": "run",
+            "line": 6
+        },
+        {
+            "module": "graph_intelligence/intelligence_benchmark.py",
+            "method": "run",
+            "line": 9
+        },
+        {
+            "module": "graph_intelligence/graph_dynamics.py",
+            "method": "analyze",
+            "line": 6
+        },
+        {
+            "module": "graph_intelligence/structural_transition.py",
+            "method": "analyze",
+            "line": 13
+        },
+        {
+            "module": "graph_intelligence/evolution_predictor.py",
+            "method": "predict",
+            "line": 12
+        },
+        {
+            "module": "graph_intelligence/evolution_layer.py",
+            "method": "analyze",
+            "line": 13
+        },
+        {
+            "module": "graph_intelligence/critical_transition.py",
+            "method": "analyze",
+            "line": 93
+        },
+        {
+            "module": "graph_intelligence/pipeline.py",
+            "method": "run",
+            "line": 55
+        },
+        {
+            "module": "graph_intelligence/decision_engine.py",
+            "method": "analyze",
+            "line": 6
+        },
+        {
+            "module": "graph_intelligence/decision_engine.py",
+            "method": "decide",
+            "line": 41
+        },
+        {
+            "module": "graph_intelligence/predictive_structural.py",
+            "method": "predict",
+            "line": 30
+        },
+        {
+            "module": "graph_intelligence/graph_intelligence.py",
+            "method": "analyze",
+            "line": 40
+        },
+        {
+            "module": "metrics/divergence.py",
+            "method": "analyze",
+            "line": 5
+        },
+        {
+            "module": "metrics/dynamics.py",
+            "method": "analyze",
+            "line": 5
+        },
+        {
+            "module": "metrics/engine.py",
+            "method": "analyze",
+            "line": 21
+        },
+        {
+            "module": "metrics/potential.py",
+            "method": "analyze",
+            "line": 5
+        },
+        {
+            "module": "predictive/anomaly.py",
+            "method": "analyze",
+            "line": 4
+        },
+        {
+            "module": "predictive/forecast.py",
+            "method": "analyze",
+            "line": 4
+        },
+        {
+            "module": "predictive/regime.py",
+            "method": "analyze",
+            "line": 5
+        },
+        {
+            "module": "predictive/risk.py",
+            "method": "analyze",
+            "line": 4
+        },
+        {
+            "module": "state/transition.py",
+            "method": "predict",
+            "line": 8
+        },
+        {
+            "module": "enterprise/decision_service.py",
+            "method": "evaluate",
+            "line": 6
+        },
+        {
+            "module": "enterprise/enterprise_api_gateway.py",
+            "method": "execute",
+            "line": 14
+        },
+        {
+            "module": "enterprise/event_processor.py",
+            "method": "process",
+            "line": 12
+        },
+        {
+            "module": "enterprise/intelligence_api.py",
+            "method": "ingest",
+            "line": 24
+        },
+        {
+            "module": "enterprise/intelligence_core.py",
+            "method": "analyze",
+            "line": 18
+        },
+        {
+            "module": "enterprise/monitoring_alert.py",
+            "method": "analyze",
+            "line": 6
+        },
+        {
+            "module": "enterprise/orchestrator.py",
+            "method": "execute",
+            "line": 24
+        },
+        {
+            "module": "enterprise/self_optimization.py",
+            "method": "analyze",
+            "line": 12
+        },
+        {
+            "module": "enterprise/validation_automation.py",
+            "method": "run",
+            "line": 19
+        },
+        {
+            "module": "enterprise/workflow_engine.py",
+            "method": "execute",
+            "line": 12
+        },
+        {
+            "module": "enterprise/adaptive_intelligence_bridge.py",
+            "method": "process",
+            "line": 32
+        },
+        {
+            "module": "enterprise/autonomous_intelligence_loop.py",
+            "method": "process",
+            "line": 37
+        },
+        {
+            "module": "enterprise/intelligence_orchestration_layer.py",
+            "method": "process",
+            "line": 25
+        },
+        {
+            "module": "enterprise/self_awareness_layer.py",
+            "method": "process",
+            "line": 20
+        },
+        {
+            "module": "enterprise/autonomous_feedback.py",
+            "method": "evaluate",
+            "line": 21
+        },
+        {
+            "module": "enterprise/cognitive_memory_layer.py",
+            "method": "process",
+            "line": 82
+        },
+        {
+            "module": "enterprise/predictive_intelligence_layer.py",
+            "method": "process",
+            "line": 29
+        },
+        {
+            "module": "enterprise/intelligence_orchestrator_bridge.py",
+            "method": "execute",
+            "line": 25
+        },
+        {
+            "module": "intelligence/orchestrator.py",
+            "method": "analyze",
+            "line": 16
+        },
+        {
+            "module": "intelligence/orchestrator.py",
+            "method": "predict",
+            "line": 41
+        },
+        {
+            "module": "intelligence/orchestrator.py",
+            "method": "decide",
+            "line": 69
+        },
+        {
+            "module": "intelligence/runtime_bridge.py",
+            "method": "analyze",
+            "line": 30
+        },
+        {
+            "module": "intelligence/evolution_engine.py",
+            "method": "analyze",
+            "line": 12
+        },
+        {
+            "module": "intelligence/graph_evolution_bridge.py",
+            "method": "process",
+            "line": 15
+        },
+        {
+            "module": "intelligence/intelligence_core.py",
+            "method": "analyze",
+            "line": 23
+        },
+        {
+            "module": "intelligence/kernel_v73.py",
+            "method": "analyze",
+            "line": 99
+        },
+        {
+            "module": "intelligence/kernel_v73.py",
+            "method": "build_state",
+            "line": 140
+        },
+        {
+            "module": "intelligence/evolution_history_analyzer.py",
+            "method": "analyze",
+            "line": 10
+        },
+        {
+            "module": "intelligence/predictive_temporal_engine.py",
+            "method": "predict",
+            "line": 10
+        },
+        {
+            "module": "mathematical/dlis_math_v1.py",
+            "method": "evaluate",
+            "line": 135
+        },
+        {
+            "module": "mathematical/mathematical_core.py",
+            "method": "analyze",
+            "line": 18
+        },
+        {
+            "module": "research/collatz/analysis.py",
+            "method": "analyze",
+            "line": 5
+        }
+    ],
+    "total": 73
+}
