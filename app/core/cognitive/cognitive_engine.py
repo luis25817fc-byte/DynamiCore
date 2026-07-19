@@ -1,13 +1,11 @@
+
 from datetime import datetime, timezone
 
 
 class CognitiveEngine:
-    """
-    DynamiCore Cognitive Engine
-    V8.0
-    """
 
     VERSION = "V8.0"
+
 
     def __init__(
         self,
@@ -16,7 +14,9 @@ class CognitiveEngine:
         confidence_engine=None,
         objective_manager=None,
         action_selector=None,
-        feedback_integrator=None
+        feedback_integrator=None,
+        decision_trace=None,
+        trace_store=None
     ):
 
         self.context_builder = context_builder
@@ -25,48 +25,11 @@ class CognitiveEngine:
         self.objective_manager = objective_manager
         self.action_selector = action_selector
         self.feedback_integrator = feedback_integrator
+        self.decision_trace = decision_trace
+        self.trace_store = trace_store
 
 
-    def status(self):
-
-        return {
-
-            "version": self.VERSION,
-
-            "timestamp":
-                datetime.now(
-                    timezone.utc
-                ).isoformat(),
-
-            "ready":
-
-                all(
-
-                    [
-
-                        self.context_builder is not None,
-
-                        self.reasoning_engine is not None,
-
-                        self.confidence_engine is not None,
-
-                        self.objective_manager is not None,
-
-                        self.action_selector is not None,
-
-                        self.feedback_integrator is not None
-
-                    ]
-
-                )
-
-        }
-
-
-    def execute(
-        self,
-        runtime_state
-    ):
+    def execute(self, runtime_state):
 
         result = {
 
@@ -78,93 +41,90 @@ class CognitiveEngine:
                 ).isoformat(),
 
             "input":
-                runtime_state,
-
-            "context":
-                None,
-
-            "reasoning":
-                None,
-
-            "confidence":
-                None,
-
-            "objective":
-                None,
-
-            "action":
-                None,
-
-            "feedback":
-                None
+                runtime_state
 
         }
 
 
-        if self.context_builder:
+        context = (
+            self.context_builder.build(runtime_state)
+            if self.context_builder
+            else {}
+        )
 
-            result["context"] = (
+        result["context"] = context
 
-                self.context_builder.build(
-                    runtime_state
+
+        reasoning = (
+            self.reasoning_engine.reason(context)
+            if self.reasoning_engine
+            else {}
+        )
+
+        result["reasoning"] = reasoning
+
+
+        confidence = (
+            self.confidence_engine.evaluate(reasoning)
+            if self.confidence_engine
+            else {}
+        )
+
+        result["confidence"] = confidence
+
+
+        objective = (
+            self.objective_manager.select(result)
+            if self.objective_manager
+            else {}
+        )
+
+        result["objective"] = objective
+
+
+        action = (
+            self.action_selector.select(result)
+            if self.action_selector
+            else {}
+        )
+
+        result["action"] = action
+
+
+        feedback = (
+            self.feedback_integrator.update(result)
+            if self.feedback_integrator
+            else {}
+        )
+
+        result["feedback"] = feedback
+
+
+        if self.decision_trace:
+
+            trace = self.decision_trace.create(result)
+
+            result["decision_trace"] = trace
+
+
+            if self.trace_store:
+
+                result["trace_storage"] = (
+                    self.trace_store.save(trace)
                 )
-
-            )
-
-
-        if self.reasoning_engine:
-
-            result["reasoning"] = (
-
-                self.reasoning_engine.reason(
-                    result["context"]
-                )
-
-            )
-
-
-        if self.confidence_engine:
-
-            result["confidence"] = (
-
-                self.confidence_engine.evaluate(
-                    result["reasoning"]
-                )
-
-            )
-
-
-        if self.objective_manager:
-
-            result["objective"] = (
-
-                self.objective_manager.select(
-                    result
-                )
-
-            )
-
-
-        if self.action_selector:
-
-            result["action"] = (
-
-                self.action_selector.select(
-                    result
-                )
-
-            )
-
-
-        if self.feedback_integrator:
-
-            result["feedback"] = (
-
-                self.feedback_integrator.update(
-                    result
-                )
-
-            )
 
 
         return result
+
+
+    def status(self):
+
+        return {
+
+            "version":
+                self.VERSION,
+
+            "ready":
+                True
+
+        }
