@@ -1,0 +1,16 @@
+{
+    "CONTINUE_OPERATION": {
+        "executions": 1,
+        "success": 1,
+        "score": 1.0,
+        "history": [
+            {
+                "timestamp": "2026-07-15T14:30:59.033307",
+                "score": 1.0,
+                "decision": {
+                    "action": "CONTINUE_OPERATION"
+                }
+            }
+        ]
+    }
+}

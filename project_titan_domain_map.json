@@ -1,0 +1,98 @@
+{
+  "Engine Layer": [
+    "app/core/engine.py",
+    "app/core/adaptation/engine.py",
+    "app/core/attribution/engine.py",
+    "app/core/causal/engine.py",
+    "app/core/context/engine.py",
+    "app/core/decision/engine.py",
+    "app/core/decision/policy_engine.py",
+    "app/core/explainability/engine.py",
+    "app/core/feedback/engine.py",
+    "app/core/graph_intelligence/history_engine.py",
+    "app/core/graph_intelligence/pattern_engine.py",
+    "app/core/graph_intelligence/decision_engine.py",
+    "app/core/knowledge/engine.py",
+    "app/core/learning/engine.py",
+    "app/core/metrics/engine.py",
+    "app/core/simulation/engine.py",
+    "app/core/twin/engine.py",
+    "app/core/enterprise/workflow_engine.py",
+    "app/core/intelligence/evolution_engine.py",
+    "app/core/mathematical/invariant_engine.py",
+    "app/core/evolution/evolution_engine_v73.py",
+    "app/core/research/collatz/engine.py"
+  ],
+  "Mathematical Core": [
+    "app/core/entropy.py",
+    "app/core/metrics/entropy.py"
+  ],
+  "Graph Intelligence": [
+    "app/core/graph.py",
+    "app/core/causal/graph.py",
+    "app/core/graph_intelligence/graph_dynamics.py",
+    "app/core/graph_intelligence/graph_intelligence.py",
+    "app/core/graph_intelligence/graph_delta.py",
+    "app/core/enterprise/dynamic_graph_bridge.py",
+    "app/core/enterprise/dynamic_graph_evolution_bridge.py",
+    "app/core/intelligence/graph_adapter.py",
+    "app/core/intelligence/graph_evolution_bridge.py",
+    "app/core/intelligence/graph_intelligence_validator.py"
+  ],
+  "Memory Intelligence": [
+    "app/core/memory.py",
+    "app/core/adaptation/strategy_memory.py",
+    "app/core/graph_intelligence/structural_memory.py",
+    "app/core/graph_intelligence/temporal_memory.py",
+    "app/core/graph_intelligence/transition_memory.py",
+    "app/core/learning/memory.py",
+    "app/core/enterprise/knowledge_memory.py",
+    "app/core/enterprise/cognitive_memory_layer.py"
+  ],
+  "Evolution Intelligence": [
+    "app/core/adaptation/evolution_adapter.py",
+    "app/core/adaptation/evolution_service.py",
+    "app/core/adaptation/evolution_diff.py",
+    "app/core/adaptation/policy_evolution.py",
+    "app/core/graph_intelligence/evolution_diff.py",
+    "app/core/graph_intelligence/evolution_metrics.py",
+    "app/core/graph_intelligence/evolution_predictor.py",
+    "app/core/graph_intelligence/evolution_layer.py",
+    "app/core/state/evolution.py",
+    "app/core/enterprise/adaptive_strategy_evolution.py",
+    "app/core/enterprise/dynamic_graph_evolution_bridge.py",
+    "app/core/intelligence/evolution_contract.py",
+    "app/core/intelligence/evolution_engine.py",
+    "app/core/intelligence/evolution_orchestrator.py",
+    "app/core/intelligence/graph_evolution_bridge.py",
+    "app/core/evolution/evolution_state.py",
+    "app/core/evolution/evolution_engine_v73.py"
+  ],
+  "Metrics Core": [
+    "app/core/agents/metrics_agent.py",
+    "app/core/graph_intelligence/evolution_metrics.py"
+  ],
+  "Decision Intelligence": [
+    "app/core/agents/decision_agent.py",
+    "app/core/decision/decision_contract.py",
+    "app/core/graph_intelligence/decision_engine.py",
+    "app/core/enterprise/decision_service.py",
+    "app/core/enterprise/decision_execution_bridge.py"
+  ],
+  "Predictive Intelligence": [
+    "app/core/graph_intelligence/evolution_predictor.py",
+    "app/core/graph_intelligence/predictive_structural.py",
+    "app/core/enterprise/predictive_intelligence_layer.py"
+  ],
+  "Enterprise Layer": [
+    "app/core/validation/v71_enterprise_validator.py",
+    "app/core/enterprise/enterprise_api_gateway.py",
+    "app/core/enterprise/enterprise_core.py",
+    "app/core/intelligence/enterprise_bootstrap.py",
+    "app/core/intelligence/enterprise_layer.py"
+  ],
+  "Kernel Layer": [
+    "app/core/intelligence/kernel.py",
+    "app/core/intelligence/kernel_v73.py"
+  ]
+}

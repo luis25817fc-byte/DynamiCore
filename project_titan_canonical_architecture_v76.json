@@ -1,0 +1,108 @@
+{
+    "version": "7.6.1",
+    "project": "DynamiCore Project Titan",
+    "generated": "2026-07-18 14:10:32.942269",
+    "architecture": {
+        "core": {
+            "purpose": "Deterministic complex system analysis",
+            "modules": [
+                "app.core.engine",
+                "app.core.analyzer",
+                "app.core.basins",
+                "app.core.cycles"
+            ]
+        },
+        "mathematical_intelligence": {
+            "purpose": "State metrics and structural analysis",
+            "modules": [
+                "mathematical_core",
+                "metrics",
+                "invariant_engine"
+            ]
+        },
+        "graph_intelligence": {
+            "purpose": "Structural graph evolution analysis",
+            "modules": [
+                "graph_intelligence",
+                "graph_engine",
+                "transition_analysis"
+            ]
+        },
+        "evolution": {
+            "purpose": "Detect system changes over time",
+            "modules": [
+                "evolution_engine_v73",
+                "evolution_diff",
+                "evolution_service"
+            ]
+        },
+        "memory": {
+            "purpose": "Historical state preservation",
+            "modules": [
+                "runtime_persistence",
+                "temporal_memory_engine",
+                "structural_timeline_engine",
+                "evolution_history_analyzer"
+            ]
+        },
+        "prediction": {
+            "purpose": "Future state estimation",
+            "modules": [
+                "predictive_temporal_engine",
+                "predictive"
+            ]
+        },
+        "adaptation": {
+            "purpose": "Adaptive optimization layer",
+            "modules": [
+                "adaptation.engine",
+                "policy",
+                "calibration",
+                "confidence",
+                "self_optimizer",
+                "strategy_memory"
+            ]
+        },
+        "agents": {
+            "purpose": "Specialized intelligence workers",
+            "modules": [
+                "metrics_agent",
+                "forecast_agent",
+                "risk_agent",
+                "decision_agent",
+                "agent_orchestrator"
+            ]
+        },
+        "decision": {
+            "purpose": "Decision generation layer",
+            "modules": [
+                "decision.engine",
+                "decision_contract",
+                "enterprise_decision_service"
+            ]
+        },
+        "enterprise": {
+            "purpose": "Operational intelligence layer",
+            "modules": [
+                "enterprise_core",
+                "enterprise_runtime",
+                "enterprise_layer",
+                "intelligence_api",
+                "autonomous_intelligence_loop"
+            ]
+        },
+        "validation": {
+            "purpose": "Integrity verification",
+            "modules": [
+                "validation_bridge",
+                "validators"
+            ]
+        },
+        "future_v8": {
+            "name": "Cognitive Decision Engine",
+            "principle": "Deterministic intelligence core with optional conversational AI layer",
+            "status": "PLANNED AFTER V7 COMPLETION"
+        }
+    },
+    "status": "DOCUMENTED"
+}

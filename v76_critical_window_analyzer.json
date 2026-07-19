@@ -1,0 +1,24 @@
+{
+    "version": "7.6.21",
+    "module": "CriticalWindowAnalyzer",
+    "generated": "2026-07-18 17:06:58.316254",
+    "input_state": {
+        "entropy": 0.91,
+        "health": 0.22,
+        "risk": 0.78
+    },
+    "transition_signal": {
+        "detected": false
+    },
+    "critical_window": {
+        "detected": false,
+        "score": 0.78,
+        "severity": "HIGH_ATTENTION"
+    },
+    "rules": {
+        "deterministic": true,
+        "traceable": true,
+        "no_auto_intervention": true
+    },
+    "status": "ONLINE"
+}

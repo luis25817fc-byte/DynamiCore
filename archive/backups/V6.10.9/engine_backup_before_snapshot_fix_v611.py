@@ -322,33 +322,7 @@ class DynamiCoreEngine:
         previous = None
 
         if len(snapshots) > 0:
-
-            if isinstance(snapshots, list):
-
-                previous = snapshots[-1]
-
-            elif isinstance(snapshots, dict):
-
-                history = snapshots.get(
-                    "snapshots",
-                    []
-                )
-
-                if isinstance(history, list) and history:
-
-                    previous = history[-1]
-
-                else:
-
-                    previous = {}
-
-            else:
-
-                previous = {}
-
-        else:
-
-            previous = {}
+            previous = snapshots[-1]
 
 
         current_snapshot = {

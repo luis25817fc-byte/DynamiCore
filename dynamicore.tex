@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, graphicx}
+
+\title{DynamiCore: Finite-Size Structural Transitions in Deterministic Binary Dynamical Systems}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We study deterministic binary dynamical systems over finite state spaces $S_k = \{0,1\}^{2^k}$.
+
+We show that increasing system size induces structural transitions in attractor organization, despite the absence of stochasticity or external forcing.
+
+We characterize these transitions using cycle decomposition, entropy, and a structural variation operator $\Psi(k)$.
+
+The results highlight finite-size induced reorganization of deterministic dynamics rather than asymptotic behavior.
+\end{abstract}
+
+\section{Model}
+
+We define:
+\[
+S_k = \{0,1\}^{2^k}
+\]
+
+and a deterministic map:
+\[
+f_k: S_k \rightarrow S_k
+\]
+
+with dynamics:
+\[
+x_{t+1} = f_k(x_t)
+\]
+
+All trajectories converge to periodic orbits due to finiteness.
+
+\section{Cycle Structure}
+
+We define the attractor decomposition:
+\[
+\mathcal{C}(k) = \{C_1, ..., C_{n_k}\}
+\]
+
+with equivalence relation:
+\[
+x \sim y \iff \exists t: f_k^t(x) = y
+\]
+
+\section{Observables}
+
+\subsection{Coherence}
+
+\[
+R(k) = \frac{|C_{\max}|}{|S_k|}
+\]
+
+\subsection{Entropy}
+
+\[
+p_i = \frac{|C_i|}{\sum_j |C_j|}
+\quad,\quad
+H(k) = -\sum_i p_i \log p_i
+\]
+
+\subsection{Structural Variation}
+
+\[
+\Psi(k) = |\Delta R(k)| + |\Delta H(k)|
+\]
+
+\[
+\Delta X(k) = X(k+1) - X(k)
+\]
+
+\section{Baselines}
+
+We compare against:
+
+- Random Boolean Networks (RBN)
+- Cellular Automata (CA)
+- Flat statistical baseline
+
+\section{Critical Scale}
+
+\[
+k^* = \arg\max_k \Psi(k)
+\]
+
+\section{Results}
+
+We observe three regimes:
+
+- Ordered regime: coherent attractor dominance
+- Transition regime: peak in structural variation
+- Asymptotic regime: stabilization of cycle structure
+
+\section{Conclusion}
+
+Finite deterministic systems can exhibit structural transitions driven purely by state-space scaling, without stochasticity or external forcing.
+
+\end{document}

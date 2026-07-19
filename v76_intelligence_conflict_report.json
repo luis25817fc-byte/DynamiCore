@@ -1,0 +1,89 @@
+{
+    "version": "7.6.7",
+    "project": "DynamiCore Project Titan",
+    "generated": "2026-07-18 15:04:10.114773",
+    "conflicts": {
+        "memory": {
+            "detected": false,
+            "modules": [
+                "memory.py",
+                "adaptation/strategy_memory.py",
+                "graph_intelligence/dynamic_intelligence_state.py",
+                "graph_intelligence/history_engine.py",
+                "graph_intelligence/structural_memory.py",
+                "graph_intelligence/temporal_memory.py",
+                "graph_intelligence/transition_memory.py",
+                "kernel/state_vector.py",
+                "learning/memory.py",
+                "state/snapshot.py",
+                "state/history.py",
+                "enterprise/global_state_manager.py",
+                "enterprise/knowledge_memory.py",
+                "enterprise/persistence_history.py",
+                "enterprise/runtime_state.py",
+                "enterprise/cognitive_memory_layer.py",
+                "intelligence/dlis_state.py",
+                "intelligence/runtime_persistence.py",
+                "intelligence/temporal_memory_engine.py",
+                "intelligence/evolution_history_analyzer.py",
+                "intelligence/structural_timeline_engine.py",
+                "mathematical/state_adapter.py",
+                "evolution/evolution_state.py",
+                "research/collatz/state.py"
+            ],
+            "reason": "Multiple memory systems require hierarchy definition"
+        },
+        "prediction": {
+            "detected": false,
+            "modules": [
+                "agents/forecast_agent.py",
+                "agents/risk_agent.py",
+                "graph_intelligence/evolution_predictor.py",
+                "graph_intelligence/predictive_structural.py",
+                "predictive/anomaly.py",
+                "predictive/forecast.py",
+                "predictive/regime.py",
+                "predictive/risk.py",
+                "enterprise/predictive_intelligence_layer.py",
+                "intelligence/predictive_temporal_engine.py"
+            ],
+            "reason": "Prediction engines require aggregation strategy"
+        },
+        "decision": {
+            "detected": false,
+            "modules": [
+                "adaptation/policy.py",
+                "adaptation/policy_bridge.py",
+                "adaptation/policy_evolution.py",
+                "agents/decision_agent.py",
+                "decision/policy_engine.py",
+                "decision/decision_contract.py",
+                "graph_intelligence/decision_engine.py",
+                "enterprise/decision_service.py",
+                "enterprise/decision_execution_bridge.py"
+            ],
+            "reason": "Decision engines require authority model"
+        }
+    },
+    "authority_candidates": {
+        "memory": [
+            "RuntimePersistence",
+            "TemporalMemoryEngine",
+            "StructuralTimelineEngine"
+        ],
+        "prediction": [
+            "PredictiveTemporalEngine",
+            "ForecastEngine"
+        ],
+        "decision": [
+            "DecisionEngine",
+            "EnterpriseDecisionService"
+        ]
+    },
+    "resolution_strategy": {
+        "memory": "Define canonical memory manager",
+        "prediction": "Define predictive aggregation layer",
+        "decision": "Define decision authority chain"
+    },
+    "status": "CONFLICT_ANALYSIS_COMPLETE"
+}

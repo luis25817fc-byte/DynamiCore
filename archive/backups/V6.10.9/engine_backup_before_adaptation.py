@@ -28,8 +28,6 @@ from .attribution.engine import AttributionEngine
 from .causal.engine import CausalEngine
 from .decision.engine import DecisionEngine
 from .feedback.engine import FeedbackEngine
-from .adaptation.engine import AdaptationEngine
-from .adaptation.evolution_service import EvolutionService
 
 
 
@@ -49,7 +47,7 @@ class DynamiCoreEngine:
 
         self.agents = AgentOrchestrator()
 
-        self.evolution_engine = EvolutionEngine()
+        self.evolution = EvolutionEngine()
 
         self.transition = StateTransitionEngine()
 
@@ -73,8 +71,6 @@ class DynamiCoreEngine:
 
         self.decision = DecisionEngine()
         self.feedback = FeedbackEngine()
-        self.adaptation = AdaptationEngine()
-        self.evolution = EvolutionService()
 
 
 
@@ -273,34 +269,6 @@ class DynamiCoreEngine:
         )
 
 
-
-        # ==========================
-        # ADAPTIVE INTELLIGENCE LOOP
-        # ==========================
-
-        result["adaptation"] = self.adaptation.adapt(
-
-            result.get(
-                "feedback",
-                {}
-            ),
-
-            result.get(
-                "decision",
-                {}
-            ),
-
-            result.get(
-                "causal",
-                {}
-            ),
-
-            state_vector
-
-        )
-
-
-
         # ==========================
         # EXPLAINABILITY INTELLIGENCE
         # ==========================
@@ -322,33 +290,7 @@ class DynamiCoreEngine:
         previous = None
 
         if len(snapshots) > 0:
-
-            if isinstance(snapshots, list):
-
-                previous = snapshots[-1]
-
-            elif isinstance(snapshots, dict):
-
-                history = snapshots.get(
-                    "snapshots",
-                    []
-                )
-
-                if isinstance(history, list) and history:
-
-                    previous = history[-1]
-
-                else:
-
-                    previous = {}
-
-            else:
-
-                previous = {}
-
-        else:
-
-            previous = {}
+            previous = snapshots[-1]
 
 
         current_snapshot = {

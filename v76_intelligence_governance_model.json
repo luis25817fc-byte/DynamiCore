@@ -1,0 +1,65 @@
+{
+    "version": "7.6.8",
+    "project": "DynamiCore Project Titan",
+    "generated": "2026-07-18 15:11:11.531911",
+    "governance": {
+        "orchestration_authority": {
+            "module": "CognitiveOrchestrator",
+            "responsibility": "Coordinate intelligence flow without replacing domain engines"
+        },
+        "memory_authority": {
+            "primary": "TemporalMemoryManager",
+            "components": [
+                "RuntimePersistence",
+                "TemporalMemoryEngine",
+                "StructuralTimelineEngine",
+                "EvolutionHistoryAnalyzer"
+            ],
+            "responsibility": "Manage historical system knowledge"
+        },
+        "prediction_authority": {
+            "primary": "PredictionManager",
+            "components": [
+                "PredictiveTemporalEngine",
+                "ForecastEngine",
+                "RiskEngine",
+                "AnomalyEngine"
+            ],
+            "responsibility": "Generate consolidated future state estimations"
+        },
+        "decision_authority": {
+            "primary": "DecisionEngine",
+            "components": [
+                "DecisionEngine",
+                "DecisionAgent",
+                "EnterpriseDecisionService",
+                "PolicyEngine"
+            ],
+            "responsibility": "Generate explainable decisions"
+        },
+        "execution_authority": {
+            "primary": "EnterpriseGateway",
+            "components": [
+                "EnterpriseAPIGateway",
+                "AutonomousControl",
+                "ExecutionBridge"
+            ],
+            "responsibility": "External system interaction"
+        },
+        "validation_authority": {
+            "primary": "ValidationBridge",
+            "responsibility": "Protect deterministic integrity"
+        }
+    },
+    "rules": {
+        "single_domain_authority": true,
+        "preserve_determinism": true,
+        "trace_all_decisions": true,
+        "no_hidden_execution": true
+    },
+    "v8_alignment": {
+        "component": "Cognitive Decision Engine",
+        "status": "FOUNDATION_READY"
+    },
+    "status": "GOVERNANCE_MODEL_DEFINED"
+}

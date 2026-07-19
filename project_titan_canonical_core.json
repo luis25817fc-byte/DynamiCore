@@ -1,0 +1,336 @@
+{
+  "Kernel": [
+    {
+      "module": "app/core/intelligence/kernel.py",
+      "status": "PRIMARY"
+    },
+    {
+      "module": "app/core/intelligence/kernel_v73.py",
+      "status": "REVIEW"
+    }
+  ],
+  "Engine": [
+    {
+      "module": "app/core/adaptation/engine.py",
+      "status": "PRIMARY"
+    },
+    {
+      "module": "app/core/attribution/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/causal/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/context/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/decision/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/decision/policy_engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/enterprise/workflow_engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/evolution/evolution_engine_v73.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/explainability/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/feedback/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/decision_engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/history_engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/pattern_engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/intelligence/evolution_engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/knowledge/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/learning/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/mathematical/invariant_engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/metrics/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/research/collatz/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/simulation/engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/twin/engine.py",
+      "status": "REVIEW"
+    }
+  ],
+  "Graph": [
+    {
+      "module": "app/core/causal/graph.py",
+      "status": "PRIMARY"
+    },
+    {
+      "module": "app/core/enterprise/dynamic_graph_bridge.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/enterprise/dynamic_graph_evolution_bridge.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/graph_delta.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/graph_dynamics.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/graph_intelligence.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/intelligence/graph_adapter.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/intelligence/graph_evolution_bridge.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/intelligence/graph_intelligence_validator.py",
+      "status": "REVIEW"
+    }
+  ],
+  "Evolution": [
+    {
+      "module": "app/core/adaptation/evolution_adapter.py",
+      "status": "PRIMARY"
+    },
+    {
+      "module": "app/core/adaptation/evolution_diff.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/adaptation/evolution_service.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/adaptation/policy_evolution.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/enterprise/adaptive_strategy_evolution.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/enterprise/dynamic_graph_evolution_bridge.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/evolution/evolution_engine_v73.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/evolution/evolution_state.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/evolution_diff.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/evolution_layer.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/evolution_metrics.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/evolution_predictor.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/intelligence/evolution_contract.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/intelligence/evolution_engine.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/intelligence/evolution_orchestrator.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/intelligence/graph_evolution_bridge.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/state/evolution.py",
+      "status": "REVIEW"
+    }
+  ],
+  "Memory": [
+    {
+      "module": "app/core/adaptation/strategy_memory.py",
+      "status": "PRIMARY"
+    },
+    {
+      "module": "app/core/enterprise/cognitive_memory_layer.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/enterprise/knowledge_memory.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/structural_memory.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/temporal_memory.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/transition_memory.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/learning/memory.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/memory.py",
+      "status": "REVIEW"
+    }
+  ],
+  "Decision": [
+    {
+      "module": "app/core/agents/decision_agent.py",
+      "status": "PRIMARY"
+    },
+    {
+      "module": "app/core/decision/decision_contract.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/enterprise/decision_execution_bridge.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/enterprise/decision_service.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/decision_engine.py",
+      "status": "REVIEW"
+    }
+  ],
+  "Predictive": [
+    {
+      "module": "app/core/enterprise/predictive_intelligence_layer.py",
+      "status": "PRIMARY"
+    },
+    {
+      "module": "app/core/graph_intelligence/evolution_predictor.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/predictive_structural.py",
+      "status": "REVIEW"
+    }
+  ],
+  "Enterprise": [
+    {
+      "module": "app/core/enterprise/enterprise_api_gateway.py",
+      "status": "PRIMARY"
+    },
+    {
+      "module": "app/core/enterprise/enterprise_core.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/intelligence/enterprise_bootstrap.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/intelligence/enterprise_layer.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/validation/v71_enterprise_validator.py",
+      "status": "REVIEW"
+    }
+  ],
+  "Mathematical": [
+    {
+      "module": "app/core/agents/metrics_agent.py",
+      "status": "PRIMARY"
+    },
+    {
+      "module": "app/core/entropy.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/graph_intelligence/evolution_metrics.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/mathematical/mathematical_core.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/metrics/divergence.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/metrics/entropy.py",
+      "status": "REVIEW"
+    },
+    {
+      "module": "app/core/metrics/potential.py",
+      "status": "REVIEW"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+    "version": "7.6.12",
+    "project": "DynamiCore Project Titan",
+    "generated": "2026-07-18 15:36:01.985613",
+    "bindings": {
+        "analysis": {
+            "exists": true,
+            "class_found": true,
+            "methods_found": [
+                "analyze"
+            ]
+        },
+        "memory": {
+            "exists": true,
+            "class_found": false,
+            "methods_found": []
+        },
+        "prediction": {
+            "exists": false,
+            "class_found": false,
+            "methods_found": []
+        },
+        "decision": {
+            "exists": true,
+            "class_found": true,
+            "methods_found": [
+                "decide"
+            ]
+        },
+        "validation": {
+            "exists": true,
+            "class_found": true,
+            "methods_found": [
+                "validate"
+            ]
+        }
+    },
+    "issues": [
+        "memory: CLASS_MISSING",
+        "prediction: FILE_MISSING",
+        "prediction: CLASS_MISSING"
+    ],
+    "status": "BINDING_REVIEW_REQUIRED"
+}
