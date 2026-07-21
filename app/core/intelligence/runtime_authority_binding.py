@@ -34,40 +34,13 @@ class RuntimeAuthorityBinding:
 
         return {
 
-            "version":
-                self.VERSION,
+            "version": self.VERSION,
 
             "module":
                 "RuntimeAuthorityBinding",
 
             "executions":
                 self.executions,
-
-            "components":
-                {
-
-                    "kernel":
-                        self.kernel is not None,
-
-                    "runtime":
-                        self.runtime is not None,
-
-                    "governance":
-                        self.governance is not None,
-
-                    "validation":
-                        self.validation is not None,
-
-                    "rollback":
-                        self.rollback is not None,
-
-                    "observation":
-                        self.observation is not None,
-
-                    "event_bus":
-                        self.event_bus is not None
-
-                },
 
             "status":
                 "ONLINE"
@@ -84,10 +57,16 @@ class RuntimeAuthorityBinding:
         self.executions += 1
 
 
+        trace_id = payload.get(
+            "trace_id",
+            f"DLIS046-{self.executions}"
+        )
+
+
         trace = {
 
             "trace_id":
-                f"DLIS046-{self.executions}",
+                trace_id,
 
             "timestamp":
                 datetime.now(

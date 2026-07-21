@@ -1,22 +1,19 @@
 
+
 from datetime import datetime, timezone
+
 
 
 class DynamiCoreAdapter:
 
-    """
-    DLIS-015
-
-    Adapter layer between
-    DynamiCoreEngine and DLIS runtime.
-    """
 
     VERSION = "DLIS-015"
 
 
+
     def __init__(
         self,
-        engine
+        engine=None
     ):
 
         self.engine = engine
@@ -36,9 +33,9 @@ class DynamiCoreAdapter:
                 ).isoformat(),
 
             "engine_type":
-                type(
-                    self.engine
-                ).__name__,
+                type(self.engine).__name__
+                if self.engine
+                else None,
 
             "connected":
                 self.engine is not None
@@ -52,22 +49,27 @@ class DynamiCoreAdapter:
         state
     ):
 
+
         if self.engine is None:
 
-            raise RuntimeError(
-                "DynamiCore Engine missing"
-            )
+            return {
+
+                "status":
+                    "NO_ENGINE",
+
+                "output":
+                    {}
+
+            }
 
 
-        output = self.engine.analyze(
+
+        output = self.engine.execute(
             state
         )
 
 
         return {
-
-            "version":
-                self.VERSION,
 
             "status":
                 "ENGINE_EXECUTED",
@@ -76,3 +78,4 @@ class DynamiCoreAdapter:
                 output
 
         }
+
