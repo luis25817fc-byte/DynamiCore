@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 """
 DynamiCore DLIS Mathematical Validation Framework
@@ -13,6 +14,14 @@ class DLISValidationFramework:
         self.last_result = None
 
 
+=======
+class DLISValidationFramework:
+
+
+    VERSION = "MVF-001"
+
+
+>>>>>>> origin/validation-suite-v2
     def validate(
         self,
         potential,
@@ -24,11 +33,18 @@ class DLISValidationFramework:
         entropy_curvature
     ):
 
+<<<<<<< HEAD
         validation = {
+=======
+
+        checks = {
+
+>>>>>>> origin/validation-suite-v2
 
             "psi_valid":
                 potential >= 0,
 
+<<<<<<< HEAD
             "pressure_valid":
                 pressure >= 0,
 
@@ -37,19 +53,42 @@ class DLISValidationFramework:
 
             "collapse_valid":
                 0 <= collapse_probability <= 1,
+=======
+
+            "pressure_valid":
+                pressure >= 0,
+
+
+            "coherence_valid":
+                coherence >= 0,
+
+
+            "collapse_valid":
+                collapse_probability >= 0,
+
+>>>>>>> origin/validation-suite-v2
 
             "energy_valid":
                 structural_energy >= 0,
 
+<<<<<<< HEAD
             "curvature_valid":
                 entropy_curvature >= 0,
 
+=======
+
+            "curvature_valid":
+                entropy_curvature >= 0,
+
+
+>>>>>>> origin/validation-suite-v2
             "delta_psi_valid":
                 delta_psi >= 0
 
         }
 
 
+<<<<<<< HEAD
         validation["global_validation"] = all(
             validation.values()
         )
@@ -69,3 +108,27 @@ class DLISValidationFramework:
         self.last_result = result
 
         return result
+=======
+        return {
+
+
+            "version":
+                self.VERSION,
+
+
+            "validation":
+                {
+
+
+                    **checks,
+
+
+                    "global_validation":
+                        all(
+                            checks.values()
+                        )
+
+                }
+
+        }
+>>>>>>> origin/validation-suite-v2

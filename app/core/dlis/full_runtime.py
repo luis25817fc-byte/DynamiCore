@@ -92,6 +92,7 @@ class DLISFullRuntime:
         delta_psi = potential
 
 
+
         validation = self.validator.validate(
             potential,
             pressure,
@@ -103,18 +104,43 @@ class DLISFullRuntime:
         )
 
 
+        validation_ready = (
+            validation
+            .get(
+                "validation",
+                {}
+            )
+            .get(
+                "global_validation",
+                False
+            )
+        )
+
+
+        enterprise_ready = bool(
+            engine_status.get(
+                "connected",
+                False
+            )
+            and validation_ready
+        )
+
+
         return {
 
             "version":
                 self.VERSION,
+
 
             "timestamp":
                 datetime.now(
                     timezone.utc
                 ).isoformat(),
 
+
             "runtime":
                 "ONLINE",
+
 
             "engine_connected":
                 engine_status.get(
@@ -122,17 +148,21 @@ class DLISFullRuntime:
                     False
                 ),
 
+
             "dlis_tensor":
                 {
                     "tensor":
                         tensor
                 },
 
+
             "validation":
                 validation,
 
+
             "routing":
                 {
+
                     "prediction":
                         "PREDICT" in actions,
 
@@ -141,17 +171,10 @@ class DLISFullRuntime:
 
                     "decision":
                         "DECIDE" in actions
+
                 },
 
+
             "enterprise_ready":
-                (
-                    engine_status.get(
-                        "connected",
-                        False
-                    )
-                    and validation.get(
-                        "runtime_ready",
-                        False
-                    )
-                )
+                enterprise_ready
         }

@@ -1,0 +1,41 @@
+[
+    {
+        "trace_id": "656d9c60-432c-4603-8d33-b4e7b2ccad04",
+        "timestamp": "2026-07-19T21:22:20.747458+00:00",
+        "version": "V8.0",
+        "objective": {
+            "version": "V8.0",
+            "timestamp": "2026-07-19T21:22:20.747396+00:00",
+            "objective": "preserve_stability",
+            "priority": "medium",
+            "confidence": 0.75
+        },
+        "action": {
+            "version": "V8.0",
+            "timestamp": "2026-07-19T21:22:20.747404+00:00",
+            "objective": "preserve_stability",
+            "action": "maintain_current_state"
+        },
+        "confidence": {
+            "version": "V8.0",
+            "timestamp": "2026-07-19T21:22:20.747389+00:00",
+            "confidence": 0.75,
+            "accepted": true,
+            "hypotheses": [
+                "STRUCTURAL_STABILITY",
+                "HIGH_COHERENCE",
+                "VALIDATED_STATE"
+            ]
+        },
+        "reasoning": {
+            "version": "V8.0",
+            "timestamp": "2026-07-19T21:22:20.747380+00:00",
+            "hypotheses": [
+                "STRUCTURAL_STABILITY",
+                "HIGH_COHERENCE",
+                "VALIDATED_STATE"
+            ],
+            "score": 3
+        }
+    }
+]
