@@ -1,0 +1,4426 @@
+{
+  "benchmark_suite.py": {
+    "classes": [],
+    "functions": [
+      "load_system_state",
+      "compute_entropy",
+      "run_benchmark"
+    ],
+    "imports": [
+      "json",
+      "numpy"
+    ]
+  },
+  "billing.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "dashboard.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "matplotlib.pyplot",
+      "numpy",
+      "requests",
+      "streamlit"
+    ]
+  },
+  "database.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "os",
+      "sqlalchemy",
+      "sqlalchemy.orm"
+    ]
+  },
+  "generate_figures.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "matplotlib.pyplot",
+      "numpy",
+      "os"
+    ]
+  },
+  "setup.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "setuptools"
+    ]
+  },
+  "api/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "api/main.py": {
+    "classes": [],
+    "functions": [
+      "root"
+    ],
+    "imports": [
+      "api.routes.analyze",
+      "fastapi"
+    ]
+  },
+  "api/auth.py": {
+    "classes": [],
+    "functions": [
+      "generate_key"
+    ],
+    "imports": [
+      "uuid"
+    ]
+  },
+  "api/chat.py": {
+    "classes": [],
+    "functions": [
+      "handler"
+    ],
+    "imports": [
+      "openai",
+      "os"
+    ]
+  },
+  "api/db.py": {
+    "classes": [],
+    "functions": [
+      "get_engine"
+    ],
+    "imports": [
+      "os",
+      "sqlalchemy",
+      "sqlalchemy.orm"
+    ]
+  },
+  "app/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "auth/security.py": {
+    "classes": [],
+    "functions": [
+      "hash_password",
+      "verify_password",
+      "create_access_token"
+    ],
+    "imports": [
+      "datetime",
+      "jwt",
+      "os",
+      "passlib.context"
+    ]
+  },
+  "benchmarks/stress_test.py": {
+    "classes": [],
+    "functions": [
+      "stress_test"
+    ],
+    "imports": [
+      "numpy",
+      "pathlib",
+      "sys",
+      "time"
+    ]
+  },
+  "benchmarks/v78_runtime_benchmark.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreBenchmark",
+        "methods": [
+          "__init__",
+          "generate_system",
+          "run_case",
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.engine",
+      "json",
+      "pathlib",
+      "sys",
+      "time"
+    ]
+  },
+  "engine/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "engine/basins.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "engine/engine.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "state",
+      "time"
+    ]
+  },
+  "engine/graph.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "engine/cycles.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "engine/memory.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "engine/state.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreState",
+        "methods": [
+          "to_dict",
+          "summary"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "dataclasses",
+      "datetime",
+      "typing",
+      "uuid"
+    ]
+  },
+  "engine/metrics.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "engine/validation.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "models/user.py": {
+    "classes": [
+      {
+        "class": "User",
+        "methods": []
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "database",
+      "sqlalchemy"
+    ]
+  },
+  "reports/investor_report.py": {
+    "classes": [
+      {
+        "class": "InvestorReport",
+        "methods": [
+          "__init__",
+          "export_json",
+          "executive_summary"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "json"
+    ]
+  },
+  "schemas/user.py": {
+    "classes": [
+      {
+        "class": "UserCreate",
+        "methods": []
+      },
+      {
+        "class": "UserLogin",
+        "methods": []
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "pydantic"
+    ]
+  },
+  "tests/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "tests/test_core_engine.py": {
+    "classes": [],
+    "functions": [
+      "test_core_engine"
+    ],
+    "imports": [
+      "app.core.engine",
+      "sys"
+    ]
+  },
+  "tests/test_evolution_adapter_history.py": {
+    "classes": [],
+    "functions": [
+      "test_evolution_history"
+    ],
+    "imports": [
+      "app.core.adaptation.evolution_adapter",
+      "sys"
+    ]
+  },
+  "tests/test_evolution_service_full_cycle.py": {
+    "classes": [],
+    "functions": [
+      "test_full_cycle"
+    ],
+    "imports": [
+      "app.core.adaptation.evolution_service",
+      "sys"
+    ]
+  },
+  "tests/test_metrics_coherence.py": {
+    "classes": [],
+    "functions": [
+      "test_coherence"
+    ],
+    "imports": [
+      "app.core.metrics.coherence",
+      "sys"
+    ]
+  },
+  "tests/test_metrics_dynamics.py": {
+    "classes": [],
+    "functions": [
+      "test_dynamics"
+    ],
+    "imports": [
+      "app.core.metrics.dynamics",
+      "sys"
+    ]
+  },
+  "tests/test_metrics_divergence.py": {
+    "classes": [],
+    "functions": [
+      "test_divergence"
+    ],
+    "imports": [
+      "app.core.metrics.divergence",
+      "sys"
+    ]
+  },
+  "tests/test_metrics_potential.py": {
+    "classes": [],
+    "functions": [
+      "test_potential"
+    ],
+    "imports": [
+      "app.core.metrics.potential",
+      "sys"
+    ]
+  },
+  "tests/test_metrics_entropy.py": {
+    "classes": [],
+    "functions": [
+      "test_entropy"
+    ],
+    "imports": [
+      "app.core.metrics.entropy",
+      "sys"
+    ]
+  },
+  "tests/test_policy_evolution_integration.py": {
+    "classes": [],
+    "functions": [
+      "test_policy_evolution_flow"
+    ],
+    "imports": [
+      "app.core.adaptation.policy_bridge",
+      "app.core.adaptation.policy_evolution",
+      "sys"
+    ]
+  },
+  "tests/test_v77_engine_integration.py": {
+    "classes": [],
+    "functions": [
+      "test_engine_import",
+      "test_bridge_import",
+      "test_orchestrator_import",
+      "test_binding_import",
+      "test_full_contract_chain"
+    ],
+    "imports": [
+      "app.core.engine",
+      "app.core.intelligence.canonical_engine_binding",
+      "app.core.intelligence.master_engine_bridge",
+      "app.core.intelligence.master_orchestration_layer",
+      "pathlib",
+      "sys"
+    ]
+  },
+  "tests/test_v77_runtime_pipeline.py": {
+    "classes": [],
+    "functions": [
+      "build_runtime",
+      "test_runtime_creation",
+      "test_runtime_execution",
+      "test_pipeline_trace"
+    ],
+    "imports": [
+      "app.core.engine",
+      "app.core.intelligence.canonical_engine_binding",
+      "app.core.intelligence.master_engine_bridge",
+      "app.core.intelligence.master_orchestration_layer",
+      "pathlib",
+      "sys"
+    ]
+  },
+  "tests/test_v778_runtime_hardening.py": {
+    "classes": [],
+    "functions": [
+      "runtime",
+      "test_empty_input_protection",
+      "test_runtime_repeated_execution",
+      "test_deterministic_output",
+      "test_contract_status"
+    ],
+    "imports": [
+      "app.core.engine",
+      "app.core.intelligence.canonical_engine_binding",
+      "app.core.intelligence.master_engine_bridge",
+      "app.core.intelligence.master_orchestration_layer",
+      "pathlib",
+      "sys"
+    ]
+  },
+  "tests/test_v781_benchmark_validation.py": {
+    "classes": [],
+    "functions": [
+      "test_benchmark_import",
+      "test_benchmark_execution",
+      "test_benchmark_repeatability",
+      "test_benchmark_integrity"
+    ],
+    "imports": [
+      "benchmarks.v78_runtime_benchmark",
+      "pathlib",
+      "sys"
+    ]
+  },
+  "api/routes/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "api/routes/auth.py": {
+    "classes": [],
+    "functions": [
+      "get_db",
+      "register",
+      "login"
+    ],
+    "imports": [
+      "auth.security",
+      "database",
+      "fastapi",
+      "models.user",
+      "schemas.user",
+      "sqlalchemy.orm"
+    ]
+  },
+  "api/routes/analyze.py": {
+    "classes": [
+      {
+        "class": "AnalyzeRequest",
+        "methods": []
+      }
+    ],
+    "functions": [
+      "analyze"
+    ],
+    "imports": [
+      "app.core.engine",
+      "fastapi",
+      "pydantic"
+    ]
+  },
+  "api/routes/explain.py": {
+    "classes": [],
+    "functions": [
+      "explain"
+    ],
+    "imports": [
+      "fastapi"
+    ]
+  },
+  "app/core/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/Billing.py": {
+    "classes": [],
+    "functions": [
+      "get_plan_limit",
+      "create_checkout_mock"
+    ],
+    "imports": []
+  },
+  "app/core/ai.py": {
+    "classes": [],
+    "functions": [
+      "run_ai"
+    ],
+    "imports": [
+      "openai",
+      "os"
+    ]
+  },
+  "app/core/analyzer.py": {
+    "classes": [
+      {
+        "class": "DynamiCore",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "collections",
+      "math"
+    ]
+  },
+  "app/core/basins.py": {
+    "classes": [
+      {
+        "class": "BasinAnalyzer",
+        "methods": [
+          "__init__",
+          "compute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/cycles.py": {
+    "classes": [
+      {
+        "class": "CycleDetector",
+        "methods": [
+          "__init__",
+          "compute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/db.py": {
+    "classes": [
+      {
+        "class": "Base",
+        "methods": []
+      }
+    ],
+    "functions": [
+      "get_db",
+      "create_database"
+    ],
+    "imports": [
+      "os",
+      "sqlalchemy",
+      "sqlalchemy.orm"
+    ]
+  },
+  "app/core/engine.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "adaptation.engine",
+      "adaptation.evolution_service",
+      "agents.orchestrator",
+      "attribution.engine",
+      "causal.engine",
+      "context.engine",
+      "decision.engine",
+      "explainability.engine",
+      "feedback.engine",
+      "kernel.state_vector",
+      "knowledge.engine",
+      "learning.engine",
+      "metrics.engine",
+      "predictive.anomaly",
+      "predictive.forecast",
+      "predictive.regime",
+      "predictive.risk",
+      "simulation.engine",
+      "state.evolution",
+      "state.snapshot",
+      "state.transition",
+      "twin.engine",
+      "validation.validator"
+    ]
+  },
+  "app/core/entropy.py": {
+    "classes": [
+      {
+        "class": "Entropy",
+        "methods": [
+          "shannon"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "numpy"
+    ]
+  },
+  "app/core/graph.py": {
+    "classes": [
+      {
+        "class": "FunctionalGraph",
+        "methods": [
+          "__init__",
+          "next_state"
+        ]
+      }
+    ],
+    "functions": [
+      "to_dict"
+    ],
+    "imports": [
+      "numpy"
+    ]
+  },
+  "app/core/security.py": {
+    "classes": [],
+    "functions": [
+      "hash_password",
+      "verify_password",
+      "create_access_token",
+      "decode_token",
+      "create_api_key"
+    ],
+    "imports": [
+      "datetime",
+      "jose",
+      "passlib.context",
+      "secrets"
+    ]
+  },
+  "app/core/stripe_service.py": {
+    "classes": [],
+    "functions": [
+      "create_checkout"
+    ],
+    "imports": [
+      "os",
+      "stripe"
+    ]
+  },
+  "app/core/auth.py": {
+    "classes": [],
+    "functions": [
+      "create_api_key",
+      "create_user",
+      "get_user"
+    ],
+    "imports": [
+      "app.core.db",
+      "app.core.models",
+      "uuid"
+    ]
+  },
+  "app/core/memory.py": {
+    "classes": [],
+    "functions": [
+      "save_message",
+      "get_history"
+    ],
+    "imports": [
+      "app.core.db",
+      "app.core.models"
+    ]
+  },
+  "app/core/models.py": {
+    "classes": [
+      {
+        "class": "User",
+        "methods": []
+      },
+      {
+        "class": "UsageLog",
+        "methods": []
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "api.db",
+      "datetime",
+      "sqlalchemy"
+    ]
+  },
+  "app/core/middleware.py": {
+    "classes": [],
+    "functions": [
+      "require_api_key"
+    ],
+    "imports": [
+      "app.core.auth",
+      "fastapi"
+    ]
+  },
+  "app/core/runtime_dependencies.py": {
+    "classes": [],
+    "functions": [
+      "optional_import"
+    ],
+    "imports": []
+  },
+  "app/core/health_check.py": {
+    "classes": [
+      {
+        "class": "HealthCheck",
+        "methods": [
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "calibration",
+      "confidence",
+      "engine",
+      "policy",
+      "self_optimizer"
+    ]
+  },
+  "app/core/adaptation/adaptive_learning.py": {
+    "classes": [
+      {
+        "class": "AdaptiveLearningEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/adaptive_threshold.py": {
+    "classes": [
+      {
+        "class": "AdaptiveThresholdEngine",
+        "methods": [
+          "__init__",
+          "evaluate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/calibration.py": {
+    "classes": [
+      {
+        "class": "CalibrationEngine",
+        "methods": [
+          "__init__",
+          "calibrate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/engine.py": {
+    "classes": [
+      {
+        "class": "AdaptationEngine",
+        "methods": [
+          "__init__",
+          "adapt"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "adaptive_learning",
+      "adaptive_threshold",
+      "calibration",
+      "confidence",
+      "policy",
+      "self_optimizer",
+      "strategy_memory",
+      "strategy_optimizer"
+    ]
+  },
+  "app/core/adaptation/confidence.py": {
+    "classes": [
+      {
+        "class": "ConfidenceEngine",
+        "methods": [
+          "__init__",
+          "evaluate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/evolution_adapter.py": {
+    "classes": [
+      {
+        "class": "EvolutionAdapter",
+        "methods": [
+          "__init__",
+          "process"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "policy_evolution"
+    ]
+  },
+  "app/core/adaptation/policy.py": {
+    "classes": [
+      {
+        "class": "PolicyEngine",
+        "methods": [
+          "__init__",
+          "evaluate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/evolution_service.py": {
+    "classes": [
+      {
+        "class": "EvolutionService",
+        "methods": [
+          "__init__",
+          "evaluate",
+          "recommendation",
+          "compare"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "evolution_adapter",
+      "evolution_diff"
+    ]
+  },
+  "app/core/adaptation/evolution_diff.py": {
+    "classes": [
+      {
+        "class": "EvolutionDiffEngine",
+        "methods": [
+          "__init__",
+          "_extract_metrics",
+          "compare"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/policy_bridge.py": {
+    "classes": [
+      {
+        "class": "PolicyBridge",
+        "methods": [
+          "__init__",
+          "update"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/policy_evolution.py": {
+    "classes": [
+      {
+        "class": "PolicyEvolutionEngine",
+        "methods": [
+          "__init__",
+          "record",
+          "rank",
+          "best_policy"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/self_optimizer.py": {
+    "classes": [
+      {
+        "class": "SelfOptimizerEngine",
+        "methods": [
+          "__init__",
+          "optimize"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/strategy_memory.py": {
+    "classes": [
+      {
+        "class": "StrategyMemory",
+        "methods": [
+          "__init__",
+          "store",
+          "all",
+          "count"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/adaptation/strategy_optimizer.py": {
+    "classes": [
+      {
+        "class": "StrategyOptimizer",
+        "methods": [
+          "__init__",
+          "optimize"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/agents/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "base",
+      "orchestrator"
+    ]
+  },
+  "app/core/agents/base.py": {
+    "classes": [
+      {
+        "class": "BaseAgent",
+        "methods": [
+          "__init__",
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/agents/forecast_agent.py": {
+    "classes": [
+      {
+        "class": "ForecastAgent",
+        "methods": [
+          "__init__",
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "base"
+    ]
+  },
+  "app/core/agents/metrics_agent.py": {
+    "classes": [
+      {
+        "class": "MetricsAgent",
+        "methods": [
+          "__init__",
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "base"
+    ]
+  },
+  "app/core/agents/decision_agent.py": {
+    "classes": [
+      {
+        "class": "DecisionAgent",
+        "methods": [
+          "__init__",
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "base"
+    ]
+  },
+  "app/core/agents/orchestrator.py": {
+    "classes": [
+      {
+        "class": "AgentOrchestrator",
+        "methods": [
+          "__init__",
+          "execute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "decision_agent",
+      "forecast_agent",
+      "metrics_agent",
+      "risk_agent"
+    ]
+  },
+  "app/core/agents/risk_agent.py": {
+    "classes": [
+      {
+        "class": "RiskAgent",
+        "methods": [
+          "__init__",
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "base"
+    ]
+  },
+  "app/core/attribution/engine.py": {
+    "classes": [
+      {
+        "class": "AttributionEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/attribution/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "engine"
+    ]
+  },
+  "app/core/causal/engine.py": {
+    "classes": [
+      {
+        "class": "CausalEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "graph"
+    ]
+  },
+  "app/core/causal/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "engine",
+      "graph"
+    ]
+  },
+  "app/core/causal/graph.py": {
+    "classes": [
+      {
+        "class": "CausalGraph",
+        "methods": [
+          "__init__",
+          "add_relation",
+          "get_effects"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/context/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "engine"
+    ]
+  },
+  "app/core/context/engine.py": {
+    "classes": [
+      {
+        "class": "ContextEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/decision/engine.py": {
+    "classes": [
+      {
+        "class": "DecisionEngine",
+        "methods": [
+          "decide"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/decision/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "engine"
+    ]
+  },
+  "app/core/decision/policy_engine.py": {
+    "classes": [
+      {
+        "class": "EnterpriseDecisionPolicyEngine",
+        "methods": [
+          "evaluate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/decision/decision_contract.py": {
+    "classes": [
+      {
+        "class": "DecisionContract",
+        "methods": [
+          "build"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/explainability/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "engine"
+    ]
+  },
+  "app/core/explainability/engine.py": {
+    "classes": [
+      {
+        "class": "ExplainabilityEngine",
+        "methods": [
+          "generate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/feedback/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "engine"
+    ]
+  },
+  "app/core/feedback/engine.py": {
+    "classes": [
+      {
+        "class": "FeedbackEngine",
+        "methods": [
+          "evaluate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/dynamic_intelligence_state.py": {
+    "classes": [
+      {
+        "class": "DynamicIntelligenceState",
+        "methods": [
+          "build"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/final_audit.py": {
+    "classes": [
+      {
+        "class": "FinalAudit",
+        "methods": [
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/intelligence_benchmark.py": {
+    "classes": [
+      {
+        "class": "IntelligenceBenchmark",
+        "methods": [
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "time"
+    ]
+  },
+  "app/core/graph_intelligence/intelligence_validator.py": {
+    "classes": [
+      {
+        "class": "IntelligenceValidator",
+        "methods": [
+          "validate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/structural_fusion.py": {
+    "classes": [
+      {
+        "class": "StructuralIntelligenceFusion",
+        "methods": [
+          "fuse"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/evolution_diff.py": {
+    "classes": [
+      {
+        "class": "EvolutionDiffEngine",
+        "methods": [
+          "compare"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "evolution_layer",
+      "evolution_predictor",
+      "graph_delta",
+      "pattern_engine",
+      "pipeline",
+      "structural_signature",
+      "temporal_memory"
+    ]
+  },
+  "app/core/graph_intelligence/evolution_metrics.py": {
+    "classes": [
+      {
+        "class": "EvolutionMetrics",
+        "methods": [
+          "calculate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/graph_dynamics.py": {
+    "classes": [
+      {
+        "class": "GraphDynamicsEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/history_engine.py": {
+    "classes": [
+      {
+        "class": "HistoricalEvolutionEngine",
+        "methods": [
+          "__init__",
+          "record",
+          "latest",
+          "all",
+          "size"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "copy",
+      "datetime"
+    ]
+  },
+  "app/core/graph_intelligence/pattern_engine.py": {
+    "classes": [
+      {
+        "class": "StructuralPatternEngine",
+        "methods": [
+          "detect"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/structural_memory.py": {
+    "classes": [
+      {
+        "class": "StructuralMemory",
+        "methods": [
+          "__init__",
+          "store",
+          "size"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/temporal_memory.py": {
+    "classes": [
+      {
+        "class": "TemporalGraphMemory",
+        "methods": [
+          "__init__",
+          "store",
+          "latest"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/transition_detector.py": {
+    "classes": [
+      {
+        "class": "TransitionDetector",
+        "methods": [
+          "detect"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/transition_memory.py": {
+    "classes": [
+      {
+        "class": "TransitionMemory",
+        "methods": [
+          "__init__",
+          "record",
+          "history"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/structural_transition.py": {
+    "classes": [
+      {
+        "class": "StructuralTransitionIntelligence",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/evolution_predictor.py": {
+    "classes": [
+      {
+        "class": "GraphEvolutionPredictor",
+        "methods": [
+          "predict"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/evolution_layer.py": {
+    "classes": [
+      {
+        "class": "EvolutionLayer",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/graph_delta.py": {
+    "classes": [
+      {
+        "class": "GraphDeltaEngine",
+        "methods": [
+          "compare"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/structural_signature.py": {
+    "classes": [
+      {
+        "class": "StructuralSignatureEngine",
+        "methods": [
+          "generate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "hashlib",
+      "json"
+    ]
+  },
+  "app/core/graph_intelligence/structural_signature_v2.py": {
+    "classes": [
+      {
+        "class": "StructuralSignatureV2",
+        "methods": [
+          "compare"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "hashlib",
+      "json"
+    ]
+  },
+  "app/core/graph_intelligence/critical_transition.py": {
+    "classes": [
+      {
+        "class": "CriticalTransitionDetector",
+        "methods": [
+          "detect",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/pipeline.py": {
+    "classes": [
+      {
+        "class": "GraphIntelligencePipeline",
+        "methods": [
+          "__init__",
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "critical_transition",
+      "decision_engine",
+      "dynamic_intelligence_state",
+      "evolution_layer",
+      "evolution_metrics",
+      "graph_delta",
+      "predictive_structural",
+      "structural_fusion",
+      "structural_signature",
+      "structural_signature_v2",
+      "structural_transition"
+    ]
+  },
+  "app/core/graph_intelligence/decision_engine.py": {
+    "classes": [
+      {
+        "class": "DecisionEngine",
+        "methods": [
+          "analyze",
+          "decide"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/predictive_structural.py": {
+    "classes": [
+      {
+        "class": "PredictiveStructuralLayer",
+        "methods": [
+          "_clamp",
+          "predict"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/graph_intelligence/graph_intelligence.py": {
+    "classes": [
+      {
+        "class": "DynamicGraphIntelligence",
+        "methods": [
+          "__init__",
+          "analyze",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/kernel/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "state_vector"
+    ]
+  },
+  "app/core/kernel/state_vector.py": {
+    "classes": [
+      {
+        "class": "StateVector",
+        "methods": [
+          "__init__",
+          "to_dict",
+          "__repr__"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/knowledge/store.py": {
+    "classes": [
+      {
+        "class": "KnowledgeStore",
+        "methods": [
+          "__init__",
+          "add_pattern",
+          "add_rule",
+          "get_patterns",
+          "get_rules"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/knowledge/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "engine",
+      "store"
+    ]
+  },
+  "app/core/knowledge/engine.py": {
+    "classes": [
+      {
+        "class": "KnowledgeEngine",
+        "methods": [
+          "__init__",
+          "extract",
+          "infer"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "store"
+    ]
+  },
+  "app/core/learning/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "engine",
+      "memory"
+    ]
+  },
+  "app/core/learning/engine.py": {
+    "classes": [
+      {
+        "class": "LearningEngine",
+        "methods": [
+          "__init__",
+          "learn",
+          "recall"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "memory"
+    ]
+  },
+  "app/core/learning/memory.py": {
+    "classes": [
+      {
+        "class": "LearningMemory",
+        "methods": [
+          "__init__",
+          "store",
+          "all",
+          "count"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/metrics/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "coherence",
+      "divergence",
+      "dynamics",
+      "entropy",
+      "potential"
+    ]
+  },
+  "app/core/metrics/coherence.py": {
+    "classes": [
+      {
+        "class": "CoherenceEngine",
+        "methods": [
+          "compute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/metrics/divergence.py": {
+    "classes": [
+      {
+        "class": "DivergenceEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/metrics/dynamics.py": {
+    "classes": [
+      {
+        "class": "DynamicsEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/metrics/entropy.py": {
+    "classes": [
+      {
+        "class": "EntropyEngine",
+        "methods": [
+          "shannon",
+          "normalized",
+          "entropy_rate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "collections",
+      "math"
+    ]
+  },
+  "app/core/metrics/engine.py": {
+    "classes": [
+      {
+        "class": "MetricsEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "coherence",
+      "divergence",
+      "dynamics",
+      "entropy",
+      "potential"
+    ]
+  },
+  "app/core/metrics/potential.py": {
+    "classes": [
+      {
+        "class": "PotentialEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/predictive/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/predictive/anomaly.py": {
+    "classes": [
+      {
+        "class": "AnomalyEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/predictive/forecast.py": {
+    "classes": [
+      {
+        "class": "ForecastEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/predictive/regime.py": {
+    "classes": [
+      {
+        "class": "RegimeEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/predictive/risk.py": {
+    "classes": [
+      {
+        "class": "RiskEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/simulation/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "engine",
+      "scenario"
+    ]
+  },
+  "app/core/simulation/engine.py": {
+    "classes": [
+      {
+        "class": "ScenarioEngine",
+        "methods": [
+          "simulate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "scenario"
+    ]
+  },
+  "app/core/simulation/scenario.py": {
+    "classes": [
+      {
+        "class": "Scenario",
+        "methods": [
+          "__init__",
+          "apply"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/state/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "transition"
+    ]
+  },
+  "app/core/state/evolution.py": {
+    "classes": [
+      {
+        "class": "EvolutionEngine",
+        "methods": [
+          "compare"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/state/store.py": {
+    "classes": [
+      {
+        "class": "SnapshotStore",
+        "methods": [
+          "__init__",
+          "_sanitize",
+          "save",
+          "load"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "json",
+      "pathlib"
+    ]
+  },
+  "app/core/state/snapshot.py": {
+    "classes": [
+      {
+        "class": "SnapshotEngine",
+        "methods": [
+          "__init__",
+          "save",
+          "all",
+          "latest"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "store"
+    ]
+  },
+  "app/core/state/history.py": {
+    "classes": [
+      {
+        "class": "HistoryEngine",
+        "methods": [
+          "__init__",
+          "add",
+          "get",
+          "latest",
+          "size"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/state/transition.py": {
+    "classes": [
+      {
+        "class": "StateTransitionEngine",
+        "methods": [
+          "predict"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.kernel"
+    ]
+  },
+  "app/core/twin/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "engine",
+      "model"
+    ]
+  },
+  "app/core/twin/engine.py": {
+    "classes": [
+      {
+        "class": "TwinEngine",
+        "methods": [
+          "__init__",
+          "create",
+          "update",
+          "get",
+          "list"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "model"
+    ]
+  },
+  "app/core/twin/model.py": {
+    "classes": [
+      {
+        "class": "DigitalTwin",
+        "methods": [
+          "__init__",
+          "update",
+          "record",
+          "snapshot"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/validation/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "validator"
+    ]
+  },
+  "app/core/validation/validator.py": {
+    "classes": [
+      {
+        "class": "ValidationEngine",
+        "methods": [
+          "validate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/validation/v71_enterprise_validator.py": {
+    "classes": [
+      {
+        "class": "V71EnterpriseValidator",
+        "methods": [
+          "__init__",
+          "validate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/enterprise/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/adaptive_intelligence.py": {
+    "classes": [
+      {
+        "class": "EnterpriseAdaptiveIntelligence",
+        "methods": [
+          "__init__",
+          "adapt"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/bootstrap.py": {
+    "classes": [
+      {
+        "class": "EnterpriseBootstrap",
+        "methods": [
+          "build"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "configuration",
+      "decision_service",
+      "deployment_readiness",
+      "enterprise_core",
+      "intelligence_api",
+      "intelligence_stream",
+      "knowledge_memory",
+      "monitoring_alert",
+      "orchestrator",
+      "persistence_history",
+      "runtime_manager",
+      "security_layer"
+    ]
+  },
+  "app/core/enterprise/configuration.py": {
+    "classes": [
+      {
+        "class": "EnterpriseConfiguration",
+        "methods": [
+          "__init__",
+          "get",
+          "update"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/decision_service.py": {
+    "classes": [
+      {
+        "class": "EnterpriseDecisionService",
+        "methods": [
+          "evaluate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/deployment_readiness.py": {
+    "classes": [
+      {
+        "class": "DeploymentReadiness",
+        "methods": [
+          "__init__",
+          "audit"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/enterprise_api_gateway.py": {
+    "classes": [
+      {
+        "class": "EnterpriseAPIGateway",
+        "methods": [
+          "__init__",
+          "execute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/enterprise_core.py": {
+    "classes": [
+      {
+        "class": "EnterpriseCore",
+        "methods": [
+          "__init__",
+          "start"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/event_processor.py": {
+    "classes": [
+      {
+        "class": "EnterpriseEventProcessor",
+        "methods": [
+          "__init__",
+          "process",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/final_integration_audit.py": {
+    "classes": [
+      {
+        "class": "EnterpriseFinalIntegrationAudit",
+        "methods": [
+          "audit"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/global_state_manager.py": {
+    "classes": [
+      {
+        "class": "EnterpriseGlobalStateManager",
+        "methods": [
+          "__init__",
+          "update",
+          "snapshot"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/intelligence_api.py": {
+    "classes": [
+      {
+        "class": "IntelligenceAPI",
+        "methods": [
+          "__init__",
+          "status",
+          "ingest",
+          "health"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/intelligence_core.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreEnterpriseIntelligenceCore",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/intelligence_gateway.py": {
+    "classes": [
+      {
+        "class": "EnterpriseIntelligenceGateway",
+        "methods": [
+          "__init__",
+          "request"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/intelligence_stream.py": {
+    "classes": [
+      {
+        "class": "IntelligenceStream",
+        "methods": [
+          "__init__",
+          "push",
+          "snapshot"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/knowledge_memory.py": {
+    "classes": [
+      {
+        "class": "EnterpriseKnowledgeMemory",
+        "methods": [
+          "__init__",
+          "learn",
+          "recall"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/monitoring_alert.py": {
+    "classes": [
+      {
+        "class": "EnterpriseMonitoringAlert",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/observability.py": {
+    "classes": [
+      {
+        "class": "EnterpriseObservability",
+        "methods": [
+          "__init__",
+          "record_event",
+          "record_error",
+          "snapshot"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "time"
+    ]
+  },
+  "app/core/enterprise/orchestrator.py": {
+    "classes": [
+      {
+        "class": "EnterpriseOrchestrator",
+        "methods": [
+          "__init__",
+          "execute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/persistence_history.py": {
+    "classes": [
+      {
+        "class": "EnterprisePersistenceHistory",
+        "methods": [
+          "__init__",
+          "save",
+          "get_history"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/enterprise/runtime_manager.py": {
+    "classes": [
+      {
+        "class": "EnterpriseRuntimeManager",
+        "methods": [
+          "__init__",
+          "heartbeat"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "runtime_state"
+    ]
+  },
+  "app/core/enterprise/runtime_state.py": {
+    "classes": [
+      {
+        "class": "EnterpriseRuntimeState",
+        "methods": [
+          "__init__",
+          "update"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/security_layer.py": {
+    "classes": [
+      {
+        "class": "EnterpriseSecurityLayer",
+        "methods": [
+          "authenticate",
+          "authorize"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/self_optimization.py": {
+    "classes": [
+      {
+        "class": "EnterpriseSelfOptimization",
+        "methods": [
+          "__init__",
+          "analyze",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/validation_automation.py": {
+    "classes": [
+      {
+        "class": "EnterpriseValidationAutomation",
+        "methods": [
+          "__init__",
+          "run",
+          "export"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime",
+      "json"
+    ]
+  },
+  "app/core/enterprise/workflow_engine.py": {
+    "classes": [
+      {
+        "class": "EnterpriseWorkflowEngine",
+        "methods": [
+          "__init__",
+          "execute",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/adaptive_intelligence_bridge.py": {
+    "classes": [
+      {
+        "class": "AdaptiveIntelligenceBridge",
+        "methods": [
+          "__init__",
+          "process"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.enterprise.adaptive_intelligence",
+      "app.core.enterprise.knowledge_memory",
+      "app.core.enterprise.self_optimization",
+      "app.core.graph_intelligence.evolution_predictor",
+      "app.core.graph_intelligence.predictive_structural"
+    ]
+  },
+  "app/core/enterprise/autonomous_intelligence_loop.py": {
+    "classes": [
+      {
+        "class": "AutonomousIntelligenceLoop",
+        "methods": [
+          "__init__",
+          "initialize_control",
+          "process"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.agents.decision_agent",
+      "app.core.decision.engine",
+      "app.core.enterprise.autonomous_control",
+      "app.core.enterprise.decision_service",
+      "app.core.enterprise.workflow_engine"
+    ]
+  },
+  "app/core/enterprise/intelligence_orchestration_layer.py": {
+    "classes": [
+      {
+        "class": "IntelligenceOrchestrationLayer",
+        "methods": [
+          "__init__",
+          "process"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.enterprise.global_state_manager",
+      "app.core.enterprise.monitoring_alert",
+      "app.core.enterprise.observability",
+      "app.core.enterprise.orchestrator"
+    ]
+  },
+  "app/core/enterprise/self_awareness_layer.py": {
+    "classes": [
+      {
+        "class": "SelfAwarenessLayer",
+        "methods": [
+          "__init__",
+          "process"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.enterprise.global_state_manager",
+      "app.core.enterprise.monitoring_alert",
+      "app.core.enterprise.observability",
+      "app.core.enterprise.runtime_manager",
+      "app.core.enterprise.runtime_state"
+    ]
+  },
+  "app/core/enterprise/autonomous_control.py": {
+    "classes": [
+      {
+        "class": "EnterpriseAutonomousControl",
+        "methods": [
+          "__init__",
+          "control"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/autonomous_feedback.py": {
+    "classes": [
+      {
+        "class": "AutonomousFeedbackIntelligence",
+        "methods": [
+          "__init__",
+          "evaluate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/enterprise/persistent_strategy_repository.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/strategy_loader.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/adaptive_strategy_evolution.py": {
+    "classes": [
+      {
+        "class": "AdaptiveStrategyEvolution",
+        "methods": [
+          "__init__",
+          "load",
+          "save",
+          "evaluate_strategy",
+          "recommend",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime",
+      "json",
+      "pathlib"
+    ]
+  },
+  "app/core/enterprise/decision_execution_bridge.py": {
+    "classes": [
+      {
+        "class": "EnterpriseDecisionExecutionBridge",
+        "methods": [
+          "__init__",
+          "execute_decision"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/enterprise/cognitive_memory_layer.py": {
+    "classes": [
+      {
+        "class": "CognitiveMemoryLayer",
+        "methods": [
+          "__init__",
+          "process",
+          "recall_operational_memory"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.enterprise.knowledge_memory",
+      "app.core.enterprise.persistence_history",
+      "app.core.graph_intelligence.history_engine",
+      "app.core.graph_intelligence.pattern_engine",
+      "app.core.graph_intelligence.temporal_memory",
+      "app.core.graph_intelligence.transition_memory",
+      "datetime"
+    ]
+  },
+  "app/core/enterprise/predictive_intelligence_layer.py": {
+    "classes": [
+      {
+        "class": "PredictiveIntelligenceLayer",
+        "methods": [
+          "__init__",
+          "process"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.graph_intelligence.evolution_predictor",
+      "app.core.graph_intelligence.predictive_structural"
+    ]
+  },
+  "app/core/enterprise/dynamic_graph_bridge.py": {
+    "classes": [
+      {
+        "class": "EnterpriseDynamicGraphBridge",
+        "methods": [
+          "__init__",
+          "analyze_transition"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.enterprise.predictive_intelligence_layer"
+    ]
+  },
+  "app/core/enterprise/intelligence_orchestrator_bridge.py": {
+    "classes": [
+      {
+        "class": "IntelligenceOrchestratorBridge",
+        "methods": [
+          "__init__",
+          "execute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/dynamic_graph_evolution_bridge.py": {
+    "classes": [
+      {
+        "class": "DynamicGraphEvolutionBridge",
+        "methods": [
+          "__init__",
+          "analyze_transition"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/enterprise/runtime_bootstrap.py": {
+    "classes": [
+      {
+        "class": "RuntimeBootstrap",
+        "methods": [
+          "__init__",
+          "boot"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.intelligence.auto_registry",
+      "app.core.intelligence.kernel",
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/structural_contract.py": {
+    "classes": [
+      {
+        "class": "StructuralIntelligenceState",
+        "methods": [
+          "update_metrics",
+          "snapshot"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "dataclasses",
+      "typing"
+    ]
+  },
+  "app/core/intelligence/orchestrator.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreIntelligenceOrchestrator",
+        "methods": [
+          "__init__",
+          "analyze",
+          "predict",
+          "decide"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.contracts"
+    ]
+  },
+  "app/core/intelligence/graph_adapter.py": {
+    "classes": [
+      {
+        "class": "GraphIntelligenceAdapter",
+        "methods": [
+          "__init__",
+          "analyze_structure"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.graph_intelligence.graph_delta",
+      "app.core.graph_intelligence.structural_signature"
+    ]
+  },
+  "app/core/intelligence/runtime_bridge.py": {
+    "classes": [
+      {
+        "class": "RuntimeIntelligenceBridge",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/runtime_registry.py": {
+    "classes": [
+      {
+        "class": "RuntimeRegistry",
+        "methods": [
+          "__init__",
+          "register",
+          "health",
+          "get"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/enterprise_bootstrap.py": {
+    "classes": [
+      {
+        "class": "EnterpriseBootstrap",
+        "methods": [
+          "__init__",
+          "register_component",
+          "boot",
+          "health"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.intelligence.kernel"
+    ]
+  },
+  "app/core/intelligence/kernel.py": {
+    "classes": [
+      {
+        "class": "IntelligenceKernel",
+        "methods": [
+          "__init__",
+          "register",
+          "status",
+          "health"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/auto_registry.py": {
+    "classes": [
+      {
+        "class": "AutoRegistry",
+        "methods": [
+          "__init__",
+          "register_module",
+          "register_core_stack"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "importlib"
+    ]
+  },
+  "app/core/intelligence/evolution_contract.py": {
+    "classes": [
+      {
+        "class": "EvolutionReport",
+        "methods": []
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "dataclasses",
+      "datetime",
+      "typing"
+    ]
+  },
+  "app/core/intelligence/evolution_engine.py": {
+    "classes": [
+      {
+        "class": "EvolutionEngine",
+        "methods": [
+          "analyze",
+          "_compute_delta",
+          "_classify_transition",
+          "_confidence"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.intelligence.evolution_contract",
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/evolution_orchestrator.py": {
+    "classes": [
+      {
+        "class": "EvolutionOrchestrator",
+        "methods": [
+          "__init__",
+          "analyze_evolution",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.intelligence.evolution_engine",
+      "app.core.intelligence.graph_evolution_bridge",
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/graph_evolution_bridge.py": {
+    "classes": [
+      {
+        "class": "GraphEvolutionBridge",
+        "methods": [
+          "__init__",
+          "process",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/intelligence_core.py": {
+    "classes": [
+      {
+        "class": "IntelligenceCore",
+        "methods": [
+          "__init__",
+          "analyze",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime",
+      "evolution_orchestrator"
+    ]
+  },
+  "app/core/intelligence/graph_intelligence_validator.py": {
+    "classes": [
+      {
+        "class": "GraphIntelligenceValidator",
+        "methods": [
+          "__init__",
+          "validate_graph_state",
+          "validate_evolution",
+          "validate_prediction",
+          "validate_decision",
+          "validate",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/intelligence_validation_bridge.py": {
+    "classes": [
+      {
+        "class": "IntelligenceValidationBridge",
+        "methods": [
+          "__init__",
+          "validate_intelligence",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.intelligence.graph_intelligence_validator",
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/dlis_state.py": {
+    "classes": [
+      {
+        "class": "DLISState",
+        "methods": [
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "dataclasses",
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/validation_bridge.py": {
+    "classes": [
+      {
+        "class": "ValidationBridgeV73",
+        "methods": [
+          "__init__",
+          "validate_math",
+          "validate_graph",
+          "validate_evolution",
+          "validate",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/kernel_v73.py": {
+    "classes": [
+      {
+        "class": "IntelligenceKernelV73",
+        "methods": [
+          "__init__",
+          "attach_math_core",
+          "attach_graph_intelligence",
+          "attach_evolution_engine",
+          "attach_validation_bridge",
+          "analyze",
+          "build_state",
+          "validate",
+          "attach_enterprise_layer",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.intelligence.dlis_state",
+      "app.core.intelligence.validation_bridge",
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/enterprise_layer.py": {
+    "classes": [
+      {
+        "class": "EnterpriseLayerV73",
+        "methods": [
+          "__init__",
+          "register_event",
+          "register_state",
+          "register_transition",
+          "health",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.intelligence.enterprise_runtime",
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/enterprise_runtime.py": {
+    "classes": [
+      {
+        "class": "RuntimeEvent",
+        "methods": []
+      },
+      {
+        "class": "RuntimeSnapshot",
+        "methods": []
+      },
+      {
+        "class": "EnterpriseRuntimeV73",
+        "methods": [
+          "__init__",
+          "push_event",
+          "push_state",
+          "push_transition",
+          "metrics",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.intelligence.runtime_persistence",
+      "dataclasses",
+      "datetime",
+      "typing"
+    ]
+  },
+  "app/core/intelligence/runtime_persistence.py": {
+    "classes": [
+      {
+        "class": "RuntimePersistenceV741",
+        "methods": [
+          "__init__",
+          "initialize_storage",
+          "load_data",
+          "save_data",
+          "save_event",
+          "save_state",
+          "save_transition",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "json",
+      "pathlib"
+    ]
+  },
+  "app/core/intelligence/temporal_memory_engine.py": {
+    "classes": [
+      {
+        "class": "TemporalMemoryEngineV75",
+        "methods": [
+          "__init__",
+          "_load",
+          "events",
+          "states",
+          "transitions",
+          "latest_state",
+          "evolution_summary",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime",
+      "json",
+      "pathlib"
+    ]
+  },
+  "app/core/intelligence/evolution_history_analyzer.py": {
+    "classes": [
+      {
+        "class": "EvolutionHistoryAnalyzerV751",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "statistics"
+    ]
+  },
+  "app/core/intelligence/structural_timeline_engine.py": {
+    "classes": [
+      {
+        "class": "StructuralTimelineEngineV752",
+        "methods": [
+          "build",
+          "summary",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/predictive_temporal_engine.py": {
+    "classes": [
+      {
+        "class": "PredictiveTemporalEngineV753",
+        "methods": [
+          "predict",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/cognitive_orchestrator.py": {
+    "classes": [
+      {
+        "class": "CognitiveOrchestrator",
+        "methods": [
+          "__init__",
+          "_record",
+          "receive_state",
+          "analyze",
+          "update_memory",
+          "request_prediction",
+          "request_decision",
+          "generate_trace",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/orchestrator_integration_bridge.py": {
+    "classes": [
+      {
+        "class": "OrchestratorIntegrationBridge",
+        "methods": [
+          "__init__",
+          "process",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/canonical_binding_adapter.py": {
+    "classes": [
+      {
+        "class": "MemoryBindingAdapter",
+        "methods": [
+          "__init__",
+          "store_state",
+          "latest"
+        ]
+      },
+      {
+        "class": "PredictionBindingAdapter",
+        "methods": [
+          "__init__",
+          "predict"
+        ]
+      },
+      {
+        "class": "DecisionBindingAdapter",
+        "methods": [
+          "__init__",
+          "decide"
+        ]
+      },
+      {
+        "class": "CanonicalBindingAdapter",
+        "methods": [
+          "__init__",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "canonical_binding_adapter",
+      "cognitive_orchestrator",
+      "orchestrator"
+    ]
+  },
+  "app/core/intelligence/master_orchestration_layer.py": {
+    "classes": [
+      {
+        "class": "MasterOrchestrationLayer",
+        "methods": [
+          "__init__",
+          "record",
+          "execute",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/canonical_engine_binding.py": {
+    "classes": [
+      {
+        "class": "CanonicalEngineBinding",
+        "methods": [
+          "__init__",
+          "record",
+          "execute",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/master_engine_bridge.py": {
+    "classes": [
+      {
+        "class": "MasterEngineBridge",
+        "methods": [
+          "__init__",
+          "record",
+          "execute",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/dynamicore_intelligence_kernel.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreIntelligenceKernel",
+        "methods": [
+          "__init__",
+          "execute",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "datetime"
+    ]
+  },
+  "app/core/intelligence/kernel_factory.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreKernelFactory",
+        "methods": [
+          "create",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "dynamicore_intelligence_kernel"
+    ]
+  },
+  "app/core/contracts/intelligence_contract.py": {
+    "classes": [
+      {
+        "class": "IntelligenceState",
+        "methods": []
+      },
+      {
+        "class": "IntelligencePrediction",
+        "methods": []
+      },
+      {
+        "class": "IntelligenceDecision",
+        "methods": []
+      },
+      {
+        "class": "IntelligenceReport",
+        "methods": []
+      }
+    ],
+    "functions": [
+      "build_report"
+    ],
+    "imports": [
+      "dataclasses",
+      "datetime",
+      "typing"
+    ]
+  },
+  "app/core/contracts/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "intelligence_contract"
+    ]
+  },
+  "app/core/mathematical/dlis_math_v1.py": {
+    "classes": [
+      {
+        "class": "DLISState",
+        "methods": []
+      },
+      {
+        "class": "DLISMath",
+        "methods": [
+          "psi",
+          "pi",
+          "omega",
+          "sigma",
+          "phi",
+          "kappa",
+          "collapse",
+          "evaluate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "dataclasses",
+      "math"
+    ]
+  },
+  "app/core/mathematical/mathematical_core.py": {
+    "classes": [
+      {
+        "class": "MathematicalCore",
+        "methods": [
+          "__init__",
+          "analyze",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.mathematical.invariant_engine",
+      "datetime"
+    ]
+  },
+  "app/core/mathematical/state_adapter.py": {
+    "classes": [
+      {
+        "class": "MathematicalState",
+        "methods": []
+      },
+      {
+        "class": "StateAdapter",
+        "methods": [
+          "adapt",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "dataclasses"
+    ]
+  },
+  "app/core/mathematical/invariant_engine.py": {
+    "classes": [
+      {
+        "class": "InvariantReport",
+        "methods": []
+      },
+      {
+        "class": "InvariantEngine",
+        "methods": [
+          "_get",
+          "compare_values",
+          "compare",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "dataclasses",
+      "math"
+    ]
+  },
+  "app/core/mathematical/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "invariant_engine",
+      "mathematical_core",
+      "state_adapter"
+    ]
+  },
+  "app/core/evolution/evolution_state.py": {
+    "classes": [
+      {
+        "class": "EvolutionState",
+        "methods": [
+          "__post_init__"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "dataclasses",
+      "datetime"
+    ]
+  },
+  "app/core/evolution/evolution_engine_v73.py": {
+    "classes": [
+      {
+        "class": "EvolutionEngineV73",
+        "methods": [
+          "__init__",
+          "calculate_delta",
+          "evolve",
+          "status"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.evolution.evolution_state"
+    ]
+  },
+  "app/core/dlis/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/dlis/critical_probability.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/dlis/memory_evolution.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/dlis/laws.py": {
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/dlis/potential_engine.py": {
+    "classes": [
+      {
+        "class": "StructuralPotentialEngine",
+        "methods": [
+          "__init__",
+          "compute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/dlis/structural_pressure.py": {
+    "classes": [
+      {
+        "class": "StructuralPressureEngine",
+        "methods": [
+          "compute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/dlis/adaptive_coherence.py": {
+    "classes": [
+      {
+        "class": "AdaptiveCoherenceEngine",
+        "methods": [
+          "compute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/dlis/evolution_balance.py": {
+    "classes": [
+      {
+        "class": "EvolutionBalanceEngine",
+        "methods": [
+          "compute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/dlis/collapse_probability.py": {
+    "classes": [
+      {
+        "class": "CollapseProbabilityEngine",
+        "methods": [
+          "compute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "math"
+    ]
+  },
+  "app/core/dlis/structural_energy.py": {
+    "classes": [
+      {
+        "class": "StructuralEnergyEngine",
+        "methods": [
+          "compute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/dlis/entropy_curvature.py": {
+    "classes": [
+      {
+        "class": "EntropyCurvatureEngine",
+        "methods": [
+          "compute"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/dlis/mvf_validator.py": {
+    "classes": [
+      {
+        "class": "DLISValidationFramework",
+        "methods": [
+          "validate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/research/collatz/engine.py": {
+    "classes": [
+      {
+        "class": "CollatzEngine",
+        "methods": [
+          "generate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/research/collatz/__init__.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "analysis",
+      "engine",
+      "state"
+    ]
+  },
+  "app/core/research/collatz/analysis.py": {
+    "classes": [
+      {
+        "class": "CollatzAnalyzer",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "app/core/research/collatz/state.py": {
+    "classes": [
+      {
+        "class": "CollatzStateBuilder",
+        "methods": [
+          "build"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.kernel"
+    ]
+  },
+  "archive/v6.12.0_foundation_backup/models.py": {
+    "classes": [
+      {
+        "class": "User",
+        "methods": []
+      },
+      {
+        "class": "UsageLog",
+        "methods": []
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "api.db",
+      "datetime",
+      "sqlalchemy"
+    ]
+  },
+  "archive/v6.12.0_foundation_backup/auth.py": {
+    "classes": [],
+    "functions": [
+      "create_api_key",
+      "create_user",
+      "get_user"
+    ],
+    "imports": [
+      "app.core.db",
+      "app.core.models",
+      "uuid"
+    ]
+  },
+  "archive/v6.12.0_foundation_backup/memory.py": {
+    "classes": [],
+    "functions": [
+      "save_message",
+      "get_history"
+    ],
+    "imports": [
+      "app.core.db",
+      "app.core.models"
+    ]
+  },
+  "archive/v6.12.0_foundation_backup/middleware.py": {
+    "classes": [],
+    "functions": [
+      "require_api_key"
+    ],
+    "imports": [
+      "app.core.auth",
+      "fastapi"
+    ]
+  },
+  "archive/v6.12.1_runtime_backup/dashboard.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "matplotlib.pyplot",
+      "numpy",
+      "requests",
+      "streamlit"
+    ]
+  },
+  "archive/v6.12.1_runtime_backup/security.py": {
+    "classes": [],
+    "functions": [
+      "hash_password",
+      "verify_password",
+      "create_access_token"
+    ],
+    "imports": [
+      "datetime",
+      "jwt",
+      "os",
+      "passlib.context"
+    ]
+  },
+  "archive/v6.12.1_runtime_backup/stress_test.py": {
+    "classes": [],
+    "functions": [
+      "stress_test"
+    ],
+    "imports": [
+      "dynamicore.core.analyzer",
+      "numpy",
+      "time"
+    ]
+  },
+  "archive/v6.12.1_runtime_backup/auth.py": {
+    "classes": [],
+    "functions": [
+      "create_api_key",
+      "create_user",
+      "get_user"
+    ],
+    "imports": [
+      "app.core.db",
+      "app.core.models",
+      "uuid"
+    ]
+  },
+  "archive/v6.12.1_runtime_backup/models.py": {
+    "classes": [
+      {
+        "class": "User",
+        "methods": []
+      },
+      {
+        "class": "UsageLog",
+        "methods": []
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "api.db",
+      "datetime",
+      "sqlalchemy"
+    ]
+  },
+  "archive/v6.12.3_predictive_backup/predictive_structural.py": {
+    "classes": [
+      {
+        "class": "PredictiveStructuralLayer",
+        "methods": [
+          "_clamp",
+          "predict"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/backups/V6.10.9/pipeline_v6_3_3_backup.py": {
+    "classes": [
+      {
+        "class": "GraphIntelligencePipeline",
+        "methods": [
+          "__init__",
+          "analyze_structure",
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "evolution_layer",
+      "evolution_predictor",
+      "graph_delta",
+      "pattern_engine",
+      "structural_signature",
+      "temporal_memory"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_before_adaptation.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "agents.orchestrator",
+      "attribution.engine",
+      "causal.engine",
+      "context.engine",
+      "decision.engine",
+      "explainability.engine",
+      "feedback.engine",
+      "kernel.state_vector",
+      "knowledge.engine",
+      "learning.engine",
+      "metrics.engine",
+      "predictive.anomaly",
+      "predictive.forecast",
+      "predictive.regime",
+      "predictive.risk",
+      "simulation.engine",
+      "state.evolution",
+      "state.snapshot",
+      "state.transition",
+      "twin.engine",
+      "validation.validator"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_before_v61_policy_evolution.py": {
+    "classes": [
+      {
+        "class": "AdaptationEngine",
+        "methods": [
+          "__init__",
+          "adapt"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "adaptive_learning",
+      "adaptive_threshold",
+      "calibration",
+      "confidence",
+      "policy",
+      "self_optimizer",
+      "strategy_memory",
+      "strategy_optimizer"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_before_v6_integration.py": {
+    "classes": [
+      {
+        "class": "AdaptationEngine",
+        "methods": [
+          "__init__",
+          "adapt"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "calibration",
+      "confidence",
+      "policy",
+      "self_optimizer"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_before_policy_evolution_integration.py": {
+    "classes": [
+      {
+        "class": "AdaptationEngine",
+        "methods": [
+          "__init__",
+          "adapt"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "adaptive_learning",
+      "adaptive_threshold",
+      "calibration",
+      "confidence",
+      "policy",
+      "self_optimizer",
+      "strategy_memory",
+      "strategy_optimizer"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_v1.py": {
+    "classes": [
+      {
+        "class": "AdaptationEngine",
+        "methods": [
+          "__init__",
+          "adapt"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/backups/V6.10.9/engine_backup_v5_3.py": {
+    "classes": [
+      {
+        "class": "AdaptationEngine",
+        "methods": [
+          "__init__",
+          "adapt"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "calibration",
+      "confidence",
+      "policy",
+      "self_optimizer"
+    ]
+  },
+  "archive/backups/V6.10.9/analyze_text_backup.py": {
+    "classes": [
+      {
+        "class": "AnalyzeRequest",
+        "methods": []
+      }
+    ],
+    "functions": [
+      "sentiment",
+      "analyze"
+    ],
+    "imports": [
+      "app.core.engine",
+      "collections",
+      "fastapi",
+      "pydantic",
+      "re"
+    ]
+  },
+  "archive/backups/V6.10.9/evolution_service_backup_before_diff_v611.py": {
+    "classes": [
+      {
+        "class": "EvolutionService",
+        "methods": [
+          "__init__",
+          "evaluate",
+          "recommendation",
+          "compare"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "evolution_adapter"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "adaptation.engine",
+      "adaptation.evolution_service",
+      "agents.orchestrator",
+      "attribution.engine",
+      "causal.engine",
+      "context.engine",
+      "decision.engine",
+      "explainability.engine",
+      "feedback.engine",
+      "kernel.state_vector",
+      "knowledge.engine",
+      "learning.engine",
+      "metrics.engine",
+      "predictive.anomaly",
+      "predictive.forecast",
+      "predictive.regime",
+      "predictive.risk",
+      "simulation.engine",
+      "state.evolution",
+      "state.snapshot",
+      "state.transition",
+      "twin.engine",
+      "validation.validator"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "adaptation.engine",
+      "agents.orchestrator",
+      "attribution.engine",
+      "causal.engine",
+      "context.engine",
+      "decision.engine",
+      "explainability.engine",
+      "feedback.engine",
+      "kernel.state_vector",
+      "knowledge.engine",
+      "learning.engine",
+      "metrics.engine",
+      "predictive.anomaly",
+      "predictive.forecast",
+      "predictive.regime",
+      "predictive.risk",
+      "simulation.engine",
+      "state.evolution",
+      "state.snapshot",
+      "state.transition",
+      "twin.engine",
+      "validation.validator"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "adaptation.engine",
+      "adaptation.evolution_service",
+      "agents.orchestrator",
+      "attribution.engine",
+      "causal.engine",
+      "context.engine",
+      "decision.engine",
+      "explainability.engine",
+      "feedback.engine",
+      "kernel.state_vector",
+      "knowledge.engine",
+      "learning.engine",
+      "metrics.engine",
+      "predictive.anomaly",
+      "predictive.forecast",
+      "predictive.regime",
+      "predictive.risk",
+      "simulation.engine",
+      "state.evolution",
+      "state.snapshot",
+      "state.transition",
+      "twin.engine",
+      "validation.validator"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_fix_evolution_refs.py": {
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "adaptation.evolution_service",
+      "state.evolution"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "adaptation.engine",
+      "adaptation.evolution_service",
+      "agents.orchestrator",
+      "attribution.engine",
+      "causal.engine",
+      "context.engine",
+      "decision.engine",
+      "explainability.engine",
+      "feedback.engine",
+      "kernel.state_vector",
+      "knowledge.engine",
+      "learning.engine",
+      "metrics.engine",
+      "predictive.anomaly",
+      "predictive.forecast",
+      "predictive.regime",
+      "predictive.risk",
+      "simulation.engine",
+      "state.evolution",
+      "state.snapshot",
+      "state.transition",
+      "twin.engine",
+      "validation.validator"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "adaptation.engine",
+      "adaptation.evolution_service",
+      "agents.orchestrator",
+      "attribution.engine",
+      "causal.engine",
+      "context.engine",
+      "decision.engine",
+      "explainability.engine",
+      "feedback.engine",
+      "kernel.state_vector",
+      "knowledge.engine",
+      "learning.engine",
+      "metrics.engine",
+      "predictive.anomaly",
+      "predictive.forecast",
+      "predictive.regime",
+      "predictive.risk",
+      "simulation.engine",
+      "state.evolution",
+      "state.snapshot",
+      "state.transition",
+      "twin.engine",
+      "validation.validator"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_old_backup.py": {
+    "classes": [
+      {
+        "class": "DynamiCoreEngine",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "collections",
+      "math"
+    ]
+  },
+  "archive/backups/V6.10.9/engine_backup_v05.py": {
+    "classes": [
+      {
+        "class": "MetricsEngine",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "coherence",
+      "divergence",
+      "dynamics",
+      "entropy",
+      "potential"
+    ]
+  },
+  "archive/backups/V6.10.9/state_vector.backup_before_statevector_fix.py": {
+    "classes": [
+      {
+        "class": "StateVector",
+        "methods": [
+          "__init__",
+          "to_dict",
+          "from_dict"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/backups/V6.10.9/decision_engine.backup_before_adapter_fix.py": {
+    "classes": [
+      {
+        "class": "DecisionEngine",
+        "methods": [
+          "analyze",
+          "decide"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/backups/V6.10.9/decision_engine.backup_before_decide_adapter_v2.py": {
+    "classes": [
+      {
+        "class": "DecisionEngine",
+        "methods": [
+          "analyze",
+          "decide"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/backups/V6.10.9/decision_engine.backup_before_final_adapter.py": {
+    "classes": [
+      {
+        "class": "DecisionEngine",
+        "methods": [
+          "analyze",
+          "decide"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_predictive_fix.py": {
+    "classes": [
+      {
+        "class": "EnterpriseDynamicGraphBridge",
+        "methods": [
+          "__init__",
+          "analyze_transition"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.graph_intelligence.dynamic_intelligence_state",
+      "app.core.graph_intelligence.graph_intelligence",
+      "app.core.graph_intelligence.structural_fusion"
+    ]
+  },
+  "archive/backups/V6.10.9/structural_transition.backup_v652_before_v699.py": {
+    "classes": [
+      {
+        "class": "StructuralTransitionIntelligence",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/backups/V6.10.9/graph_intelligence.backup_v650_before_v699.py": {
+    "classes": [
+      {
+        "class": "DynamicGraphIntelligence",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.graph_intelligence.evolution_metrics",
+      "app.core.graph_intelligence.structural_transition"
+    ]
+  },
+  "archive/backups/V6.10.9/autonomous_control.backup_v676_before_v6102.py": {
+    "classes": [
+      {
+        "class": "EnterpriseAutonomousControl",
+        "methods": [
+          "__init__",
+          "control"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6105_before_adaptive.py": {
+    "classes": [
+      {
+        "class": "EnterpriseDynamicGraphBridge",
+        "methods": [
+          "__init__",
+          "analyze_transition"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.decision.decision_contract",
+      "app.core.decision.policy_engine",
+      "app.core.graph_intelligence.dynamic_intelligence_state",
+      "app.core.graph_intelligence.graph_intelligence",
+      "app.core.graph_intelligence.structural_fusion"
+    ]
+  },
+  "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_adapter_v6108.py": {
+    "classes": [
+      {
+        "class": "EnterpriseDynamicGraphBridge",
+        "methods": [
+          "__init__",
+          "analyze_transition"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.decision.decision_contract",
+      "app.core.decision.policy_engine",
+      "app.core.enterprise.adaptive_strategy_evolution",
+      "app.core.enterprise.cognitive_memory_layer",
+      "app.core.graph_intelligence.dynamic_intelligence_state",
+      "app.core.graph_intelligence.graph_intelligence",
+      "app.core.graph_intelligence.structural_fusion"
+    ]
+  },
+  "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_fix_v6108.py": {
+    "classes": [
+      {
+        "class": "EnterpriseDynamicGraphBridge",
+        "methods": [
+          "__init__",
+          "analyze_transition"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.decision.decision_contract",
+      "app.core.decision.policy_engine",
+      "app.core.enterprise.adaptive_strategy_evolution",
+      "app.core.enterprise.cognitive_memory_layer",
+      "app.core.graph_intelligence.dynamic_intelligence_state",
+      "app.core.graph_intelligence.graph_intelligence",
+      "app.core.graph_intelligence.structural_fusion"
+    ]
+  },
+  "archive/backups/V6.10.9/evolution_predictor.backup_v624.py": {
+    "classes": [
+      {
+        "class": "GraphEvolutionPredictor",
+        "methods": [
+          "predict"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/backups/V6.10.9/predictive_structural.backup_v654.py": {
+    "classes": [
+      {
+        "class": "PredictiveStructuralLayer",
+        "methods": [
+          "predict"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/backups/V6.10.9/predictive_intelligence_layer.backup_v695.py": {
+    "classes": [
+      {
+        "class": "PredictiveIntelligenceLayer",
+        "methods": [
+          "__init__",
+          "process"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.decision.engine",
+      "app.core.graph_intelligence.decision_engine",
+      "app.core.graph_intelligence.evolution_predictor",
+      "app.core.graph_intelligence.predictive_structural"
+    ]
+  },
+  "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6108.py": {
+    "classes": [
+      {
+        "class": "EnterpriseDynamicGraphBridge",
+        "methods": [
+          "__init__",
+          "analyze_transition"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.decision.decision_contract",
+      "app.core.decision.policy_engine",
+      "app.core.enterprise.adaptive_strategy_evolution",
+      "app.core.enterprise.cognitive_memory_layer",
+      "app.core.graph_intelligence.dynamic_intelligence_state",
+      "app.core.graph_intelligence.graph_intelligence",
+      "app.core.graph_intelligence.structural_fusion"
+    ]
+  },
+  "archive/runtime_backups/graph_intelligence/graph_intelligence.backup_v651.py": {
+    "classes": [
+      {
+        "class": "DynamicGraphIntelligence",
+        "methods": [
+          "__init__",
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "app.core.graph_intelligence.evolution_metrics",
+      "app.core.graph_intelligence.structural_transition"
+    ]
+  },
+  "archive/runtime_backups/graph_intelligence/evolution_layer.backup_v622.py": {
+    "classes": [
+      {
+        "class": "EvolutionLayer",
+        "methods": [
+          "analyze"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/runtime_backups/graph_intelligence/graph_delta.backup_v621.py": {
+    "classes": [
+      {
+        "class": "GraphDeltaEngine",
+        "methods": [
+          "compare"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/runtime_backups/graph_intelligence/structural_signature.backup_v631.py": {
+    "classes": [
+      {
+        "class": "StructuralSignatureEngine",
+        "methods": [
+          "generate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/runtime_backups/graph_intelligence/structural_signature_v2.backup_v650.py": {
+    "classes": [
+      {
+        "class": "StructuralSignatureV2",
+        "methods": [
+          "generate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  },
+  "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py": {
+    "classes": [
+      {
+        "class": "GraphIntelligencePipeline",
+        "methods": [
+          "__init__",
+          "analyze_structure",
+          "run"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": [
+      "critical_transition",
+      "decision_engine",
+      "dynamic_intelligence_state",
+      "evolution_diff",
+      "evolution_layer",
+      "evolution_metrics",
+      "evolution_predictor",
+      "graph_delta",
+      "graph_intelligence",
+      "history_engine",
+      "intelligence_benchmark",
+      "intelligence_validator",
+      "pattern_engine",
+      "predictive_structural",
+      "structural_fusion",
+      "structural_signature",
+      "structural_signature_v2",
+      "structural_transition",
+      "temporal_memory",
+      "transition_detector"
+    ]
+  },
+  "archive/runtime_backups/graph_intelligence/critical_transition.backup_v700.py": {
+    "classes": [
+      {
+        "class": "CriticalTransitionDetector",
+        "methods": [
+          "evaluate"
+        ]
+      }
+    ],
+    "functions": [],
+    "imports": []
+  }
+}
