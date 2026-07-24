@@ -1,212 +1,94 @@
+from datetime import datetime, timezone
 
-from dataclasses import dataclass, asdict
-from datetime import datetime
-from typing import Any, Dict
-
-from app.core.intelligence.runtime_persistence import RuntimePersistenceV741
-
-
-
-@dataclass
-class RuntimeEvent:
-
-    timestamp: datetime
-
-    event: str
-
-    payload: Dict[str, Any]
+from .unified_cognitive_state import (
+    UnifiedCognitiveState
+)
 
 
 
-@dataclass
-class RuntimeSnapshot:
+class EnterpriseRuntime:
+    """
+    DLIS-057
 
-    timestamp: datetime
+    Enterprise Runtime Execution Layer
 
-    entropy: float
+    Coordina ciclos de inteligencia Enterprise.
+    """
 
-    structural_health: float
-
-    transition_risk: float
-
-    system_status: str
-
-
-
-class EnterpriseRuntimeV73:
-
-
-    VERSION = "7.4.1"
+    VERSION = "1.0"
 
 
 
     def __init__(self):
 
-        self.created = datetime.utcnow()
+        self.cognitive_state = UnifiedCognitiveState()
 
-        self.events = []
+        self.cycles = 0
 
-        self.snapshots = []
-
-        self.transitions = []
-
-        self.persistence = RuntimePersistenceV741()
+        self.history = []
 
 
 
-    def push_event(
+    def ingest(
         self,
-        event,
-        payload=None
+        source,
+        tensor_state
     ):
 
-        obj = RuntimeEvent(
-
-            timestamp=datetime.utcnow(),
-
-            event=event,
-
-            payload=payload or {}
-
+        return self.cognitive_state.ingest(
+            source,
+            tensor_state
         )
 
-        self.events.append(obj)
-
-        self.persistence.save_event(
-            asdict(obj)
-        )
-
-        return asdict(obj)
 
 
+    def execute_cycle(self):
 
-    def push_state(
-        self,
-        state
-    ):
-
-        snap = RuntimeSnapshot(
-
-            timestamp=datetime.utcnow(),
-
-            entropy=getattr(
-                state,
-                "global_entropy",
-                0.0
-            ),
-
-            structural_health=getattr(
-                state,
-                "structural_health",
-                0.0
-            ),
-
-            transition_risk=getattr(
-                state,
-                "transition_risk",
-                0.0
-            ),
-
-            system_status=getattr(
-                state,
-                "system_status",
-                "UNKNOWN"
-            )
-
-        )
-
-        self.snapshots.append(
-            snap
-        )
-
-        self.persistence.save_state(
-            asdict(snap)
-        )
-
-        return asdict(snap)
+        state = self.cognitive_state.compute()
 
 
+        cycle = {
 
-    def push_transition(
-        self,
-        previous,
-        current
-    ):
-
-        transition = {
+            "cycle_id":
+                self.cycles + 1,
 
             "timestamp":
-                str(datetime.utcnow()),
+                datetime.now(
+                    timezone.utc
+                ).isoformat(),
 
-            "previous":
-                previous,
-
-            "current":
-                current
+            "state":
+                state
 
         }
 
-        self.transitions.append(
-            transition
+
+        self.cycles += 1
+
+
+        self.history.append(
+            cycle
         )
 
-        self.persistence.save_transition(
-            transition
-        )
 
-        return transition
+        return cycle
 
 
 
-    def metrics(self):
+    def diagnostics(self):
 
         return {
 
             "version":
                 self.VERSION,
 
-            "events":
-                len(self.events),
+            "cycles":
+                self.cycles,
 
-            "states":
-                len(self.snapshots),
+            "history_size":
+                len(self.history),
 
-            "transitions":
-                len(self.transitions),
-
-            "persistence":
-                self.persistence.status(),
-
-            "status":
-                "ONLINE"
-
-        }
-
-
-
-    def status(self):
-
-        return {
-
-            "version":
-                self.VERSION,
-
-            "module":
-                "EnterpriseRuntimeV73",
-
-            "events":
-                len(self.events),
-
-            "states":
-                len(self.snapshots),
-
-            "transitions":
-                len(self.transitions),
-
-            "persistence":
-                "ACTIVE",
-
-            "status":
-                "ONLINE"
+            "cognitive_state":
+                self.cognitive_state.diagnostics()
 
         }
