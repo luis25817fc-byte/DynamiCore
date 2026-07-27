@@ -1,134 +1,97 @@
 from datetime import datetime, timezone
+import uuid
 
 
 class EnterpriseRuntimeOrchestrator:
-    """
-    DLIS-057.1
-
-    Enterprise Runtime Orchestrator
-
-    Coordina eventos Enterprise con
-    el ciclo operacional cognitivo.
-    """
 
     VERSION = "1.0"
 
 
-
     def __init__(
         self,
-        runtime
+        task_manager,
+        scheduler,
+        resource_monitor
     ):
 
-        self.runtime = runtime
+        self.task_manager = task_manager
+        self.scheduler = scheduler
+        self.resource_monitor = resource_monitor
 
-        self.events_processed = 0
-
-        self.cycles_executed = 0
-
-        self.history = []
+        self.executions = []
 
 
-
-    def process_event(
+    def execute(
         self,
-        event
+        operation,
+        payload,
+        priority="NORMAL"
     ):
 
-        payload = event.payload
-
-
-        self.runtime.ingest(
-
-            event.source,
-
-            {
-
-                "source_module":
-                    event.source,
-
-                "tensor":
-                {
-
-                    "dimensions":
-                        len(payload),
-
-                    "values":
-                        [
-                            float(v)
-                            for v in payload.values()
-                            if isinstance(
-                                v,
-                                (int,float)
-                            )
-                        ]
-
-                }
-
-            }
-
+        task = self.task_manager.create_task(
+            operation,
+            payload
         )
 
 
-        self.events_processed += 1
+        self.task_manager.start_task(
+            task["task_id"]
+        )
 
 
-        return {
-
-            "event_id":
-                event.event_id,
-
-            "status":
-                "INGESTED"
-
-        }
+        scheduled = self.scheduler.submit_task(
+            task["task_id"],
+            operation,
+            priority
+        )
 
 
-
-    def execute_cycle(self):
-
-        cycle = self.runtime.execute_cycle()
+        execution = self.scheduler.next_task()
 
 
-        self.cycles_executed += 1
+        metric = self.resource_monitor.record_usage(
+            task["task_id"],
+            0.5,
+            256,
+            1
+        )
+
+
+        result = self.task_manager.complete_task(
+            task["task_id"],
+            {
+                "status": "EXECUTED",
+                "schedule_id": scheduled["schedule_id"]
+            }
+        )
 
 
         record = {
-
-            "timestamp":
-                datetime.now(
-                    timezone.utc
-                ).isoformat(),
-
-            "cycle":
-                cycle
-
+            "execution_id": str(uuid.uuid4()),
+            "task": result,
+            "schedule": execution,
+            "resource_metric": metric,
+            "timestamp": datetime.now(
+                timezone.utc
+            ).isoformat(),
+            "version": self.VERSION
         }
 
 
-        self.history.append(
-            record
-        )
+        self.executions.append(record)
+
+        return record
 
 
-        return cycle
+    def history(self):
 
+        return self.executions
 
 
     def diagnostics(self):
 
         return {
-
-            "version":
-                self.VERSION,
-
-            "events_processed":
-                self.events_processed,
-
-            "cycles_executed":
-                self.cycles_executed,
-
-            "history_size":
-                len(self.history)
-
+            "version": self.VERSION,
+            "executions": len(self.executions),
+            "status": "READY"
         }
