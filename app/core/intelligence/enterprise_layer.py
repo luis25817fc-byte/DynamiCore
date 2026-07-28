@@ -1,7 +1,7 @@
 
 from datetime import datetime
 
-from app.core.intelligence.enterprise_runtime import EnterpriseRuntimeV73
+from app.core.intelligence.enterprise_runtime import EnterpriseRuntime
 
 
 class EnterpriseLayerV73:
@@ -15,7 +15,7 @@ class EnterpriseLayerV73:
 
         self.created = datetime.utcnow()
 
-        self.runtime = EnterpriseRuntimeV73()
+        self.runtime = EnterpriseRuntime()
 
         self.active = True
 
