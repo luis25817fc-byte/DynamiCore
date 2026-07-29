@@ -1,0 +1,9 @@
+{
+    "certificate_id": "9ef124c5-093b-4283-93ee-a81bf134fc7e",
+    "version": "1.0",
+    "timestamp": "2026-07-29T16:17:33.642978+00:00",
+    "state_id": "a88fed96-67b6-4a56-84e7-6c1d8718c88c",
+    "trace_events": 11,
+    "errors": [],
+    "status": "ENTERPRISE_PERSISTENCE_TRACE_CERTIFIED"
+}
