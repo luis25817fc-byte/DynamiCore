@@ -105,3 +105,12 @@ class EnterpriseServiceRegistry:
                 self.list_services()
 
         }
+
+
+
+# ======================================================
+# DLIS-078-A001
+# Canonical Registry Instance
+# ======================================================
+
+enterprise_service_registry = EnterpriseServiceRegistry()

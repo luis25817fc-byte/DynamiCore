@@ -1,0 +1,153 @@
+{
+    "timestamp": "2026-07-30T00:07:04.739932+00:00",
+    "mode": "READ_ONLY",
+    "dynamic_activation_map": {
+        "enterprise_intelligence_bus": {
+            "activation_candidates": 0,
+            "matches": []
+        },
+        "cognitive_tensor_adapter": {
+            "activation_candidates": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/cognitive_pipeline.py",
+                    "signals": [
+                        "event"
+                    ]
+                }
+            ]
+        },
+        "tensor_fusion": {
+            "activation_candidates": 4,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/dlis054_assembly.py",
+                    "signals": [
+                        "orchestrator",
+                        "dynamic"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/dlis049_facade.py",
+                    "signals": [
+                        "getattr",
+                        "dynamic"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/cognitive_pipeline.py",
+                    "signals": [
+                        "event"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/unified_cognitive_state.py",
+                    "signals": [
+                        "register"
+                    ]
+                }
+            ]
+        },
+        "runtime_persistence": {
+            "activation_candidates": 0,
+            "matches": []
+        },
+        "enterprise_trace": {
+            "activation_candidates": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/enterprise_intelligence_bus.py",
+                    "signals": [
+                        "register",
+                        "event",
+                        "subscribe",
+                        "publish",
+                        "load"
+                    ]
+                }
+            ]
+        },
+        "evolution_orchestrator": {
+            "activation_candidates": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/intelligence_core.py",
+                    "signals": [
+                        "orchestrator"
+                    ]
+                }
+            ]
+        },
+        "graph_adapter": {
+            "activation_candidates": 2,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/intelligence_core.py",
+                    "signals": [
+                        "orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/runtime_bridge.py",
+                    "signals": [
+                        "factory",
+                        "dynamic"
+                    ]
+                }
+            ]
+        },
+        "intelligence_core": {
+            "activation_candidates": 0,
+            "matches": []
+        },
+        "enterprise_runtime": {
+            "activation_candidates": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/enterprise_layer.py",
+                    "signals": [
+                        "register",
+                        "kernel",
+                        "event",
+                        "load"
+                    ]
+                }
+            ]
+        },
+        "full_runtime": {
+            "activation_candidates": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/dlis054_assembly.py",
+                    "signals": [
+                        "orchestrator",
+                        "dynamic"
+                    ]
+                }
+            ]
+        }
+    },
+    "errors": [],
+    "summary": {
+        "files_scanned": 450,
+        "components_checked": 10,
+        "dynamic_candidates": 7,
+        "still_isolated": 3,
+        "errors": 0
+    },
+    "activated_components": [
+        "cognitive_tensor_adapter",
+        "tensor_fusion",
+        "enterprise_trace",
+        "evolution_orchestrator",
+        "graph_adapter",
+        "enterprise_runtime",
+        "full_runtime"
+    ],
+    "isolated_components": [
+        "enterprise_intelligence_bus",
+        "runtime_persistence",
+        "intelligence_core"
+    ],
+    "status": "DLIS_076_A006_2_COMPLETE"
+}

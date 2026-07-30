@@ -1,0 +1,52 @@
+{
+    "timestamp": "2026-07-29T23:30:24.964462+00:00",
+    "mode": "READ_ONLY",
+    "targets": {
+        "runtime_pipeline": [
+            "app/core/dlis/runtime_pipeline.py"
+        ],
+        "full_runtime": [
+            "app/core/dlis/full_runtime.py"
+        ],
+        "observability": [
+            "app/core/enterprise/observability.py",
+            "app/core/intelligence/enterprise_observability.py"
+        ],
+        "enterprise_runtime": [
+            "app/core/intelligence/enterprise_runtime.py",
+            "app/core/intelligence/enterprise_runtime_bridge.py",
+            "app/core/intelligence/enterprise_runtime_kernel.py",
+            "app/core/intelligence/enterprise_runtime_task_manager.py",
+            "app/core/intelligence/enterprise_runtime_orchestrator.py",
+            "app/core/intelligence/enterprise_runtime_stress_validator.py",
+            "app/core/intelligence/enterprise_runtime_consistency_validator.py",
+            "app/core/intelligence/enterprise_runtime_certification.py"
+        ],
+        "enterprise_runtime_bridge": [
+            "app/core/intelligence/enterprise_runtime_bridge.py"
+        ],
+        "runtime_bridge": [
+            "app/core/intelligence/runtime_bridge.py",
+            "app/core/intelligence/enterprise_runtime_bridge.py",
+            "app/core/cognitive/runtime_bridge.py"
+        ]
+    },
+    "direct_dependencies": [
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "dependency": "app.core.dlis.full_runtime"
+        }
+    ],
+    "reverse_dependencies": [
+        {
+            "consumer": "app/core/enterprise/intelligence_orchestration_layer.py",
+            "dependency": "app.core.enterprise.observability"
+        },
+        {
+            "consumer": "app/core/enterprise/self_awareness_layer.py",
+            "dependency": "app.core.enterprise.observability"
+        }
+    ],
+    "errors": [],
+    "status": "DLIS_076_A004_COMPLETE"
+}

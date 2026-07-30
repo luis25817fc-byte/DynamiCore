@@ -1,0 +1,1537 @@
+{
+    "report": {
+        "timestamp": "2026-07-29T23:24:22.633394+00:00",
+        "mode": "READ_ONLY",
+        "modules_scanned": 357,
+        "architecture_layers": {
+            "GENERAL": 94,
+            "GRAPH": 28,
+            "VALIDATION": 3,
+            "ENTERPRISE": 42,
+            "INTELLIGENCE": 143,
+            "MATHEMATICAL": 5,
+            "DLIS_CORE": 25,
+            "COGNITIVE": 17
+        },
+        "critical_components": {
+            "enterprise_runtime": [
+                {
+                    "path": "app/core/intelligence/enterprise_runtime.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "ENTERPRISE"
+                },
+                {
+                    "path": "app/core/intelligence/enterprise_runtime_bridge.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "ENTERPRISE"
+                },
+                {
+                    "path": "app/core/intelligence/enterprise_runtime_kernel.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "ENTERPRISE"
+                },
+                {
+                    "path": "app/core/intelligence/enterprise_runtime_task_manager.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "ENTERPRISE"
+                },
+                {
+                    "path": "app/core/intelligence/enterprise_runtime_orchestrator.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "ENTERPRISE"
+                },
+                {
+                    "path": "app/core/intelligence/enterprise_runtime_stress_validator.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "ENTERPRISE"
+                },
+                {
+                    "path": "app/core/intelligence/enterprise_runtime_consistency_validator.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "ENTERPRISE"
+                },
+                {
+                    "path": "app/core/intelligence/enterprise_runtime_certification.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "ENTERPRISE"
+                }
+            ],
+            "enterprise_intelligence_bus": [
+                {
+                    "path": "app/core/intelligence/enterprise_intelligence_bus.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "INTELLIGENCE"
+                }
+            ],
+            "tensor_fusion": [
+                {
+                    "path": "app/core/intelligence/tensor_fusion.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "INTELLIGENCE"
+                },
+                {
+                    "path": "app/core/dlis/tensor_fusion_layer.py",
+                    "layer": "DLIS_CORE",
+                    "expected": "INTELLIGENCE"
+                }
+            ],
+            "cognitive_tensor_adapter": [
+                {
+                    "path": "app/core/intelligence/cognitive_tensor_adapter.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "INTELLIGENCE"
+                },
+                {
+                    "path": "app/core/dlis/cognitive_tensor_adapter.py",
+                    "layer": "DLIS_CORE",
+                    "expected": "INTELLIGENCE"
+                }
+            ],
+            "runtime_persistence": [
+                {
+                    "path": "app/core/intelligence/runtime_persistence.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "INTELLIGENCE"
+                }
+            ],
+            "enterprise_trace": [
+                {
+                    "path": "app/core/intelligence/enterprise_trace.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "INTELLIGENCE"
+                }
+            ],
+            "evolution_orchestrator": [
+                {
+                    "path": "app/core/intelligence/evolution_orchestrator.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "INTELLIGENCE"
+                }
+            ],
+            "graph_adapter": [
+                {
+                    "path": "app/core/intelligence/graph_adapter.py",
+                    "layer": "INTELLIGENCE",
+                    "expected": "INTELLIGENCE"
+                }
+            ]
+        },
+        "boundary_findings": [
+            {
+                "type": "enterprise_direct_dlis_dependency",
+                "source": "app/core/enterprise/observability.py",
+                "target": "app/core/dlis/runtime_pipeline.py"
+            },
+            {
+                "type": "enterprise_direct_dlis_dependency",
+                "source": "app/core/enterprise/observability.py",
+                "target": "app/core/dlis/full_runtime.py"
+            }
+        ],
+        "status": "DLIS_076_A003_COMPLETE"
+    },
+    "layers": {
+        "GENERAL": [
+            "app/__init__.py",
+            "app/core/__init__.py",
+            "app/core/Billing.py",
+            "app/core/analyzer.py",
+            "app/core/ai.py",
+            "app/core/basins.py",
+            "app/core/auth.py",
+            "app/core/cycles.py",
+            "app/core/db.py",
+            "app/core/engine.py",
+            "app/core/entropy.py",
+            "app/core/health_check.py",
+            "app/core/memory.py",
+            "app/core/models.py",
+            "app/core/middleware.py",
+            "app/core/runtime_dependencies.py",
+            "app/core/security.py",
+            "app/core/stripe_service.py",
+            "app/core/adaptation/__init__.py",
+            "app/core/adaptation/adaptive_learning.py",
+            "app/core/adaptation/adaptive_threshold.py",
+            "app/core/adaptation/calibration.py",
+            "app/core/adaptation/confidence.py",
+            "app/core/adaptation/engine.py",
+            "app/core/adaptation/evolution_adapter.py",
+            "app/core/adaptation/policy.py",
+            "app/core/adaptation/evolution_service.py",
+            "app/core/adaptation/evolution_diff.py",
+            "app/core/adaptation/policy_evolution.py",
+            "app/core/adaptation/policy_bridge.py",
+            "app/core/adaptation/strategy_memory.py",
+            "app/core/adaptation/self_optimizer.py",
+            "app/core/adaptation/strategy_optimizer.py",
+            "app/core/agents/__init__.py",
+            "app/core/agents/forecast_agent.py",
+            "app/core/agents/base.py",
+            "app/core/agents/metrics_agent.py",
+            "app/core/agents/decision_agent.py",
+            "app/core/agents/orchestrator.py",
+            "app/core/agents/risk_agent.py",
+            "app/core/attribution/__init__.py",
+            "app/core/attribution/engine.py",
+            "app/core/causal/__init__.py",
+            "app/core/causal/engine.py",
+            "app/core/context/__init__.py",
+            "app/core/context/engine.py",
+            "app/core/decision/__init__.py",
+            "app/core/decision/engine.py",
+            "app/core/decision/decision_contract.py",
+            "app/core/decision/policy_engine.py",
+            "app/core/explainability/engine.py",
+            "app/core/explainability/__init__.py",
+            "app/core/feedback/__init__.py",
+            "app/core/feedback/engine.py",
+            "app/core/kernel/__init__.py",
+            "app/core/kernel/state_vector.py",
+            "app/core/knowledge/__init__.py",
+            "app/core/knowledge/engine.py",
+            "app/core/knowledge/store.py",
+            "app/core/learning/__init__.py",
+            "app/core/learning/engine.py",
+            "app/core/learning/memory.py",
+            "app/core/metrics/__init__.py",
+            "app/core/metrics/coherence.py",
+            "app/core/metrics/divergence.py",
+            "app/core/metrics/engine.py",
+            "app/core/metrics/entropy.py",
+            "app/core/metrics/dynamics.py",
+            "app/core/metrics/potential.py",
+            "app/core/predictive/__init__.py",
+            "app/core/predictive/anomaly.py",
+            "app/core/predictive/forecast.py",
+            "app/core/predictive/regime.py",
+            "app/core/predictive/risk.py",
+            "app/core/simulation/__init__.py",
+            "app/core/simulation/engine.py",
+            "app/core/simulation/scenario.py",
+            "app/core/state/__init__.py",
+            "app/core/state/evolution.py",
+            "app/core/state/history.py",
+            "app/core/state/transition.py",
+            "app/core/state/store.py",
+            "app/core/state/snapshot.py",
+            "app/core/twin/__init__.py",
+            "app/core/twin/engine.py",
+            "app/core/twin/model.py",
+            "app/core/contracts/__init__.py",
+            "app/core/contracts/intelligence_contract.py",
+            "app/core/evolution/evolution_engine_v73.py",
+            "app/core/evolution/evolution_state.py",
+            "app/core/research/collatz/__init__.py",
+            "app/core/research/collatz/analysis.py",
+            "app/core/research/collatz/state.py",
+            "app/core/research/collatz/engine.py"
+        ],
+        "GRAPH": [
+            "app/core/graph.py",
+            "app/core/causal/graph.py",
+            "app/core/graph_intelligence/__init__.py",
+            "app/core/graph_intelligence/critical_transition.py",
+            "app/core/graph_intelligence/dynamic_intelligence_state.py",
+            "app/core/graph_intelligence/decision_engine.py",
+            "app/core/graph_intelligence/evolution_diff.py",
+            "app/core/graph_intelligence/evolution_metrics.py",
+            "app/core/graph_intelligence/evolution_layer.py",
+            "app/core/graph_intelligence/evolution_predictor.py",
+            "app/core/graph_intelligence/final_audit.py",
+            "app/core/graph_intelligence/graph_delta.py",
+            "app/core/graph_intelligence/graph_dynamics.py",
+            "app/core/graph_intelligence/graph_intelligence.py",
+            "app/core/graph_intelligence/intelligence_benchmark.py",
+            "app/core/graph_intelligence/history_engine.py",
+            "app/core/graph_intelligence/intelligence_validator.py",
+            "app/core/graph_intelligence/pipeline.py",
+            "app/core/graph_intelligence/pattern_engine.py",
+            "app/core/graph_intelligence/predictive_structural.py",
+            "app/core/graph_intelligence/structural_fusion.py",
+            "app/core/graph_intelligence/structural_memory.py",
+            "app/core/graph_intelligence/structural_signature.py",
+            "app/core/graph_intelligence/structural_signature_v2.py",
+            "app/core/graph_intelligence/temporal_memory.py",
+            "app/core/graph_intelligence/structural_transition.py",
+            "app/core/graph_intelligence/transition_detector.py",
+            "app/core/graph_intelligence/transition_memory.py"
+        ],
+        "VALIDATION": [
+            "app/core/validation/__init__.py",
+            "app/core/validation/v71_enterprise_validator.py",
+            "app/core/validation/validator.py"
+        ],
+        "ENTERPRISE": [
+            "app/core/enterprise/persistent_strategy_repository.py",
+            "app/core/enterprise/strategy_loader.py",
+            "app/core/enterprise/__init__.py",
+            "app/core/enterprise/adaptive_intelligence_bridge.py",
+            "app/core/enterprise/adaptive_intelligence.py",
+            "app/core/enterprise/adaptive_strategy_evolution.py",
+            "app/core/enterprise/autonomous_feedback.py",
+            "app/core/enterprise/autonomous_control.py",
+            "app/core/enterprise/bootstrap.py",
+            "app/core/enterprise/autonomous_intelligence_loop.py",
+            "app/core/enterprise/cognitive_memory_layer.py",
+            "app/core/enterprise/decision_execution_bridge.py",
+            "app/core/enterprise/configuration.py",
+            "app/core/enterprise/decision_service.py",
+            "app/core/enterprise/deployment_readiness.py",
+            "app/core/enterprise/dynamic_graph_bridge.py",
+            "app/core/enterprise/enterprise_api_gateway.py",
+            "app/core/enterprise/dynamic_graph_evolution_bridge.py",
+            "app/core/enterprise/enterprise_core.py",
+            "app/core/enterprise/event_processor.py",
+            "app/core/enterprise/final_integration_audit.py",
+            "app/core/enterprise/global_state_manager.py",
+            "app/core/enterprise/intelligence_api.py",
+            "app/core/enterprise/intelligence_core.py",
+            "app/core/enterprise/intelligence_gateway.py",
+            "app/core/enterprise/intelligence_orchestration_layer.py",
+            "app/core/enterprise/intelligence_orchestrator_bridge.py",
+            "app/core/enterprise/intelligence_stream.py",
+            "app/core/enterprise/knowledge_memory.py",
+            "app/core/enterprise/monitoring_alert.py",
+            "app/core/enterprise/observability.py",
+            "app/core/enterprise/orchestrator.py",
+            "app/core/enterprise/persistence_history.py",
+            "app/core/enterprise/predictive_intelligence_layer.py",
+            "app/core/enterprise/runtime_bootstrap.py",
+            "app/core/enterprise/runtime_manager.py",
+            "app/core/enterprise/runtime_state.py",
+            "app/core/enterprise/security_layer.py",
+            "app/core/enterprise/self_awareness_layer.py",
+            "app/core/enterprise/self_optimization.py",
+            "app/core/enterprise/validation_automation.py",
+            "app/core/enterprise/workflow_engine.py"
+        ],
+        "INTELLIGENCE": [
+            "app/core/intelligence/cognitive_kernel_contract.py",
+            "app/core/intelligence/dynamicore_intelligence_kernel.py",
+            "app/core/intelligence/enterprise_cognitive_kernel.py",
+            "app/core/intelligence/kernel_factory.py",
+            "app/core/intelligence/kernel_gateway.py",
+            "app/core/intelligence/__init__.py",
+            "app/core/intelligence/auto_registry.py",
+            "app/core/intelligence/canonical_binding_adapter.py",
+            "app/core/intelligence/canonical_engine_binding.py",
+            "app/core/intelligence/cognitive_orchestrator.py",
+            "app/core/intelligence/dlis_state.py",
+            "app/core/intelligence/enterprise_bootstrap.py",
+            "app/core/intelligence/evolution_contract.py",
+            "app/core/intelligence/evolution_history_analyzer.py",
+            "app/core/intelligence/evolution_engine.py",
+            "app/core/intelligence/evolution_orchestrator.py",
+            "app/core/intelligence/graph_adapter.py",
+            "app/core/intelligence/graph_evolution_bridge.py",
+            "app/core/intelligence/graph_intelligence_validator.py",
+            "app/core/intelligence/intelligence_core.py",
+            "app/core/intelligence/intelligence_validation_bridge.py",
+            "app/core/intelligence/kernel.py",
+            "app/core/intelligence/master_engine_bridge.py",
+            "app/core/intelligence/kernel_v73.py",
+            "app/core/intelligence/orchestrator.py",
+            "app/core/intelligence/master_orchestration_layer.py",
+            "app/core/intelligence/orchestrator_integration_bridge.py",
+            "app/core/intelligence/predictive_temporal_engine.py",
+            "app/core/intelligence/runtime_bridge.py",
+            "app/core/intelligence/runtime_persistence.py",
+            "app/core/intelligence/runtime_registry.py",
+            "app/core/intelligence/structural_contract.py",
+            "app/core/intelligence/structural_timeline_engine.py",
+            "app/core/intelligence/temporal_memory_engine.py",
+            "app/core/intelligence/validation_bridge.py",
+            "app/core/intelligence/authority_wiring.py",
+            "app/core/intelligence/enterprise_cycle_validator.py",
+            "app/core/intelligence/runtime_authority_binding.py",
+            "app/core/intelligence/intelligence_vector_adapter.py",
+            "app/core/intelligence/dlis054_assembly.py",
+            "app/core/intelligence/dlis049_facade.py",
+            "app/core/intelligence/enterprise_event_types.py",
+            "app/core/intelligence/enterprise_priority.py",
+            "app/core/intelligence/enterprise_event.py",
+            "app/core/intelligence/enterprise_subscriber.py",
+            "app/core/intelligence/enterprise_router.py",
+            "app/core/intelligence/enterprise_trace.py",
+            "app/core/intelligence/enterprise_intelligence_bus.py",
+            "app/core/intelligence/cognitive_tensor_adapter.py",
+            "app/core/intelligence/tensor_fusion.py",
+            "app/core/intelligence/cognitive_pipeline.py",
+            "app/core/intelligence/cognitive_aggregator.py",
+            "app/core/intelligence/unified_cognitive_state.py",
+            "app/core/intelligence/enterprise_runtime.py",
+            "app/core/intelligence/enterprise_runtime_bridge.py",
+            "app/core/intelligence/enterprise_decision_engine.py",
+            "app/core/intelligence/enterprise_action_engine.py",
+            "app/core/intelligence/enterprise_learning_engine.py",
+            "app/core/intelligence/enterprise_knowledge_memory.py",
+            "app/core/intelligence/enterprise_knowledge_integrator.py",
+            "app/core/intelligence/enterprise_predictive_engine.py",
+            "app/core/intelligence/enterprise_predictive_feedback.py",
+            "app/core/intelligence/enterprise_simulation_engine.py",
+            "app/core/intelligence/enterprise_scenario_evaluator.py",
+            "app/core/intelligence/enterprise_decision_optimizer.py",
+            "app/core/intelligence/enterprise_strategy_engine.py",
+            "app/core/intelligence/enterprise_strategy_memory.py",
+            "app/core/intelligence/enterprise_adaptive_policy.py",
+            "app/core/intelligence/enterprise_evidence_collector.py",
+            "app/core/intelligence/enterprise_cause_graph.py",
+            "app/core/intelligence/enterprise_root_cause_analyzer.py",
+            "app/core/intelligence/enterprise_influence_propagation.py",
+            "app/core/intelligence/enterprise_counterfactual_engine.py",
+            "app/core/intelligence/enterprise_explanation_engine.py",
+            "app/core/intelligence/enterprise_policy_feedback.py",
+            "app/core/intelligence/enterprise_causal_engine.py",
+            "app/core/intelligence/enterprise_digital_twin.py",
+            "app/core/intelligence/enterprise_twin_sync.py",
+            "app/core/intelligence/enterprise_future_state_simulator.py",
+            "app/core/intelligence/enterprise_state_divergence.py",
+            "app/core/intelligence/enterprise_models.py",
+            "app/core/intelligence/enterprise_contracts.py",
+            "app/core/intelligence/enterprise_container.py",
+            "app/core/intelligence/enterprise_event_bus.py",
+            "app/core/intelligence/enterprise_observability.py",
+            "app/core/intelligence/enterprise_runtime_kernel.py",
+            "app/core/intelligence/enterprise_service_adapters.py",
+            "app/core/intelligence/enterprise_service_registry.py",
+            "app/core/intelligence/enterprise_capability_discovery.py",
+            "app/core/intelligence/enterprise_orchestrator.py",
+            "app/core/intelligence/enterprise_dynamic_workflow.py",
+            "app/core/intelligence/enterprise_workflow_memory.py",
+            "app/core/intelligence/enterprise_agent_framework.py",
+            "app/core/intelligence/enterprise_specialized_agents.py",
+            "app/core/intelligence/enterprise_agent_collaboration.py",
+            "app/core/intelligence/enterprise_agent_learning.py",
+            "app/core/intelligence/enterprise_agent_optimization.py",
+            "app/core/intelligence/enterprise_cognitive_control_plane.py",
+            "app/core/intelligence/enterprise_intelligence_router.py",
+            "app/core/intelligence/enterprise_decision_fusion.py",
+            "app/core/intelligence/enterprise_cognitive_memory.py",
+            "app/core/intelligence/enterprise_adaptive_control_loop.py",
+            "app/core/intelligence/enterprise_command_interface.py",
+            "app/core/intelligence/enterprise_query_engine.py",
+            "app/core/intelligence/enterprise_executive_report.py",
+            "app/core/intelligence/enterprise_intelligence_session.py",
+            "app/core/intelligence/enterprise_operational_core.py",
+            "app/core/intelligence/enterprise_operational_metrics.py",
+            "app/core/intelligence/enterprise_alert_intelligence.py",
+            "app/core/intelligence/enterprise_operational_forecast.py",
+            "app/core/intelligence/enterprise_operational_response.py",
+            "app/core/intelligence/enterprise_autonomous_operations.py",
+            "app/core/intelligence/enterprise_autonomous_execution.py",
+            "app/core/intelligence/enterprise_audit_models.py",
+            "app/core/intelligence/enterprise_audit_orchestrator.py",
+            "app/core/intelligence/enterprise_audit_replay.py",
+            "app/core/intelligence/enterprise_identity_manager.py",
+            "app/core/intelligence/enterprise_access_control.py",
+            "app/core/intelligence/enterprise_policy_engine.py",
+            "app/core/intelligence/enterprise_security_gateway.py",
+            "app/core/intelligence/enterprise_trust_validator.py",
+            "app/core/intelligence/enterprise_api_gateway.py",
+            "app/core/intelligence/enterprise_request_router.py",
+            "app/core/intelligence/enterprise_integration_layer.py",
+            "app/core/intelligence/enterprise_response_layer.py",
+            "app/core/intelligence/enterprise_api_security_binding.py",
+            "app/core/intelligence/enterprise_sdk_core.py",
+            "app/core/intelligence/enterprise_domain_connector.py",
+            "app/core/intelligence/enterprise_connector_registry.py",
+            "app/core/intelligence/enterprise_data_contract_adapter.py",
+            "app/core/intelligence/enterprise_sdk_integration_validation.py",
+            "app/core/intelligence/enterprise_runtime_task_manager.py",
+            "app/core/intelligence/enterprise_execution_scheduler.py",
+            "app/core/intelligence/enterprise_resource_monitor.py",
+            "app/core/intelligence/enterprise_runtime_orchestrator.py",
+            "app/core/intelligence/enterprise_runtime_stress_validator.py",
+            "app/core/intelligence/enterprise_failure_recovery_validator.py",
+            "app/core/intelligence/enterprise_runtime_consistency_validator.py",
+            "app/core/intelligence/enterprise_long_run_stability_validator.py",
+            "app/core/intelligence/enterprise_runtime_certification.py",
+            "app/core/intelligence/enterprise_extreme_runtime_assault.py",
+            "app/core/intelligence/enterprise_layer.py",
+            "app/core/intelligence/enterprise_telemetry_layer.py"
+        ],
+        "MATHEMATICAL": [
+            "app/core/mathematical/invariant_engine.py",
+            "app/core/mathematical/dlis_math_v1.py",
+            "app/core/mathematical/mathematical_core.py",
+            "app/core/mathematical/state_adapter.py",
+            "app/core/mathematical/__init__.py"
+        ],
+        "DLIS_CORE": [
+            "app/core/dlis/__init__.py",
+            "app/core/dlis/adaptive_coherence.py",
+            "app/core/dlis/collapse_probability.py",
+            "app/core/dlis/core_binding.py",
+            "app/core/dlis/critical_probability.py",
+            "app/core/dlis/engine_binding.py",
+            "app/core/dlis/entropy_curvature.py",
+            "app/core/dlis/evolution_balance.py",
+            "app/core/dlis/evolution_connector.py",
+            "app/core/dlis/evolution_tensor.py",
+            "app/core/dlis/laws.py",
+            "app/core/dlis/memory_evolution.py",
+            "app/core/dlis/potential_engine.py",
+            "app/core/dlis/runtime_pipeline.py",
+            "app/core/dlis/structural_energy.py",
+            "app/core/dlis/structural_fusion.py",
+            "app/core/dlis/structural_pressure.py",
+            "app/core/dlis/validation_integration.py",
+            "app/core/dlis/full_runtime.py",
+            "app/core/dlis/mvf_validator.py",
+            "app/core/dlis/tensor_binding.py",
+            "app/core/dlis/dynamicore_adapter.py",
+            "app/core/dlis/cognitive_tensor_adapter.py",
+            "app/core/dlis/cognitive_state_vector.py",
+            "app/core/dlis/tensor_fusion_layer.py"
+        ],
+        "COGNITIVE": [
+            "app/core/cognitive/__init__.py",
+            "app/core/cognitive/action_selector.py",
+            "app/core/cognitive/adaptive_integration.py",
+            "app/core/cognitive/adaptive_strategy.py",
+            "app/core/cognitive/cognitive_engine.py",
+            "app/core/cognitive/confidence_engine.py",
+            "app/core/cognitive/context_builder.py",
+            "app/core/cognitive/decision_trace.py",
+            "app/core/cognitive/feedback_integrator.py",
+            "app/core/cognitive/learning_loop.py",
+            "app/core/cognitive/memory_layer.py",
+            "app/core/cognitive/memory_reasoning.py",
+            "app/core/cognitive/objective_manager.py",
+            "app/core/cognitive/reasoning_engine.py",
+            "app/core/cognitive/registry.py",
+            "app/core/cognitive/runtime_bridge.py",
+            "app/core/cognitive/trace_store.py"
+        ]
+    },
+    "dependencies": {
+        "app/core/analyzer.py": [
+            "math",
+            "collections"
+        ],
+        "app/core/ai.py": [
+            "os",
+            "openai"
+        ],
+        "app/core/auth.py": [
+            "uuid",
+            "app.core.db",
+            "app.core.models"
+        ],
+        "app/core/db.py": [
+            "os",
+            "sqlalchemy",
+            "sqlalchemy.orm",
+            "sqlalchemy.orm",
+            "sqlalchemy.orm"
+        ],
+        "app/core/engine.py": [
+            "metrics.engine",
+            "predictive.forecast",
+            "predictive.risk",
+            "predictive.regime",
+            "predictive.anomaly",
+            "state.snapshot",
+            "kernel.state_vector",
+            "agents.orchestrator",
+            "state.evolution",
+            "state.transition",
+            "twin.engine",
+            "simulation.engine",
+            "validation.validator",
+            "knowledge.engine",
+            "learning.engine",
+            "context.engine",
+            "explainability.engine",
+            "attribution.engine",
+            "causal.engine",
+            "decision.engine",
+            "feedback.engine",
+            "adaptation.engine",
+            "adaptation.evolution_service"
+        ],
+        "app/core/entropy.py": [
+            "numpy"
+        ],
+        "app/core/graph.py": [
+            "numpy"
+        ],
+        "app/core/memory.py": [
+            "app.core.db",
+            "app.core.models"
+        ],
+        "app/core/models.py": [
+            "sqlalchemy",
+            "datetime",
+            "api.db"
+        ],
+        "app/core/middleware.py": [
+            "fastapi",
+            "app.core.auth"
+        ],
+        "app/core/security.py": [
+            "secrets",
+            "datetime",
+            "datetime",
+            "jose",
+            "passlib.context"
+        ],
+        "app/core/stripe_service.py": [
+            "stripe",
+            "os"
+        ],
+        "app/core/adaptation/__init__.py": [
+            "engine",
+            "policy",
+            "calibration",
+            "confidence",
+            "self_optimizer"
+        ],
+        "app/core/adaptation/engine.py": [
+            "policy",
+            "calibration",
+            "confidence",
+            "self_optimizer",
+            "adaptive_threshold",
+            "strategy_memory",
+            "adaptive_learning",
+            "strategy_optimizer"
+        ],
+        "app/core/adaptation/evolution_adapter.py": [
+            "policy_evolution"
+        ],
+        "app/core/adaptation/evolution_service.py": [
+            "evolution_adapter",
+            "evolution_diff"
+        ],
+        "app/core/agents/__init__.py": [
+            "orchestrator",
+            "base"
+        ],
+        "app/core/agents/forecast_agent.py": [
+            "base"
+        ],
+        "app/core/agents/metrics_agent.py": [
+            "base"
+        ],
+        "app/core/agents/decision_agent.py": [
+            "base"
+        ],
+        "app/core/agents/orchestrator.py": [
+            "metrics_agent",
+            "risk_agent",
+            "forecast_agent",
+            "decision_agent"
+        ],
+        "app/core/agents/risk_agent.py": [
+            "base"
+        ],
+        "app/core/attribution/__init__.py": [
+            "engine"
+        ],
+        "app/core/causal/__init__.py": [
+            "engine",
+            "graph"
+        ],
+        "app/core/causal/engine.py": [
+            "graph"
+        ],
+        "app/core/context/__init__.py": [
+            "engine"
+        ],
+        "app/core/decision/__init__.py": [
+            "engine"
+        ],
+        "app/core/decision/policy_engine.py": [
+            "datetime"
+        ],
+        "app/core/explainability/__init__.py": [
+            "engine"
+        ],
+        "app/core/feedback/__init__.py": [
+            "engine"
+        ],
+        "app/core/graph_intelligence/__init__.py": [
+            "structural_signature",
+            "graph_delta",
+            "evolution_layer",
+            "pattern_engine",
+            "evolution_predictor",
+            "temporal_memory",
+            "pipeline"
+        ],
+        "app/core/graph_intelligence/graph_intelligence.py": [
+            "datetime"
+        ],
+        "app/core/graph_intelligence/intelligence_benchmark.py": [
+            "time"
+        ],
+        "app/core/graph_intelligence/history_engine.py": [
+            "datetime",
+            "copy"
+        ],
+        "app/core/graph_intelligence/pipeline.py": [
+            "graph_delta",
+            "structural_signature",
+            "structural_signature_v2",
+            "evolution_layer",
+            "evolution_metrics",
+            "predictive_structural",
+            "critical_transition",
+            "dynamic_intelligence_state",
+            "structural_transition",
+            "structural_fusion",
+            "decision_engine"
+        ],
+        "app/core/graph_intelligence/structural_signature.py": [
+            "hashlib",
+            "json"
+        ],
+        "app/core/graph_intelligence/structural_signature_v2.py": [
+            "hashlib",
+            "json"
+        ],
+        "app/core/kernel/__init__.py": [
+            "state_vector"
+        ],
+        "app/core/knowledge/__init__.py": [
+            "engine",
+            "store"
+        ],
+        "app/core/knowledge/engine.py": [
+            "store"
+        ],
+        "app/core/learning/__init__.py": [
+            "engine",
+            "memory"
+        ],
+        "app/core/learning/engine.py": [
+            "memory"
+        ],
+        "app/core/metrics/__init__.py": [
+            "entropy",
+            "coherence",
+            "dynamics",
+            "potential",
+            "divergence"
+        ],
+        "app/core/metrics/engine.py": [
+            "entropy",
+            "coherence",
+            "dynamics",
+            "potential",
+            "divergence"
+        ],
+        "app/core/metrics/entropy.py": [
+            "math",
+            "collections"
+        ],
+        "app/core/simulation/__init__.py": [
+            "engine",
+            "scenario"
+        ],
+        "app/core/simulation/engine.py": [
+            "scenario"
+        ],
+        "app/core/state/__init__.py": [
+            "transition"
+        ],
+        "app/core/state/transition.py": [
+            "app.core.kernel"
+        ],
+        "app/core/state/store.py": [
+            "json",
+            "pathlib"
+        ],
+        "app/core/state/snapshot.py": [
+            "store"
+        ],
+        "app/core/twin/__init__.py": [
+            "engine",
+            "model"
+        ],
+        "app/core/twin/engine.py": [
+            "model"
+        ],
+        "app/core/twin/model.py": [
+            "datetime"
+        ],
+        "app/core/validation/__init__.py": [
+            "validator"
+        ],
+        "app/core/validation/v71_enterprise_validator.py": [
+            "datetime"
+        ],
+        "app/core/enterprise/adaptive_intelligence_bridge.py": [
+            "app.core.enterprise.adaptive_intelligence",
+            "app.core.enterprise.knowledge_memory",
+            "app.core.enterprise.self_optimization",
+            "app.core.graph_intelligence.evolution_predictor",
+            "app.core.graph_intelligence.predictive_structural"
+        ],
+        "app/core/enterprise/adaptive_strategy_evolution.py": [
+            "json",
+            "pathlib",
+            "datetime"
+        ],
+        "app/core/enterprise/autonomous_feedback.py": [
+            "datetime"
+        ],
+        "app/core/enterprise/bootstrap.py": [
+            "runtime_manager",
+            "intelligence_stream",
+            "intelligence_api",
+            "decision_service",
+            "monitoring_alert",
+            "persistence_history",
+            "configuration",
+            "security_layer",
+            "deployment_readiness",
+            "orchestrator",
+            "enterprise_core",
+            "knowledge_memory"
+        ],
+        "app/core/enterprise/autonomous_intelligence_loop.py": [
+            "app.core.enterprise.autonomous_control",
+            "app.core.enterprise.workflow_engine",
+            "app.core.enterprise.decision_service",
+            "app.core.decision.engine",
+            "app.core.agents.decision_agent"
+        ],
+        "app/core/enterprise/cognitive_memory_layer.py": [
+            "datetime",
+            "app.core.enterprise.knowledge_memory",
+            "app.core.enterprise.persistence_history",
+            "app.core.graph_intelligence.temporal_memory",
+            "app.core.graph_intelligence.pattern_engine",
+            "app.core.graph_intelligence.history_engine",
+            "app.core.graph_intelligence.transition_memory"
+        ],
+        "app/core/enterprise/decision_execution_bridge.py": [
+            "datetime"
+        ],
+        "app/core/enterprise/dynamic_graph_bridge.py": [
+            "app.core.enterprise.predictive_intelligence_layer"
+        ],
+        "app/core/enterprise/intelligence_orchestration_layer.py": [
+            "app.core.enterprise.orchestrator",
+            "app.core.enterprise.global_state_manager",
+            "app.core.enterprise.observability",
+            "app.core.enterprise.monitoring_alert"
+        ],
+        "app/core/enterprise/observability.py": [
+            "time"
+        ],
+        "app/core/enterprise/persistence_history.py": [
+            "datetime"
+        ],
+        "app/core/enterprise/predictive_intelligence_layer.py": [
+            "app.core.graph_intelligence.evolution_predictor",
+            "app.core.graph_intelligence.predictive_structural"
+        ],
+        "app/core/enterprise/runtime_bootstrap.py": [
+            "datetime",
+            "app.core.intelligence.kernel",
+            "app.core.intelligence.auto_registry"
+        ],
+        "app/core/enterprise/runtime_manager.py": [
+            "runtime_state"
+        ],
+        "app/core/enterprise/self_awareness_layer.py": [
+            "app.core.enterprise.observability",
+            "app.core.enterprise.monitoring_alert",
+            "app.core.enterprise.global_state_manager",
+            "app.core.enterprise.runtime_state",
+            "app.core.enterprise.runtime_manager"
+        ],
+        "app/core/enterprise/validation_automation.py": [
+            "json",
+            "datetime"
+        ],
+        "app/core/intelligence/cognitive_kernel_contract.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/dynamicore_intelligence_kernel.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_cognitive_kernel.py": [
+            "datetime",
+            "app.core.intelligence.cognitive_kernel_contract"
+        ],
+        "app/core/intelligence/kernel_factory.py": [
+            "dynamicore_intelligence_kernel",
+            "app.core.engine",
+            "app.core.metrics.engine",
+            "app.core.graph_intelligence.graph_intelligence",
+            "app.core.predictive.forecast",
+            "app.core.decision.engine",
+            "app.core.adaptation.engine",
+            "app.core.learning.memory",
+            "app.core.state.evolution"
+        ],
+        "app/core/intelligence/kernel_gateway.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/__init__.py": [
+            "orchestrator",
+            "cognitive_orchestrator",
+            "canonical_binding_adapter"
+        ],
+        "app/core/intelligence/auto_registry.py": [
+            "importlib"
+        ],
+        "app/core/intelligence/canonical_binding_adapter.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/canonical_engine_binding.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/cognitive_orchestrator.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/dlis_state.py": [
+            "dataclasses",
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_bootstrap.py": [
+            "app.core.intelligence.kernel"
+        ],
+        "app/core/intelligence/evolution_contract.py": [
+            "dataclasses",
+            "datetime",
+            "typing"
+        ],
+        "app/core/intelligence/evolution_history_analyzer.py": [
+            "statistics"
+        ],
+        "app/core/intelligence/evolution_engine.py": [
+            "datetime",
+            "app.core.intelligence.evolution_contract"
+        ],
+        "app/core/intelligence/evolution_orchestrator.py": [
+            "datetime",
+            "app.core.intelligence.evolution_engine",
+            "app.core.intelligence.graph_evolution_bridge"
+        ],
+        "app/core/intelligence/graph_adapter.py": [
+            "app.core.graph_intelligence.structural_signature",
+            "app.core.graph_intelligence.graph_delta"
+        ],
+        "app/core/intelligence/graph_evolution_bridge.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/graph_intelligence_validator.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/intelligence_core.py": [
+            "datetime",
+            "evolution_orchestrator"
+        ],
+        "app/core/intelligence/intelligence_validation_bridge.py": [
+            "datetime",
+            "app.core.intelligence.graph_intelligence_validator"
+        ],
+        "app/core/intelligence/kernel.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/master_engine_bridge.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/kernel_v73.py": [
+            "datetime",
+            "app.core.intelligence.dlis_state",
+            "app.core.intelligence.validation_bridge"
+        ],
+        "app/core/intelligence/orchestrator.py": [
+            "app.core.contracts"
+        ],
+        "app/core/intelligence/master_orchestration_layer.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/orchestrator_integration_bridge.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/predictive_temporal_engine.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/runtime_bridge.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/runtime_persistence.py": [
+            "pathlib",
+            "json"
+        ],
+        "app/core/intelligence/runtime_registry.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/structural_contract.py": [
+            "dataclasses",
+            "typing"
+        ],
+        "app/core/intelligence/structural_timeline_engine.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/temporal_memory_engine.py": [
+            "pathlib",
+            "json",
+            "datetime"
+        ],
+        "app/core/intelligence/validation_bridge.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_cycle_validator.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/runtime_authority_binding.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/dlis054_assembly.py": [
+            "app.core.intelligence.dlis049_facade",
+            "app.core.intelligence.orchestrator",
+            "app.core.intelligence.intelligence_vector_adapter",
+            "app.core.cognitive.cognitive_engine",
+            "app.core.dlis.dynamicore_adapter",
+            "app.core.dlis.cognitive_state_vector",
+            "app.core.dlis.tensor_fusion_layer",
+            "app.core.dlis.full_runtime",
+            "app.core.dlis.tensor_binding",
+            "app.core.dlis.mvf_validator"
+        ],
+        "app/core/intelligence/dlis049_facade.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_event_types.py": [
+            "enum"
+        ],
+        "app/core/intelligence/enterprise_priority.py": [
+            "enum"
+        ],
+        "app/core/intelligence/enterprise_event.py": [
+            "dataclasses",
+            "datetime",
+            "uuid",
+            "enterprise_event_types",
+            "enterprise_priority"
+        ],
+        "app/core/intelligence/enterprise_trace.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_intelligence_bus.py": [
+            "enterprise_event",
+            "enterprise_priority",
+            "enterprise_router",
+            "enterprise_trace"
+        ],
+        "app/core/intelligence/cognitive_tensor_adapter.py": [
+            "datetime",
+            "typing"
+        ],
+        "app/core/intelligence/tensor_fusion.py": [
+            "datetime",
+            "typing"
+        ],
+        "app/core/intelligence/cognitive_pipeline.py": [
+            "cognitive_tensor_adapter",
+            "tensor_fusion"
+        ],
+        "app/core/intelligence/cognitive_aggregator.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/unified_cognitive_state.py": [
+            "datetime",
+            "cognitive_aggregator",
+            "tensor_fusion"
+        ],
+        "app/core/intelligence/enterprise_runtime.py": [
+            "datetime",
+            "unified_cognitive_state"
+        ],
+        "app/core/intelligence/enterprise_decision_engine.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_action_engine.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_learning_engine.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_knowledge_memory.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_knowledge_integrator.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_predictive_engine.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_predictive_feedback.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_simulation_engine.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_scenario_evaluator.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_decision_optimizer.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_strategy_engine.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_strategy_memory.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_adaptive_policy.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_evidence_collector.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_cause_graph.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_root_cause_analyzer.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_influence_propagation.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_counterfactual_engine.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_explanation_engine.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_policy_feedback.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_causal_engine.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_digital_twin.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_twin_sync.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_future_state_simulator.py": [
+            "datetime",
+            "uuid",
+            "copy"
+        ],
+        "app/core/intelligence/enterprise_state_divergence.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_models.py": [
+            "dataclasses",
+            "datetime",
+            "enum",
+            "typing",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_contracts.py": [
+            "abc",
+            "app.core.intelligence.enterprise_models"
+        ],
+        "app/core/intelligence/enterprise_container.py": [
+            "typing"
+        ],
+        "app/core/intelligence/enterprise_event_bus.py": [
+            "datetime",
+            "typing",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_observability.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_runtime_kernel.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_service_adapters.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_service_registry.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_capability_discovery.py": [
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_orchestrator.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_dynamic_workflow.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_workflow_memory.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_agent_framework.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_specialized_agents.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_agent_collaboration.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_agent_learning.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_agent_optimization.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_cognitive_control_plane.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_intelligence_router.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_decision_fusion.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_cognitive_memory.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_adaptive_control_loop.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_command_interface.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_query_engine.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_executive_report.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_intelligence_session.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_operational_core.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_operational_metrics.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_alert_intelligence.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_operational_forecast.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_operational_response.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_autonomous_operations.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_autonomous_execution.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_audit_models.py": [
+            "dataclasses",
+            "datetime"
+        ],
+        "app/core/intelligence/enterprise_audit_orchestrator.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_audit_replay.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_identity_manager.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_access_control.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_policy_engine.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_security_gateway.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_trust_validator.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_api_gateway.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_request_router.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_integration_layer.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_response_layer.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_api_security_binding.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_sdk_core.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_domain_connector.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_connector_registry.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_data_contract_adapter.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_sdk_integration_validation.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_runtime_task_manager.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_execution_scheduler.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_resource_monitor.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_runtime_orchestrator.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_runtime_stress_validator.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_failure_recovery_validator.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_runtime_consistency_validator.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/intelligence/enterprise_long_run_stability_validator.py": [
+            "datetime",
+            "uuid",
+            "time"
+        ],
+        "app/core/intelligence/enterprise_runtime_certification.py": [
+            "datetime",
+            "uuid",
+            "time"
+        ],
+        "app/core/intelligence/enterprise_extreme_runtime_assault.py": [
+            "datetime",
+            "uuid",
+            "time",
+            "random"
+        ],
+        "app/core/intelligence/enterprise_layer.py": [
+            "datetime",
+            "app.core.intelligence.enterprise_runtime"
+        ],
+        "app/core/intelligence/enterprise_telemetry_layer.py": [
+            "__future__",
+            "dataclasses",
+            "datetime",
+            "threading",
+            "typing"
+        ],
+        "app/core/contracts/__init__.py": [
+            "intelligence_contract"
+        ],
+        "app/core/contracts/intelligence_contract.py": [
+            "dataclasses",
+            "datetime",
+            "typing"
+        ],
+        "app/core/mathematical/invariant_engine.py": [
+            "dataclasses",
+            "math"
+        ],
+        "app/core/mathematical/dlis_math_v1.py": [
+            "dataclasses",
+            "math"
+        ],
+        "app/core/mathematical/mathematical_core.py": [
+            "datetime",
+            "app.core.mathematical.invariant_engine"
+        ],
+        "app/core/mathematical/state_adapter.py": [
+            "dataclasses"
+        ],
+        "app/core/mathematical/__init__.py": [
+            "mathematical_core",
+            "state_adapter",
+            "invariant_engine"
+        ],
+        "app/core/evolution/evolution_engine_v73.py": [
+            "app.core.evolution.evolution_state"
+        ],
+        "app/core/evolution/evolution_state.py": [
+            "dataclasses",
+            "datetime"
+        ],
+        "app/core/dlis/collapse_probability.py": [
+            "math"
+        ],
+        "app/core/dlis/core_binding.py": [
+            "datetime"
+        ],
+        "app/core/dlis/engine_binding.py": [
+            "datetime"
+        ],
+        "app/core/dlis/evolution_connector.py": [
+            "datetime"
+        ],
+        "app/core/dlis/evolution_tensor.py": [
+            "datetime"
+        ],
+        "app/core/dlis/runtime_pipeline.py": [
+            "datetime"
+        ],
+        "app/core/dlis/structural_fusion.py": [
+            "datetime"
+        ],
+        "app/core/dlis/validation_integration.py": [
+            "datetime"
+        ],
+        "app/core/dlis/full_runtime.py": [
+            "datetime"
+        ],
+        "app/core/dlis/dynamicore_adapter.py": [
+            "datetime"
+        ],
+        "app/core/dlis/cognitive_tensor_adapter.py": [
+            "datetime"
+        ],
+        "app/core/dlis/cognitive_state_vector.py": [
+            "datetime"
+        ],
+        "app/core/dlis/tensor_fusion_layer.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/__init__.py": [
+            "cognitive_engine"
+        ],
+        "app/core/cognitive/action_selector.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/adaptive_integration.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/adaptive_strategy.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/cognitive_engine.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/confidence_engine.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/context_builder.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/decision_trace.py": [
+            "datetime",
+            "uuid"
+        ],
+        "app/core/cognitive/feedback_integrator.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/learning_loop.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/memory_layer.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/memory_reasoning.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/objective_manager.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/reasoning_engine.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/registry.py": [
+            "context_builder",
+            "reasoning_engine",
+            "confidence_engine",
+            "objective_manager",
+            "action_selector",
+            "feedback_integrator"
+        ],
+        "app/core/cognitive/runtime_bridge.py": [
+            "datetime"
+        ],
+        "app/core/cognitive/trace_store.py": [
+            "pathlib",
+            "datetime",
+            "json"
+        ],
+        "app/core/research/collatz/__init__.py": [
+            "engine",
+            "analysis",
+            "state"
+        ],
+        "app/core/research/collatz/state.py": [
+            "app.core.kernel"
+        ]
+    }
+}

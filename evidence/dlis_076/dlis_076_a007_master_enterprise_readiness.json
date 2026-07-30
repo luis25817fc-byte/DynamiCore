@@ -1,0 +1,507 @@
+{
+    "timestamp": "2026-07-30T00:21:31.384806+00:00",
+    "mode": "READ_ONLY",
+    "files_scanned": 450,
+    "targets": {
+        "enterprise_runtime": {
+            "matches": 1,
+            "files": [
+                {
+                    "file": "app/core/intelligence/enterprise_layer.py",
+                    "signals": [
+                        "Kernel",
+                        "Runtime("
+                    ]
+                }
+            ]
+        },
+        "enterprise_intelligence_bus": {
+            "matches": 0,
+            "files": []
+        },
+        "cognitive_tensor_adapter": {
+            "matches": 1,
+            "files": [
+                {
+                    "file": "app/core/intelligence/cognitive_pipeline.py",
+                    "signals": [
+                        "Tensor"
+                    ]
+                }
+            ]
+        },
+        "tensor_fusion": {
+            "matches": 4,
+            "files": [
+                {
+                    "file": "app/core/intelligence/dlis054_assembly.py",
+                    "signals": [
+                        "build(",
+                        "Orchestrator",
+                        "Runtime(",
+                        "Tensor"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/dlis049_facade.py",
+                    "signals": [
+                        "build(",
+                        "Tensor"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/cognitive_pipeline.py",
+                    "signals": [
+                        "Tensor"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/unified_cognitive_state.py",
+                    "signals": [
+                        "Tensor"
+                    ]
+                }
+            ]
+        },
+        "runtime_persistence": {
+            "matches": 0,
+            "files": []
+        },
+        "enterprise_trace": {
+            "matches": 1,
+            "files": [
+                {
+                    "file": "app/core/intelligence/enterprise_intelligence_bus.py",
+                    "signals": [
+                        "register("
+                    ]
+                }
+            ]
+        },
+        "evolution_orchestrator": {
+            "matches": 1,
+            "files": [
+                {
+                    "file": "app/core/intelligence/intelligence_core.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                }
+            ]
+        },
+        "graph_adapter": {
+            "matches": 2,
+            "files": [
+                {
+                    "file": "app/core/intelligence/intelligence_core.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/runtime_bridge.py",
+                    "signals": [
+                        "Factory"
+                    ]
+                }
+            ]
+        },
+        "intelligence_core": {
+            "matches": 1,
+            "files": [
+                {
+                    "file": "app/core/enterprise/intelligence_gateway.py",
+                    "signals": []
+                }
+            ]
+        },
+        "enterprise_layer": {
+            "matches": 1,
+            "files": [
+                {
+                    "file": "app/core/intelligence/kernel_v73.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                }
+            ]
+        },
+        "bootstrap": {
+            "matches": 4,
+            "files": [
+                {
+                    "file": "app/core/enterprise/bootstrap.py",
+                    "signals": [
+                        "bootstrap",
+                        "build(",
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/enterprise/runtime_bootstrap.py",
+                    "signals": [
+                        "bootstrap",
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/enterprise/validation_automation.py",
+                    "signals": [
+                        "bootstrap",
+                        "build("
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/enterprise_bootstrap.py",
+                    "signals": [
+                        "bootstrap",
+                        "Kernel"
+                    ]
+                }
+            ]
+        },
+        "factory": {
+            "matches": 10,
+            "files": [
+                {
+                    "file": "engine/state.py",
+                    "signals": [
+                        "Factory"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/kernel_factory.py",
+                    "signals": [
+                        "create(",
+                        "Factory",
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/dlis_state.py",
+                    "signals": [
+                        "Factory"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/evolution_contract.py",
+                    "signals": [
+                        "Factory"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/runtime_bridge.py",
+                    "signals": [
+                        "Factory"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/structural_contract.py",
+                    "signals": [
+                        "Factory"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/enterprise_event.py",
+                    "signals": [
+                        "Factory"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/enterprise_models.py",
+                    "signals": [
+                        "Factory"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/enterprise_telemetry_layer.py",
+                    "signals": [
+                        "Factory"
+                    ]
+                },
+                {
+                    "file": "app/core/contracts/intelligence_contract.py",
+                    "signals": [
+                        "initialize",
+                        "Factory"
+                    ]
+                }
+            ]
+        },
+        "kernel": {
+            "matches": 25,
+            "files": [
+                {
+                    "file": "app/core/engine.py",
+                    "signals": [
+                        "create(",
+                        "Kernel",
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/state/transition.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/validation/v71_enterprise_validator.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/enterprise/runtime_bootstrap.py",
+                    "signals": [
+                        "bootstrap",
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/cognitive_kernel_contract.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/dynamicore_intelligence_kernel.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/enterprise_cognitive_kernel.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/kernel_factory.py",
+                    "signals": [
+                        "create(",
+                        "Factory",
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/kernel_gateway.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/auto_registry.py",
+                    "signals": [
+                        "register(",
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/enterprise_bootstrap.py",
+                    "signals": [
+                        "bootstrap",
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/kernel.py",
+                    "signals": [
+                        "register(",
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/kernel_v73.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/authority_wiring.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/runtime_authority_binding.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/enterprise_runtime_kernel.py",
+                    "signals": [
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/enterprise_service_registry.py",
+                    "signals": [
+                        "register(",
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/enterprise_layer.py",
+                    "signals": [
+                        "Kernel",
+                        "Runtime("
+                    ]
+                },
+                {
+                    "file": "app/core/research/collatz/state.py",
+                    "signals": [
+                        "build(",
+                        "Kernel"
+                    ]
+                },
+                {
+                    "file": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+                    "signals": [
+                        "create(",
+                        "Kernel",
+                        "Orchestrator"
+                    ]
+                }
+            ]
+        },
+        "orchestrator": {
+            "matches": 31,
+            "files": [
+                {
+                    "file": "tests/test_v778_runtime_hardening.py",
+                    "signals": [
+                        "Orchestrator",
+                        "Runtime("
+                    ]
+                },
+                {
+                    "file": "tests/test_v77_engine_integration.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "tests/test_v77_runtime_pipeline.py",
+                    "signals": [
+                        "Orchestrator",
+                        "Runtime("
+                    ]
+                },
+                {
+                    "file": "app/core/engine.py",
+                    "signals": [
+                        "create(",
+                        "Kernel",
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/agents/__init__.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/agents/orchestrator.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/enterprise/bootstrap.py",
+                    "signals": [
+                        "bootstrap",
+                        "build(",
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/enterprise/enterprise_core.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/enterprise/final_integration_audit.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/enterprise/intelligence_orchestration_layer.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/enterprise/intelligence_orchestrator_bridge.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/enterprise/orchestrator.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/__init__.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/canonical_engine_binding.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/cognitive_orchestrator.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/evolution_orchestrator.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/intelligence_core.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/master_engine_bridge.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/orchestrator.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/orchestrator_integration_bridge.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                }
+            ]
+        }
+    },
+    "errors": [],
+    "final_assessment": {
+        "architecture_scan_complete": true,
+        "ready_for_enterprise_review": true,
+        "next_action": "ARCHITECTURE_DECISION_AFTER_REVIEW"
+    }
+}

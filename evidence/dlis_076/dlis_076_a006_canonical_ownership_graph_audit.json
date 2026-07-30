@@ -1,0 +1,3641 @@
+{
+    "timestamp": "2026-07-29T23:45:10.916643+00:00",
+    "mode": "READ_ONLY",
+    "targets": {
+        "enterprise_runtime": "app/core/intelligence/enterprise_runtime.py",
+        "enterprise_intelligence_bus": "app/core/intelligence/enterprise_intelligence_bus.py",
+        "runtime_persistence": "app/core/intelligence/runtime_persistence.py",
+        "enterprise_trace": "app/core/intelligence/enterprise_trace.py",
+        "tensor_fusion": "app/core/intelligence/tensor_fusion.py",
+        "cognitive_tensor_adapter": "app/core/intelligence/cognitive_tensor_adapter.py",
+        "evolution_orchestrator": "app/core/intelligence/evolution_orchestrator.py",
+        "graph_adapter": "app/core/intelligence/graph_adapter.py",
+        "intelligence_core": "app/core/intelligence/intelligence_core.py",
+        "dlis_runtime": "app/core/dlis/full_runtime.py"
+    },
+    "dependency_edges": [
+        {
+            "source": "benchmark_suite.py",
+            "target": "numpy"
+        },
+        {
+            "source": "benchmark_suite.py",
+            "target": "json"
+        },
+        {
+            "source": "dashboard.py",
+            "target": "streamlit"
+        },
+        {
+            "source": "dashboard.py",
+            "target": "requests"
+        },
+        {
+            "source": "dashboard.py",
+            "target": "matplotlib.pyplot"
+        },
+        {
+            "source": "dashboard.py",
+            "target": "numpy"
+        },
+        {
+            "source": "database.py",
+            "target": "os"
+        },
+        {
+            "source": "database.py",
+            "target": "sqlalchemy"
+        },
+        {
+            "source": "database.py",
+            "target": "sqlalchemy.orm"
+        },
+        {
+            "source": "generate_figures.py",
+            "target": "numpy"
+        },
+        {
+            "source": "generate_figures.py",
+            "target": "matplotlib.pyplot"
+        },
+        {
+            "source": "generate_figures.py",
+            "target": "os"
+        },
+        {
+            "source": "setup.py",
+            "target": "setuptools"
+        },
+        {
+            "source": "api/auth.py",
+            "target": "uuid"
+        },
+        {
+            "source": "api/db.py",
+            "target": "os"
+        },
+        {
+            "source": "api/db.py",
+            "target": "sqlalchemy.orm"
+        },
+        {
+            "source": "api/db.py",
+            "target": "sqlalchemy"
+        },
+        {
+            "source": "api/chat.py",
+            "target": "openai"
+        },
+        {
+            "source": "api/chat.py",
+            "target": "os"
+        },
+        {
+            "source": "api/main.py",
+            "target": "fastapi"
+        },
+        {
+            "source": "api/main.py",
+            "target": "api.routes.analyze"
+        },
+        {
+            "source": "api/main.py",
+            "target": "api.routes.explain"
+        },
+        {
+            "source": "api/main.py",
+            "target": "api.routes.auth"
+        },
+        {
+            "source": "auth/security.py",
+            "target": "passlib.context"
+        },
+        {
+            "source": "auth/security.py",
+            "target": "datetime"
+        },
+        {
+            "source": "auth/security.py",
+            "target": "jwt"
+        },
+        {
+            "source": "auth/security.py",
+            "target": "os"
+        },
+        {
+            "source": "benchmarks/stress_test.py",
+            "target": "sys"
+        },
+        {
+            "source": "benchmarks/stress_test.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "benchmarks/stress_test.py",
+            "target": "time"
+        },
+        {
+            "source": "benchmarks/stress_test.py",
+            "target": "numpy"
+        },
+        {
+            "source": "benchmarks/stress_test.py",
+            "target": "app.core.analyzer"
+        },
+        {
+            "source": "benchmarks/stress_test.py",
+            "target": "app.core.engine"
+        },
+        {
+            "source": "benchmarks/v78_runtime_benchmark.py",
+            "target": "sys"
+        },
+        {
+            "source": "benchmarks/v78_runtime_benchmark.py",
+            "target": "time"
+        },
+        {
+            "source": "benchmarks/v78_runtime_benchmark.py",
+            "target": "json"
+        },
+        {
+            "source": "benchmarks/v78_runtime_benchmark.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "benchmarks/v78_runtime_benchmark.py",
+            "target": "app.core.engine"
+        },
+        {
+            "source": "engine/engine.py",
+            "target": "time"
+        },
+        {
+            "source": "engine/engine.py",
+            "target": "state"
+        },
+        {
+            "source": "engine/state.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "engine/state.py",
+            "target": "datetime"
+        },
+        {
+            "source": "engine/state.py",
+            "target": "typing"
+        },
+        {
+            "source": "engine/state.py",
+            "target": "uuid"
+        },
+        {
+            "source": "models/user.py",
+            "target": "sqlalchemy"
+        },
+        {
+            "source": "models/user.py",
+            "target": "database"
+        },
+        {
+            "source": "reports/investor_report.py",
+            "target": "json"
+        },
+        {
+            "source": "schemas/user.py",
+            "target": "pydantic"
+        },
+        {
+            "source": "tests/test_core_engine.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_core_engine.py",
+            "target": "app.core.engine"
+        },
+        {
+            "source": "tests/test_evolution_adapter_history.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_evolution_adapter_history.py",
+            "target": "app.core.adaptation.evolution_adapter"
+        },
+        {
+            "source": "tests/test_evolution_service_full_cycle.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_evolution_service_full_cycle.py",
+            "target": "app.core.adaptation.evolution_service"
+        },
+        {
+            "source": "tests/test_metrics_entropy.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_metrics_entropy.py",
+            "target": "app.core.metrics.entropy"
+        },
+        {
+            "source": "tests/test_metrics_dynamics.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_metrics_dynamics.py",
+            "target": "app.core.metrics.dynamics"
+        },
+        {
+            "source": "tests/test_metrics_divergence.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_metrics_divergence.py",
+            "target": "app.core.metrics.divergence"
+        },
+        {
+            "source": "tests/test_metrics_potential.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_metrics_potential.py",
+            "target": "app.core.metrics.potential"
+        },
+        {
+            "source": "tests/test_metrics_coherence.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_metrics_coherence.py",
+            "target": "app.core.metrics.coherence"
+        },
+        {
+            "source": "tests/test_policy_evolution_integration.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_policy_evolution_integration.py",
+            "target": "app.core.adaptation.policy_evolution"
+        },
+        {
+            "source": "tests/test_policy_evolution_integration.py",
+            "target": "app.core.adaptation.policy_bridge"
+        },
+        {
+            "source": "tests/test_v778_runtime_hardening.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_v778_runtime_hardening.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "tests/test_v778_runtime_hardening.py",
+            "target": "app.core.engine"
+        },
+        {
+            "source": "tests/test_v778_runtime_hardening.py",
+            "target": "app.core.intelligence.master_engine_bridge"
+        },
+        {
+            "source": "tests/test_v778_runtime_hardening.py",
+            "target": "app.core.intelligence.master_orchestration_layer"
+        },
+        {
+            "source": "tests/test_v778_runtime_hardening.py",
+            "target": "app.core.intelligence.canonical_engine_binding"
+        },
+        {
+            "source": "tests/test_v77_engine_integration.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_v77_engine_integration.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "tests/test_v77_engine_integration.py",
+            "target": "app.core.engine"
+        },
+        {
+            "source": "tests/test_v77_engine_integration.py",
+            "target": "app.core.intelligence.master_engine_bridge"
+        },
+        {
+            "source": "tests/test_v77_engine_integration.py",
+            "target": "app.core.intelligence.master_orchestration_layer"
+        },
+        {
+            "source": "tests/test_v77_engine_integration.py",
+            "target": "app.core.intelligence.canonical_engine_binding"
+        },
+        {
+            "source": "tests/test_v77_runtime_pipeline.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_v77_runtime_pipeline.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "tests/test_v77_runtime_pipeline.py",
+            "target": "app.core.engine"
+        },
+        {
+            "source": "tests/test_v77_runtime_pipeline.py",
+            "target": "app.core.intelligence.master_engine_bridge"
+        },
+        {
+            "source": "tests/test_v77_runtime_pipeline.py",
+            "target": "app.core.intelligence.master_orchestration_layer"
+        },
+        {
+            "source": "tests/test_v77_runtime_pipeline.py",
+            "target": "app.core.intelligence.canonical_engine_binding"
+        },
+        {
+            "source": "tests/test_v781_benchmark_validation.py",
+            "target": "sys"
+        },
+        {
+            "source": "tests/test_v781_benchmark_validation.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "tests/test_v781_benchmark_validation.py",
+            "target": "benchmarks.v78_runtime_benchmark"
+        },
+        {
+            "source": "api/routes/analyze.py",
+            "target": "fastapi"
+        },
+        {
+            "source": "api/routes/analyze.py",
+            "target": "pydantic"
+        },
+        {
+            "source": "api/routes/analyze.py",
+            "target": "app.core.engine"
+        },
+        {
+            "source": "api/routes/auth.py",
+            "target": "fastapi"
+        },
+        {
+            "source": "api/routes/auth.py",
+            "target": "sqlalchemy.orm"
+        },
+        {
+            "source": "api/routes/auth.py",
+            "target": "models.user"
+        },
+        {
+            "source": "api/routes/auth.py",
+            "target": "schemas.user"
+        },
+        {
+            "source": "api/routes/auth.py",
+            "target": "auth.security"
+        },
+        {
+            "source": "api/routes/auth.py",
+            "target": "database"
+        },
+        {
+            "source": "api/routes/explain.py",
+            "target": "fastapi"
+        },
+        {
+            "source": "app/core/analyzer.py",
+            "target": "math"
+        },
+        {
+            "source": "app/core/analyzer.py",
+            "target": "collections"
+        },
+        {
+            "source": "app/core/ai.py",
+            "target": "os"
+        },
+        {
+            "source": "app/core/ai.py",
+            "target": "openai"
+        },
+        {
+            "source": "app/core/auth.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/auth.py",
+            "target": "app.core.db"
+        },
+        {
+            "source": "app/core/auth.py",
+            "target": "app.core.models"
+        },
+        {
+            "source": "app/core/db.py",
+            "target": "os"
+        },
+        {
+            "source": "app/core/db.py",
+            "target": "sqlalchemy"
+        },
+        {
+            "source": "app/core/db.py",
+            "target": "sqlalchemy.orm"
+        },
+        {
+            "source": "app/core/db.py",
+            "target": "sqlalchemy.orm"
+        },
+        {
+            "source": "app/core/db.py",
+            "target": "sqlalchemy.orm"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "metrics.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "predictive.forecast"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "predictive.risk"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "predictive.regime"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "predictive.anomaly"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "state.snapshot"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "kernel.state_vector"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "agents.orchestrator"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "state.evolution"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "state.transition"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "twin.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "simulation.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "validation.validator"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "knowledge.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "learning.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "context.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "explainability.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "attribution.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "causal.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "decision.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "feedback.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "adaptation.engine"
+        },
+        {
+            "source": "app/core/engine.py",
+            "target": "adaptation.evolution_service"
+        },
+        {
+            "source": "app/core/entropy.py",
+            "target": "numpy"
+        },
+        {
+            "source": "app/core/graph.py",
+            "target": "numpy"
+        },
+        {
+            "source": "app/core/memory.py",
+            "target": "app.core.db"
+        },
+        {
+            "source": "app/core/memory.py",
+            "target": "app.core.models"
+        },
+        {
+            "source": "app/core/models.py",
+            "target": "sqlalchemy"
+        },
+        {
+            "source": "app/core/models.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/models.py",
+            "target": "api.db"
+        },
+        {
+            "source": "app/core/middleware.py",
+            "target": "fastapi"
+        },
+        {
+            "source": "app/core/middleware.py",
+            "target": "app.core.auth"
+        },
+        {
+            "source": "app/core/security.py",
+            "target": "secrets"
+        },
+        {
+            "source": "app/core/security.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/security.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/security.py",
+            "target": "jose"
+        },
+        {
+            "source": "app/core/security.py",
+            "target": "passlib.context"
+        },
+        {
+            "source": "app/core/stripe_service.py",
+            "target": "stripe"
+        },
+        {
+            "source": "app/core/stripe_service.py",
+            "target": "os"
+        },
+        {
+            "source": "app/core/adaptation/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/adaptation/__init__.py",
+            "target": "policy"
+        },
+        {
+            "source": "app/core/adaptation/__init__.py",
+            "target": "calibration"
+        },
+        {
+            "source": "app/core/adaptation/__init__.py",
+            "target": "confidence"
+        },
+        {
+            "source": "app/core/adaptation/__init__.py",
+            "target": "self_optimizer"
+        },
+        {
+            "source": "app/core/adaptation/engine.py",
+            "target": "policy"
+        },
+        {
+            "source": "app/core/adaptation/engine.py",
+            "target": "calibration"
+        },
+        {
+            "source": "app/core/adaptation/engine.py",
+            "target": "confidence"
+        },
+        {
+            "source": "app/core/adaptation/engine.py",
+            "target": "self_optimizer"
+        },
+        {
+            "source": "app/core/adaptation/engine.py",
+            "target": "adaptive_threshold"
+        },
+        {
+            "source": "app/core/adaptation/engine.py",
+            "target": "strategy_memory"
+        },
+        {
+            "source": "app/core/adaptation/engine.py",
+            "target": "adaptive_learning"
+        },
+        {
+            "source": "app/core/adaptation/engine.py",
+            "target": "strategy_optimizer"
+        },
+        {
+            "source": "app/core/adaptation/evolution_adapter.py",
+            "target": "policy_evolution"
+        },
+        {
+            "source": "app/core/adaptation/evolution_service.py",
+            "target": "evolution_adapter"
+        },
+        {
+            "source": "app/core/adaptation/evolution_service.py",
+            "target": "evolution_diff"
+        },
+        {
+            "source": "app/core/agents/__init__.py",
+            "target": "orchestrator"
+        },
+        {
+            "source": "app/core/agents/__init__.py",
+            "target": "base"
+        },
+        {
+            "source": "app/core/agents/forecast_agent.py",
+            "target": "base"
+        },
+        {
+            "source": "app/core/agents/metrics_agent.py",
+            "target": "base"
+        },
+        {
+            "source": "app/core/agents/decision_agent.py",
+            "target": "base"
+        },
+        {
+            "source": "app/core/agents/orchestrator.py",
+            "target": "metrics_agent"
+        },
+        {
+            "source": "app/core/agents/orchestrator.py",
+            "target": "risk_agent"
+        },
+        {
+            "source": "app/core/agents/orchestrator.py",
+            "target": "forecast_agent"
+        },
+        {
+            "source": "app/core/agents/orchestrator.py",
+            "target": "decision_agent"
+        },
+        {
+            "source": "app/core/agents/risk_agent.py",
+            "target": "base"
+        },
+        {
+            "source": "app/core/attribution/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/causal/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/causal/__init__.py",
+            "target": "graph"
+        },
+        {
+            "source": "app/core/causal/engine.py",
+            "target": "graph"
+        },
+        {
+            "source": "app/core/context/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/decision/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/decision/policy_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/explainability/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/feedback/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/graph_intelligence/__init__.py",
+            "target": "structural_signature"
+        },
+        {
+            "source": "app/core/graph_intelligence/__init__.py",
+            "target": "graph_delta"
+        },
+        {
+            "source": "app/core/graph_intelligence/__init__.py",
+            "target": "evolution_layer"
+        },
+        {
+            "source": "app/core/graph_intelligence/__init__.py",
+            "target": "pattern_engine"
+        },
+        {
+            "source": "app/core/graph_intelligence/__init__.py",
+            "target": "evolution_predictor"
+        },
+        {
+            "source": "app/core/graph_intelligence/__init__.py",
+            "target": "temporal_memory"
+        },
+        {
+            "source": "app/core/graph_intelligence/__init__.py",
+            "target": "pipeline"
+        },
+        {
+            "source": "app/core/graph_intelligence/graph_intelligence.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/graph_intelligence/intelligence_benchmark.py",
+            "target": "time"
+        },
+        {
+            "source": "app/core/graph_intelligence/history_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/graph_intelligence/history_engine.py",
+            "target": "copy"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "graph_delta"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "structural_signature"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "structural_signature_v2"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "evolution_layer"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "evolution_metrics"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "predictive_structural"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "critical_transition"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "dynamic_intelligence_state"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "structural_transition"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "structural_fusion"
+        },
+        {
+            "source": "app/core/graph_intelligence/pipeline.py",
+            "target": "decision_engine"
+        },
+        {
+            "source": "app/core/graph_intelligence/structural_signature.py",
+            "target": "hashlib"
+        },
+        {
+            "source": "app/core/graph_intelligence/structural_signature.py",
+            "target": "json"
+        },
+        {
+            "source": "app/core/graph_intelligence/structural_signature_v2.py",
+            "target": "hashlib"
+        },
+        {
+            "source": "app/core/graph_intelligence/structural_signature_v2.py",
+            "target": "json"
+        },
+        {
+            "source": "app/core/kernel/__init__.py",
+            "target": "state_vector"
+        },
+        {
+            "source": "app/core/knowledge/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/knowledge/__init__.py",
+            "target": "store"
+        },
+        {
+            "source": "app/core/knowledge/engine.py",
+            "target": "store"
+        },
+        {
+            "source": "app/core/learning/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/learning/__init__.py",
+            "target": "memory"
+        },
+        {
+            "source": "app/core/learning/engine.py",
+            "target": "memory"
+        },
+        {
+            "source": "app/core/metrics/__init__.py",
+            "target": "entropy"
+        },
+        {
+            "source": "app/core/metrics/__init__.py",
+            "target": "coherence"
+        },
+        {
+            "source": "app/core/metrics/__init__.py",
+            "target": "dynamics"
+        },
+        {
+            "source": "app/core/metrics/__init__.py",
+            "target": "potential"
+        },
+        {
+            "source": "app/core/metrics/__init__.py",
+            "target": "divergence"
+        },
+        {
+            "source": "app/core/metrics/engine.py",
+            "target": "entropy"
+        },
+        {
+            "source": "app/core/metrics/engine.py",
+            "target": "coherence"
+        },
+        {
+            "source": "app/core/metrics/engine.py",
+            "target": "dynamics"
+        },
+        {
+            "source": "app/core/metrics/engine.py",
+            "target": "potential"
+        },
+        {
+            "source": "app/core/metrics/engine.py",
+            "target": "divergence"
+        },
+        {
+            "source": "app/core/metrics/entropy.py",
+            "target": "math"
+        },
+        {
+            "source": "app/core/metrics/entropy.py",
+            "target": "collections"
+        },
+        {
+            "source": "app/core/simulation/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/simulation/__init__.py",
+            "target": "scenario"
+        },
+        {
+            "source": "app/core/simulation/engine.py",
+            "target": "scenario"
+        },
+        {
+            "source": "app/core/state/__init__.py",
+            "target": "transition"
+        },
+        {
+            "source": "app/core/state/transition.py",
+            "target": "app.core.kernel"
+        },
+        {
+            "source": "app/core/state/store.py",
+            "target": "json"
+        },
+        {
+            "source": "app/core/state/store.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "app/core/state/snapshot.py",
+            "target": "store"
+        },
+        {
+            "source": "app/core/twin/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/twin/__init__.py",
+            "target": "model"
+        },
+        {
+            "source": "app/core/twin/engine.py",
+            "target": "model"
+        },
+        {
+            "source": "app/core/twin/model.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/validation/__init__.py",
+            "target": "validator"
+        },
+        {
+            "source": "app/core/validation/v71_enterprise_validator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/enterprise/adaptive_intelligence_bridge.py",
+            "target": "app.core.enterprise.adaptive_intelligence"
+        },
+        {
+            "source": "app/core/enterprise/adaptive_intelligence_bridge.py",
+            "target": "app.core.enterprise.knowledge_memory"
+        },
+        {
+            "source": "app/core/enterprise/adaptive_intelligence_bridge.py",
+            "target": "app.core.enterprise.self_optimization"
+        },
+        {
+            "source": "app/core/enterprise/adaptive_intelligence_bridge.py",
+            "target": "app.core.graph_intelligence.evolution_predictor"
+        },
+        {
+            "source": "app/core/enterprise/adaptive_intelligence_bridge.py",
+            "target": "app.core.graph_intelligence.predictive_structural"
+        },
+        {
+            "source": "app/core/enterprise/adaptive_strategy_evolution.py",
+            "target": "json"
+        },
+        {
+            "source": "app/core/enterprise/adaptive_strategy_evolution.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "app/core/enterprise/adaptive_strategy_evolution.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/enterprise/autonomous_feedback.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "runtime_manager"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "intelligence_stream"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "intelligence_api"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "decision_service"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "monitoring_alert"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "persistence_history"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "configuration"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "security_layer"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "deployment_readiness"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "orchestrator"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "enterprise_core"
+        },
+        {
+            "source": "app/core/enterprise/bootstrap.py",
+            "target": "knowledge_memory"
+        },
+        {
+            "source": "app/core/enterprise/autonomous_intelligence_loop.py",
+            "target": "app.core.enterprise.autonomous_control"
+        },
+        {
+            "source": "app/core/enterprise/autonomous_intelligence_loop.py",
+            "target": "app.core.enterprise.workflow_engine"
+        },
+        {
+            "source": "app/core/enterprise/autonomous_intelligence_loop.py",
+            "target": "app.core.enterprise.decision_service"
+        },
+        {
+            "source": "app/core/enterprise/autonomous_intelligence_loop.py",
+            "target": "app.core.decision.engine"
+        },
+        {
+            "source": "app/core/enterprise/autonomous_intelligence_loop.py",
+            "target": "app.core.agents.decision_agent"
+        },
+        {
+            "source": "app/core/enterprise/cognitive_memory_layer.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/enterprise/cognitive_memory_layer.py",
+            "target": "app.core.enterprise.knowledge_memory"
+        },
+        {
+            "source": "app/core/enterprise/cognitive_memory_layer.py",
+            "target": "app.core.enterprise.persistence_history"
+        },
+        {
+            "source": "app/core/enterprise/cognitive_memory_layer.py",
+            "target": "app.core.graph_intelligence.temporal_memory"
+        },
+        {
+            "source": "app/core/enterprise/cognitive_memory_layer.py",
+            "target": "app.core.graph_intelligence.pattern_engine"
+        },
+        {
+            "source": "app/core/enterprise/cognitive_memory_layer.py",
+            "target": "app.core.graph_intelligence.history_engine"
+        },
+        {
+            "source": "app/core/enterprise/cognitive_memory_layer.py",
+            "target": "app.core.graph_intelligence.transition_memory"
+        },
+        {
+            "source": "app/core/enterprise/decision_execution_bridge.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/enterprise/dynamic_graph_bridge.py",
+            "target": "app.core.enterprise.predictive_intelligence_layer"
+        },
+        {
+            "source": "app/core/enterprise/intelligence_orchestration_layer.py",
+            "target": "app.core.enterprise.orchestrator"
+        },
+        {
+            "source": "app/core/enterprise/intelligence_orchestration_layer.py",
+            "target": "app.core.enterprise.global_state_manager"
+        },
+        {
+            "source": "app/core/enterprise/intelligence_orchestration_layer.py",
+            "target": "app.core.enterprise.observability"
+        },
+        {
+            "source": "app/core/enterprise/intelligence_orchestration_layer.py",
+            "target": "app.core.enterprise.monitoring_alert"
+        },
+        {
+            "source": "app/core/enterprise/observability.py",
+            "target": "time"
+        },
+        {
+            "source": "app/core/enterprise/persistence_history.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/enterprise/predictive_intelligence_layer.py",
+            "target": "app.core.graph_intelligence.evolution_predictor"
+        },
+        {
+            "source": "app/core/enterprise/predictive_intelligence_layer.py",
+            "target": "app.core.graph_intelligence.predictive_structural"
+        },
+        {
+            "source": "app/core/enterprise/runtime_bootstrap.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/enterprise/runtime_bootstrap.py",
+            "target": "app.core.intelligence.kernel"
+        },
+        {
+            "source": "app/core/enterprise/runtime_bootstrap.py",
+            "target": "app.core.intelligence.auto_registry"
+        },
+        {
+            "source": "app/core/enterprise/runtime_manager.py",
+            "target": "runtime_state"
+        },
+        {
+            "source": "app/core/enterprise/self_awareness_layer.py",
+            "target": "app.core.enterprise.observability"
+        },
+        {
+            "source": "app/core/enterprise/self_awareness_layer.py",
+            "target": "app.core.enterprise.monitoring_alert"
+        },
+        {
+            "source": "app/core/enterprise/self_awareness_layer.py",
+            "target": "app.core.enterprise.global_state_manager"
+        },
+        {
+            "source": "app/core/enterprise/self_awareness_layer.py",
+            "target": "app.core.enterprise.runtime_state"
+        },
+        {
+            "source": "app/core/enterprise/self_awareness_layer.py",
+            "target": "app.core.enterprise.runtime_manager"
+        },
+        {
+            "source": "app/core/enterprise/validation_automation.py",
+            "target": "json"
+        },
+        {
+            "source": "app/core/enterprise/validation_automation.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/cognitive_kernel_contract.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/cognitive_kernel_contract.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/dynamicore_intelligence_kernel.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_cognitive_kernel.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_cognitive_kernel.py",
+            "target": "app.core.intelligence.cognitive_kernel_contract"
+        },
+        {
+            "source": "app/core/intelligence/kernel_factory.py",
+            "target": "dynamicore_intelligence_kernel"
+        },
+        {
+            "source": "app/core/intelligence/kernel_factory.py",
+            "target": "app.core.engine"
+        },
+        {
+            "source": "app/core/intelligence/kernel_factory.py",
+            "target": "app.core.metrics.engine"
+        },
+        {
+            "source": "app/core/intelligence/kernel_factory.py",
+            "target": "app.core.graph_intelligence.graph_intelligence"
+        },
+        {
+            "source": "app/core/intelligence/kernel_factory.py",
+            "target": "app.core.predictive.forecast"
+        },
+        {
+            "source": "app/core/intelligence/kernel_factory.py",
+            "target": "app.core.decision.engine"
+        },
+        {
+            "source": "app/core/intelligence/kernel_factory.py",
+            "target": "app.core.adaptation.engine"
+        },
+        {
+            "source": "app/core/intelligence/kernel_factory.py",
+            "target": "app.core.learning.memory"
+        },
+        {
+            "source": "app/core/intelligence/kernel_factory.py",
+            "target": "app.core.state.evolution"
+        },
+        {
+            "source": "app/core/intelligence/kernel_gateway.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/__init__.py",
+            "target": "orchestrator"
+        },
+        {
+            "source": "app/core/intelligence/__init__.py",
+            "target": "cognitive_orchestrator"
+        },
+        {
+            "source": "app/core/intelligence/__init__.py",
+            "target": "canonical_binding_adapter"
+        },
+        {
+            "source": "app/core/intelligence/auto_registry.py",
+            "target": "importlib"
+        },
+        {
+            "source": "app/core/intelligence/canonical_binding_adapter.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/canonical_engine_binding.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/cognitive_orchestrator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/dlis_state.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/intelligence/dlis_state.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_bootstrap.py",
+            "target": "app.core.intelligence.kernel"
+        },
+        {
+            "source": "app/core/intelligence/evolution_contract.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/intelligence/evolution_contract.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/evolution_contract.py",
+            "target": "typing"
+        },
+        {
+            "source": "app/core/intelligence/evolution_history_analyzer.py",
+            "target": "statistics"
+        },
+        {
+            "source": "app/core/intelligence/evolution_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/evolution_engine.py",
+            "target": "app.core.intelligence.evolution_contract"
+        },
+        {
+            "source": "app/core/intelligence/evolution_orchestrator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/evolution_orchestrator.py",
+            "target": "app.core.intelligence.evolution_engine"
+        },
+        {
+            "source": "app/core/intelligence/evolution_orchestrator.py",
+            "target": "app.core.intelligence.graph_evolution_bridge"
+        },
+        {
+            "source": "app/core/intelligence/graph_adapter.py",
+            "target": "app.core.graph_intelligence.structural_signature"
+        },
+        {
+            "source": "app/core/intelligence/graph_adapter.py",
+            "target": "app.core.graph_intelligence.graph_delta"
+        },
+        {
+            "source": "app/core/intelligence/graph_evolution_bridge.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/graph_intelligence_validator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/intelligence_core.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/intelligence_core.py",
+            "target": "evolution_orchestrator"
+        },
+        {
+            "source": "app/core/intelligence/intelligence_validation_bridge.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/intelligence_validation_bridge.py",
+            "target": "app.core.intelligence.graph_intelligence_validator"
+        },
+        {
+            "source": "app/core/intelligence/kernel.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/master_engine_bridge.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/kernel_v73.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/kernel_v73.py",
+            "target": "app.core.intelligence.dlis_state"
+        },
+        {
+            "source": "app/core/intelligence/kernel_v73.py",
+            "target": "app.core.intelligence.validation_bridge"
+        },
+        {
+            "source": "app/core/intelligence/orchestrator.py",
+            "target": "app.core.contracts"
+        },
+        {
+            "source": "app/core/intelligence/master_orchestration_layer.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/orchestrator_integration_bridge.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/predictive_temporal_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/runtime_bridge.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/runtime_persistence.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "app/core/intelligence/runtime_persistence.py",
+            "target": "json"
+        },
+        {
+            "source": "app/core/intelligence/runtime_registry.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/structural_contract.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/intelligence/structural_contract.py",
+            "target": "typing"
+        },
+        {
+            "source": "app/core/intelligence/structural_timeline_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/temporal_memory_engine.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "app/core/intelligence/temporal_memory_engine.py",
+            "target": "json"
+        },
+        {
+            "source": "app/core/intelligence/temporal_memory_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/validation_bridge.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_cycle_validator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/runtime_authority_binding.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "target": "app.core.intelligence.dlis049_facade"
+        },
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "target": "app.core.intelligence.orchestrator"
+        },
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "target": "app.core.intelligence.intelligence_vector_adapter"
+        },
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "target": "app.core.cognitive.cognitive_engine"
+        },
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "target": "app.core.dlis.dynamicore_adapter"
+        },
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "target": "app.core.dlis.cognitive_state_vector"
+        },
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "target": "app.core.dlis.tensor_fusion_layer"
+        },
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "target": "app.core.dlis.full_runtime"
+        },
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "target": "app.core.dlis.tensor_binding"
+        },
+        {
+            "source": "app/core/intelligence/dlis054_assembly.py",
+            "target": "app.core.dlis.mvf_validator"
+        },
+        {
+            "source": "app/core/intelligence/dlis049_facade.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_event_types.py",
+            "target": "enum"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_priority.py",
+            "target": "enum"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_event.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_event.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_event.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_event.py",
+            "target": "enterprise_event_types"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_event.py",
+            "target": "enterprise_priority"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_trace.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_intelligence_bus.py",
+            "target": "enterprise_event"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_intelligence_bus.py",
+            "target": "enterprise_priority"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_intelligence_bus.py",
+            "target": "enterprise_router"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_intelligence_bus.py",
+            "target": "enterprise_trace"
+        },
+        {
+            "source": "app/core/intelligence/cognitive_tensor_adapter.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/cognitive_tensor_adapter.py",
+            "target": "typing"
+        },
+        {
+            "source": "app/core/intelligence/tensor_fusion.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/tensor_fusion.py",
+            "target": "typing"
+        },
+        {
+            "source": "app/core/intelligence/cognitive_pipeline.py",
+            "target": "cognitive_tensor_adapter"
+        },
+        {
+            "source": "app/core/intelligence/cognitive_pipeline.py",
+            "target": "tensor_fusion"
+        },
+        {
+            "source": "app/core/intelligence/cognitive_aggregator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/unified_cognitive_state.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/unified_cognitive_state.py",
+            "target": "cognitive_aggregator"
+        },
+        {
+            "source": "app/core/intelligence/unified_cognitive_state.py",
+            "target": "tensor_fusion"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime.py",
+            "target": "unified_cognitive_state"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_decision_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_action_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_learning_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_knowledge_memory.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_knowledge_integrator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_predictive_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_predictive_feedback.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_simulation_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_scenario_evaluator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_decision_optimizer.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_strategy_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_strategy_memory.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_adaptive_policy.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_evidence_collector.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_evidence_collector.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_cause_graph.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_cause_graph.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_root_cause_analyzer.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_root_cause_analyzer.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_influence_propagation.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_influence_propagation.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_counterfactual_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_counterfactual_engine.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_explanation_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_explanation_engine.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_policy_feedback.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_causal_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_digital_twin.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_digital_twin.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_twin_sync.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_twin_sync.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_future_state_simulator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_future_state_simulator.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_future_state_simulator.py",
+            "target": "copy"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_state_divergence.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_state_divergence.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_models.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_models.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_models.py",
+            "target": "enum"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_models.py",
+            "target": "typing"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_models.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_contracts.py",
+            "target": "abc"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_contracts.py",
+            "target": "app.core.intelligence.enterprise_models"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_container.py",
+            "target": "typing"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_event_bus.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_event_bus.py",
+            "target": "typing"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_event_bus.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_observability.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_observability.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_kernel.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_service_adapters.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_service_registry.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_capability_discovery.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_orchestrator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_orchestrator.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_dynamic_workflow.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_dynamic_workflow.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_workflow_memory.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_workflow_memory.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_agent_framework.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_agent_framework.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_specialized_agents.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_specialized_agents.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_agent_collaboration.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_agent_collaboration.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_agent_learning.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_agent_learning.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_agent_optimization.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_agent_optimization.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_cognitive_control_plane.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_cognitive_control_plane.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_intelligence_router.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_intelligence_router.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_decision_fusion.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_decision_fusion.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_cognitive_memory.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_cognitive_memory.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_adaptive_control_loop.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_adaptive_control_loop.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_command_interface.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_command_interface.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_query_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_query_engine.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_executive_report.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_executive_report.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_intelligence_session.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_intelligence_session.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_operational_core.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_operational_core.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_operational_metrics.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_operational_metrics.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_alert_intelligence.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_alert_intelligence.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_operational_forecast.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_operational_forecast.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_operational_response.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_operational_response.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_autonomous_operations.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_autonomous_operations.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_autonomous_execution.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_autonomous_execution.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_audit_models.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_audit_models.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_audit_orchestrator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_audit_orchestrator.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_audit_replay.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_audit_replay.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_identity_manager.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_identity_manager.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_access_control.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_access_control.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_policy_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_policy_engine.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_security_gateway.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_security_gateway.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_trust_validator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_trust_validator.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_api_gateway.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_api_gateway.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_request_router.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_request_router.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_integration_layer.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_integration_layer.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_response_layer.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_response_layer.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_api_security_binding.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_api_security_binding.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_sdk_core.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_sdk_core.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_domain_connector.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_domain_connector.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_connector_registry.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_connector_registry.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_data_contract_adapter.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_data_contract_adapter.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_sdk_integration_validation.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_sdk_integration_validation.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_task_manager.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_task_manager.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_execution_scheduler.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_execution_scheduler.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_resource_monitor.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_resource_monitor.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_orchestrator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_orchestrator.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_stress_validator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_stress_validator.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_failure_recovery_validator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_failure_recovery_validator.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_consistency_validator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_consistency_validator.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_long_run_stability_validator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_long_run_stability_validator.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_long_run_stability_validator.py",
+            "target": "time"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_certification.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_certification.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_runtime_certification.py",
+            "target": "time"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_extreme_runtime_assault.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_extreme_runtime_assault.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_extreme_runtime_assault.py",
+            "target": "time"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_extreme_runtime_assault.py",
+            "target": "random"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_layer.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_layer.py",
+            "target": "app.core.intelligence.enterprise_runtime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_telemetry_layer.py",
+            "target": "__future__"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_telemetry_layer.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_telemetry_layer.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_telemetry_layer.py",
+            "target": "threading"
+        },
+        {
+            "source": "app/core/intelligence/enterprise_telemetry_layer.py",
+            "target": "typing"
+        },
+        {
+            "source": "app/core/contracts/__init__.py",
+            "target": "intelligence_contract"
+        },
+        {
+            "source": "app/core/contracts/intelligence_contract.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/contracts/intelligence_contract.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/contracts/intelligence_contract.py",
+            "target": "typing"
+        },
+        {
+            "source": "app/core/mathematical/invariant_engine.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/mathematical/invariant_engine.py",
+            "target": "math"
+        },
+        {
+            "source": "app/core/mathematical/dlis_math_v1.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/mathematical/dlis_math_v1.py",
+            "target": "math"
+        },
+        {
+            "source": "app/core/mathematical/mathematical_core.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/mathematical/mathematical_core.py",
+            "target": "app.core.mathematical.invariant_engine"
+        },
+        {
+            "source": "app/core/mathematical/state_adapter.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/mathematical/__init__.py",
+            "target": "mathematical_core"
+        },
+        {
+            "source": "app/core/mathematical/__init__.py",
+            "target": "state_adapter"
+        },
+        {
+            "source": "app/core/mathematical/__init__.py",
+            "target": "invariant_engine"
+        },
+        {
+            "source": "app/core/evolution/evolution_engine_v73.py",
+            "target": "app.core.evolution.evolution_state"
+        },
+        {
+            "source": "app/core/evolution/evolution_state.py",
+            "target": "dataclasses"
+        },
+        {
+            "source": "app/core/evolution/evolution_state.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/collapse_probability.py",
+            "target": "math"
+        },
+        {
+            "source": "app/core/dlis/core_binding.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/engine_binding.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/evolution_connector.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/evolution_tensor.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/runtime_pipeline.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/structural_fusion.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/validation_integration.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/full_runtime.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/dynamicore_adapter.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/cognitive_tensor_adapter.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/cognitive_state_vector.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/dlis/tensor_fusion_layer.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/__init__.py",
+            "target": "cognitive_engine"
+        },
+        {
+            "source": "app/core/cognitive/action_selector.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/adaptive_integration.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/adaptive_strategy.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/cognitive_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/confidence_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/context_builder.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/decision_trace.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/decision_trace.py",
+            "target": "uuid"
+        },
+        {
+            "source": "app/core/cognitive/feedback_integrator.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/learning_loop.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/memory_layer.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/memory_reasoning.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/objective_manager.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/reasoning_engine.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/registry.py",
+            "target": "context_builder"
+        },
+        {
+            "source": "app/core/cognitive/registry.py",
+            "target": "reasoning_engine"
+        },
+        {
+            "source": "app/core/cognitive/registry.py",
+            "target": "confidence_engine"
+        },
+        {
+            "source": "app/core/cognitive/registry.py",
+            "target": "objective_manager"
+        },
+        {
+            "source": "app/core/cognitive/registry.py",
+            "target": "action_selector"
+        },
+        {
+            "source": "app/core/cognitive/registry.py",
+            "target": "feedback_integrator"
+        },
+        {
+            "source": "app/core/cognitive/runtime_bridge.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/trace_store.py",
+            "target": "pathlib"
+        },
+        {
+            "source": "app/core/cognitive/trace_store.py",
+            "target": "datetime"
+        },
+        {
+            "source": "app/core/cognitive/trace_store.py",
+            "target": "json"
+        },
+        {
+            "source": "app/core/research/collatz/__init__.py",
+            "target": "engine"
+        },
+        {
+            "source": "app/core/research/collatz/__init__.py",
+            "target": "analysis"
+        },
+        {
+            "source": "app/core/research/collatz/__init__.py",
+            "target": "state"
+        },
+        {
+            "source": "app/core/research/collatz/state.py",
+            "target": "app.core.kernel"
+        },
+        {
+            "source": "archive/v6.12.0_foundation_backup/auth.py",
+            "target": "uuid"
+        },
+        {
+            "source": "archive/v6.12.0_foundation_backup/auth.py",
+            "target": "app.core.db"
+        },
+        {
+            "source": "archive/v6.12.0_foundation_backup/auth.py",
+            "target": "app.core.models"
+        },
+        {
+            "source": "archive/v6.12.0_foundation_backup/middleware.py",
+            "target": "fastapi"
+        },
+        {
+            "source": "archive/v6.12.0_foundation_backup/middleware.py",
+            "target": "app.core.auth"
+        },
+        {
+            "source": "archive/v6.12.0_foundation_backup/memory.py",
+            "target": "app.core.db"
+        },
+        {
+            "source": "archive/v6.12.0_foundation_backup/memory.py",
+            "target": "app.core.models"
+        },
+        {
+            "source": "archive/v6.12.0_foundation_backup/models.py",
+            "target": "sqlalchemy"
+        },
+        {
+            "source": "archive/v6.12.0_foundation_backup/models.py",
+            "target": "datetime"
+        },
+        {
+            "source": "archive/v6.12.0_foundation_backup/models.py",
+            "target": "api.db"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/auth.py",
+            "target": "uuid"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/auth.py",
+            "target": "app.core.db"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/auth.py",
+            "target": "app.core.models"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/dashboard.py",
+            "target": "streamlit"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/dashboard.py",
+            "target": "requests"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/dashboard.py",
+            "target": "matplotlib.pyplot"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/dashboard.py",
+            "target": "numpy"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/models.py",
+            "target": "sqlalchemy"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/models.py",
+            "target": "datetime"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/models.py",
+            "target": "api.db"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/stress_test.py",
+            "target": "time"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/stress_test.py",
+            "target": "numpy"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/stress_test.py",
+            "target": "dynamicore.core.analyzer"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/security.py",
+            "target": "passlib.context"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/security.py",
+            "target": "datetime"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/security.py",
+            "target": "jwt"
+        },
+        {
+            "source": "archive/v6.12.1_runtime_backup/security.py",
+            "target": "os"
+        },
+        {
+            "source": "archive/backups/V6.10.9/analyze_text_backup.py",
+            "target": "fastapi"
+        },
+        {
+            "source": "archive/backups/V6.10.9/analyze_text_backup.py",
+            "target": "pydantic"
+        },
+        {
+            "source": "archive/backups/V6.10.9/analyze_text_backup.py",
+            "target": "collections"
+        },
+        {
+            "source": "archive/backups/V6.10.9/analyze_text_backup.py",
+            "target": "app.core.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/analyze_text_backup.py",
+            "target": "re"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_adapter_v6108.py",
+            "target": "app.core.graph_intelligence.graph_intelligence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_adapter_v6108.py",
+            "target": "app.core.graph_intelligence.structural_fusion"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_adapter_v6108.py",
+            "target": "app.core.graph_intelligence.dynamic_intelligence_state"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_adapter_v6108.py",
+            "target": "app.core.decision.policy_engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_adapter_v6108.py",
+            "target": "app.core.decision.decision_contract"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_adapter_v6108.py",
+            "target": "app.core.enterprise.adaptive_strategy_evolution"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_adapter_v6108.py",
+            "target": "app.core.enterprise.cognitive_memory_layer"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_fix_v6108.py",
+            "target": "app.core.graph_intelligence.graph_intelligence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_fix_v6108.py",
+            "target": "app.core.graph_intelligence.structural_fusion"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_fix_v6108.py",
+            "target": "app.core.graph_intelligence.dynamic_intelligence_state"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_fix_v6108.py",
+            "target": "app.core.decision.policy_engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_fix_v6108.py",
+            "target": "app.core.decision.decision_contract"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_fix_v6108.py",
+            "target": "app.core.enterprise.adaptive_strategy_evolution"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_fix_v6108.py",
+            "target": "app.core.enterprise.cognitive_memory_layer"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6108.py",
+            "target": "app.core.graph_intelligence.graph_intelligence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6108.py",
+            "target": "app.core.graph_intelligence.structural_fusion"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6108.py",
+            "target": "app.core.graph_intelligence.dynamic_intelligence_state"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6108.py",
+            "target": "app.core.decision.policy_engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6108.py",
+            "target": "app.core.decision.decision_contract"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6108.py",
+            "target": "app.core.enterprise.adaptive_strategy_evolution"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6108.py",
+            "target": "app.core.enterprise.cognitive_memory_layer"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_predictive_fix.py",
+            "target": "app.core.graph_intelligence.graph_intelligence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_predictive_fix.py",
+            "target": "app.core.graph_intelligence.structural_fusion"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_predictive_fix.py",
+            "target": "app.core.graph_intelligence.dynamic_intelligence_state"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6105_before_adaptive.py",
+            "target": "app.core.graph_intelligence.graph_intelligence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6105_before_adaptive.py",
+            "target": "app.core.graph_intelligence.structural_fusion"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6105_before_adaptive.py",
+            "target": "app.core.graph_intelligence.dynamic_intelligence_state"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6105_before_adaptive.py",
+            "target": "app.core.decision.policy_engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6105_before_adaptive.py",
+            "target": "app.core.decision.decision_contract"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "metrics.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "predictive.forecast"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "predictive.risk"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "predictive.regime"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "predictive.anomaly"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "state.snapshot"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "kernel.state_vector"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "agents.orchestrator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "state.evolution"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "state.transition"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "twin.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "simulation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "validation.validator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "knowledge.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "learning.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "context.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "explainability.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "attribution.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "causal.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "decision.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+            "target": "feedback.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "metrics.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "predictive.forecast"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "predictive.risk"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "predictive.regime"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "predictive.anomaly"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "state.snapshot"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "kernel.state_vector"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "agents.orchestrator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "state.evolution"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "state.transition"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "twin.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "simulation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "validation.validator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "knowledge.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "learning.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "context.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "explainability.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "attribution.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "causal.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "decision.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "feedback.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "adaptation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+            "target": "adaptation.evolution_service"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "metrics.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "predictive.forecast"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "predictive.risk"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "predictive.regime"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "predictive.anomaly"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "state.snapshot"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "kernel.state_vector"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "agents.orchestrator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "state.evolution"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "state.transition"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "twin.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "simulation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "validation.validator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "knowledge.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "learning.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "context.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "explainability.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "attribution.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "causal.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "decision.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "feedback.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "adaptation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+            "target": "adaptation.evolution_service"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "metrics.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "predictive.forecast"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "predictive.risk"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "predictive.regime"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "predictive.anomaly"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "state.snapshot"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "kernel.state_vector"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "agents.orchestrator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "state.evolution"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "state.transition"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "twin.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "simulation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "validation.validator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "knowledge.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "learning.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "context.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "explainability.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "attribution.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "causal.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "decision.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "feedback.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "adaptation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+            "target": "adaptation.evolution_service"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "metrics.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "predictive.forecast"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "predictive.risk"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "predictive.regime"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "predictive.anomaly"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "state.snapshot"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "kernel.state_vector"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "agents.orchestrator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "state.evolution"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "state.transition"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "twin.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "simulation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "validation.validator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "knowledge.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "learning.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "context.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "explainability.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "attribution.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "causal.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "decision.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "feedback.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+            "target": "adaptation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_policy_evolution_integration.py",
+            "target": "policy"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_policy_evolution_integration.py",
+            "target": "calibration"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_policy_evolution_integration.py",
+            "target": "confidence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_policy_evolution_integration.py",
+            "target": "self_optimizer"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_policy_evolution_integration.py",
+            "target": "adaptive_threshold"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_policy_evolution_integration.py",
+            "target": "strategy_memory"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_policy_evolution_integration.py",
+            "target": "adaptive_learning"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_policy_evolution_integration.py",
+            "target": "strategy_optimizer"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "metrics.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "predictive.forecast"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "predictive.risk"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "predictive.regime"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "predictive.anomaly"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "state.snapshot"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "kernel.state_vector"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "agents.orchestrator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "state.evolution"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "state.transition"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "twin.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "simulation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "validation.validator"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "knowledge.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "learning.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "context.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "explainability.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "attribution.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "causal.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "decision.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "feedback.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "adaptation.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+            "target": "adaptation.evolution_service"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v61_policy_evolution.py",
+            "target": "policy"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v61_policy_evolution.py",
+            "target": "calibration"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v61_policy_evolution.py",
+            "target": "confidence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v61_policy_evolution.py",
+            "target": "self_optimizer"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v61_policy_evolution.py",
+            "target": "adaptive_threshold"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v61_policy_evolution.py",
+            "target": "strategy_memory"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v61_policy_evolution.py",
+            "target": "adaptive_learning"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v61_policy_evolution.py",
+            "target": "strategy_optimizer"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_fix_evolution_refs.py",
+            "target": "state.evolution"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_fix_evolution_refs.py",
+            "target": "adaptation.evolution_service"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v6_integration.py",
+            "target": "policy"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v6_integration.py",
+            "target": "calibration"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v6_integration.py",
+            "target": "confidence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_before_v6_integration.py",
+            "target": "self_optimizer"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_v05.py",
+            "target": "entropy"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_v05.py",
+            "target": "coherence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_v05.py",
+            "target": "dynamics"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_v05.py",
+            "target": "potential"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_v05.py",
+            "target": "divergence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_v5_3.py",
+            "target": "policy"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_v5_3.py",
+            "target": "calibration"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_v5_3.py",
+            "target": "confidence"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_backup_v5_3.py",
+            "target": "self_optimizer"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_old_backup.py",
+            "target": "math"
+        },
+        {
+            "source": "archive/backups/V6.10.9/engine_old_backup.py",
+            "target": "collections"
+        },
+        {
+            "source": "archive/backups/V6.10.9/evolution_service_backup_before_diff_v611.py",
+            "target": "evolution_adapter"
+        },
+        {
+            "source": "archive/backups/V6.10.9/pipeline_v6_3_3_backup.py",
+            "target": "graph_delta"
+        },
+        {
+            "source": "archive/backups/V6.10.9/pipeline_v6_3_3_backup.py",
+            "target": "structural_signature"
+        },
+        {
+            "source": "archive/backups/V6.10.9/pipeline_v6_3_3_backup.py",
+            "target": "evolution_layer"
+        },
+        {
+            "source": "archive/backups/V6.10.9/pipeline_v6_3_3_backup.py",
+            "target": "pattern_engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/pipeline_v6_3_3_backup.py",
+            "target": "evolution_predictor"
+        },
+        {
+            "source": "archive/backups/V6.10.9/pipeline_v6_3_3_backup.py",
+            "target": "temporal_memory"
+        },
+        {
+            "source": "archive/backups/V6.10.9/predictive_intelligence_layer.backup_v695.py",
+            "target": "app.core.graph_intelligence.evolution_predictor"
+        },
+        {
+            "source": "archive/backups/V6.10.9/predictive_intelligence_layer.backup_v695.py",
+            "target": "app.core.graph_intelligence.predictive_structural"
+        },
+        {
+            "source": "archive/backups/V6.10.9/predictive_intelligence_layer.backup_v695.py",
+            "target": "app.core.graph_intelligence.decision_engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/predictive_intelligence_layer.backup_v695.py",
+            "target": "app.core.decision.engine"
+        },
+        {
+            "source": "archive/backups/V6.10.9/graph_intelligence.backup_v650_before_v699.py",
+            "target": "app.core.graph_intelligence.evolution_metrics"
+        },
+        {
+            "source": "archive/backups/V6.10.9/graph_intelligence.backup_v650_before_v699.py",
+            "target": "app.core.graph_intelligence.structural_transition"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/graph_intelligence.backup_v651.py",
+            "target": "app.core.graph_intelligence.evolution_metrics"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/graph_intelligence.backup_v651.py",
+            "target": "app.core.graph_intelligence.structural_transition"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "graph_delta"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "structural_signature"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "structural_signature_v2"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "evolution_layer"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "evolution_diff"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "transition_detector"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "graph_intelligence"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "evolution_metrics"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "structural_transition"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "structural_fusion"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "predictive_structural"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "critical_transition"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "dynamic_intelligence_state"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "intelligence_validator"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "intelligence_benchmark"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "pattern_engine"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "evolution_predictor"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "temporal_memory"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "history_engine"
+        },
+        {
+            "source": "archive/runtime_backups/graph_intelligence/pipeline.backup_v640.py",
+            "target": "decision_engine"
+        }
+    ],
+    "reverse_dependencies": [
+        {
+            "component": "enterprise_runtime",
+            "path": "app/core/intelligence/enterprise_runtime.py",
+            "consumers": [
+                "app/core/intelligence/enterprise_layer.py"
+            ],
+            "consumer_count": 1
+        },
+        {
+            "component": "enterprise_intelligence_bus",
+            "path": "app/core/intelligence/enterprise_intelligence_bus.py",
+            "consumers": [],
+            "consumer_count": 0
+        },
+        {
+            "component": "runtime_persistence",
+            "path": "app/core/intelligence/runtime_persistence.py",
+            "consumers": [],
+            "consumer_count": 0
+        },
+        {
+            "component": "enterprise_trace",
+            "path": "app/core/intelligence/enterprise_trace.py",
+            "consumers": [],
+            "consumer_count": 0
+        },
+        {
+            "component": "tensor_fusion",
+            "path": "app/core/intelligence/tensor_fusion.py",
+            "consumers": [],
+            "consumer_count": 0
+        },
+        {
+            "component": "cognitive_tensor_adapter",
+            "path": "app/core/intelligence/cognitive_tensor_adapter.py",
+            "consumers": [],
+            "consumer_count": 0
+        },
+        {
+            "component": "evolution_orchestrator",
+            "path": "app/core/intelligence/evolution_orchestrator.py",
+            "consumers": [],
+            "consumer_count": 0
+        },
+        {
+            "component": "graph_adapter",
+            "path": "app/core/intelligence/graph_adapter.py",
+            "consumers": [],
+            "consumer_count": 0
+        },
+        {
+            "component": "intelligence_core",
+            "path": "app/core/intelligence/intelligence_core.py",
+            "consumers": [],
+            "consumer_count": 0
+        },
+        {
+            "component": "dlis_runtime",
+            "path": "app/core/dlis/full_runtime.py",
+            "consumers": [
+                "app/core/intelligence/dlis054_assembly.py"
+            ],
+            "consumer_count": 1
+        }
+    ],
+    "cycles": [],
+    "errors": [],
+    "summary": {
+        "files_scanned": 450,
+        "dependency_edges": 887,
+        "critical_components": 10,
+        "syntax_errors": 0
+    },
+    "status": "DLIS_076_A006_COMPLETE"
+}

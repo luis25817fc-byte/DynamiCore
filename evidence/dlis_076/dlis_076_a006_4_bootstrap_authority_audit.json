@@ -1,0 +1,105 @@
+{
+    "timestamp": "2026-07-30T00:14:49.289808+00:00",
+    "mode": "READ_ONLY",
+    "instantiation_map": {
+        "enterprise_runtime": {
+            "candidate_count": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/enterprise_layer.py",
+                    "signals": [
+                        "Kernel",
+                        "EnterpriseRuntime("
+                    ]
+                }
+            ]
+        },
+        "enterprise_intelligence_bus": {
+            "candidate_count": 0,
+            "matches": []
+        },
+        "cognitive_tensor_adapter": {
+            "candidate_count": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/cognitive_pipeline.py",
+                    "signals": [
+                        "TensorFusion(",
+                        "CognitiveTensor"
+                    ]
+                }
+            ]
+        },
+        "tensor_fusion": {
+            "candidate_count": 4,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/dlis054_assembly.py",
+                    "signals": [
+                        "Orchestrator",
+                        "build("
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/dlis049_facade.py",
+                    "signals": [
+                        "build("
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/cognitive_pipeline.py",
+                    "signals": [
+                        "TensorFusion(",
+                        "CognitiveTensor"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/unified_cognitive_state.py",
+                    "signals": [
+                        "TensorFusion("
+                    ]
+                }
+            ]
+        },
+        "runtime_persistence": {
+            "candidate_count": 0,
+            "matches": []
+        },
+        "enterprise_trace": {
+            "candidate_count": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/enterprise_intelligence_bus.py",
+                    "signals": [
+                        "register(",
+                        "EnterpriseTrace("
+                    ]
+                }
+            ]
+        },
+        "evolution_orchestrator": {
+            "candidate_count": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/intelligence_core.py",
+                    "signals": [
+                        "Orchestrator"
+                    ]
+                }
+            ]
+        },
+        "intelligence_core": {
+            "candidate_count": 0,
+            "matches": []
+        }
+    },
+    "errors": [],
+    "summary": {
+        "files_scanned": 450,
+        "components_checked": 8,
+        "components_with_owner_candidates": 5,
+        "components_without_owner_candidates": 3,
+        "errors": 0
+    },
+    "status": "DLIS_076_A006_4_COMPLETE"
+}

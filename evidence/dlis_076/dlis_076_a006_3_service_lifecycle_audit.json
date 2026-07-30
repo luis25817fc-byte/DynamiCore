@@ -1,0 +1,120 @@
+{
+    "timestamp": "2026-07-30T00:07:25.210871+00:00",
+    "mode": "READ_ONLY",
+    "lifecycle_map": {
+        "enterprise_intelligence_bus": {
+            "lifecycle_candidates": 0,
+            "matches": []
+        },
+        "runtime_persistence": {
+            "lifecycle_candidates": 0,
+            "matches": []
+        },
+        "intelligence_core": {
+            "lifecycle_candidates": 1,
+            "matches": [
+                {
+                    "file": "app/core/enterprise/intelligence_gateway.py",
+                    "signals": [
+                        "__init__",
+                        "init"
+                    ]
+                }
+            ]
+        },
+        "enterprise_runtime": {
+            "lifecycle_candidates": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/enterprise_layer.py",
+                    "signals": [
+                        "__init__",
+                        "init",
+                        "register",
+                        "create",
+                        "load"
+                    ]
+                }
+            ]
+        },
+        "tensor_fusion": {
+            "lifecycle_candidates": 4,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/dlis054_assembly.py",
+                    "signals": [
+                        "build"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/dlis049_facade.py",
+                    "signals": [
+                        "__init__",
+                        "init",
+                        "build"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/cognitive_pipeline.py",
+                    "signals": [
+                        "__init__",
+                        "init"
+                    ]
+                },
+                {
+                    "file": "app/core/intelligence/unified_cognitive_state.py",
+                    "signals": [
+                        "__init__",
+                        "init",
+                        "register"
+                    ]
+                }
+            ]
+        },
+        "cognitive_tensor_adapter": {
+            "lifecycle_candidates": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/cognitive_pipeline.py",
+                    "signals": [
+                        "__init__",
+                        "init"
+                    ]
+                }
+            ]
+        },
+        "evolution_orchestrator": {
+            "lifecycle_candidates": 1,
+            "matches": [
+                {
+                    "file": "app/core/intelligence/intelligence_core.py",
+                    "signals": [
+                        "__init__",
+                        "init",
+                        "create"
+                    ]
+                }
+            ]
+        }
+    },
+    "errors": [],
+    "summary": {
+        "files_scanned": 450,
+        "components_checked": 7,
+        "lifecycle_owned": 5,
+        "lifecycle_unknown": 2,
+        "errors": 0
+    },
+    "owned_components": [
+        "intelligence_core",
+        "enterprise_runtime",
+        "tensor_fusion",
+        "cognitive_tensor_adapter",
+        "evolution_orchestrator"
+    ],
+    "unknown_components": [
+        "enterprise_intelligence_bus",
+        "runtime_persistence"
+    ],
+    "status": "DLIS_076_A006_3_COMPLETE"
+}

@@ -1,0 +1,115 @@
+{
+    "timestamp": "2026-07-29T23:53:48.572972+00:00",
+    "mode": "READ_ONLY",
+    "components": {
+        "enterprise_runtime": "app/core/intelligence/enterprise_runtime.py",
+        "enterprise_intelligence_bus": "app/core/intelligence/enterprise_intelligence_bus.py",
+        "cognitive_tensor_adapter": "app/core/intelligence/cognitive_tensor_adapter.py",
+        "tensor_fusion": "app/core/intelligence/tensor_fusion.py",
+        "runtime_persistence": "app/core/intelligence/runtime_persistence.py",
+        "enterprise_trace": "app/core/intelligence/enterprise_trace.py",
+        "evolution_orchestrator": "app/core/intelligence/evolution_orchestrator.py",
+        "graph_adapter": "app/core/intelligence/graph_adapter.py",
+        "intelligence_core": "app/core/intelligence/intelligence_core.py",
+        "full_runtime": "app/core/dlis/full_runtime.py"
+    },
+    "usage_map": {
+        "enterprise_runtime": {
+            "path": "app/core/intelligence/enterprise_runtime.py",
+            "consumer_count": 1,
+            "consumers": [
+                "app/core/intelligence/enterprise_layer.py"
+            ]
+        },
+        "enterprise_intelligence_bus": {
+            "path": "app/core/intelligence/enterprise_intelligence_bus.py",
+            "consumer_count": 0,
+            "consumers": []
+        },
+        "cognitive_tensor_adapter": {
+            "path": "app/core/intelligence/cognitive_tensor_adapter.py",
+            "consumer_count": 0,
+            "consumers": []
+        },
+        "tensor_fusion": {
+            "path": "app/core/intelligence/tensor_fusion.py",
+            "consumer_count": 0,
+            "consumers": []
+        },
+        "runtime_persistence": {
+            "path": "app/core/intelligence/runtime_persistence.py",
+            "consumer_count": 0,
+            "consumers": []
+        },
+        "enterprise_trace": {
+            "path": "app/core/intelligence/enterprise_trace.py",
+            "consumer_count": 0,
+            "consumers": []
+        },
+        "evolution_orchestrator": {
+            "path": "app/core/intelligence/evolution_orchestrator.py",
+            "consumer_count": 0,
+            "consumers": []
+        },
+        "graph_adapter": {
+            "path": "app/core/intelligence/graph_adapter.py",
+            "consumer_count": 0,
+            "consumers": []
+        },
+        "intelligence_core": {
+            "path": "app/core/intelligence/intelligence_core.py",
+            "consumer_count": 0,
+            "consumers": []
+        },
+        "full_runtime": {
+            "path": "app/core/dlis/full_runtime.py",
+            "consumer_count": 1,
+            "consumers": [
+                "app/core/intelligence/dlis054_assembly.py"
+            ]
+        }
+    },
+    "isolated_components": [
+        {
+            "component": "enterprise_intelligence_bus",
+            "path": "app/core/intelligence/enterprise_intelligence_bus.py"
+        },
+        {
+            "component": "cognitive_tensor_adapter",
+            "path": "app/core/intelligence/cognitive_tensor_adapter.py"
+        },
+        {
+            "component": "tensor_fusion",
+            "path": "app/core/intelligence/tensor_fusion.py"
+        },
+        {
+            "component": "runtime_persistence",
+            "path": "app/core/intelligence/runtime_persistence.py"
+        },
+        {
+            "component": "enterprise_trace",
+            "path": "app/core/intelligence/enterprise_trace.py"
+        },
+        {
+            "component": "evolution_orchestrator",
+            "path": "app/core/intelligence/evolution_orchestrator.py"
+        },
+        {
+            "component": "graph_adapter",
+            "path": "app/core/intelligence/graph_adapter.py"
+        },
+        {
+            "component": "intelligence_core",
+            "path": "app/core/intelligence/intelligence_core.py"
+        }
+    ],
+    "errors": [],
+    "summary": {
+        "files_scanned": 450,
+        "components_checked": 10,
+        "active_components": 2,
+        "isolated_components": 8,
+        "errors": 0
+    },
+    "status": "DLIS_076_A006_1_COMPLETE"
+}

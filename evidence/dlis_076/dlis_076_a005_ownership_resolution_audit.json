@@ -1,0 +1,239 @@
+{
+    "timestamp": "2026-07-29T23:36:30.585195+00:00",
+    "mode": "READ_ONLY",
+    "families": {
+        "engine": {
+            "implementations": [
+                "engine/engine.py",
+                "tests/test_core_engine.py",
+                "tests/test_v77_engine_integration.py",
+                "app/core/engine.py",
+                "app/core/adaptation/engine.py",
+                "app/core/attribution/engine.py",
+                "app/core/causal/engine.py",
+                "app/core/context/engine.py",
+                "app/core/decision/engine.py",
+                "app/core/decision/policy_engine.py",
+                "app/core/explainability/engine.py",
+                "app/core/feedback/engine.py",
+                "app/core/graph_intelligence/decision_engine.py",
+                "app/core/graph_intelligence/history_engine.py",
+                "app/core/graph_intelligence/pattern_engine.py",
+                "app/core/knowledge/engine.py",
+                "app/core/learning/engine.py",
+                "app/core/metrics/engine.py",
+                "app/core/simulation/engine.py",
+                "app/core/twin/engine.py",
+                "app/core/enterprise/workflow_engine.py",
+                "app/core/intelligence/canonical_engine_binding.py",
+                "app/core/intelligence/evolution_engine.py",
+                "app/core/intelligence/master_engine_bridge.py",
+                "app/core/intelligence/predictive_temporal_engine.py",
+                "app/core/intelligence/structural_timeline_engine.py",
+                "app/core/intelligence/temporal_memory_engine.py",
+                "app/core/intelligence/enterprise_decision_engine.py",
+                "app/core/intelligence/enterprise_action_engine.py",
+                "app/core/intelligence/enterprise_learning_engine.py",
+                "app/core/intelligence/enterprise_predictive_engine.py",
+                "app/core/intelligence/enterprise_simulation_engine.py",
+                "app/core/intelligence/enterprise_strategy_engine.py",
+                "app/core/intelligence/enterprise_counterfactual_engine.py",
+                "app/core/intelligence/enterprise_explanation_engine.py",
+                "app/core/intelligence/enterprise_causal_engine.py",
+                "app/core/intelligence/enterprise_query_engine.py",
+                "app/core/intelligence/enterprise_policy_engine.py",
+                "app/core/mathematical/invariant_engine.py",
+                "app/core/evolution/evolution_engine_v73.py",
+                "app/core/dlis/engine_binding.py",
+                "app/core/dlis/potential_engine.py",
+                "app/core/cognitive/cognitive_engine.py",
+                "app/core/cognitive/confidence_engine.py",
+                "app/core/cognitive/reasoning_engine.py",
+                "app/core/research/collatz/engine.py",
+                "archive/backups/V6.10.9/decision_engine.backup_before_adapter_fix.py",
+                "archive/backups/V6.10.9/decision_engine.backup_before_decide_adapter_v2.py",
+                "archive/backups/V6.10.9/decision_engine.backup_before_final_adapter.py",
+                "archive/backups/V6.10.9/engine_backup_before_adaptation.py",
+                "archive/backups/V6.10.9/engine_backup_before_evolution_cleanup_v611.py",
+                "archive/backups/V6.10.9/engine_backup_before_evolution_diff_v611.py",
+                "archive/backups/V6.10.9/engine_backup_before_evolution_reference_fix.py",
+                "archive/backups/V6.10.9/engine_backup_before_evolution_integration.py",
+                "archive/backups/V6.10.9/engine_backup_before_policy_evolution_integration.py",
+                "archive/backups/V6.10.9/engine_backup_before_snapshot_fix_v611.py",
+                "archive/backups/V6.10.9/engine_backup_before_v61_policy_evolution.py",
+                "archive/backups/V6.10.9/engine_backup_fix_evolution_refs.py",
+                "archive/backups/V6.10.9/engine_backup_before_v6_integration.py",
+                "archive/backups/V6.10.9/engine_backup_v05.py",
+                "archive/backups/V6.10.9/engine_backup_v5_3.py",
+                "archive/backups/V6.10.9/engine_backup_v1.py",
+                "archive/backups/V6.10.9/engine_old_backup.py"
+            ],
+            "count": 63,
+            "candidate_owner": "REQUIRES_ANALYSIS"
+        },
+        "runtime": {
+            "implementations": [
+                "benchmarks/v78_runtime_benchmark.py",
+                "tests/test_v778_runtime_hardening.py",
+                "tests/test_v77_runtime_pipeline.py",
+                "app/core/runtime_dependencies.py",
+                "app/core/enterprise/runtime_bootstrap.py",
+                "app/core/enterprise/runtime_manager.py",
+                "app/core/enterprise/runtime_state.py",
+                "app/core/intelligence/runtime_bridge.py",
+                "app/core/intelligence/runtime_persistence.py",
+                "app/core/intelligence/runtime_registry.py",
+                "app/core/intelligence/runtime_authority_binding.py",
+                "app/core/intelligence/enterprise_runtime.py",
+                "app/core/intelligence/enterprise_runtime_bridge.py",
+                "app/core/intelligence/enterprise_runtime_kernel.py",
+                "app/core/intelligence/enterprise_runtime_task_manager.py",
+                "app/core/intelligence/enterprise_runtime_orchestrator.py",
+                "app/core/intelligence/enterprise_runtime_stress_validator.py",
+                "app/core/intelligence/enterprise_runtime_consistency_validator.py",
+                "app/core/intelligence/enterprise_runtime_certification.py",
+                "app/core/intelligence/enterprise_extreme_runtime_assault.py",
+                "app/core/dlis/runtime_pipeline.py",
+                "app/core/dlis/full_runtime.py",
+                "app/core/cognitive/runtime_bridge.py"
+            ],
+            "count": 23,
+            "candidate_owner": "REQUIRES_ANALYSIS"
+        },
+        "kernel": {
+            "implementations": [
+                "app/core/intelligence/cognitive_kernel_contract.py",
+                "app/core/intelligence/dynamicore_intelligence_kernel.py",
+                "app/core/intelligence/enterprise_cognitive_kernel.py",
+                "app/core/intelligence/kernel_factory.py",
+                "app/core/intelligence/kernel_gateway.py",
+                "app/core/intelligence/kernel.py",
+                "app/core/intelligence/kernel_v73.py",
+                "app/core/intelligence/enterprise_runtime_kernel.py"
+            ],
+            "count": 8,
+            "candidate_owner": "REQUIRES_ANALYSIS"
+        },
+        "memory": {
+            "implementations": [
+                "engine/memory.py",
+                "app/core/memory.py",
+                "app/core/adaptation/strategy_memory.py",
+                "app/core/graph_intelligence/structural_memory.py",
+                "app/core/graph_intelligence/temporal_memory.py",
+                "app/core/graph_intelligence/transition_memory.py",
+                "app/core/learning/memory.py",
+                "app/core/enterprise/cognitive_memory_layer.py",
+                "app/core/enterprise/knowledge_memory.py",
+                "app/core/intelligence/temporal_memory_engine.py",
+                "app/core/intelligence/enterprise_knowledge_memory.py",
+                "app/core/intelligence/enterprise_strategy_memory.py",
+                "app/core/intelligence/enterprise_workflow_memory.py",
+                "app/core/intelligence/enterprise_cognitive_memory.py",
+                "app/core/dlis/memory_evolution.py",
+                "app/core/cognitive/memory_layer.py",
+                "app/core/cognitive/memory_reasoning.py",
+                "archive/v6.12.0_foundation_backup/memory.py"
+            ],
+            "count": 18,
+            "candidate_owner": "REQUIRES_ANALYSIS"
+        },
+        "adapter": {
+            "implementations": [
+                "tests/test_evolution_adapter_history.py",
+                "app/core/adaptation/evolution_adapter.py",
+                "app/core/intelligence/canonical_binding_adapter.py",
+                "app/core/intelligence/graph_adapter.py",
+                "app/core/intelligence/intelligence_vector_adapter.py",
+                "app/core/intelligence/cognitive_tensor_adapter.py",
+                "app/core/intelligence/enterprise_service_adapters.py",
+                "app/core/intelligence/enterprise_data_contract_adapter.py",
+                "app/core/mathematical/state_adapter.py",
+                "app/core/dlis/dynamicore_adapter.py",
+                "app/core/dlis/cognitive_tensor_adapter.py",
+                "archive/backups/V6.10.9/decision_engine.backup_before_adapter_fix.py",
+                "archive/backups/V6.10.9/decision_engine.backup_before_decide_adapter_v2.py",
+                "archive/backups/V6.10.9/decision_engine.backup_before_final_adapter.py",
+                "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_adapter_v6108.py"
+            ],
+            "count": 15,
+            "candidate_owner": "REQUIRES_ANALYSIS"
+        },
+        "bridge": {
+            "implementations": [
+                "app/core/adaptation/policy_bridge.py",
+                "app/core/enterprise/adaptive_intelligence_bridge.py",
+                "app/core/enterprise/decision_execution_bridge.py",
+                "app/core/enterprise/dynamic_graph_bridge.py",
+                "app/core/enterprise/dynamic_graph_evolution_bridge.py",
+                "app/core/enterprise/intelligence_orchestrator_bridge.py",
+                "app/core/intelligence/graph_evolution_bridge.py",
+                "app/core/intelligence/intelligence_validation_bridge.py",
+                "app/core/intelligence/master_engine_bridge.py",
+                "app/core/intelligence/orchestrator_integration_bridge.py",
+                "app/core/intelligence/runtime_bridge.py",
+                "app/core/intelligence/validation_bridge.py",
+                "app/core/intelligence/enterprise_runtime_bridge.py",
+                "app/core/cognitive/runtime_bridge.py",
+                "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_adapter_v6108.py",
+                "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_prediction_fix_v6108.py",
+                "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6108.py",
+                "archive/backups/V6.10.9/dynamic_graph_bridge.backup_before_predictive_fix.py",
+                "archive/backups/V6.10.9/dynamic_graph_bridge.backup_v6105_before_adaptive.py"
+            ],
+            "count": 19,
+            "candidate_owner": "REQUIRES_ANALYSIS"
+        },
+        "tensor": {
+            "implementations": [
+                "app/core/intelligence/cognitive_tensor_adapter.py",
+                "app/core/intelligence/tensor_fusion.py",
+                "app/core/dlis/evolution_tensor.py",
+                "app/core/dlis/tensor_binding.py",
+                "app/core/dlis/cognitive_tensor_adapter.py",
+                "app/core/dlis/tensor_fusion_layer.py"
+            ],
+            "count": 6,
+            "candidate_owner": "REQUIRES_ANALYSIS"
+        },
+        "orchestrator": {
+            "implementations": [
+                "app/core/agents/orchestrator.py",
+                "app/core/enterprise/intelligence_orchestrator_bridge.py",
+                "app/core/enterprise/orchestrator.py",
+                "app/core/intelligence/cognitive_orchestrator.py",
+                "app/core/intelligence/evolution_orchestrator.py",
+                "app/core/intelligence/orchestrator.py",
+                "app/core/intelligence/orchestrator_integration_bridge.py",
+                "app/core/intelligence/enterprise_orchestrator.py",
+                "app/core/intelligence/enterprise_audit_orchestrator.py",
+                "app/core/intelligence/enterprise_runtime_orchestrator.py"
+            ],
+            "count": 10,
+            "candidate_owner": "REQUIRES_ANALYSIS"
+        },
+        "observability": {
+            "implementations": [
+                "app/core/enterprise/observability.py",
+                "app/core/intelligence/enterprise_observability.py"
+            ],
+            "count": 2,
+            "candidate_owner": "REQUIRES_ANALYSIS"
+        },
+        "intelligence_core": {
+            "implementations": [
+                "app/core/enterprise/intelligence_core.py",
+                "app/core/intelligence/intelligence_core.py"
+            ],
+            "count": 2,
+            "candidate_owner": "REQUIRES_ANALYSIS"
+        }
+    },
+    "errors": [],
+    "summary": {
+        "files_scanned": 450,
+        "families_analyzed": 10,
+        "syntax_errors": 0
+    },
+    "status": "DLIS_076_A005_COMPLETE"
+}
