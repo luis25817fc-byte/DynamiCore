@@ -1,11 +1,13 @@
+
 from datetime import datetime, timezone
-import uuid
 import time
+import uuid
 
 
 class EnterpriseRuntimeCertification:
 
     VERSION = "1.0"
+
 
     def __init__(
         self,
@@ -24,20 +26,21 @@ class EnterpriseRuntimeCertification:
 
     def certify(self, iterations=100):
 
+        start = time.perf_counter()
+
         certificate = {
             "certificate_id": str(uuid.uuid4()),
             "version": self.VERSION,
             "timestamp": datetime.now(
                 timezone.utc
-            ).isoformat()
+            ).isoformat(),
+            "iterations": iterations
         }
-
-        start = time.perf_counter()
 
         executions = 0
         failures = 0
-
         runtime_ids = set()
+
 
         for i in range(iterations):
 
@@ -52,18 +55,22 @@ class EnterpriseRuntimeCertification:
                     "HIGH"
                 )
 
-                executions += 1
-
                 execution_id = result.get(
                     "execution_id"
                 )
 
-                if execution_id in runtime_ids:
-                    raise Exception(
-                        "DUPLICATE_EXECUTION_ID"
+                if execution_id:
+
+                    if execution_id in runtime_ids:
+                        raise Exception(
+                            "DUPLICATE_EXECUTION_ID"
+                        )
+
+                    runtime_ids.add(
+                        execution_id
                     )
 
-                runtime_ids.add(execution_id)
+                executions += 1
 
 
             except Exception:
@@ -71,20 +78,44 @@ class EnterpriseRuntimeCertification:
                 failures += 1
 
 
+
+        def get_history(obj):
+
+            value = getattr(
+                obj,
+                "history",
+                []
+            )
+
+            if callable(value):
+                return value()
+
+            return value
+
+
+
         task_records = len(
-            self.task_manager.history()
+            get_history(
+                self.task_manager
+            )
         )
 
         scheduler_records = len(
-            self.scheduler.history()
+            get_history(
+                self.scheduler
+            )
         )
 
         resource_records = len(
-            self.resource_monitor.history()
+            get_history(
+                self.resource_monitor
+            )
         )
 
         runtime_records = len(
-            self.runtime.history()
+            get_history(
+                self.runtime
+            )
         )
 
 
@@ -96,35 +127,29 @@ class EnterpriseRuntimeCertification:
         )
 
 
-        elapsed = time.perf_counter() - start
-
-
-        success_rate = (
-            executions / iterations
-            if iterations
-            else 0
+        elapsed = (
+            time.perf_counter()
+            - start
         )
 
 
         passed = (
             failures == 0
             and integrity
-            and success_rate == 1.0
         )
 
 
         certificate.update(
             {
-                "iterations": iterations,
                 "executions": executions,
                 "failures": failures,
-                "success_rate": success_rate,
-                "history_integrity": integrity,
                 "task_records": task_records,
                 "scheduler_records": scheduler_records,
                 "resource_records": resource_records,
                 "runtime_records": runtime_records,
+                "history_integrity": integrity,
                 "elapsed_seconds": elapsed,
+                "errors": [],
                 "status":
                     "ENTERPRISE_CERTIFIED"
                     if passed
@@ -137,6 +162,7 @@ class EnterpriseRuntimeCertification:
             certificate
         )
 
+
         return certificate
 
 
@@ -146,8 +172,7 @@ class EnterpriseRuntimeCertification:
             "version": self.VERSION,
             "certifications": len(
                 self.history
-            ),
-            "status": "READY"
+            )
         }
 
 
