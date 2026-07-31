@@ -1,20 +1,9 @@
 {
-    "certification": "DLIS-075.2 R2",
-    "name": "ENTERPRISE DEPENDENCY & CONTRACT CERTIFICATION",
-    "certificate_id": "e8b562ba-72ba-4b3a-984d-2552362669c7",
-    "timestamp": "2026-07-29T15:58:19.682782+00:00",
+    "certificate_id": "7a38acc3-3ac1-4820-a561-41eead736da5",
+    "version": "1.1",
+    "timestamp": "2026-07-31T05:17:44.169004+00:00",
     "modules_scanned": 142,
     "loaded_modules": 142,
-    "critical_pipeline": {
-        "intelligence_core": "FOUND",
-        "graph_adapter": "FOUND",
-        "dynamicore_intelligence_kernel": "FOUND",
-        "evolution_orchestrator": "FOUND",
-        "enterprise_intelligence_bus": "FOUND",
-        "cognitive_tensor_adapter": "FOUND",
-        "tensor_fusion": "FOUND",
-        "enterprise_runtime": "FOUND"
-    },
     "errors": [],
     "status": "ENTERPRISE_DEPENDENCY_CERTIFIED"
 }

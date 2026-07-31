@@ -1,13 +1,10 @@
 {
     "certification": "DLIS-075.1",
-    "name": "ENTERPRISE INTEGRATION PRE-CERTIFICATION R2",
-    "timestamp": "2026-07-29T15:53:40.258339+00:00",
+    "timestamp": "2026-07-31T05:17:44.168493+00:00",
     "modules_found": 142,
     "syntax_ok": 142,
     "syntax_failed": 0,
     "loaded_ok": 142,
     "load_failed": 0,
-    "syntax_errors": [],
-    "load_errors": [],
     "status": "ENTERPRISE PRE-CERTIFIED"
 }
