@@ -1,34 +1,34 @@
+from .policy_evolution import PolicyEvolutionEngine
+
 
 class PolicyBridge:
 
-
-    def __init__(self, evolution):
-
-        self.evolution = evolution
+    VERSION = "6.1"
 
 
+    def __init__(self, evolution=None):
 
-    def update(
+        self.evolution = (
+            evolution
+            if evolution is not None
+            else PolicyEvolutionEngine()
+        )
 
-        self,
 
-        policy,
+    def update(self, policy, feedback):
 
-        feedback
-
-    ):
-
+        if isinstance(policy, dict):
+            policy = policy.get(
+                "strategy",
+                "unknown"
+            )
 
         self.evolution.record(
-
             policy,
-
             feedback.get(
                 "outcome",
                 "unknown"
             )
-
         )
-
 
         return self.evolution.best_policy()
