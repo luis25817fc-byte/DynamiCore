@@ -1,0 +1,70 @@
+{
+    "bridge": [
+        "adaptation/policy_bridge.py",
+        "cognitive/runtime_bridge.py",
+        "enterprise/adaptive_intelligence_bridge.py",
+        "enterprise/decision_execution_bridge.py",
+        "enterprise/dynamic_graph_bridge.py",
+        "enterprise/dynamic_graph_evolution_bridge.py",
+        "enterprise/intelligence_orchestrator_bridge.py",
+        "intelligence/enterprise_runtime_bridge.py",
+        "intelligence/graph_evolution_bridge.py",
+        "intelligence/intelligence_validation_bridge.py",
+        "intelligence/master_engine_bridge.py",
+        "intelligence/orchestrator_integration_bridge.py",
+        "intelligence/runtime_bridge.py",
+        "intelligence/validation_bridge.py"
+    ],
+    "adapter": [
+        "adaptation/evolution_adapter.py",
+        "dlis/cognitive_tensor_adapter.py",
+        "dlis/dynamicore_adapter.py",
+        "intelligence/canonical_binding_adapter.py",
+        "intelligence/cognitive_tensor_adapter.py",
+        "intelligence/enterprise_data_contract_adapter.py",
+        "intelligence/enterprise_service_adapters.py",
+        "intelligence/graph_adapter.py",
+        "intelligence/intelligence_vector_adapter.py",
+        "mathematical/state_adapter.py"
+    ],
+    "factory": [
+        "intelligence/kernel_factory.py"
+    ],
+    "registry": [
+        "cognitive/registry.py",
+        "intelligence/auto_registry.py",
+        "intelligence/enterprise_connector_registry.py",
+        "intelligence/enterprise_service_registry.py",
+        "intelligence/runtime_registry.py"
+    ],
+    "helper": [],
+    "wrapper": [],
+    "__init__": [
+        "__init__.py",
+        "adaptation/__init__.py",
+        "agents/__init__.py",
+        "attribution/__init__.py",
+        "causal/__init__.py",
+        "cognitive/__init__.py",
+        "context/__init__.py",
+        "contracts/__init__.py",
+        "decision/__init__.py",
+        "dlis/__init__.py",
+        "enterprise/__init__.py",
+        "explainability/__init__.py",
+        "feedback/__init__.py",
+        "graph_intelligence/__init__.py",
+        "intelligence/__init__.py",
+        "kernel/__init__.py",
+        "knowledge/__init__.py",
+        "learning/__init__.py",
+        "mathematical/__init__.py",
+        "metrics/__init__.py",
+        "predictive/__init__.py",
+        "research/collatz/__init__.py",
+        "simulation/__init__.py",
+        "state/__init__.py",
+        "twin/__init__.py",
+        "validation/__init__.py"
+    ]
+}

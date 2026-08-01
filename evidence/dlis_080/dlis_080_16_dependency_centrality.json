@@ -1,0 +1,1777 @@
+{
+    "version": "DLIS-080.16",
+    "modules": 253,
+    "ranking": [
+        {
+            "module": "engine.py",
+            "incoming": 0,
+            "outgoing": 23,
+            "importance_score": 23,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/bootstrap.py",
+            "incoming": 0,
+            "outgoing": 12,
+            "importance_score": 12,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "graph_intelligence/pipeline.py",
+            "incoming": 0,
+            "outgoing": 11,
+            "importance_score": 11,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/dlis054_assembly.py",
+            "incoming": 0,
+            "outgoing": 10,
+            "importance_score": 10,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/kernel_factory.py",
+            "incoming": 0,
+            "outgoing": 9,
+            "importance_score": 9,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "adaptation/engine.py",
+            "incoming": 0,
+            "outgoing": 8,
+            "importance_score": 8,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/cognitive_memory_layer.py",
+            "incoming": 0,
+            "outgoing": 7,
+            "importance_score": 7,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "graph_intelligence/__init__.py",
+            "incoming": 0,
+            "outgoing": 7,
+            "importance_score": 7,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/registry.py",
+            "incoming": 0,
+            "outgoing": 6,
+            "importance_score": 6,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "adaptation/__init__.py",
+            "incoming": 0,
+            "outgoing": 5,
+            "importance_score": 5,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/adaptive_intelligence_bridge.py",
+            "incoming": 0,
+            "outgoing": 5,
+            "importance_score": 5,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/autonomous_intelligence_loop.py",
+            "incoming": 0,
+            "outgoing": 5,
+            "importance_score": 5,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/self_awareness_layer.py",
+            "incoming": 0,
+            "outgoing": 5,
+            "importance_score": 5,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_event.py",
+            "incoming": 0,
+            "outgoing": 5,
+            "importance_score": 5,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_models.py",
+            "incoming": 0,
+            "outgoing": 5,
+            "importance_score": 5,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_telemetry_layer.py",
+            "incoming": 0,
+            "outgoing": 5,
+            "importance_score": 5,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "metrics/__init__.py",
+            "incoming": 0,
+            "outgoing": 5,
+            "importance_score": 5,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "metrics/engine.py",
+            "incoming": 0,
+            "outgoing": 5,
+            "importance_score": 5,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "agents/orchestrator.py",
+            "incoming": 0,
+            "outgoing": 4,
+            "importance_score": 4,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/intelligence_orchestration_layer.py",
+            "incoming": 0,
+            "outgoing": 4,
+            "importance_score": 4,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_extreme_runtime_assault.py",
+            "incoming": 0,
+            "outgoing": 4,
+            "importance_score": 4,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_intelligence_bus.py",
+            "incoming": 0,
+            "outgoing": 4,
+            "importance_score": 4,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "security.py",
+            "incoming": 0,
+            "outgoing": 4,
+            "importance_score": 4,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "auth.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/trace_store.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "contracts/intelligence_contract.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "db.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/adaptive_strategy_evolution.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/runtime_bootstrap.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/__init__.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_event_bus.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_future_state_simulator.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_long_run_stability_validator.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_runtime_certification.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/evolution_contract.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/evolution_orchestrator.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/kernel_v73.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/temporal_memory_engine.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/unified_cognitive_state.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "mathematical/__init__.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "models.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "research/collatz/__init__.py",
+            "incoming": 0,
+            "outgoing": 3,
+            "importance_score": 3,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "adaptation/evolution_service.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "agents/__init__.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "ai.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "analyzer.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "causal/__init__.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/decision_trace.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/predictive_intelligence_layer.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/validation_automation.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "evolution/evolution_state.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "graph_intelligence/history_engine.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "graph_intelligence/structural_signature.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "graph_intelligence/structural_signature_v2.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/cognitive_kernel_contract.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/cognitive_pipeline.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/cognitive_tensor_adapter.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/dlis_state.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_access_control.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_adaptive_control_loop.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_agent_collaboration.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_agent_framework.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_agent_learning.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_agent_optimization.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_alert_intelligence.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_api_gateway.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_api_security_binding.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_audit_models.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_audit_orchestrator.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_audit_replay.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_autonomous_execution.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_autonomous_operations.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_cause_graph.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_cognitive_control_plane.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_cognitive_kernel.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_cognitive_memory.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_command_interface.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_connector_registry.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_contracts.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_counterfactual_engine.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_data_contract_adapter.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_decision_fusion.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_digital_twin.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_domain_connector.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_dynamic_workflow.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_evidence_collector.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_execution_scheduler.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_executive_report.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_explanation_engine.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_failure_recovery_validator.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_identity_manager.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_influence_propagation.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_integration_layer.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_intelligence_router.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_intelligence_session.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_layer.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_observability.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_operational_core.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_operational_forecast.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_operational_metrics.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_operational_response.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_orchestrator.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_policy_engine.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_query_engine.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_request_router.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_resource_monitor.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_response_layer.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_root_cause_analyzer.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_runtime.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_runtime_consistency_validator.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_runtime_orchestrator.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_runtime_stress_validator.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_runtime_task_manager.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_sdk_core.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_sdk_integration_validation.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_security_gateway.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_specialized_agents.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_state_divergence.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_trust_validator.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_twin_sync.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_workflow_memory.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/evolution_engine.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/graph_adapter.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/intelligence_core.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/intelligence_validation_bridge.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/runtime_persistence.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/structural_contract.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/tensor_fusion.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "knowledge/__init__.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "learning/__init__.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "mathematical/dlis_math_v1.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "mathematical/invariant_engine.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "mathematical/mathematical_core.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "memory.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "metrics/entropy.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "middleware.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "simulation/__init__.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "state/store.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "stripe_service.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "twin/__init__.py",
+            "incoming": 0,
+            "outgoing": 2,
+            "importance_score": 2,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "adaptation/evolution_adapter.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "agents/decision_agent.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "agents/forecast_agent.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "agents/metrics_agent.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "agents/risk_agent.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "attribution/__init__.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "causal/engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/__init__.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/action_selector.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/adaptive_integration.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/adaptive_strategy.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/cognitive_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/confidence_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/context_builder.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/feedback_integrator.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/learning_loop.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/memory_layer.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/memory_reasoning.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/objective_manager.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/reasoning_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "cognitive/runtime_bridge.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "context/__init__.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "contracts/__init__.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "decision/__init__.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "decision/policy_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/cognitive_state_vector.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/cognitive_tensor_adapter.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/collapse_probability.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/core_binding.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/dynamicore_adapter.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/engine_binding.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/evolution_connector.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/evolution_tensor.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/full_runtime.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/runtime_pipeline.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/structural_fusion.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/tensor_fusion_layer.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "dlis/validation_integration.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/autonomous_feedback.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/decision_execution_bridge.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/dynamic_graph_bridge.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/observability.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/persistence_history.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "enterprise/runtime_manager.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "entropy.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "evolution/evolution_engine_v73.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "explainability/__init__.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "feedback/__init__.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "graph.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "graph_intelligence/graph_intelligence.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "graph_intelligence/intelligence_benchmark.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/auto_registry.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/canonical_binding_adapter.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/canonical_engine_binding.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/cognitive_aggregator.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/cognitive_orchestrator.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/dlis049_facade.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/dlis078_bus_binding.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/dlis078_tensor_binding.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/dynamicore_intelligence_kernel.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_action_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_adaptive_policy.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_bootstrap.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_capability_discovery.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_causal_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_container.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_cycle_validator.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_decision_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_decision_optimizer.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_event_types.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_knowledge_integrator.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_knowledge_memory.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_learning_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_policy_feedback.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_predictive_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_predictive_feedback.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_priority.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_runtime_kernel.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_scenario_evaluator.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_service_adapters.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_service_registry.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_simulation_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_strategy_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_strategy_memory.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/enterprise_trace.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/evolution_history_analyzer.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/graph_evolution_bridge.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/graph_intelligence_validator.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/kernel.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/kernel_gateway.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/master_engine_bridge.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/master_orchestration_layer.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/orchestrator.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/orchestrator_integration_bridge.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/predictive_temporal_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/runtime_authority_binding.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/runtime_bridge.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/runtime_registry.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/structural_timeline_engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "intelligence/validation_bridge.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "kernel/__init__.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "knowledge/engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "learning/engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "mathematical/state_adapter.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "research/collatz/state.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "simulation/engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "state/__init__.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "state/snapshot.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "state/transition.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "twin/engine.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "twin/model.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "validation/__init__.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        },
+        {
+            "module": "validation/v71_enterprise_validator.py",
+            "incoming": 0,
+            "outgoing": 1,
+            "importance_score": 1,
+            "role": "ISOLATED"
+        }
+    ]
+}
