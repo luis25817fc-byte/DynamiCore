@@ -1,0 +1,77 @@
+[
+    {
+        "file": "adaptation/evolution_adapter.py",
+        "exists": true,
+        "size": 632
+    },
+    {
+        "file": "adaptation/evolution_service.py",
+        "exists": true,
+        "size": 2013
+    },
+    {
+        "file": "adaptation/policy_bridge.py",
+        "exists": true,
+        "size": 656
+    },
+    {
+        "file": "adaptation/policy_evolution.py",
+        "exists": true,
+        "size": 1612
+    },
+    {
+        "file": "cognitive/registry.py",
+        "exists": true,
+        "size": 243
+    },
+    {
+        "file": "cognitive/runtime_bridge.py",
+        "exists": true,
+        "size": 840
+    },
+    {
+        "file": "enterprise/decision_execution_bridge.py",
+        "exists": true,
+        "size": 2495
+    },
+    {
+        "file": "enterprise/dynamic_graph_bridge.py",
+        "exists": true,
+        "size": 1863
+    },
+    {
+        "file": "enterprise/dynamic_graph_evolution_bridge.py",
+        "exists": true,
+        "size": 1813
+    },
+    {
+        "file": "enterprise/intelligence_orchestrator_bridge.py",
+        "exists": true,
+        "size": 1176
+    },
+    {
+        "file": "intelligence/runtime_bridge.py",
+        "exists": true,
+        "size": 2539
+    },
+    {
+        "file": "intelligence/runtime_registry.py",
+        "exists": true,
+        "size": 366
+    },
+    {
+        "file": "intelligence/enterprise_connector_registry.py",
+        "exists": true,
+        "size": 183
+    },
+    {
+        "file": "intelligence/enterprise_service_registry.py",
+        "exists": true,
+        "size": 1777
+    },
+    {
+        "file": "enterprise/registry_core.py",
+        "exists": true,
+        "size": 822
+    }
+]
