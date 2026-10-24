@@ -1,0 +1,45 @@
+{
+  "component": "EOS-005",
+  "name": "Enterprise Scheduler",
+  "status": "TESTS_PASSED",
+  "timestamp_utc": "2026-10-24T09:09:34.731426+00:00",
+  "branch": "validation-suite-v2",
+  "base_commit": "b652275d0bd3d3103edce61565e839eab6e08aa1",
+  "module": "app/core/enterprise_os/scheduler.py",
+  "tests": {
+    "suite": "unittest",
+    "passed": 11,
+    "failed": 0,
+    "test_module": "tests.test_eos005_scheduler"
+  },
+  "compatibility": {
+    "legacy_class": "EnterpriseExecutionScheduler",
+    "legacy_module_preserved": true,
+    "legacy_api_methods": [
+      "submit_task",
+      "next_task",
+      "queue_status",
+      "history",
+      "diagnostics"
+    ]
+  },
+  "features": [
+    "deterministic priority ordering",
+    "due-time scheduling",
+    "optional atomic JSON persistence",
+    "handler registry and explicit execution",
+    "idempotency keys",
+    "queued-task cancellation",
+    "bounded retry attempts",
+    "failure and lifecycle tracking",
+    "optional EventBus integration",
+    "diagnostics"
+  ],
+  "limitations": [
+    "No background worker is started.",
+    "No distributed locking is implemented.",
+    "Exactly-once external side effects are not guaranteed.",
+    "A task interrupted while RUNNING requires reconciliation.",
+    "Certification is limited to the recorded unit tests; full EOS integration remains to be validated."
+  ]
+}
