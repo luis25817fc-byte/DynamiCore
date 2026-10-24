@@ -1,0 +1,44 @@
+{
+  "timestamp_utc": "2026-10-24T21:19:25.926691+00:00",
+  "commit_under_test": "817a728aab5aa2c0f5fe6ade126f15cfa04ad524",
+  "scope": "concurrency_and_repeatability",
+  "checks": [
+    {
+      "name": "eventbus_concurrent_delivery_4000",
+      "status": "PASS",
+      "duration_seconds": 0.021498,
+      "details": {
+        "workers": 8,
+        "events_per_worker": 500,
+        "expected_deliveries": 4000,
+        "actual_deliveries": 4000,
+        "events_per_second": 204282.04
+      }
+    },
+    {
+      "name": "telemetry_concurrent_increment_4000",
+      "status": "FAIL",
+      "duration_seconds": 0.045784,
+      "error": "AssertionError: No se encontró el contador en snapshot; revisar el esquema devuelto."
+    },
+    {
+      "name": "repeat_full_unittest_suite",
+      "status": "PASS",
+      "duration_seconds": 0.277406,
+      "details": {
+        "tests_run": 50,
+        "duration_seconds": 0.2774,
+        "result": "OK"
+      }
+    }
+  ],
+  "limitations": [
+    "This harness does not establish production security certification.",
+    "No destructive failure injection or production load test was performed."
+  ],
+  "summary": {
+    "checks_passed": 2,
+    "checks_failed": 1,
+    "status": "FAIL"
+  }
+}
