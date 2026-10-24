@@ -1,44 +1,65 @@
 {
-  "timestamp_utc": "2026-10-24T21:19:25.926691+00:00",
-  "commit_under_test": "817a728aab5aa2c0f5fe6ade126f15cfa04ad524",
-  "scope": "concurrency_and_repeatability",
+  "title": "DynamiCore EOS hardening and concurrency verification",
+  "schema_version": "1.1",
+  "timestamp_utc": "2026-10-24T21:31:24.571996+00:00",
+  "commit_under_test": "a23c3f011334e5d1182a39f03de281d2c14f89df",
+  "status": "PASS",
+  "summary": {
+    "checks_passed": 4,
+    "checks_failed": 0
+  },
   "checks": [
+    {
+      "name": "telemetry_concurrent_increment_4000_correct_schema",
+      "status": "PASS",
+      "duration_seconds": 0.040545,
+      "details": {
+        "workers": 8,
+        "increments_per_worker": 500,
+        "expected": 4000,
+        "actual": 4000,
+        "metric_count": 1,
+        "increments_per_second": 98810.31,
+        "fresh_instance": true,
+        "snapshot_schema": "metrics[].name/type/value"
+      }
+    },
     {
       "name": "eventbus_concurrent_delivery_4000",
       "status": "PASS",
-      "duration_seconds": 0.021498,
+      "duration_seconds": 0.090407,
       "details": {
-        "workers": 8,
-        "events_per_worker": 500,
-        "expected_deliveries": 4000,
-        "actual_deliveries": 4000,
-        "events_per_second": 204282.04
+        "expected": 4000,
+        "actual": 4000,
+        "workers": 8
       }
     },
     {
-      "name": "telemetry_concurrent_increment_4000",
-      "status": "FAIL",
-      "duration_seconds": 0.045784,
-      "error": "AssertionError: No se encontró el contador en snapshot; revisar el esquema devuelto."
-    },
-    {
-      "name": "repeat_full_unittest_suite",
+      "name": "full_unittest_suite",
       "status": "PASS",
-      "duration_seconds": 0.277406,
+      "duration_seconds": 0.30003,
       "details": {
         "tests_run": 50,
-        "duration_seconds": 0.2774,
         "result": "OK"
       }
+    },
+    {
+      "name": "compileall",
+      "status": "PASS"
     }
   ],
-  "limitations": [
-    "This harness does not establish production security certification.",
-    "No destructive failure injection or production load test was performed."
-  ],
-  "summary": {
+  "previous_attempt": {
+    "telemetry_check": "FAIL",
+    "diagnosis": "Verifier assumed a flat dictionary; actual snapshot schema is snapshot['metrics'] containing metric objects. An exploratory increment also preceded the 4000 concurrent increments.",
+    "resolution": "Reran using a fresh instance and the actual snapshot schema."
+  },
+  "previous_report_summary": {
     "checks_passed": 2,
     "checks_failed": 1,
     "status": "FAIL"
-  }
+  },
+  "limitations": [
+    "Concurrency microtest is not a production-scale load test.",
+    "No independent security or disaster-recovery certification is claimed."
+  ]
 }
