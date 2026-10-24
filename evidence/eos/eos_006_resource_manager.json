@@ -1,0 +1,13 @@
+{
+  "component": "EOS-006",
+  "name": "Enterprise Resource Manager",
+  "status": "TESTED",
+  "timestamp_utc": "2026-10-24T18:09:31.170764+00:00",
+  "module": "app/core/enterprise_os/resource_manager.py",
+  "tests": "tests/test_eos006_resource_manager.py",
+  "tests_passed": true,
+  "limitations": [
+    "In-memory resource accounting; state is not persistent across process restarts.",
+    "This test run does not certify integration with the complete DynamiCore runtime."
+  ]
+}
